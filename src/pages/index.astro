@@ -4,15 +4,11 @@ import { formatDate, getFeaturedImage, getExcerpt } from '../lib/utils';
 import { getCategories as getPostCategories } from '../lib/utils';
 
 let posts = [];
-let featuredPost = null;
-let recentPosts = [];
 let categories = [];
 let tags = [];
 
 try {
-  posts = await getPosts(1, 9);
-  featuredPost = posts[0];
-  recentPosts = posts.slice(1);
+  posts = await getPosts(1, 12);
   categories = await getCategories();
   tags = await getTags();
 } catch (error) {
@@ -59,48 +55,11 @@ const taxonomies = categories.length > 0 ? categories : tags;
   </header>
 
   <main>
-    <section class="hero-featured">
-      {featuredPost && (
-        <article class="featured-post">
-          {getFeaturedImage(featuredPost) && (
-            <div class="featured-image">
-              <img 
-                src={getFeaturedImage(featuredPost)} 
-                alt={featuredPost.title.rendered}
-              />
-            </div>
-          )}
-          <div class="featured-content">
-            <div class="featured-meta">
-              <span class="badge">Featured</span>
-              {getPostCategories(featuredPost).length > 0 && (
-                <div class="categories">
-                  {getPostCategories(featuredPost).map((cat) => (
-                    <a href="/blog" class="category-tag">{cat.name}</a>
-                  ))}
-                </div>
-              )}
-            </div>
-            <h1>
-              <a href={`/blog/${featuredPost.slug}`}>
-                {featuredPost.title.rendered}
-              </a>
-            </h1>
-            <p class="featured-excerpt">{getExcerpt(featuredPost.excerpt.rendered, 200)}</p>
-            <div class="featured-footer">
-              <time datetime={featuredPost.date}>{formatDate(featuredPost.date)}</time>
-              <a href={`/blog/${featuredPost.slug}`} class="read-more-btn">Read Full Article →</a>
-            </div>
-          </div>
-        </article>
-      )}
-    </section>
-
     <div class="content-wrapper">
       <section class="posts-section">
         <h2>Latest Posts</h2>
         <div class="post-grid">
-          {recentPosts.map((post) => (
+          {posts.map((post) => (
             <article class="post-card">
               {getFeaturedImage(post) && (
                 <img 
@@ -241,136 +200,7 @@ const taxonomies = categories.length > 0 ? categories : tags;
     main {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 0;
-    }
-
-    .hero-featured {
-      background: transparent;
-      margin: 2rem auto 3rem;
-      padding: 0 2rem;
-    }
-
-    .featured-post {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 500px;
-      gap: 0;
-      overflow: hidden;
-      border-radius: 12px;
-      background: white;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .featured-image {
-      overflow: hidden;
-      position: relative;
-    }
-
-    .featured-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s;
-    }
-
-    .featured-post:hover .featured-image img {
-      transform: scale(1.05);
-    }
-
-    .featured-content {
-      padding: 3rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .featured-meta {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .badge {
-      background: #e74c3c;
-      color: white;
-      padding: 0.25rem 0.75rem;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
-    .categories {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .category-tag {
-      background: #ecf0f1;
-      color: #2c3e50;
-      padding: 0.25rem 0.75rem;
-      border-radius: 4px;
-      font-size: 0.875rem;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-
-    .category-tag:hover {
-      background: #3498db;
-      color: white;
-    }
-
-    .featured-content h1 {
-      font-size: 2.5rem;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-
-    .featured-content h1 a {
-      color: #2c3e50;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .featured-content h1 a:hover {
-      color: #3498db;
-    }
-
-    .featured-excerpt {
-      color: #555;
-      font-size: 1.125rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.8;
-    }
-
-    .featured-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 1rem;
-      border-top: 1px solid #ecf0f1;
-    }
-
-    .featured-footer time {
-      color: #7f8c8d;
-      font-size: 0.875rem;
-    }
-
-    .read-more-btn {
-      background: #3498db;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background 0.2s;
-    }
-
-    .read-more-btn:hover {
-      background: #2980b9;
+      padding: 2rem 0 0;
     }
 
     .content-wrapper {
