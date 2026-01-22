@@ -1,9 +1,9 @@
 /**
  * WordPress REST API Client
- * Connects to WordPress backend at cookmushroom.com
+ * Connects to WordPress backend at wp.cookmushroom.com
  */
 
-const WP_API_URL = process.env.WP_API_URL || 'https://cookmushroom.com/wp-json/wp/v2';
+const WP_API_URL = import.meta.env.WP_API_URL || 'https://wp.cookmushroom.com/wp-json/wp/v2';
 
 interface WPPost {
   id: number;
