@@ -25,7 +25,6 @@ tags = tags.filter(tag => tag.slug !== 'blog' && tag.name.toLowerCase() !== 'blo
 
 // Use categories if available, otherwise use tags
 const taxonomies = categories.length > 0 ? categories : tags;
-const taxonomyType = categories.length > 0 ? 'category' : 'tag';
 ---
 
 <!DOCTYPE html>

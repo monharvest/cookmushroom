@@ -213,7 +213,13 @@ export async function getAllPostSlugs(): Promise<string[]> {
     _fields: 'slug'
   });
   
-  return posts.map(post => post.slug);
+  // Filter out slugs with URL-encoded characters (emojis, special chars)
+  return posts
+    .map(post => post.slug)
+    .filter(slug => {
+      // Only allow slugs with alphanumeric, hyphens, and underscores
+      return /^[a-z0-9-_]+$/i.test(slug);
+    });
 }
 
 /**
