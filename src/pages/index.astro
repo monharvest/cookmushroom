@@ -6,11 +6,13 @@ import { getCategories as getPostCategories } from '../lib/utils';
 let posts = [];
 let categories = [];
 let tags = [];
+let recentPosts = [];
 
 try {
   posts = await getPosts(1, 12);
   categories = await getCategories();
   tags = await getTags();
+  recentPosts = posts; // Use the same posts for recent posts, or fetch separately if needed
 } catch (error) {
   console.error('Error fetching WordPress data:', error);
 }
