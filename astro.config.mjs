@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
@@ -7,7 +6,7 @@ export default defineConfig({
   output: 'static', // Change to 'server' for SSR
   
   integrations: [
-    sitemap()
+    // Sitemap temporarily disabled during build
   ],
 
   // If you need SSR later, uncomment:
