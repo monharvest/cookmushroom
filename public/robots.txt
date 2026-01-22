@@ -1,0 +1,24 @@
+# robots.txt for cookmushroom.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://cookmushroom.com/sitemap.xml
+
+# Allow search engines and AI crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Prevent crawling of private/admin areas
+Disallow: /admin/
+Disallow: /private/
