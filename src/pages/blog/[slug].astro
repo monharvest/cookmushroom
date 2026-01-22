@@ -1,0 +1,308 @@
+---
+import { getAllPostSlugs, getPostBySlug } from '../../lib/wordpress';
+import { formatDate, getFeaturedImage, getCategories, calculateReadingTime, cleanContent } from '../../lib/utils';
+
+export async function getStaticPaths() {
+  const slugs = await getAllPostSlugs();
+  
+  return slugs.map(slug => ({
+    params: { slug }
+  }));
+}
+
+const { slug } = Astro.params;
+const post = await getPostBySlug(slug as string);
+
+if (!post) {
+  return Astro.redirect('/404');
+}
+
+const featuredImage = getFeaturedImage(post);
+const categories = getCategories(post);
+const readingTime = calculateReadingTime(post.content.rendered);
+const cleanedContent = cleanContent(post.content.rendered);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{post.title.rendered} | CookMushroom</title>
+  <meta name="description" content={post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160)} />
+  <meta name="keywords" content={`mushroom recipe, ${categories.map(c => c.name).join(', ')}, mushroom cooking, mushroom preparation`} />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content={post.title.rendered} />
+  <meta property="og:description" content={post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160)} />
+  {featuredImage && <meta property="og:image" content={featuredImage} />}
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content={post.date} />
+  {categories.length > 0 && <meta property="article:section" content={categories[0].name} />}
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={post.title.rendered} />
+  <meta name="twitter:description" content={post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160)} />
+  {featuredImage && <meta name="twitter:image" content={featuredImage} />}
+  
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/">CookMushroom</a>
+      <a href="/blog">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="post">
+      <header class="post-header">
+        <h1>{post.title.rendered}</h1>
+        
+        <div class="post-meta">
+          <time datetime={post.date}>{formatDate(post.date)}</time>
+          <span>•</span>
+          <span>{readingTime} min read</span>
+          
+          {categories.length > 0 && (
+            <>
+              <span>•</span>
+              <div class="categories">
+                {categories.map(cat => (
+                  <a href={`/category/${cat.slug}`}>{cat.name}</a>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+
+        {featuredImage && (
+          <img 
+            src={featuredImage} 
+            alt={post.title.rendered}
+            class="featured-image"
+          />
+        )}
+      </header>
+
+      <div class="post-content" set:html={cleanedContent} />
+    </article>
+
+    <div class="post-navigation">
+      <a href="/blog" class="back-link">← Back to Blog</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; {new Date().getFullYear()} CookMushroom. All rights reserved.</p>
+  </footer>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 1rem 2rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .post-header {
+      margin-bottom: 2rem;
+    }
+
+    .post-header h1 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+    }
+
+    .post-meta {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .categories {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .categories a {
+      background: #3498db;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+
+    .categories a:hover {
+      background: #2980b9;
+    }
+
+    .featured-image {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .post-content {
+      font-size: 1.125rem;
+      line-height: 1.8;
+    }
+
+    .post-content :global(img) {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin: 1.5rem 0;
+    }
+
+    .post-content :global(h2) {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+
+    .post-content :global(h3) {
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: #2c3e50;
+    }
+
+    .post-content :global(p) {
+      margin-bottom: 1rem;
+    }
+
+    .post-content :global(a) {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    .post-content :global(a:hover) {
+      text-decoration: underline;
+    }
+
+    .post-content :global(blockquote) {
+      border-left: 4px solid #3498db;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      color: #555;
+      font-style: italic;
+    }
+
+    .post-content :global(pre) {
+      background: #f4f4f4;
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+
+    .post-content :global(code) {
+      background: #f4f4f4;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+    }
+
+    .post-content :global(ul), .post-content :global(ol) {
+      margin-left: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .post-navigation {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .back-link {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+  </style>
+
+  <script>
+    // Add accessibility attributes to iframes in WordPress content
+    document.addEventListener('DOMContentLoaded', () => {
+      const iframes = document.querySelectorAll('.post-content iframe');
+      iframes.forEach((iframe) => {
+        if (!iframe.hasAttribute('title')) {
+          // Try to get title from src URL or use generic description
+          const src = iframe.getAttribute('src') || '';
+          let title = 'Embedded content';
+          
+          if (src.includes('youtube.com') || src.includes('youtu.be')) {
+            title = 'YouTube video player';
+          } else if (src.includes('vimeo.com')) {
+            title = 'Vimeo video player';
+          } else if (src.includes('instagram.com')) {
+            title = 'Instagram embed';
+          } else if (src.includes('twitter.com')) {
+            title = 'Twitter embed';
+          }
+          
+          iframe.setAttribute('title', title);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

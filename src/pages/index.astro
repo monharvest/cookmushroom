@@ -1,0 +1,697 @@
+---
+import { getPosts, getCategories, getTags } from '../lib/wordpress';
+import { formatDate, getFeaturedImage, getExcerpt } from '../lib/utils';
+import { getCategories as getPostCategories } from '../lib/utils';
+
+let posts = [];
+let featuredPost = null;
+let recentPosts = [];
+let categories = [];
+let tags = [];
+
+try {
+  posts = await getPosts(1, 9);
+  featuredPost = posts[0];
+  recentPosts = posts.slice(1);
+  categories = await getCategories();
+  tags = await getTags();
+} catch (error) {
+  console.error('Error fetching WordPress data:', error);
+}
+
+// Filter out 'blog' category
+categories = categories.filter(cat => cat.slug !== 'blog' && cat.name.toLowerCase() !== 'blog');
+tags = tags.filter(tag => tag.slug !== 'blog' && tag.name.toLowerCase() !== 'blog');
+
+// Use categories if available, otherwise use tags
+const taxonomies = categories.length > 0 ? categories : tags;
+const taxonomyType = categories.length > 0 ? 'category' : 'tag';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CookMushroom - Expert Mushroom Recipes, Cooking Tips & Foraging Guides</title>
+  <meta name="description" content="Discover delicious mushroom recipes, expert cooking techniques, identification guides, and foraging tips. Learn to cook wild and cultivated mushrooms with confidence. Your ultimate mushroom culinary resource." />
+  <meta name="keywords" content="mushroom recipes, mushroom cooking, wild mushrooms, mushroom identification, foraging mushrooms, edible mushrooms, mushroom dishes, mushroom preparation, cooking techniques, gourmet mushrooms" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="CookMushroom - Expert Mushroom Recipes & Cooking Guides" />
+  <meta property="og:description" content="Discover delicious mushroom recipes, expert cooking techniques, identification guides, and foraging tips for wild and cultivated mushrooms." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cookmushroom.com" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CookMushroom - Expert Mushroom Recipes & Cooking Guides" />
+  <meta name="twitter:description" content="Discover delicious mushroom recipes, expert cooking techniques, identification guides, and foraging tips." />
+  
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/">CookMushroom</a>
+      <a href="/blog">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-featured">
+      {featuredPost && (
+        <article class="featured-post">
+          {getFeaturedImage(featuredPost) && (
+            <div class="featured-image">
+              <img 
+                src={getFeaturedImage(featuredPost)} 
+                alt={featuredPost.title.rendered}
+              />
+            </div>
+          )}
+          <div class="featured-content">
+            <div class="featured-meta">
+              <span class="badge">Featured</span>
+              {getPostCategories(featuredPost).length > 0 && (
+                <div class="categories">
+                  {getPostCategories(featuredPost).map((cat) => (
+                    <a href="/blog" class="category-tag">{cat.name}</a>
+                  ))}
+                </div>
+              )}
+            </div>
+            <h1>
+              <a href={`/blog/${featuredPost.slug}`}>
+                {featuredPost.title.rendered}
+              </a>
+            </h1>
+            <p class="featured-excerpt">{getExcerpt(featuredPost.excerpt.rendered, 200)}</p>
+            <div class="featured-footer">
+              <time datetime={featuredPost.date}>{formatDate(featuredPost.date)}</time>
+              <a href={`/blog/${featuredPost.slug}`} class="read-more-btn">Read Full Article →</a>
+            </div>
+          </div>
+        </article>
+      )}
+    </section>
+
+    <div class="content-wrapper">
+      <section class="posts-section">
+        <h2>Latest Posts</h2>
+        <div class="post-grid">
+          {recentPosts.map((post) => (
+            <article class="post-card">
+              {getFeaturedImage(post) && (
+                <img 
+                  src={getFeaturedImage(post)} 
+                  alt={post.title.rendered}
+                  loading="lazy"
+                />
+              )}
+              <div class="post-card-content">
+                {getPostCategories(post).length > 0 && (
+                  <div class="post-categories">
+                    {getPostCategories(post).slice(0, 2).map((cat) => (
+                      <a href="/blog" class="category-badge">{cat.name}</a>
+                    ))}
+                  </div>
+                )}
+                <h3>
+                  <a href={`/blog/${post.slug}`}>
+                    {post.title.rendered}
+                  </a>
+                </h3>
+                <p class="date">{formatDate(post.date)}</p>
+                <div class="excerpt">
+                  {getExcerpt(post.excerpt.rendered)}
+                </div>
+                  <a href={`/blog/${post.slug}`} class="read-more">Read more →</a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+  
+        <aside class="sidebar">
+          {taxonomies.length > 0 && (
+            <div class="widget">
+              <h3>{categories.length > 0 ? 'Categories' : 'Tags'}</h3>
+              <ul class="category-list">
+                {taxonomies.slice(0, 8).map((item) => (
+                  <li>
+                    <a href="/blog">
+                      {item.name}
+                      <span class="count">({item.count})</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+  
+          {categories.length > 0 && tags.length > 0 && (
+            <div class="widget">
+              <h3>Popular Tags</h3>
+              <div class="tag-cloud">
+                {tags.slice(0, 15).map((tag) => (
+                  <a href="/blog" class="tag-item">
+                    {tag.name} ({tag.count})
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
+        <div class="widget">
+          <h3>Recent Posts</h3>
+          <ul class="recent-posts-list">
+            {recentPosts.slice(0, 5).map((post) => (
+              <li>
+                <a href={`/blog/${post.slug}`}>
+                  {getFeaturedImage(post) && (
+                    <img 
+                      src={getFeaturedImage(post)} 
+                      alt={post.title.rendered}
+                      class="widget-thumb"
+                    />
+                  )}
+                  <div class="widget-post-info">
+                    <h4>{post.title.rendered}</h4>
+                    <time>{formatDate(post.date)}</time>
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="widget widget-about">
+          <h3>About</h3>
+          <p>CookMushroom is your go-to resource for everything about mushroom cooking, recipes, and culinary techniques.</p>
+          <a href="/about" class="btn-secondary">Learn More</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; {new Date().getFullYear()} CookMushroom. All rights reserved.</p>
+  </footer>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8f9fa;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #3498db;
+    }
+
+    main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .hero-featured {
+      background: transparent;
+      margin: 2rem auto 3rem;
+      padding: 0 2rem;
+    }
+
+    .featured-post {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 500px;
+      gap: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .featured-image {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .featured-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .featured-post:hover .featured-image img {
+      transform: scale(1.05);
+    }
+
+    .featured-content {
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-meta {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: #e74c3c;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .categories {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .category-tag {
+      background: #ecf0f1;
+      color: #2c3e50;
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .category-tag:hover {
+      background: #3498db;
+      color: white;
+    }
+
+    .featured-content h1 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .featured-content h1 a {
+      color: #2c3e50;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .featured-content h1 a:hover {
+      color: #3498db;
+    }
+
+    .featured-excerpt {
+      color: #555;
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .featured-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid #ecf0f1;
+    }
+
+    .featured-footer time {
+      color: #7f8c8d;
+      font-size: 0.875rem;
+    }
+
+    .read-more-btn {
+      background: #3498db;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .read-more-btn:hover {
+      background: #2980b9;
+    }
+
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 3rem;
+      padding: 0 2rem 2rem;
+      align-items: start;
+    }
+
+    .posts-section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #2c3e50;
+    }
+
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .post-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .post-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .post-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .post-card-content {
+      padding: 1.25rem;
+    }
+
+    .post-categories {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .category-badge {
+      background: #ecf0f1;
+      color: #2c3e50;
+      padding: 0.25rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.75rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .category-badge:hover {
+      background: #3498db;
+      color: white;
+    }
+
+    .post-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .post-card h3 a {
+      color: #2c3e50;
+      text-decoration: none;
+    }
+
+    .post-card h3 a:hover {
+      color: #3498db;
+    }
+
+    .date {
+      color: #7f8c8d;
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .excerpt {
+      color: #555;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .read-more {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      transition: color 0.2s;
+    }
+
+    .read-more:hover {
+      color: #2980b9;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 2rem;
+    }
+
+    .widget {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .widget h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 0.5rem;
+    }
+
+    .category-list {
+      list-style: none;
+    }
+
+    .category-list li {
+      margin-bottom: 0.75rem;
+    }
+
+    .category-list a {
+      color: #555;
+      text-decoration: none;
+      display: flex;
+      justify-content: space-between;
+      transition: color 0.2s;
+      padding: 0.5rem;
+      border-radius: 4px;
+    }
+
+    .category-list a:hover {
+      background: #ecf0f1;
+      color: #3498db;
+    }
+
+    .category-list .count {
+      color: #95a5a6;
+      font-size: 0.875rem;
+    }
+
+    .view-all {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #3498db;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+    }
+
+    .view-all:hover {
+      text-decoration: underline;
+    }
+
+    .recent-posts-list {
+      list-style: none;
+    }
+
+    .recent-posts-list li {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #ecf0f1;
+    }
+
+    .recent-posts-list li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .recent-posts-list a {
+      display: flex;
+      gap: 1rem;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .recent-posts-list a:hover {
+      opacity: 0.8;
+    }
+
+    .widget-thumb {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .widget-post-info {
+      flex: 1;
+    }
+
+    .widget-post-info h4 {
+      font-size: 0.9rem;
+      color: #2c3e50;
+      margin-bottom: 0.25rem;
+      line-height: 1.3;
+    }
+
+    .widget-post-info time {
+      font-size: 0.75rem;
+      color: #95a5a6;
+    }
+
+    .widget-about p {
+      color: #555;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .btn-secondary {
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag-item {
+      background: #ecf0f1;
+      color: #2c3e50;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: all 0.2s;
+    }
+
+    .tag-item:hover {
+      background: #3498db;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+      display: inline-block;
+      background: #ecf0f1;
+      color: #2c3e50;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: #3498db;
+      color: white;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 1200px) {
+      .content-wrapper {
+        grid-template-columns: 1fr 300px;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 968px) {
+      .featured-post {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-image {
+        height: 400px;
+      }
+
+      .content-wrapper {
+        grid-template-columns: 1fr;
+        padding: 0 1rem 1rem;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      .post-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .featured-content {
+        padding: 2rem 1.5rem;
+      }
+
+      .featured-content h1 {
+        font-size: 1.75rem;
+      }
+
+      .featured-excerpt {
+        font-size: 1rem;
+      }
+
+      .post-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</body>
+</html>

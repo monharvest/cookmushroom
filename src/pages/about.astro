@@ -1,0 +1,338 @@
+---
+import { getPageBySlug } from '../lib/wordpress';
+
+const aboutPage = await getPageBySlug('about');
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About CookMushroom - Your Trusted Mushroom Cooking & Foraging Resource</title>
+  <meta name="description" content="Learn about CookMushroom's mission to help mushroom enthusiasts discover safe foraging practices, expert cooking techniques, and delicious recipes. Join our community of mushroom lovers." />
+  <meta name="keywords" content="about cookmushroom, mushroom experts, mushroom community, foraging education, mushroom cooking education" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="About CookMushroom - Your Trusted Mushroom Resource" />
+  <meta property="og:description" content="Learn about CookMushroom's mission to help mushroom enthusiasts discover safe foraging practices and expert cooking techniques." />
+  <meta property="og:type" content="website" />
+  
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/">CookMushroom</a>
+      <a href="/blog">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-container">
+      {aboutPage ? (
+        <article class="page-content">
+          <h1>{aboutPage.title.rendered}</h1>
+          <div class="content" set:html={aboutPage.content.rendered} />
+        </article>
+      ) : (
+        <article class="page-content">
+          <h1>About CookMushroom</h1>
+          
+          <section class="intro">
+            <p class="lead">Welcome to CookMushroom, your ultimate resource for everything related to mushroom cooking, recipes, and culinary techniques.</p>
+          </section>
+
+          <section>
+            <h2>Our Mission</h2>
+            <p>We're passionate about exploring the wonderful world of mushrooms and sharing our knowledge with food enthusiasts around the globe. From common button mushrooms to exotic varieties, we cover it all.</p>
+          </section>
+
+          <section>
+            <h2>What We Offer</h2>
+            <ul class="feature-list">
+              <li><strong>Recipes:</strong> Step-by-step guides for delicious mushroom dishes</li>
+              <li><strong>Cooking Techniques:</strong> Learn the best ways to prepare different mushroom varieties</li>
+              <li><strong>Nutrition Information:</strong> Discover the health benefits of mushrooms</li>
+              <li><strong>Seasonal Guides:</strong> Know when and where to find the best mushrooms</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Our Story</h2>
+            <p>CookMushroom started as a passion project by food lovers who wanted to share their expertise with the world. What began as a small blog has grown into a comprehensive resource for mushroom enthusiasts everywhere.</p>
+          </section>
+
+          <section class="cta">
+            <h2>Get in Touch</h2>
+            <p>Have questions or want to share your own mushroom cooking experiences? We'd love to hear from you!</p>
+            <a href="/blog" class="btn-primary">Explore Our Blog</a>
+          </section>
+        </article>
+      )}
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; {new Date().getFullYear()} CookMushroom. All rights reserved.</p>
+  </footer>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8f9fa;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #3498db;
+    }
+
+    nav a[href="/about"] {
+      color: #3498db;
+    }
+
+    main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .page-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .page-content {
+      background: white;
+      padding: 3rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .page-content h1 {
+      font-size: 3rem;
+      color: #2c3e50;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 3px solid #3498db;
+    }
+
+    .intro {
+      margin-bottom: 2.5rem;
+    }
+
+    .lead {
+      font-size: 1.375rem;
+      line-height: 1.8;
+      color: #555;
+      font-weight: 300;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+    }
+
+    p {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .feature-list li {
+      font-size: 1.125rem;
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+      background: #f8f9fa;
+      border-left: 4px solid #3498db;
+      border-radius: 4px;
+    }
+
+    .feature-list strong {
+      color: #2c3e50;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 2rem;
+      background: #ecf0f1;
+      border-radius: 8px;
+      margin-top: 3rem;
+    }
+
+    .cta h2 {
+      margin-top: 0;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: #3498db;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.125rem;
+      transition: background 0.2s;
+      margin-top: 1rem;
+    }
+
+    .btn-primary:hover {
+      background: #2980b9;
+    }
+
+    .content {
+      font-size: 1.125rem;
+      line-height: 1.8;
+    }
+
+    .content :global(h2) {
+      font-size: 2rem;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+    }
+
+    .content :global(h3) {
+      font-size: 1.5rem;
+      color: #2c3e50;
+      margin-bottom: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .content :global(p) {
+      margin-bottom: 1rem;
+    }
+
+    .content :global(img) {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin: 1.5rem 0;
+    }
+
+    .content :global(a) {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    .content :global(a:hover) {
+      text-decoration: underline;
+    }
+
+    .content :global(ul), .content :global(ol) {
+      margin-left: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .content :global(blockquote) {
+      border-left: 4px solid #3498db;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      color: #555;
+      font-style: italic;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        padding: 2rem 1rem;
+      }
+
+      .page-content {
+        padding: 2rem 1.5rem;
+      }
+
+      .page-content h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .lead, p, .feature-list li {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+  <script>
+    // Add accessibility attributes to iframes in WordPress content
+    document.addEventListener('DOMContentLoaded', () => {
+      const iframes = document.querySelectorAll('.content iframe');
+      iframes.forEach((iframe) => {
+        if (!iframe.hasAttribute('title')) {
+          const src = iframe.getAttribute('src') || '';
+          let title = 'Embedded content';
+          
+          if (src.includes('youtube.com') || src.includes('youtu.be')) {
+            title = 'YouTube video player';
+          } else if (src.includes('vimeo.com')) {
+            title = 'Vimeo video player';
+          } else if (src.includes('instagram.com')) {
+            title = 'Instagram embed';
+          } else if (src.includes('twitter.com')) {
+            title = 'Twitter embed';
+          }
+          
+          iframe.setAttribute('title', title);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
