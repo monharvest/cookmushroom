@@ -77,7 +77,7 @@ export function calculateReadingTime(content: string): number {
 /**
  * Fix WordPress media URLs (ensure they point to correct domain)
  */
-export function fixMediaUrl(url: string, domain = 'cookmushroom.com'): string {
+export function fixMediaUrl(url: string, domain = 'wp.cookmushroom.com'): string {
   if (!url) return '';
   
   // If URL is relative, make it absolute
