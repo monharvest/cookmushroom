@@ -10,18 +10,14 @@ jobs:
   rebuild:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Cloudflare Pages rebuild
-        run: |
-          echo "Triggering rebuild at $(date)"
-          # Empty commit to trigger Cloudflare Pages deployment
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
-          
       - uses: actions/checkout@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           
-      - name: Create empty commit and push
+      - name: Trigger Cloudflare Pages rebuild
         run: |
+          echo "Triggering rebuild at $(date)"
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
           git commit --allow-empty -m "Scheduled rebuild - $(date +'%Y-%m-%d %H:%M UTC')"
           git push
