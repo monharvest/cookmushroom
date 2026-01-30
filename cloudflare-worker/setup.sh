@@ -38,18 +38,19 @@ wrangler deploy
 echo ""
 echo "✅ Worker deployed successfully!"
 echo ""
-echo "🔐 Now set up your GitHub token:"
+echo "🔐 Now set up your Cloudflare Pages Deploy Hook:"
 echo ""
-echo "1. Go to: https://github.com/settings/tokens"
-echo "2. Generate a new token (classic)"
-echo "3. Select scope: workflow"
-echo "4. Copy the token"
+echo "1. Go to: https://dash.cloudflare.com"
+echo "2. Workers & Pages → cookmushroom → Settings → Builds & deployments"
+echo "3. Deploy hooks → Add deploy hook"
+echo "4. Name: 'Scheduled Rebuild', Branch: 'main'"
+echo "5. Copy the deploy hook URL"
 echo ""
-read -p "Press Enter when you have your GitHub token ready..."
+read -p "Press Enter when you have your deploy hook URL ready..."
 echo ""
 
-# Set GitHub token
-wrangler secret put GITHUB_TOKEN
+# Set deploy hook
+wrangler secret put PAGES_DEPLOY_HOOK
 
 echo ""
 echo "✅ Setup complete!"

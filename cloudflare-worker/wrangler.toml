@@ -6,5 +6,5 @@ compatibility_date = "2024-01-01"
 [triggers]
 crons = ["0 */12 * * *"]
 
-# Environment variables (add GITHUB_TOKEN as a secret via Cloudflare dashboard)
-# Don't put the actual token here - add it via: wrangler secret put GITHUB_TOKEN
+# Environment variables (add PAGES_DEPLOY_HOOK as a secret)
+# Don't put the actual URL here - add it via: wrangler secret put PAGES_DEPLOY_HOOK

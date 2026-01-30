@@ -1,22 +1,22 @@
 /**
  * Cloudflare Worker with Cron Trigger
- * Triggers GitHub Actions workflow to rebuild the site every 12 hours
+ * Directly triggers Cloudflare Pages rebuild every 12 hours
  * 
  * Setup:
- * 1. Create a GitHub Personal Access Token with 'repo' or 'workflow' scope
- * 2. Add it as a secret in Cloudflare Worker: GITHUB_TOKEN
+ * 1. Get your Cloudflare Pages Deploy Hook URL
+ * 2. Add it as a secret: PAGES_DEPLOY_HOOK
  * 3. Deploy this worker
- * 4. Add cron trigger in Cloudflare dashboard: 0 */12 * * *
+ * 4. Cron trigger is configured in wrangler.toml
  */
 
 export default {
-  async scheduled(event, env, ctx) {
-    // Trigger the GitHub Actions workflow
+  async scheduled(_event, env, _ctx) {
+    // Trigger Cloudflare Pages rebuild
     await triggerRebuild(env);
   },
 
   // Also allow manual trigger via HTTP
-  async fetch(request, env, ctx) {
+  async fetch(request, env, _ctx) {
     const url = new URL(request.url);
     
     if (url.pathname === '/trigger' && request.method === 'POST') {
@@ -33,36 +33,31 @@ export default {
 };
 
 async function triggerRebuild(env) {
-  const GITHUB_OWNER = 'monharvest';
-  const GITHUB_REPO = 'cookmushroom';
-  const WORKFLOW_ID = 'scheduled-rebuild.yml';
+  if (!env.PAGES_DEPLOY_HOOK) {
+    console.error('PAGES_DEPLOY_HOOK not configured');
+    return {
+      success: false,
+      error: 'Deploy hook URL not configured'
+    };
+  }
   
   try {
-    // Trigger GitHub Actions workflow via API
-    const response = await fetch(
-      `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/actions/workflows/${WORKFLOW_ID}/dispatches`,
-      {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/vnd.github.v3+json',
-          'Authorization': `Bearer ${env.GITHUB_TOKEN}`,
-          'User-Agent': 'Cloudflare-Worker-Rebuild',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          ref: 'main'
-        })
+    // Trigger Cloudflare Pages rebuild via deploy hook
+    const response = await fetch(env.PAGES_DEPLOY_HOOK, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
       }
-    );
+    });
 
     const timestamp = new Date().toISOString();
     
     if (response.ok) {
-      console.log(`[${timestamp}] Successfully triggered rebuild`);
+      console.log(`[${timestamp}] Successfully triggered Cloudflare Pages rebuild`);
       return {
         success: true,
         timestamp,
-        message: 'Rebuild triggered successfully'
+        message: 'Cloudflare Pages rebuild triggered successfully'
       };
     } else {
       const error = await response.text();

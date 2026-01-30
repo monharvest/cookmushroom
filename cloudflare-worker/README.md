@@ -1,19 +1,15 @@
 # Cloudflare Worker Cron for Auto-Rebuild
 
-This Cloudflare Worker triggers your GitHub Actions workflow every 12 hours to rebuild your site with fresh WordPress content.
+This Cloudflare Worker directly triggers Cloudflare Pages rebuilds every 12 hours to keep your site fresh with the latest WordPress content.
 
-## Why Use This Instead of GitHub Actions Schedule?
+## Why This Approach?
 
-GitHub's scheduled actions are unreliable:
-- Can be delayed by 10-15+ minutes during high load
-- May be disabled after 60 days of inactivity
-- No guarantee they'll run on time
-
-Cloudflare Workers Cron triggers are:
-- ✅ Extremely reliable
+Simple and reliable:
+- ✅ Direct Cloudflare → Cloudflare (no GitHub middleman)
+- ✅ Extremely reliable cron execution
 - ✅ Run on time (within seconds)
 - ✅ Free tier includes 100,000 requests/day
-- ✅ Integrated with your Cloudflare Pages setup
+- ✅ Fully integrated with Cloudflare Pages
 
 ## Setup Instructions
 
@@ -33,20 +29,23 @@ wrangler login
 
 1. Go to: https://github.com/settings/tokens
 2. Click "Generate new token (classic)"
-3. Give it a name: "Cloudflare Worker Rebuild"
-4. Select scope: `workflow` (to trigger workflows)
-5. Click "Generate token"
-6. **Copy the token** (you'll need it in step 5)
+3. GiveGet Cloudflare Pages Deploy Hook
 
-### 4. Deploy the Worker
+1. Go to Cloudflare Dashboard: https://dash.cloudflare.com
+2. Navigate to: **Workers & Pages** → **cookmushroom** (your Pages project)
+3. Go to **Settings** → **Builds & deployments**
+4. Scroll to **Deploy hooks**
+5. Click **Add deploy hook**
+   - Name: "Scheduled Rebuild"
+   - Branch: "main"
+6. Click **Save**
+7. **Copy the deploy hook URL** (looks like: `https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/...`
+cd cloudflare-worker
+wrangler deDeploy Hook as Secret
 
 ```bash
-cd cloudflare-worker
-wrangler deploy
-```
-
-### 5. Add GitHub Token as Secret
-
+wrangler secret put PAGES_DEPLOY_HOOK
+# Paste your deploy hook URL
 ```bash
 wrangler secret put GITHUB_TOKEN
 # Paste your GitHub token when prompted
@@ -119,20 +118,20 @@ Check if the cron is running:
 ### Worker deployed but cron not running
 
 1. Verify the worker is active in Cloudflare dashboard
-2. Check you added the GITHUB_TOKEN secret
+2. Check you added the PAGES_DEPLOY_HOOK secret
 3. Test manual trigger: `curl -X POST https://your-worker.workers.dev/trigger`
 
-### GitHub Actions not triggering
+### Rebuilds not happening
 
-1. Verify your GitHub token has `workflow` scope
-2. Check token hasn't expired
-3. Verify the workflow file is on the `main` branch
+1. Verify your deploy hook URL is correct
+2. Check it hasn't been deleted in Cloudflare dashboard
+3. Go to Pages project → Deployments to see if builds are triggering
 
-### Need to update the token
+### Need to update the deploy hook
 
 ```bash
-wrangler secret put GITHUB_TOKEN
-# Enter new token
+wrangler secret put PAGES_DEPLOY_HOOK
+# Enter new deploy hook URL
 ```
 
 ## Cost
@@ -143,15 +142,3 @@ wrangler secret put GITHUB_TOKEN
 - Cron triggers count as requests
 
 With 2 cron runs per day (every 12 hours), you'll use ~60 requests/month = **FREE** ✅
-
-## Disable GitHub Actions Schedule
-
-Since Cloudflare Worker is more reliable, you can remove the schedule from `.github/workflows/scheduled-rebuild.yml`:
-
-```yaml
-on:
-  workflow_dispatch: # Keep manual trigger
-  # Remove the schedule section
-```
-
-This keeps the workflow file for the Worker to trigger, but removes the unreliable GitHub schedule.

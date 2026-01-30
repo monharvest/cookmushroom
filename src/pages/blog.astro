@@ -6,7 +6,8 @@ const currentPage = 1;
 const perPage = 12;
 const posts = await getPosts(currentPage, perPage);
 const totalPosts = await getTotalPosts();
-const totalPages = Math.ceil(totalPosts / perPage);
+// Pagination disabled - showing all posts
+// const totalPages = Math.ceil(totalPosts / perPage);
 ---
 
 <!DOCTYPE html>
