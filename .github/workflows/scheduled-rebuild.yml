@@ -1,10 +1,7 @@
 name: Scheduled Rebuild
 
 on:
-  schedule:
-    # Rebuild every 12 hours (at 00:00, 12:00 UTC)
-    - cron: '0 */12 * * *'
-  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab or API (triggered by Cloudflare Worker)
 
 jobs:
   rebuild:

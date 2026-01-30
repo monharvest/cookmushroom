@@ -1,0 +1,10 @@
+name = "cookmushroom-rebuild-cron"
+main = "rebuild-cron.js"
+compatibility_date = "2024-01-01"
+
+# Cron trigger: Every 12 hours at 00:00 and 12:00 UTC
+[triggers]
+crons = ["0 */12 * * *"]
+
+# Environment variables (add GITHUB_TOKEN as a secret via Cloudflare dashboard)
+# Don't put the actual token here - add it via: wrangler secret put GITHUB_TOKEN
