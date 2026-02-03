@@ -20,7 +20,7 @@ Production Architecture:
 ### WordPress API Integration
 - WordPress REST API is the **single source of truth** for all content
 - API URL configured via `WP_API_URL` env var (defaults to production endpoint)
-- All WordPress interaction happens through [src/lib/wordpress.ts](src/lib/wordpress.ts)
+- All WordPress interaction happens through `src/lib/wordpress.ts`
 - Uses `_embed` parameter to fetch related data (featured images, categories) in single request
 - Error handling returns empty arrays to prevent build failures if API is unreachable
 
@@ -28,13 +28,13 @@ Production Architecture:
 - **Static mode** (default): Build locally, content fetched at build time
 - **SSR mode** (optional): Set `output: 'server'` in astro.config.mjs for dynamic content
 - Deploy to Cloudflare Pages via GitHub (auto-deploy on push) or manual upload
-- Cloudflare Worker cron ([cloudflare-worker/rebuild-cron.js](cloudflare-worker/rebuild-cron.js)) triggers rebuilds every 12 hours
+- Cloudflare Worker cron (`cloudflare-worker/rebuild-cron.js`) triggers rebuilds every 12 hours
 
 ### Key Files & Their Purpose
-- [src/lib/wordpress.ts](src/lib/wordpress.ts): WordPress API client with TypeScript interfaces
-- [src/lib/utils.ts](src/lib/utils.ts): Content sanitization, date formatting, reading time calculation
-- [src/pages/blog/[slug].astro](src/pages/blog/[slug].astro): Dynamic post pages using `getStaticPaths()`
-- [astro.config.mjs](astro.config.mjs): Build configuration, API URL injection via Vite
+- `src/lib/wordpress.ts`: WordPress API client with TypeScript interfaces
+- `src/lib/utils.ts`: Content sanitization, date formatting, reading time calculation
+- `src/pages/blog/[slug].astro`: Dynamic post pages using `getStaticPaths()`
+- `astro.config.mjs`: Build configuration, API URL injection via Vite
 
 ## Development Workflow
 
@@ -67,7 +67,7 @@ wrangler deploy
 ## Project-Specific Patterns
 
 ### Content Fetching Pattern
-Always use TypeScript interfaces from [src/lib/wordpress.ts](src/lib/wordpress.ts):
+Always use TypeScript interfaces from `src/lib/wordpress.ts`:
 ```typescript
 const posts = await getAllPosts();        // Returns WPPost[]
 const post = await getPostBySlug(slug);   // Returns WPPost | null
@@ -114,7 +114,7 @@ After making changes, verify:
 
 ## Documentation References
 
-- [README.md](README.md): Complete setup & migration guide
-- [CLOUDFLARE-DEPLOYMENT.md](CLOUDFLARE-DEPLOYMENT.md): Cloudflare Pages deployment
-- [HOSTINGER-CLOUDFLARE-GITHUB-DEPLOY.md](HOSTINGER-CLOUDFLARE-GITHUB-DEPLOY.md): GitHub auto-deploy setup
-- [cloudflare-worker/README.md](cloudflare-worker/README.md): Cron worker setup
+- `README.md`: Complete setup & migration guide
+- `CLOUDFLARE-DEPLOYMENT.md`: Cloudflare Pages deployment
+- `HOSTINGER-CLOUDFLARE-GITHUB-DEPLOY.md`: GitHub auto-deploy setup
+- `cloudflare-worker/README.md`: Cron worker setup
