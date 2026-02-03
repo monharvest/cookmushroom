@@ -1,0 +1,354 @@
+---
+import { getCategories, getPostsByCategory } from '../../lib/wordpress';
+import { formatDate, getFeaturedImage, getExcerpt } from '../../lib/utils';
+import { getCategories as getPostCategories } from '../../lib/utils';
+
+export async function getStaticPaths() {
+  const categories = await getCategories();
+  
+  // Filter out 'blog' category
+  const filteredCategories = categories.filter(
+    cat => cat.slug !== 'blog' && cat.name.toLowerCase() !== 'blog'
+  );
+  
+  return filteredCategories.map(category => ({
+    params: { slug: category.slug },
+    props: { category }
+  }));
+}
+
+const { category } = Astro.props;
+const posts = await getPostsByCategory(category.id, 1, 50);
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{category.name} - CookMushroom</title>
+  <meta name="description" content={`Browse all posts in ${category.name} category. Discover mushroom recipes, cooking tips, and more.`} />
+  
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="logo">Cook<span>Mushroom</span></a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/blog">Blog</a>
+        <a href="/about">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="category-header">
+      <h1>{category.name}</h1>
+      <p class="post-count">{posts.length} {posts.length === 1 ? 'post' : 'posts'}</p>
+    </div>
+
+    <div class="post-grid">
+      {posts.map((post) => (
+        <article class="post-card">
+          {getFeaturedImage(post) && (
+            <img 
+              src={getFeaturedImage(post)} 
+              alt={post.title.rendered}
+              loading="lazy"
+            />
+          )}
+          <div class="post-card-content">
+            {getPostCategories(post).length > 0 && (
+              <div class="post-categories">
+                {getPostCategories(post).slice(0, 2).map((cat) => (
+                  <a href={`/category/${cat.slug}`} class="category-badge">{cat.name}</a>
+                ))}
+              </div>
+            )}
+            <h3>
+              <a href={`/blog/${post.slug}`}>
+                {post.title.rendered}
+              </a>
+            </h3>
+            <p class="date">{formatDate(post.date)}</p>
+            <div class="excerpt">
+              {getExcerpt(post.excerpt.rendered)}
+            </div>
+            <a href={`/blog/${post.slug}`} class="read-more">Read more →</a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    {posts.length === 0 && (
+      <div class="no-posts">
+        <p>No posts found in this category yet.</p>
+        <a href="/blog" class="btn-primary">View All Posts</a>
+      </div>
+    )}
+  </main>
+
+  <footer>
+    <p>&copy; {new Date().getFullYear()} CookMushroom. All rights reserved.</p>
+  </footer>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Lato', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #2d2a26;
+      background: #fdfbf7;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(253, 251, 247, 0.95);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      border-bottom: 1px solid #e7e5e4;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.25rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: #292524;
+      text-decoration: none;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: -0.02em;
+    }
+
+    .logo span {
+      color: #b45309;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: #57534e;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9375rem;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: #b45309;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #b45309;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 6rem 2rem 4rem;
+    }
+
+    .category-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .category-header h1 {
+      font-size: 3rem;
+      color: #1c1917;
+      margin-bottom: 0.5rem;
+    }
+
+    .post-count {
+      color: #78716c;
+      font-size: 1.125rem;
+    }
+
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .post-card {
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      border: 1px solid #f5f5f4;
+    }
+
+    .post-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .post-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .post-card-content {
+      padding: 1.5rem;
+    }
+
+    .post-categories {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .category-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: #fef3c7;
+      color: #92400e;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .category-badge:hover {
+      background: #fde68a;
+      transform: scale(1.05);
+    }
+
+    .post-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .post-card h3 a {
+      color: #1c1917;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .post-card h3 a:hover {
+      color: #b45309;
+    }
+
+    .date {
+      color: #78716c;
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .excerpt {
+      color: #57534e;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .read-more {
+      color: #b45309;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+
+    .read-more:hover {
+      color: #92400e;
+      transform: translateX(4px);
+    }
+
+    .no-posts {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .no-posts p {
+      font-size: 1.25rem;
+      color: #78716c;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      background: #b45309;
+      color: white;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: #92400e;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(180, 83, 9, 0.3);
+    }
+
+    footer {
+      background: #292524;
+      color: #d6d3d1;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      .category-header h1 {
+        font-size: 2rem;
+      }
+
+      .post-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</body>
+</html>

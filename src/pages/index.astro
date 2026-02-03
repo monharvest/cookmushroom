@@ -81,7 +81,7 @@ const taxonomies = categories.length > 0 ? categories : tags;
                 {getPostCategories(post).length > 0 && (
                   <div class="post-categories">
                     {getPostCategories(post).slice(0, 2).map((cat) => (
-                      <a href="/blog" class="category-badge">{cat.name}</a>
+                      <a href={`/category/${cat.slug}`} class="category-badge">{cat.name}</a>
                     ))}
                   </div>
                 )}
@@ -108,26 +108,13 @@ const taxonomies = categories.length > 0 ? categories : tags;
               <ul class="category-list">
                 {taxonomies.slice(0, 8).map((item) => (
                   <li>
-                    <a href="/blog">
+                    <a href={`/category/${item.slug}`}>
                       {item.name}
                       <span class="count">({item.count})</span>
                     </a>
                   </li>
                 ))}
               </ul>
-            </div>
-          )}
-  
-          {categories.length > 0 && tags.length > 0 && (
-            <div class="widget">
-              <h3>Popular Tags</h3>
-              <div class="tag-cloud">
-                {tags.slice(0, 15).map((tag) => (
-                  <a href="/blog" class="tag-item">
-                    {tag.name} ({tag.count})
-                  </a>
-                ))}
-              </div>
             </div>
           )}
 
