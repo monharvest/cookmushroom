@@ -16,7 +16,7 @@ export default defineConfig({
 
   vite: {
     define: {
-      'process.env.WP_API_URL': JSON.stringify(process.env.WP_API_URL || 'https://cookmushroom.com/wp-json/wp/v2')
+      'process.env.WP_API_URL': JSON.stringify(process.env.WP_API_URL || 'https://cookmushroom.page.gd/wp-json/wp/v2')
     }
   }
 });
