@@ -90,7 +90,7 @@ async function fetchWP<T>(endpoint: string, params: Record<string, string | numb
     } else if (endpoint.includes('/categories') || endpoint.includes('/tags')) {
       return [] as unknown as T;
     } else if (endpoint.includes('/pages')) {
-      return null as unknown as T;
+      return [] as unknown as T;
     }
     
     throw error;
