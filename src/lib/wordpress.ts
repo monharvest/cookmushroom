@@ -1,7 +1,9 @@
 /**
  * WordPress REST API Client
- * Connects to WordPress backend at wp.cookmushroom.com
+ * Connects to WordPress backend with anti-bot challenge solver
+ * for Hostinger free hosting (cookmushroom.page.gd)
  */
+import crypto from 'node:crypto';
 
 const WP_API_URL = import.meta.env.WP_API_URL || 'https://cookmushroom.page.gd/wp-json/wp/v2';
 
@@ -58,33 +60,110 @@ interface WPMedia {
   };
 }
 
+/** Cached anti-bot cookie (valid for 6 hours per challenge) */
+let cachedCookie: string | null = null;
+
 /**
- * Fetch data from WordPress API with caching
+ * Solve Hostinger's anti-bot AES challenge.
+ * The challenge page returns HTML with an AES-128-CBC encrypted token.
+ * We decrypt it, set the __test cookie, and re-fetch to get real content.
+ */
+function solveAntiBot(html: string): string | null {
+  const match = html.match(
+    /toNumbers\("([a-f0-9]+)"\),\s*b\s*=\s*toNumbers\("([a-f0-9]+)"\),\s*c\s*=\s*toNumbers\("([a-f0-9]+)"\)/
+  );
+  if (!match) return null;
+
+  const [, keyHex, ivHex, cipherHex] = match;
+  const key = Buffer.from(keyHex, 'hex');
+  const iv = Buffer.from(ivHex, 'hex');
+  const ct = Buffer.from(cipherHex, 'hex');
+
+  const decipher = crypto.createDecipheriv('aes-128-cbc', key, iv);
+  decipher.setAutoPadding(false);
+  let decrypted = decipher.update(ct, undefined, 'hex');
+  decrypted += decipher.final('hex');
+
+  return '__test=' + decrypted;
+}
+
+/**
+ * Fetch with anti-bot challenge handling.
+ * 1. Try with cached cookie first
+ * 2. If we get a challenge page, solve it and retry
+ */
+async function fetchWithChallenge(url: string): Promise<Response> {
+  const headers: Record<string, string> = {
+    'User-Agent': 'Mozilla/5.0 (compatible; AstroBuild/1.0)',
+    'Accept': 'application/json, text/html',
+  };
+
+  // Use cached cookie if available
+  if (cachedCookie) {
+    headers['Cookie'] = cachedCookie;
+  }
+
+  let response = await fetch(url, { headers });
+  const contentType = response.headers.get('content-type') || '';
+
+  // If we got JSON, we're good
+  if (contentType.includes('application/json')) {
+    return response;
+  }
+
+  // Check if this is an anti-bot challenge page
+  const body = await response.text();
+  if (body.includes('slowAES.decrypt')) {
+    console.log('[WP] Anti-bot challenge detected, solving...');
+    const cookie = solveAntiBot(body);
+    if (!cookie) {
+      throw new Error('Failed to solve anti-bot challenge');
+    }
+
+    cachedCookie = cookie;
+
+    // Retry with the solved cookie — append &i=1 as the challenge expects
+    const retryUrl = url + (url.includes('?') ? '&' : '?') + 'i=1';
+    response = await fetch(retryUrl, {
+      headers: { ...headers, Cookie: cookie },
+    });
+
+    const retryType = response.headers.get('content-type') || '';
+    if (!retryType.includes('application/json')) {
+      const retryBody = await response.text();
+      throw new Error(`Anti-bot solved but still got non-JSON (${retryType}): ${retryBody.substring(0, 200)}`);
+    }
+
+    console.log('[WP] Anti-bot challenge solved successfully');
+    return response;
+  }
+
+  // Some other HTML error page
+  throw new Error(`Expected JSON but got ${contentType}: ${body.substring(0, 200)}`);
+}
+
+/**
+ * Fetch data from WordPress API with anti-bot handling
  */
 async function fetchWP<T>(endpoint: string, params: Record<string, string | number> = {}): Promise<T> {
   const queryParams = new URLSearchParams(
     Object.entries(params).map(([key, value]) => [key, String(value)])
   );
-  
+
   const url = `${WP_API_URL}${endpoint}?${queryParams}`;
-  
+
   try {
-    // Use custom fetch options to handle SSL
-    const response = await fetch(url, {
-      headers: {
-        'User-Agent': 'Astro/1.0'
-      }
-    });
-    
+    const response = await fetchWithChallenge(url);
+
     if (!response.ok) {
       throw new Error(`WordPress API error: ${response.status} ${response.statusText}`);
     }
-    
+
     return await response.json();
   } catch (error) {
-    console.error(`Error fetching from WordPress: ${url}`, error);
-    
-    // Return empty data structure to prevent crashes
+    console.error(`[WP] Error fetching: ${url}`, error);
+
+    // Return empty data structure to prevent build crashes
     if (endpoint.includes('/posts')) {
       return [] as unknown as T;
     } else if (endpoint.includes('/categories') || endpoint.includes('/tags')) {
@@ -92,7 +171,7 @@ async function fetchWP<T>(endpoint: string, params: Record<string, string | numb
     } else if (endpoint.includes('/pages')) {
       return [] as unknown as T;
     }
-    
+
     throw error;
   }
 }
@@ -187,9 +266,14 @@ export async function getMedia(mediaId: number) {
  * Get total number of posts (for pagination)
  */
 export async function getTotalPosts(): Promise<number> {
-  const response = await fetch(`${WP_API_URL}/posts?per_page=1`);
-  const total = response.headers.get('X-WP-Total');
-  return total ? parseInt(total, 10) : 0;
+  try {
+    const response = await fetchWithChallenge(`${WP_API_URL}/posts?per_page=1`);
+    const total = response.headers.get('X-WP-Total');
+    return total ? parseInt(total, 10) : 0;
+  } catch (error) {
+    console.error('[WP] Error fetching total posts:', error);
+    return 0;
+  }
 }
 
 /**
