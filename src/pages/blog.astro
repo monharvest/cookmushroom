@@ -55,7 +55,7 @@ const totalPosts = await getTotalPosts();
             <img 
               src={getFeaturedImage(post)} 
               alt={post.title.rendered}
-              loading="lazy"
+              onerror="this.style.display='none'"
             />
           )}
           <h2>

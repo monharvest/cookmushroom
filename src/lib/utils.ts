@@ -42,7 +42,7 @@ export function getExcerpt(content: string, length = 150): string {
 /**
  * Get featured image URL with fallback
  */
-export function getFeaturedImage(post: any, size = 'large'): string | null {
+export function getFeaturedImage(post: any, size = 'full'): string | null {
   if (!post._embedded?.['wp:featuredmedia']?.[0]) {
     return null;
   }
@@ -50,7 +50,10 @@ export function getFeaturedImage(post: any, size = 'large'): string | null {
   const media = post._embedded['wp:featuredmedia'][0];
   
   // Try to get specific size, fall back to source_url
-  return media.media_details?.sizes?.[size]?.source_url || media.source_url;
+  const imageUrl = media.media_details?.sizes?.[size]?.source_url || media.source_url;
+  
+  // Fix domain if needed
+  return fixMediaUrl(imageUrl, 'cookmushroom.com');
 }
 
 /**
