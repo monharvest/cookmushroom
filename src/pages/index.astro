@@ -1,29 +1,51 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { cookTimes, guideArticles, recipes } from '../data/guides';
+import { cookTimes, guideArticles, recipeCards } from '../data/guides';
 const featured = guideArticles.slice(0, 6);
+const mushroomGuides = guideArticles.filter((guide) => guide.mushroomSlug);
 ---
-<Layout>
-  <main>
+<Layout title="CookMushroom | Complete Mushroom Cooking Guide" description="CookMushroom is a practical kitchen reference for mushroom cook times, foraging safety notes, cleaning tips, and simple mushroom recipe ideas.">
+  <main id="content">
     <section class="hero">
       <div>
         <p class="eyebrow">Mushrooms, cooked correctly</p>
         <h1>Brown them. Don’t steam them.</h1>
-        <p class="lead">CookMushroom is a focused reference for mushroom cook times, pan methods, air-fryer tips, and simple recipe ideas.</p>
+        <p class="lead">CookMushroom is a practical kitchen reference for mushroom cook times, foraging safety notes, cleaning tips, and simple dinner ideas.</p>
         <div class="actions">
           <a class="button" href="/mushroom-cook-time-chart/">Use the cook-time chart</a>
           <a class="button secondary" href="/guides/">Browse guides</a>
         </div>
       </div>
       <aside class="panel" aria-label="Quick mushroom cooking rules">
-        <span class="badge">Quick rules</span>
+        <h2 class="panel-title">🔥 Brown Them. Don’t Steam Them.</h2>
         <ul>
           <li>Use a wide hot pan.</li>
           <li>Do not crowd the mushrooms.</li>
-          <li>Salt after the first browning.</li>
-          <li>Add butter, garlic, or sauce near the end.</li>
+          <li>Let them sit undisturbed at first.</li>
+          <li>Salt only after most browning has happened.</li>
+          <li>Wait for the pan to look dry before stirring too much.</li>
         </ul>
       </aside>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Fast answer</p>
+          <h2>Common cook times</h2>
+        </div>
+        <p><a href="/mushroom-cook-time-chart/">Open the full chart →</a></p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mushroom</th><th>Method</th><th>Time</th><th>Done when</th></tr></thead>
+          <tbody>
+            {cookTimes.slice(0, 8).map((row) => (
+              <tr><td>{row.mushroom}</td><td>{row.method}</td><td>{row.time}</td><td>{row.done}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <section class="section">
@@ -32,7 +54,7 @@ const featured = guideArticles.slice(0, 6);
           <p class="eyebrow">Start here</p>
           <h2>Cooking guides</h2>
         </div>
-        <p>No wild mushroom identification; just practical cooking for edible mushrooms.</p>
+        <p>Practical cooking pages, plus wild mushroom safety notes where they matter.</p>
       </div>
       <div class="grid">
         {featured.map((guide) => (
@@ -48,37 +70,31 @@ const featured = guideArticles.slice(0, 6);
     <section class="section">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Fast answer</p>
-          <h2>Common cook times</h2>
+          <p class="eyebrow">By mushroom</p>
+          <h2>Choose what you have</h2>
         </div>
-        <p><a href="/mushroom-cook-time-chart/">Open the full chart →</a></p>
+        <p>Fast route to the right heat, cut, safety note, and doneness signs.</p>
       </div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Mushroom</th><th>Method</th><th>Time</th><th>Done when</th></tr></thead>
-          <tbody>
-            {cookTimes.slice(0, 6).map((row) => (
-              <tr><td>{row.mushroom}</td><td>{row.method}</td><td>{row.time}</td><td>{row.done}</td></tr>
-            ))}
-          </tbody>
-        </table>
+      <div class="pills">
+        {mushroomGuides.map((guide) => <a href={`/${guide.slug}/`}>{guide.label}</a>)}
       </div>
     </section>
 
     <section class="section">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Recipe lanes</p>
+          <p class="eyebrow">Dinner ideas</p>
           <h2>What to cook next</h2>
         </div>
-        <p><a href="/mushroom-recipe-index/">Open recipe index →</a></p>
+        <p><a href="/mushroom-recipe-index/">Open recipe ideas →</a></p>
       </div>
       <div class="recipe-list">
-        {recipes.map((group) => (
-          <article class="card">
-            <h3>{group.group}</h3>
-            <ul>{group.items.slice(0, 4).map((item) => <li>{item}</li>)}</ul>
-          </article>
+        {recipeCards.slice(0, 4).map((recipe) => (
+          <a class="card recipe-card" href={`/${recipe.guide}/`}>
+            <span class="badge">{recipe.time}</span>
+            <h3>{recipe.name}</h3>
+            <p>{recipe.description}</p>
+          </a>
         ))}
       </div>
     </section>

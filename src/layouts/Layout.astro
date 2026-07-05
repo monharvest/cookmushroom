@@ -3,8 +3,18 @@ import '../styles/global.css';
 const {
   title = 'CookMushroom — How to Cook Mushrooms Properly',
   description = 'CookMushroom is a focused guide to cooking mushrooms: cook times, pan methods, air-fryer tips, and simple mushroom recipes.',
+  schema = [],
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, 'https://cookmushroom.com').toString();
+const image = 'https://cookmushroom.com/og-image.png';
+const baseSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'WebSite', name: 'CookMushroom', url: 'https://cookmushroom.com/', description },
+    { '@type': 'Organization', name: 'CookMushroom', url: 'https://cookmushroom.com/', logo: image }
+  ],
+};
+const schemas = [baseSchema, ...(Array.isArray(schema) ? schema : [schema]).filter(Boolean)];
 ---
 <!doctype html>
 <html lang="en">
@@ -18,24 +28,31 @@ const canonical = new URL(Astro.url.pathname, 'https://cookmushroom.com').toStri
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemas.length === 1 ? schemas[0] : schemas)} is:inline />
   </head>
   <body>
+    <a class="skip-link" href="#content">Skip to content</a>
     <header class="site-header">
       <nav class="nav" aria-label="Main navigation">
         <a class="brand" href="/">Cook<span>Mushroom</span></a>
         <div class="nav-links">
           <a href="/guides/">Guides</a>
           <a href="/mushroom-cook-time-chart/">Cook Times</a>
-          <a href="/mushroom-recipe-index/">Recipes</a>
+          <a href="/mushroom-recipe-index/">Recipe ideas</a>
           <a href="/about/">About</a>
         </div>
       </nav>
     </header>
     <slot />
     <footer class="footer">
-      <p>CookMushroom helps with cooking store-bought edible mushrooms. Wild mushroom ID is not covered here.</p>
+      <p>CookMushroom covers cooking edible mushrooms. Identification notes are safety reminders only — never eat a wild mushroom without expert verification.</p>
+      <p>Editorial policy: concise kitchen-tested guidance, updated when cook-time pages change.</p>
       <p>&copy; {new Date().getFullYear()} CookMushroom</p>
     </footer>
   </body>

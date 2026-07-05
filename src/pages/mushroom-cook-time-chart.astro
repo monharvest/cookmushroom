@@ -5,7 +5,7 @@ const mushrooms = [...new Map(cookTimes.map((row) => [row.mushroomSlug, row.mush
 const methods = cookTimes.reduce((items, row) => items.some(([slug]) => slug === row.methodSlug) ? items : [...items, [row.methodSlug, row.method]], []);
 ---
 <Layout title="Mushroom Cook Time Chart | CookMushroom" description="Pick a mushroom and cooking method to get time, heat, oil amount, and signs it is done.">
-  <main>
+  <main id="content">
     <p class="eyebrow">Cook-time chart</p>
     <h1>Mushroom cook time chart</h1>
     <p class="lead">Pick a mushroom and method. If a pair is not listed, use the closest texture match.</p>

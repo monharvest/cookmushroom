@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#fbf7ee"/>
+  <circle cx="180" cy="120" r="260" fill="#f4e3c9"/>
+  <circle cx="1030" cy="560" r="280" fill="#efe3cf"/>
+  <text x="84" y="150" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="38" font-weight="800" fill="#446b38" letter-spacing="4">COOKMUSHROOM</text>
+  <text x="84" y="300" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="96" font-weight="900" fill="#211a13">Brown them.</text>
+  <text x="84" y="410" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="96" font-weight="900" fill="#8b4513">Don’t steam them.</text>
+  <text x="88" y="505" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="34" font-weight="650" fill="#6f6258">Cook times, methods, and mushroom dinner ideas.</text>
+</svg>

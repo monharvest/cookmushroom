@@ -1,20 +1,37 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { guideArticles } from '../data/guides';
+const methodGuides = guideArticles.filter((guide) => !guide.mushroomSlug);
+const mushroomGuides = guideArticles.filter((guide) => guide.mushroomSlug);
 ---
-<Layout title="Mushroom Cooking Guides | CookMushroom" description="Practical guides for cooking button, oyster, lion's mane, enoki, shiitake, and portobello mushrooms.">
-  <main>
+<Layout title="Mushroom Cooking Guides | CookMushroom" description="Practical guides for cooking common, wild, cultivated, and functional mushrooms.">
+  <main id="content">
     <p class="eyebrow">Guides</p>
     <h1>Mushroom cooking guides</h1>
-    <p class="lead">Short, useful pages for getting mushrooms browned, tender, and properly seasoned.</p>
-    <div class="grid section">
-      {guideArticles.map((guide) => (
-        <a class="card" href={`/${guide.slug}/`}>
-          <span class="badge">{guide.minutes}</span>
-          <h3>{guide.title}</h3>
-          <p>{guide.description}</p>
-        </a>
-      ))}
-    </div>
+    <p class="lead">Short, useful pages for getting mushrooms browned, tender, safely handled, and properly seasoned.</p>
+    <section class="section">
+      <p class="eyebrow">Method guides</p>
+      <div class="grid">
+        {methodGuides.map((guide) => (
+          <a class="card" href={`/${guide.slug}/`}>
+            <span class="badge">{guide.minutes}</span>
+            <h3>{guide.title}</h3>
+            <p>{guide.description}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+    <section class="section">
+      <p class="eyebrow">By mushroom</p>
+      <div class="grid">
+        {mushroomGuides.map((guide) => (
+          <a class="card" href={`/${guide.slug}/`}>
+            <span class="badge">{guide.minutes}</span>
+            <h3>{guide.title}</h3>
+            <p>{guide.description}</p>
+          </a>
+        ))}
+      </div>
+    </section>
   </main>
 </Layout>
