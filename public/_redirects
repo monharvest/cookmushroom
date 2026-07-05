@@ -1,0 +1,5 @@
+https://www.cookmushroom.com/* https://cookmushroom.com/:splat 301!
+/sitemap.xml /sitemap-index.xml 301
+/blog /guides/ 301
+/blog/* /guides/ 301
+/category/* /guides/ 301

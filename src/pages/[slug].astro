@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { guideArticles } from '../data/guides';
+
+export function getStaticPaths() {
+  return guideArticles.map((guide) => ({ params: { slug: guide.slug }, props: { guide } }));
+}
+
+const { guide } = Astro.props;
+---
+<Layout title={`${guide.title} | CookMushroom`} description={guide.description}>
+  <main class="guide">
+    <p class="eyebrow">Guide · {guide.minutes}</p>
+    <h1>{guide.title}</h1>
+    <p class="lead">{guide.description}</p>
+    <div class="notice">Use store-bought or positively identified edible mushrooms. This page is cooking guidance, not wild mushroom identification.</div>
+    <article class="prose">
+      <section>
+        <h2>Method</h2>
+        <ol>{guide.steps.map((step) => <li>{step}</li>)}</ol>
+      </section>
+      <section>
+        <h2>Small fixes that matter</h2>
+        <ul>{guide.tips.map((tip) => <li>{tip}</li>)}</ul>
+      </section>
+      <section>
+        <h2>Good with</h2>
+        <p>{guide.pairings.join(', ')}.</p>
+      </section>
+    </article>
+  </main>
+</Layout>

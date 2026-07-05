@@ -1,640 +1,86 @@
 ---
-import { getPosts, getCategories, getTags } from '../lib/wordpress';
-import { formatDate, getFeaturedImage, getExcerpt } from '../lib/utils';
-import { getCategories as getPostCategories } from '../lib/utils';
-
-let posts = [];
-let categories = [];
-let tags = [];
-let recentPosts = [];
-
-try {
-  posts = await getPosts(1, 12);
-  categories = await getCategories();
-  tags = await getTags();
-  recentPosts = posts; // Use the same posts for recent posts, or fetch separately if needed
-} catch (error) {
-  console.error('Error fetching WordPress data:', error);
-}
-
-// Filter out 'blog' category
-categories = categories.filter(cat => cat.slug !== 'blog' && cat.name.toLowerCase() !== 'blog');
-tags = tags.filter(tag => tag.slug !== 'blog' && tag.name.toLowerCase() !== 'blog');
-
-// Use categories if available, otherwise use tags
-const taxonomies = categories.length > 0 ? categories : tags;
+import Layout from '../layouts/Layout.astro';
+import { cookTimes, guideArticles, recipes } from '../data/guides';
+const featured = guideArticles.slice(0, 6);
 ---
-
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CookMushroom - Expert Mushroom Recipes, Cooking Tips & Foraging Guides</title>
-  <meta name="description" content="Discover delicious mushroom recipes, expert cooking techniques, identification guides, and foraging tips. Learn to cook wild and cultivated mushrooms with confidence. Your ultimate mushroom culinary resource." />
-  <meta name="keywords" content="mushroom recipes, mushroom cooking, wild mushrooms, mushroom identification, foraging mushrooms, edible mushrooms, mushroom dishes, mushroom preparation, cooking techniques, gourmet mushrooms" />
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="CookMushroom - Expert Mushroom Recipes & Cooking Guides" />
-  <meta property="og:description" content="Discover delicious mushroom recipes, expert cooking techniques, identification guides, and foraging tips for wild and cultivated mushrooms." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://cookmushroom.com" />
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CookMushroom - Expert Mushroom Recipes & Cooking Guides" />
-  <meta name="twitter:description" content="Discover delicious mushroom recipes, expert cooking techniques, identification guides, and foraging tips." />
-  
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"></noscript>
-</head>
-<body>
-  <header>
-    <nav>
-      <a href="/" class="logo">Cook<span>Mushroom</span></a>
-      <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/blog">Blog</a>
-        <a href="/about">About</a>
-      </div>
-    </nav>
-  </header>
-
+<Layout>
   <main>
-    <div class="content-wrapper">
-      <section class="posts-section">
-        <h2>Latest Posts</h2>
-        <div class="post-grid">
-          {posts.map((post) => (
-            <article class="post-card">
-              {getFeaturedImage(post) && (
-                <img 
-                  src={getFeaturedImage(post)} 
-                  alt={post.title.rendered}
-                  loading="lazy"
-                />
-              )}
-              <div class="post-card-content">
-                {getPostCategories(post).length > 0 && (
-                  <div class="post-categories">
-                    {getPostCategories(post).slice(0, 2).map((cat) => (
-                      <a href={`/category/${cat.slug}`} class="category-badge">{cat.name}</a>
-                    ))}
-                  </div>
-                )}
-                <h3>
-                  <a href={`/blog/${post.slug}`}>
-                    {post.title.rendered}
-                  </a>
-                </h3>
-                <p class="date">{formatDate(post.date)}</p>
-                <div class="excerpt">
-                  {getExcerpt(post.excerpt.rendered)}
-                </div>
-                  <a href={`/blog/${post.slug}`} class="read-more">Read more →</a>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-  
-        <aside class="sidebar">
-          {taxonomies.length > 0 && (
-            <div class="widget">
-              <h3>{categories.length > 0 ? 'Categories' : 'Tags'}</h3>
-              <ul class="category-list">
-                {taxonomies.slice(0, 8).map((item) => (
-                  <li>
-                    <a href={`/category/${item.slug}`}>
-                      {item.name}
-                      <span class="count">({item.count})</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-        <div class="widget">
-          <h3>Recent Posts</h3>
-          <ul class="recent-posts-list">
-            {recentPosts.slice(0, 5).map((post) => (
-              <li>
-                <a href={`/blog/${post.slug}`}>
-                  {getFeaturedImage(post) && (
-                    <img 
-                      src={getFeaturedImage(post)} 
-                      alt={post.title.rendered}
-                      class="widget-thumb"
-                    />
-                  )}
-                  <div class="widget-post-info">
-                    <h4>{post.title.rendered}</h4>
-                    <time>{formatDate(post.date)}</time>
-                  </div>
-                </a>
-              </li>
-            ))}
-          </ul>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Mushrooms, cooked correctly</p>
+        <h1>Brown them. Don’t steam them.</h1>
+        <p class="lead">CookMushroom is a focused reference for mushroom cook times, pan methods, air-fryer tips, and simple recipe ideas.</p>
+        <div class="actions">
+          <a class="button" href="/mushroom-cook-time-chart/">Use the cook-time chart</a>
+          <a class="button secondary" href="/guides/">Browse guides</a>
         </div>
-
-        <div class="widget widget-about">
-          <h3>About</h3>
-          <p>CookMushroom is your go-to resource for everything about mushroom cooking, recipes, and culinary techniques.</p>
-          <a href="/about" class="btn-secondary">Learn More About CookMushroom</a>
-        </div>
+      </div>
+      <aside class="panel" aria-label="Quick mushroom cooking rules">
+        <span class="badge">Quick rules</span>
+        <ul>
+          <li>Use a wide hot pan.</li>
+          <li>Do not crowd the mushrooms.</li>
+          <li>Salt after the first browning.</li>
+          <li>Add butter, garlic, or sauce near the end.</li>
+        </ul>
       </aside>
-    </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Start here</p>
+          <h2>Cooking guides</h2>
+        </div>
+        <p>No wild mushroom identification; just practical cooking for edible mushrooms.</p>
+      </div>
+      <div class="grid">
+        {featured.map((guide) => (
+          <a class="card" href={`/${guide.slug}/`}>
+            <span class="badge">{guide.minutes}</span>
+            <h3>{guide.title}</h3>
+            <p>{guide.description}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Fast answer</p>
+          <h2>Common cook times</h2>
+        </div>
+        <p><a href="/mushroom-cook-time-chart/">Open the full chart →</a></p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mushroom</th><th>Method</th><th>Time</th><th>Done when</th></tr></thead>
+          <tbody>
+            {cookTimes.slice(0, 6).map((row) => (
+              <tr><td>{row.mushroom}</td><td>{row.method}</td><td>{row.time}</td><td>{row.done}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Recipe lanes</p>
+          <h2>What to cook next</h2>
+        </div>
+        <p><a href="/mushroom-recipe-index/">Open recipe index →</a></p>
+      </div>
+      <div class="recipe-list">
+        {recipes.map((group) => (
+          <article class="card">
+            <h3>{group.group}</h3>
+            <ul>{group.items.slice(0, 4).map((item) => <li>{item}</li>)}</ul>
+          </article>
+        ))}
+      </div>
+    </section>
   </main>
-
-  <footer>
-    <p>&copy; {new Date().getFullYear()} CookMushroom. All rights reserved.</p>
-  </footer>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Lato', system-ui, -apple-system, sans-serif;
-      line-height: 1.6;
-      color: #2d2a26;
-      background: #fdfbf7;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(253, 251, 247, 0.95);
-      backdrop-filter: blur(8px);
-      z-index: 1000;
-      border-bottom: 1px solid #e7e5e4;
-      transition: all 0.3s ease;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 1.25rem 2rem;
-    }
-
-    .logo {
-      font-size: 1.875rem;
-      font-weight: 700;
-      color: #292524;
-      text-decoration: none;
-      font-family: 'Playfair Display', serif;
-      letter-spacing: -0.02em;
-    }
-
-    .logo span {
-      color: #b45309;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .nav-links a {
-      color: #57534e;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.9375rem;
-      transition: color 0.2s;
-      position: relative;
-    }
-
-    .nav-links a:hover {
-      color: #b45309;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #b45309;
-      transition: width 0.3s ease;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    main {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 6rem 0 0;
-    }
-
-    .content-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 350px;
-      gap: 3rem;
-      padding: 0 2rem 2rem;
-      align-items: start;
-    }
-
-    .posts-section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      color: #1c1917;
-    }
-
-    .post-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .post-card {
-      background: white;
-      border-radius: 1rem;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-      border: 1px solid #f5f5f4;
-    }
-
-    .post-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-    }
-
-    .post-card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .post-card:hover img {
-      transform: scale(1.05);
-    }
-
-    .post-card-content {
-      padding: 1.5rem;
-    }
-
-    .post-categories {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .category-badge {
-      background: #fef3c7;
-      color: #92400e;
-      padding: 0.375rem 0.75rem;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.2s;
-      text-transform: uppercase;
-      letter-spacing: 0.025em;
-    }
-
-    .category-badge:hover {
-      background: #d97706;
-      color: white;
-    }
-
-    .post-card h3 {
-      font-size: 1.375rem;
-      margin-bottom: 0.75rem;
-      line-height: 1.3;
-    }
-
-    .post-card h3 a {
-      color: #1c1917;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .post-card h3 a:hover {
-      color: #b45309;
-    }
-
-    .date {
-      color: #78716c;
-      font-size: 0.875rem;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.375rem;
-    }
-
-    .date::before {
-      content: '📅';
-      font-size: 0.875rem;
-    }
-
-    .excerpt {
-      color: #57534e;
-      margin-bottom: 1.25rem;
-      line-height: 1.7;
-      font-size: 0.9375rem;
-    }
-
-    .read-more {
-      color: #b45309;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: all 0.2s;
-      font-size: 0.9375rem;
-    }
-
-    .read-more:hover {
-      color: #92400e;
-      gap: 0.75rem;
-    }
-
-    .sidebar {
-      position: sticky;
-      top: 7rem;
-    }
-
-    .widget {
-      background: white;
-      padding: 2rem;
-      border-radius: 1rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-      border: 1px solid #f5f5f4;
-    }
-
-    .widget h3 {
-      font-size: 1.375rem;
-      margin-bottom: 1.5rem;
-      color: #1c1917;
-      border-bottom: 3px solid #d97706;
-      padding-bottom: 0.75rem;
-      display: inline-block;
-    }
-
-    .category-list {
-      list-style: none;
-    }
-
-    .category-list li {
-      margin-bottom: 0.875rem;
-    }
-
-    .category-list a {
-      color: #57534e;
-      text-decoration: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: all 0.2s;
-      padding: 0.75rem;
-      border-radius: 0.5rem;
-      font-weight: 500;
-    }
-
-    .category-list a:hover {
-      background: #fef3c7;
-      color: #92400e;
-      transform: translateX(4px);
-    }
-
-    .category-list .count {
-      color: #292524;
-      font-size: 0.875rem;
-      background: #e7e5e4;
-      padding: 0.25rem 0.625rem;
-      border-radius: 9999px;
-      font-weight: 600;
-    }
-
-    .category-list a:hover .count {
-      background: #92400e;
-      color: white;
-    }
-
-    .recent-posts-list {
-      list-style: none;
-    }
-
-    .recent-posts-list li {
-      margin-bottom: 1.25rem;
-      padding-bottom: 1.25rem;
-      border-bottom: 1px solid #f5f5f4;
-    }
-
-    .recent-posts-list li:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .recent-posts-list a {
-      display: flex;
-      gap: 1rem;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-
-    .recent-posts-list a:hover {
-      opacity: 0.7;
-    }
-
-    .widget-thumb {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 0.75rem;
-      flex-shrink: 0;
-    }
-
-    .widget-post-info {
-      flex: 1;
-    }
-
-    .widget-post-info h4 {
-      font-size: 0.9375rem;
-      color: #1c1917;
-      margin-bottom: 0.5rem;
-      line-height: 1.4;
-      font-weight: 600;
-    }
-
-    .widget-post-info time {
-      font-size: 0.8125rem;
-      color: #78716c;
-    }
-
-    .widget-about {
-      background: linear-gradient(135deg, #fef3c7 0%, #fdfbf7 100%);
-      border: 1px solid #fde68a;
-    }
-
-    .widget-about p {
-      color: #57534e;
-      margin-bottom: 1.25rem;
-      line-height: 1.7;
-    }
-
-    .btn-secondary {
-      display: inline-block;
-      background: #b45309;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 9999px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s;
-      box-shadow: 0 4px 12px rgba(180, 83, 9, 0.3);
-    }
-
-    .btn-secondary:hover {
-      background: #92400e;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(180, 83, 9, 0.4);
-    }
-
-    .tag-cloud {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .tag-item {
-      background: #f5f5f4;
-      color: #57534e;
-      padding: 0.625rem 1rem;
-      border-radius: 9999px;
-      text-decoration: none;
-      font-size: 0.875rem;
-      transition: all 0.2s;
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-      font-weight: 500;
-      border: 1px solid #e7e5e4;
-    }
-
-    .tag-item:hover {
-      background: #d97706;
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
-    }
-
-    footer {
-      background: #2d2a26;
-      color: #a8a29e;
-      text-align: center;
-      padding: 3rem 2rem;
-      margin-top: 5rem;
-      border-top: 4px solid #b45309;
-    }
-
-    footer p {
-      font-size: 0.9375rem;
-    }
-
-    /* Scrollbar */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #fdfbf7;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #d6cfc7;
-      border-radius: 5px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #a8a29e;
-    }
-
-    @media (max-width: 1200px) {
-      .content-wrapper {
-        grid-template-columns: 1fr 300px;
-        gap: 2rem;
-      }
-    }
-
-    @media (max-width: 968px) {
-      .content-wrapper {
-        grid-template-columns: 1fr;
-        padding: 0 1rem 1rem;
-      }
-
-      .sidebar {
-        position: static;
-      }
-
-      .post-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 1.5rem;
-      }
-
-      .posts-section h2 {
-        font-size: 2rem;
-      }
-    }
-
-    @media (max-width: 640px) {
-      main {
-        padding: 5rem 0 0;
-      }
-
-      nav {
-        padding: 1rem 1.5rem;
-      }
-
-      .logo {
-        font-size: 1.5rem;
-      }
-
-      .nav-links {
-        gap: 1.25rem;
-      }
-
-      .nav-links a {
-        font-size: 0.875rem;
-      }
-
-      .posts-section h2 {
-        font-size: 1.75rem;
-      }
-
-      .post-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-</body>
-</html>
+</Layout>

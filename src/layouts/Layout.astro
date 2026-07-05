@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+const {
+  title = 'CookMushroom — How to Cook Mushrooms Properly',
+  description = 'CookMushroom is a focused guide to cooking mushrooms: cook times, pan methods, air-fryer tips, and simple mushroom recipes.',
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, 'https://cookmushroom.com').toString();
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="/">Cook<span>Mushroom</span></a>
+        <div class="nav-links">
+          <a href="/guides/">Guides</a>
+          <a href="/mushroom-cook-time-chart/">Cook Times</a>
+          <a href="/mushroom-recipe-index/">Recipes</a>
+          <a href="/about/">About</a>
+        </div>
+      </nav>
+    </header>
+    <slot />
+    <footer class="footer">
+      <p>CookMushroom helps with cooking store-bought edible mushrooms. Wild mushroom ID is not covered here.</p>
+      <p>&copy; {new Date().getFullYear()} CookMushroom</p>
+    </footer>
+  </body>
+</html>
