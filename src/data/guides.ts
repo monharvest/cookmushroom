@@ -135,8 +135,8 @@ const speciesGuides: GuideArticle[] = [
   // ingredients (triggers Recipe schema), FAQs, storage, and variations.
   // Grow every other guide into this shape.
   {
-    slug: 'how-to-cook-chanterelle-mushrooms', mushroomSlug: 'chanterelles', label: 'Golden chanterelles', badge: 'Foraging essential', title: 'How to Cook Chanterelle Mushrooms (Dry-Sauté Method)', description: 'Dry-sauté chanterelles until their water cooks off, then add butter, shallot, and thyme for tender centers and lightly crisp edges.', minutes: '7 min', updated: '2026-07-05', isoTime: 'PT10M', prepIsoTime: 'PT5M', heat: 'Hot pan, then medium', cut: 'Tear large pieces', finish: 'Butter, shallot, thyme',
-    image: '/images/chanterelles-skillet.png', imageAlt: 'Illustration of golden chanterelle mushrooms dry-sautéing in a cast-iron skillet with thyme and butter',
+    slug: 'how-to-cook-chanterelle-mushrooms', mushroomSlug: 'chanterelles', label: 'Golden chanterelles', badge: 'Foraging essential', title: 'How to Cook Chanterelle Mushrooms (Dry-Sauté Method)', description: 'Dry-sauté chanterelles until their water cooks off, then add butter, shallot, and thyme for tender centers and lightly crisp edges.', minutes: '7 min', updated: '2026-07-10', isoTime: 'PT10M', prepIsoTime: 'PT5M', heat: 'Hot pan, then medium', cut: 'Tear large pieces', finish: 'Butter, shallot, thyme',
+    image: '/images/chanterelles-skillet.png', imageAlt: 'Golden chanterelle mushrooms with butter, shallot, and thyme in a cast-iron skillet',
     recipeName: 'Dry-Sautéed Chanterelles with Butter and Thyme', yieldText: '2 servings as a side',
     ingredients: [
       '1 lb (450 g) fresh chanterelle mushrooms, brushed clean',
