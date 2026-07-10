@@ -7,6 +7,7 @@ export function getStaticPaths() {
 }
 
 const { guide } = Astro.props;
+const seoTitle = guide.title.length + ' | CookMushroom'.length <= 60 ? `${guide.title} | CookMushroom` : guide.title;
 const relatedRows = cookTimes.filter((row) => guide.mushroomSlug ? row.mushroomSlug === guide.mushroomSlug : row.methodSlug === 'pan').slice(0, 3);
 const relatedRecipes = recipeCards.filter((recipe) => recipe.guide === guide.slug).slice(0, 3);
 const primaryCookTime = relatedRows[0]?.time ?? guide.isoTime.replace(/^PT/, '').toLowerCase();
@@ -65,7 +66,7 @@ const breadcrumbSchema = {
 };
 const schema = [contentSchema, breadcrumbSchema];
 ---
-<Layout title={`${guide.title} | CookMushroom`} description={guide.description} schema={schema}>
+<Layout title={seoTitle} description={guide.description} schema={schema}>
   <main id="content" class="guide">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <a href="/">Home</a> › <a href="/guides/">Guides</a> › <span>{guide.label}</span>

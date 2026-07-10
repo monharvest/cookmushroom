@@ -4,7 +4,7 @@ import { cookTimes } from '../data/guides';
 const mushrooms = [...new Map(cookTimes.map((row) => [row.mushroomSlug, row.mushroom])).entries()];
 const methods = cookTimes.reduce((items, row) => items.some(([slug]) => slug === row.methodSlug) ? items : [...items, [row.methodSlug, row.method]], []);
 ---
-<Layout title="Mushroom Cook Time Chart | CookMushroom" description="Pick a mushroom and cooking method to get time, heat, oil amount, and signs it is done.">
+<Layout title="Mushroom Cook Time Chart | CookMushroom" description="Compare mushroom cook times by variety and method, including heat, oil amount, total time, and the visual signs that each mushroom is done.">
   <main id="content">
     <p class="eyebrow">Cook-time chart</p>
     <h1>Mushroom cook time chart</h1>
