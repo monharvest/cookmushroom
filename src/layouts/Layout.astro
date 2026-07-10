@@ -34,6 +34,13 @@ const schemas = [baseSchema, ...(Array.isArray(schema) ? schema : [schema]).filt
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SP5SEQPV12" is:inline></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SP5SEQPV12');
+    </script>
     <script type="application/ld+json" set:html={JSON.stringify(schemas.length === 1 ? schemas[0] : schemas)} is:inline />
   </head>
   <body>
