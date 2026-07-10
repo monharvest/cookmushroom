@@ -74,7 +74,7 @@ export const cookTimes = [
 const methodGuides: GuideArticle[] = [
   {
     slug: 'how-to-cook-mushrooms', label: 'All mushrooms', badge: 'Start here', title: 'How to Cook Mushrooms So They Brown, Not Steam', description: 'Cook sliced mushrooms in a wide hot skillet for 8–10 minutes, then add garlic butter once the pan is dry and the edges are deep brown.', minutes: '7 min', updated: '2026-07-10', isoTime: 'PT10M', prepIsoTime: 'PT5M', heat: 'Medium-high', cut: '1/4-inch slices', finish: 'Garlic butter, parsley, lemon',
-    image: '/images/garlic-butter-mushrooms.png', imageAlt: 'Illustration of golden garlic-butter button and cremini mushrooms in a cast-iron skillet',
+    image: '/images/garlic-butter-mushrooms.jpg', imageAlt: 'Golden-brown garlic-butter cremini and white button mushrooms in a cast-iron skillet with parsley',
     recipeName: 'Golden Garlic-Butter Mushrooms', yieldText: '4 servings as a side',
     ingredients: [
       '1 lb (450 g) cremini or white button mushrooms',
