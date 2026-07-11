@@ -90,7 +90,7 @@ const mushroomGuides = guideArticles.filter((guide) => guide.mushroomSlug);
       </div>
       <div class="recipe-list">
         {recipeCards.slice(0, 4).map((recipe) => (
-          <a class="card recipe-card" href={`/${recipe.guide}/`}>
+          <a class="card recipe-card" href={recipe.href}>
             <span class="badge">{recipe.time}</span>
             <h3>{recipe.name}</h3>
             <p>{recipe.description}</p>

@@ -9,7 +9,7 @@ import { recipeCards } from '../data/guides';
     <p class="lead">No filler recipes: just quick ideas tied back to the right mushroom cooking method.</p>
     <section class="recipe-list section">
       {recipeCards.map((recipe) => (
-        <a class="card recipe-card" href={`/${recipe.guide}/`}>
+        <a class="card recipe-card" href={recipe.href}>
           <span class="badge">{recipe.time}</span>
           <h2>{recipe.name}</h2>
           <p>{recipe.description}</p>

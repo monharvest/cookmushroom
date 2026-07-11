@@ -1,3 +1,5 @@
+import { recipeArticles } from './recipes';
+
 export type GuideSection = {
   heading: string;
   text?: string;
@@ -1603,7 +1605,7 @@ const speciesGuides: GuideArticle[] = [
 
 export const guideArticles: GuideArticle[] = [...methodGuides, ...speciesGuides];
 
-export const recipeCards = [
+const guideRecipeCards = [
   { name: 'Golden garlic-butter mushrooms', mushroom: 'Cremini or white button', time: '15 min', guide: 'how-to-cook-mushrooms', description: 'Sear sliced mushrooms in a wide hot skillet, then finish with garlic butter once the pan is dry.' },
   { name: 'Dry-sautéed chanterelles', mushroom: 'Golden chanterelles', time: '10 min', guide: 'how-to-cook-chanterelle-mushrooms', description: 'Cook without fat first, then finish with butter, shallot, and thyme.' },
   { name: 'Buttery pan-cooked morels', mushroom: 'Morels', time: '15 min', guide: 'how-to-cook-morel-mushrooms', description: 'Brown halved morels in butter with shallot and garlic, then finish with lemon and chives.' },
@@ -1614,4 +1616,16 @@ export const recipeCards = [
   { name: 'Black trumpet butter pasta', mushroom: 'Black trumpet', time: '15 min', guide: 'how-to-cook-black-trumpet-mushrooms', description: 'Sauté trumpets, then toss with linguine, white wine, Parmesan, and lemon zest.' },
   { name: 'King oyster scallops', mushroom: 'King oyster', time: '14 min', guide: 'how-to-cook-king-oyster-mushrooms', description: 'Score stem rounds, sear deeply, then baste with garlic butter.' },
   { name: 'Garlic-butter skillet cremini', mushroom: 'Cremini', time: '12 min', guide: 'how-to-cook-cremini-mushrooms', description: 'Brown halved cremini in a hot skillet with garlic, thyme, and lemon.' }
+];
+
+export const recipeCards = [
+  ...recipeArticles.map((recipe) => ({
+    name: recipe.title,
+    mushroom: 'Cremini mushrooms and onions',
+    time: recipe.minutes,
+    guide: 'how-to-cook-cremini-mushrooms',
+    href: `/${recipe.slug}/`,
+    description: recipe.description,
+  })),
+  ...guideRecipeCards.map((recipe) => ({ ...recipe, href: `/${recipe.guide}/` })),
 ];

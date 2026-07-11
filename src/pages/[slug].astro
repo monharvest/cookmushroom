@@ -9,7 +9,7 @@ export function getStaticPaths() {
 const { guide } = Astro.props;
 const seoTitle = guide.title.length + ' | CookMushroom'.length <= 60 ? `${guide.title} | CookMushroom` : guide.title;
 const relatedRows = cookTimes.filter((row) => guide.mushroomSlug ? row.mushroomSlug === guide.mushroomSlug : row.methodSlug === 'pan').slice(0, 3);
-const relatedRecipes = recipeCards.filter((recipe) => recipe.guide === guide.slug).slice(0, 3);
+const relatedRecipes = recipeCards.filter((recipe) => recipe.guide === guide.slug && recipe.href !== `/${guide.slug}/`).slice(0, 3);
 const primaryCookTime = relatedRows[0]?.time ?? guide.isoTime.replace(/^PT/, '').toLowerCase();
 const updatedDisplay = new Date(`${guide.updated}T00:00:00Z`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 const pageUrl = new URL(`/${guide.slug}/`, 'https://cookmushroom.com').toString();
@@ -18,7 +18,8 @@ const heroImageSizes = '(max-width: 720px) 100vw, (max-width: 1120px) 90vw, 960p
 const heroImageSrcset = guide.image?.endsWith('.webp')
   ? [600, 900, 1200].map((width) => `${width === 1200 ? guide.image : guide.image.replace(/\.webp$/, `-${width}.webp`)} ${width}w`).join(', ')
   : undefined;
-const author = { '@type': 'Organization', name: 'CookMushroom', url: 'https://cookmushroom.com/about/' };
+const author = { '@type': 'Person', name: 'Ana' };
+const publisher = { '@type': 'Organization', name: 'CookMushroom', url: 'https://cookmushroom.com/about/' };
 
 const minutesOf = (iso?: string) => iso?.match(/^PT(\d+)M$/)?.[1];
 const prepMinutes = minutesOf(guide.prepIsoTime);
@@ -42,6 +43,7 @@ const contentSchema = guide.ingredients
       description: guide.description,
       image: imageUrl,
       author,
+      publisher,
       datePublished: guide.updated,
       dateModified: guide.updated,
       prepTime: guide.prepIsoTime,
@@ -60,7 +62,7 @@ const contentSchema = guide.ingredients
       description: guide.description,
       image: imageUrl,
       author,
-      publisher: author,
+      publisher,
       datePublished: guide.updated,
       dateModified: guide.updated,
       mainEntityOfPage: pageUrl,
@@ -84,7 +86,7 @@ const schema = [contentSchema, breadcrumbSchema];
     <p class="eyebrow">Guide · {guide.minutes}</p>
     <h1>{guide.title}</h1>
     <p class="lead">{guide.description}</p>
-    <p class="updated">By <a href="/about/">CookMushroom Kitchen</a> · Updated {updatedDisplay}</p>
+    <p class="updated">By <a href="/about/">Ana</a> · Updated {updatedDisplay}</p>
     <div class="notice">Use store-bought or positively identified edible mushrooms. Identification notes on this page are safety reminders, not a foraging manual — never eat a wild mushroom without expert verification.</div>
 
     {guide.image && <img class="guide-hero-image" src={guide.image} srcset={heroImageSrcset} sizes={heroImageSrcset ? heroImageSizes : undefined} alt={guide.imageAlt ?? guide.title} width="1200" height="800" loading="eager" decoding="async" fetchpriority="high" />}
@@ -183,7 +185,7 @@ const schema = [contentSchema, breadcrumbSchema];
       {relatedRecipes.length > 0 && (
         <section>
           <h2>Use it in</h2>
-          <ul>{relatedRecipes.map((recipe) => <li><strong>{recipe.name}:</strong> {recipe.description}</li>)}</ul>
+          <ul>{relatedRecipes.map((recipe) => <li><a href={recipe.href}><strong>{recipe.name}:</strong> {recipe.description}</a></li>)}</ul>
         </section>
       )}
     </article>

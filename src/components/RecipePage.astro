@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro';
+import type { RecipeArticle } from '../data/recipes';
+
+const { recipe } = Astro.props as { recipe: RecipeArticle };
+const seoTitle = recipe.title.length + ' | CookMushroom'.length <= 60 ? `${recipe.title} | CookMushroom` : recipe.title;
+const updatedDisplay = new Date(`${recipe.updated}T00:00:00Z`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+const imageUrl = new URL(recipe.image, 'https://cookmushroom.com').toString();
+const heroImageSizes = '(max-width: 720px) 100vw, (max-width: 1120px) 90vw, 960px';
+const heroImageSrcset = [600, 900, 1200].map((width) => `${width === 1200 ? recipe.image : recipe.image.replace(/\.webp$/, `-${width}.webp`)} ${width}w`).join(', ');
+const author = { '@type': 'Person', name: 'Ana' };
+const publisher = { '@type': 'Organization', name: 'CookMushroom', url: 'https://cookmushroom.com/about/' };
+const pageUrl = new URL(`/${recipe.slug}/`, 'https://cookmushroom.com').toString();
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Recipe',
+  name: recipe.recipeName,
+  description: recipe.description,
+  image: imageUrl,
+  author,
+  publisher,
+  datePublished: recipe.updated,
+  dateModified: recipe.updated,
+  prepTime: recipe.prepIsoTime,
+  cookTime: recipe.cookIsoTime,
+  totalTime: recipe.totalIsoTime,
+  recipeYield: recipe.yieldText,
+  keywords: ['mushrooms and onions', 'cremini mushrooms', ...recipe.pairings].join(', '),
+  recipeIngredient: recipe.ingredients,
+  recipeInstructions: recipe.steps.map((text, index) => ({ '@type': 'HowToStep', position: index + 1, text })),
+  mainEntityOfPage: pageUrl,
+};
+const minutesOf = (iso: string) => iso.match(/^PT(\d+)M$/)?.[1] ?? iso;
+---
+<Layout title={seoTitle} description={recipe.description} schema={schema} heroImage={recipe.image} heroImageSrcset={heroImageSrcset} heroImageSizes={heroImageSizes}>
+  <main id="content" class="guide">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/mushroom-recipe-index/">Recipe ideas</a> › <span>{recipe.title}</span></nav>
+    <p class="eyebrow">Recipe · {recipe.minutes}</p>
+    <h1>{recipe.title}</h1>
+    <p class="lead">{recipe.description}</p>
+    <p class="updated">By <a href="/about/">Ana</a> · Updated {updatedDisplay}</p>
+    <img class="guide-hero-image" src={recipe.image} srcset={heroImageSrcset} sizes={heroImageSizes} alt={recipe.imageAlt} width="1200" height="800" loading="eager" decoding="async" fetchpriority="high" />
+    <article class="prose">
+      <section id="recipe" class="recipe-block">
+        <h2>{recipe.recipeName}</h2>
+        <p class="recipe-meta"><span>Prep: {minutesOf(recipe.prepIsoTime)} min</span><span>Cook: {minutesOf(recipe.cookIsoTime)} min</span><span>Yield: {recipe.yieldText}</span></p>
+        <h3>Ingredients</h3>
+        <ul>{recipe.ingredients.map((item) => <li>{item}</li>)}</ul>
+        <h3>Instructions</h3>
+        <ol>{recipe.steps.map((step) => <li>{step}</li>)}</ol>
+      </section>
+      <section><h2>Small fixes that matter</h2><ul>{recipe.tips.map((tip) => <li>{tip}</li>)}</ul></section>
+      <section><h2>Good with</h2><p>{recipe.pairings.join(', ')}.</p></section>
+      <section><h2>Storage and reheating</h2><ul>{recipe.storage.map((item) => <li>{item}</li>)}</ul></section>
+      <section><h2>Related guides</h2><ul>{recipe.relatedLinks.map((link) => <li><a href={link.href}>{link.label}</a></li>)}</ul></section>
+    </article>
+  </main>
+</Layout>
