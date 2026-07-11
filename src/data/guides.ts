@@ -54,20 +54,21 @@ export const cookTimes = [
   { mushroom: 'Portobello', mushroomSlug: 'portobello', method: 'Grill / pan sear', methodSlug: 'pan', time: '8–12 min', heat: 'Medium-high', fat: 'Brush with oil', done: 'Flexible, browned, juices released.' },
   { mushroom: 'Portobello', mushroomSlug: 'portobello', method: 'Oven roast', methodSlug: 'oven', time: '15–20 min', heat: '425°F / 220°C', fat: 'Brush with oil', done: 'Tender center, browned rim.' },
   { mushroom: 'Chanterelles', mushroomSlug: 'chanterelles', method: 'Dry sauté', methodSlug: 'pan', time: '8–10 min', heat: 'Hot pan, then medium', fat: 'Butter after water cooks off', done: 'Pan dry, edges lightly crisp.' },
-  { mushroom: 'Morels', mushroomSlug: 'morels', method: 'Butter sauté', methodSlug: 'pan', time: '7–9 min', heat: 'Medium-high', fat: '3 tbsp butter', done: 'Crisp edges and nutty aroma.' },
+  { mushroom: 'Morels', mushroomSlug: 'morels', method: 'Butter sauté', methodSlug: 'pan', time: '10–14 min', heat: 'Medium, then medium-low', fat: 'Butter and olive oil', done: 'Tender throughout and browned at the edges.' },
+  { mushroom: 'Porcini', mushroomSlug: 'porcini', method: 'Pan sauté', methodSlug: 'pan', time: '7–8 min', heat: 'Medium-high, then medium', fat: 'Olive oil, butter at finish', done: 'Browned edges, tender centers.' },
   { mushroom: 'Porcini', mushroomSlug: 'porcini', method: 'Rehydrate + sauté', methodSlug: 'pan', time: '20 min soak + sauté', heat: 'Boiling water, then medium', fat: 'Butter or olive oil', done: 'Broth strained and mushrooms tender.' },
-  { mushroom: 'Shaggy mane', mushroomSlug: 'shaggy-mane', method: 'Butter sauté', methodSlug: 'pan', time: '6–8 min', heat: 'Medium', fat: 'Butter', done: 'Released juices reduce to a glaze.' },
+  { mushroom: 'Shaggy mane', mushroomSlug: 'shaggy-mane', method: 'Butter sauté', methodSlug: 'pan', time: '5–6 min', heat: 'Medium-high, then medium', fat: 'Olive oil and butter', done: 'Soft, lightly colored edges.' },
   { mushroom: 'Maitake', mushroomSlug: 'maitake', method: 'Pan sear', methodSlug: 'pan', time: '10–12 min', heat: 'Medium-high', fat: '2 tbsp oil, butter at finish', done: 'Fronds golden with crisp edges.' },
   { mushroom: 'Maitake', mushroomSlug: 'maitake', method: 'Pressed roast', methodSlug: 'oven', time: '25 min', heat: '420°F / 215°C', fat: 'Olive oil', done: 'Crisp ruffled edges.' },
-  { mushroom: 'Lobster', mushroomSlug: 'lobster', method: 'Pan sear', methodSlug: 'pan', time: '10–12 min', heat: 'Medium, then high', fat: 'Butter', done: 'Medallions browned at the edges.' },
-  { mushroom: 'Black trumpet', mushroomSlug: 'black-trumpet', method: 'Cream reduction', methodSlug: 'pan', time: '8–10 min', heat: 'Medium', fat: 'Butter + cream', done: 'Cream thick enough to coat pasta.' },
-  { mushroom: 'Wood ear', mushroomSlug: 'wood-ear', method: 'Soup simmer', methodSlug: 'soup', time: '10 min', heat: 'Gentle simmer', fat: 'None required', done: 'Ribbons stay snappy in broth.' },
-  { mushroom: 'Matsutake', mushroomSlug: 'matsutake', method: 'Rice steam', methodSlug: 'steam', time: 'Rice-cooker cycle', heat: 'Steam', fat: 'None required', done: 'Aroma perfumes the rice.' },
-  { mushroom: 'Shimeji', mushroomSlug: 'shimeji', method: 'Sesame sauté', methodSlug: 'pan', time: '5 min', heat: 'High', fat: 'Sesame oil', done: 'Stems soften and bitterness cooks off.' },
+  { mushroom: 'Lobster', mushroomSlug: 'lobster', method: 'Pan sear', methodSlug: 'pan', time: '8–10 min', heat: 'Medium-high, then medium', fat: 'Olive oil and butter', done: 'Slices browned at the edges, tender centers.' },
+  { mushroom: 'Black trumpet', mushroomSlug: 'black-trumpet', method: 'Butter sauté', methodSlug: 'pan', time: '3–4 min', heat: 'Medium-high', fat: 'Butter', done: 'Moisture gone, edges beginning to crisp.' },
+  { mushroom: 'Wood ear', mushroomSlug: 'wood-ear', method: 'Blanch + stir-fry', methodSlug: 'pan', time: '2 min blanch + 4 min fry', heat: 'High', fat: '1 tbsp neutral oil', done: 'Edges lightly curled; centers springy.' },
+  { mushroom: 'Matsutake', mushroomSlug: 'matsutake', method: 'Butter sear', methodSlug: 'pan', time: '4–6 min', heat: 'Medium-high, then medium', fat: 'Oil, butter to baste', done: 'Golden edges; stems tender but springy.' },
+  { mushroom: 'Shimeji', mushroomSlug: 'shimeji', method: 'Garlic-butter sauté', methodSlug: 'pan', time: '4–6 min', heat: 'Medium-high', fat: 'Oil, butter at finish', done: 'Golden caps and a mostly dry pan.' },
   { mushroom: 'King oyster', mushroomSlug: 'king-oyster', method: 'Scallop sear', methodSlug: 'pan', time: '6–8 min', heat: 'High', fat: 'Oil, butter to baste', done: 'Deep gold crust on scored faces.' },
-  { mushroom: 'Paddy straw', mushroomSlug: 'paddy-straw', method: 'Broth simmer', methodSlug: 'soup', time: '5–8 min', heat: 'Simmer', fat: 'None required', done: 'Caps are velvety and broth-filled.' },
-  { mushroom: 'Chaga', mushroomSlug: 'chaga', method: 'Tonic simmer', methodSlug: 'simmer', time: '45 min', heat: 'Low simmer', fat: 'None', done: 'Water turns dark and vanilla-hinted.' },
-  { mushroom: 'Reishi', mushroomSlug: 'reishi', method: 'Dual extraction', methodSlug: 'extract', time: 'Hours + 1 month', heat: 'Low simmer', fat: 'Alcohol for triterpenes', done: 'Water extract and tincture are combined.' },
+  { mushroom: 'Paddy straw', mushroomSlug: 'paddy-straw', method: 'Stir-fry', methodSlug: 'pan', time: '3–5 min', heat: 'High', fat: '1 tbsp neutral oil', done: 'Hot throughout and glossy with sauce.' },
+  { mushroom: 'Chaga', mushroomSlug: 'chaga', method: 'Culinary infusion', methodSlug: 'simmer', time: '40–50 min', heat: 'Low simmer', fat: 'None', done: 'Liquid deep amber-brown and aromatic.' },
+  { mushroom: 'Reishi', mushroomSlug: 'reishi', method: 'Culinary infusion', methodSlug: 'simmer', time: '50–60 min', heat: 'Low simmer', fat: 'None', done: 'Liquid dark, woody, and aromatic; solids strained.' },
   { mushroom: 'Truffles', mushroomSlug: 'truffles', method: 'Raw shave', methodSlug: 'finish', time: 'At serving', heat: 'No direct heat', fat: 'Warm butter or cream dish', done: 'Paper-thin shavings hit warm food.' }
 ];
 
@@ -125,8 +126,109 @@ const methodGuides: GuideArticle[] = [
       'Onions: brown one thinly sliced small onion for 5 minutes before adding the mushrooms.'
     ]
   },
-  { slug: 'how-to-cook-mushrooms-in-a-pan', label: 'Pan mushrooms', title: 'How to Cook Mushrooms in a Pan', description: 'Cook sliced mushrooms in a hot, uncrowded skillet for 8–10 minutes, then add butter and garlic once the liquid has evaporated.', minutes: '4 min', updated: '2026-07-10', image: '/images/cookmushroom-pan-hero.jpg', imageAlt: 'Golden-brown garlic-butter button mushrooms with parsley in a cast-iron skillet', isoTime: 'PT10M', heat: 'Medium-high', cut: '1/4 inch slices', finish: 'Butter in the last minute', steps: ['Slice mushrooms 1/4 inch thick or tear delicate varieties into bite-size pieces.', 'Heat a skillet over medium-high heat. Add oil, then mushrooms in one layer.', 'Leave them alone for 2–3 minutes, stir, then cook 5–7 minutes more.', 'Salt, add butter and garlic for the last minute, then finish with parsley or lemon.'], tips: ['Cast iron or stainless steel browns best.', 'Cook in batches if the pan looks full.', 'Butter burns early; add it near the end.'], pairings: ['omelets', 'burgers', 'risotto', 'ramen', 'grain bowls'] },
-  { slug: 'how-to-cook-mushrooms-in-air-fryer', label: 'Air fryer', title: 'How to Cook Mushrooms in an Air Fryer', description: 'Air-fry bite-size mushrooms at 375–390°F for 10–12 minutes, shaking halfway, until the edges are brown and lightly crisp.', minutes: '4 min', updated: '2026-07-10', image: '/images/cookmushroom-air-fryer-hero.jpg', imageAlt: 'Golden air-fried cremini mushrooms with lemon and parsley', isoTime: 'PT12M', heat: '375–390°F', cut: 'Even bite-size pieces', finish: 'Sauce after cooking', steps: ['Cut mushrooms evenly and toss with a little oil, salt, and pepper.', 'Spread in a single layer. Airflow matters more than a heavy coating.', 'Cook at 375–390°F / 190–200°C, shaking halfway.', 'Finish with soy sauce, lemon, chili crisp, or grated parmesan after cooking.'], tips: ['Wet mushrooms go rubbery; dry them first.', 'Small enoki bundles cook fast, so check early.', 'Use parchment only if it does not block airflow.'], pairings: ['salads', 'bowls', 'tacos', 'rice', 'snack plates'] }
+  {
+    slug: 'how-to-cook-mushrooms-in-a-pan', label: 'Pan mushrooms', title: 'How to Cook Mushrooms in a Pan', description: 'Cook mushrooms in a hot pan until browned and juicy, with simple timing for tender centers, crisp edges, and a savory finish.', minutes: '6 min', updated: '2026-07-11', image: '/images/cookmushroom-pan-hero.jpg', imageAlt: 'Golden-brown garlic-butter button mushrooms with parsley in a cast-iron skillet', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high to brown, then medium', cut: 'Quarter small mushrooms; halve or slice large ones into 1/4-inch pieces', finish: 'Lemon juice and fresh parsley',
+    recipeName: 'Garlic Butter Pan-Fried Mushrooms', yieldText: '4 side servings',
+    ingredients: [
+      '1 lb (454 g) cremini or button mushrooms, cleaned and cut',
+      '2 tbsp (30 ml) olive oil',
+      '2 tbsp (28 g) unsalted butter',
+      '2 garlic cloves (6 g), minced',
+      '1/2 tsp (3 g) kosher salt',
+      '1/4 tsp black pepper',
+      '1 tbsp (15 ml) lemon juice',
+      '2 tbsp (8 g) chopped fresh parsley'
+    ],
+    steps: [
+      'Heat a large skillet over medium-high heat. Add the olive oil and wait until it shimmers.',
+      'Add the mushrooms in one layer. Leave them alone for about 3 minutes, until the bottoms turn brown and the edges begin to crisp.',
+      'Toss the mushrooms and cook for 4 to 5 minutes more, stirring occasionally as their liquid cooks away and the pieces become bronze and lightly chewy.',
+      'Lower the heat to medium. Add the butter, garlic, salt, and pepper. Cook for 1 to 2 minutes, stirring, until the garlic smells sweet and the butter coats the mushrooms.',
+      'Add the lemon juice and parsley. Toss for 30 seconds, then taste and adjust the salt.',
+      'Serve immediately while the edges are browned and the centers are juicy.'
+    ],
+    tips: [
+      'Dry mushrooms brown better, so avoid rinsing them unless they are visibly muddy.',
+      'Do not crowd the pan. Cook in two batches if the mushrooms cover the skillet.',
+      'Add salt after the mushrooms begin to brown so they do not release all their moisture at once.'
+    ],
+    pairings: ['toasted sourdough', 'steak or roast chicken', 'creamy polenta', 'scrambled eggs', 'buttered noodles'],
+    sections: [
+      { heading: 'Why this method works', text: 'A hot, uncrowded pan lets mushroom moisture evaporate before the butter goes in. That gives the mushrooms browned edges instead of a soft, steamed texture.' },
+      { heading: 'Before you start', text: 'Wipe the mushrooms with a damp towel or brush off dirt. Trim the dry ends, then cut the mushrooms into similar-sized pieces so they finish together.' }
+    ],
+    faqs: [
+      { question: 'Should I wash mushrooms before pan-frying?', answer: 'Brush or wipe them first. If they are muddy, rinse them quickly and dry them very well before cooking.' },
+      { question: 'Why are my mushrooms releasing so much water?', answer: 'Mushrooms naturally contain a lot of water. A crowded or cooler pan makes them steam instead of brown.' },
+      { question: 'How long do mushrooms take to cook in a pan?', answer: 'Sliced or quartered mushrooms usually take 10 to 12 minutes over medium-high to medium heat.' },
+      { question: 'Should I salt mushrooms before cooking?', answer: 'You can, but salting after they begin to brown helps them develop better color and keeps the pan from becoming overly wet.' },
+      { question: 'Can I use frozen mushrooms?', answer: 'Yes. Cook them from frozen in a wide skillet until their liquid evaporates, then add oil, butter, and seasonings.' }
+    ],
+    storage: [
+      'Refrigerate leftovers in a covered container within 2 hours.',
+      'Use refrigerated cooked mushrooms within 3 to 4 days.',
+      'Reheat in a skillet over medium heat until hot; the edges will crisp better than in a microwave.',
+      'Freeze cooked mushrooms for up to 2 months for best texture.'
+    ],
+    variations: [
+      'Herb mushrooms: add 1 tsp fresh thyme leaves with the butter.',
+      'Creamy mushrooms: stir in 1/4 cup (60 ml) heavy cream after the garlic cooks.',
+      'Spicy mushrooms: add 1/4 tsp red pepper flakes with the garlic.',
+      'Balsamic mushrooms: replace the lemon juice with 1 tbsp (15 ml) balsamic vinegar.'
+    ]
+  },
+  {
+    slug: 'how-to-cook-mushrooms-in-air-fryer', label: 'Air fryer', title: 'How to Cook Mushrooms in an Air Fryer', description: 'Air-fry mushrooms with browned edges and tender centers in minutes. Use dry, evenly cut mushrooms and finish with lemon or herbs.', minutes: '5 min', updated: '2026-07-11', image: '/images/cookmushroom-air-fryer-hero.jpg', imageAlt: 'Golden air-fried cremini mushrooms with lemon and parsley', isoTime: 'PT10M', prepIsoTime: 'PT10M', heat: '400°F (200°C)', cut: 'Halve small mushrooms; cut large ones into even 1/2-inch pieces', finish: 'Lemon juice and chopped parsley',
+    recipeName: 'Crispy Air-Fryer Mushrooms', yieldText: '4 side servings',
+    ingredients: [
+      '1 lb (454 g) cremini or button mushrooms, halved or quartered',
+      '1 tbsp (15 ml) olive oil',
+      '1 tsp (5 ml) soy sauce',
+      '1 tsp (3 g) garlic powder',
+      '1/2 tsp (1 g) smoked paprika',
+      '1/2 tsp (3 g) kosher salt',
+      '1/4 tsp black pepper',
+      '1 tbsp (15 ml) lemon juice',
+      '1 tbsp (4 g) chopped fresh parsley'
+    ],
+    steps: [
+      'Preheat the air fryer to 400°F (200°C) for 3 minutes.',
+      'Pat the mushrooms dry. Toss them with the olive oil, soy sauce, garlic powder, paprika, salt, and pepper until evenly coated.',
+      'Put the mushrooms in the basket in a loose layer, leaving a little space between pieces.',
+      'Air-fry for 5 minutes, then shake the basket so the cut sides turn and the hot air reaches the underside.',
+      'Cook for 3 to 5 minutes more, until the edges are browned, the centers are tender, and most of the moisture has cooked away.',
+      'Transfer to a bowl and toss with lemon juice and parsley. Serve hot.'
+    ],
+    tips: [
+      'Do not pile mushrooms into a deep layer. Cook in batches if needed.',
+      'Dry mushrooms before adding oil; surface water slows browning.',
+      'Check early if the pieces are small. Air fryers vary, and thin slices can finish in 7 to 8 minutes.'
+    ],
+    pairings: ['burgers', 'baked potatoes', 'rice bowls', 'breakfast hash', 'tacos'],
+    sections: [
+      { heading: 'Why use an air fryer?', text: 'Moving hot air browns the mushroom edges quickly while the centers stay tender. The best results come from a dry basket with enough space for the air to circulate.' },
+      { heading: 'Before you start', text: 'Brush off dirt and trim the stems. If the mushrooms need rinsing, dry them thoroughly before seasoning. Cut them evenly so small pieces do not overcook.' }
+    ],
+    faqs: [
+      { question: 'How long do mushrooms take in an air fryer?', answer: 'At 400°F (200°C), halved or quartered mushrooms usually take 8 to 12 minutes.' },
+      { question: 'Do I need to preheat the air fryer?', answer: 'Preheating helps the mushrooms begin browning as soon as they enter the basket. Three minutes is usually enough.' },
+      { question: 'Why are my air-fryer mushrooms soggy?', answer: 'The basket may be overcrowded, or the mushrooms may have gone in wet. Give them space and dry them before seasoning.' },
+      { question: 'Can I air-fry whole mushrooms?', answer: 'Yes, but whole mushrooms take longer and brown less evenly. Halving them gives better color and seasoning.' },
+      { question: 'Can I use canned mushrooms?', answer: 'Yes, but drain and pat them very dry first. They will be softer than fresh mushrooms and may need only 6 to 8 minutes.' }
+    ],
+    storage: [
+      'Refrigerate cooked mushrooms in a covered container within 2 hours.',
+      'Use them within 3 to 4 days.',
+      'Reheat in the air fryer at 375°F (190°C) for 3 to 5 minutes.',
+      'Freeze cooked mushrooms for up to 2 months, though they may be softer after thawing.'
+    ],
+    variations: [
+      'Ranch-style: replace the paprika with 1 tsp dried ranch seasoning.',
+      'Lemon pepper: skip the smoked paprika and use 1/2 tsp lemon pepper.',
+      'Parmesan: add 2 tbsp grated Parmesan during the final minute.',
+      'Chili-lime: replace the lemon juice with 1 tbsp lime juice and add 1/4 tsp chili powder.'
+    ]
+  }
 ];
 
 const speciesGuides: GuideArticle[] = [
@@ -135,8 +237,8 @@ const speciesGuides: GuideArticle[] = [
   // ingredients (triggers Recipe schema), FAQs, storage, and variations.
   // Grow every other guide into this shape.
   {
-    slug: 'how-to-cook-chanterelle-mushrooms', mushroomSlug: 'chanterelles', label: 'Golden chanterelles', badge: 'Foraging essential', title: 'How to Cook Chanterelle Mushrooms (Dry-Sauté Method)', description: 'Dry-sauté chanterelles until their water cooks off, then add butter, shallot, and thyme for tender centers and lightly crisp edges.', minutes: '7 min', updated: '2026-07-10', isoTime: 'PT10M', prepIsoTime: 'PT5M', heat: 'Hot pan, then medium', cut: 'Tear large pieces', finish: 'Butter, shallot, thyme',
-    image: '/images/chanterelles-skillet.png', imageAlt: 'Golden chanterelle mushrooms with butter, shallot, and thyme in a cast-iron skillet',
+    slug: 'how-to-cook-chanterelle-mushrooms', mushroomSlug: 'chanterelles', label: 'Golden chanterelles', badge: 'Foraging essential', title: 'How to Cook Chanterelle Mushrooms (Dry-Sauté Method)', description: 'Dry-sauté chanterelles until their water cooks off, then add butter, shallot, and thyme for tender centers and lightly crisp edges.', minutes: '7 min', updated: '2026-07-11', isoTime: 'PT10M', prepIsoTime: 'PT5M', heat: 'Hot pan, then medium', cut: 'Tear large pieces', finish: 'Butter, shallot, thyme',
+    image: '/images/chanterelles-skillet.jpg', imageAlt: 'Golden chanterelle mushrooms with butter, shallot, and thyme in a cast-iron skillet',
     recipeName: 'Dry-Sautéed Chanterelles with Butter and Thyme', yieldText: '2 servings as a side',
     ingredients: [
       '1 lb (450 g) fresh chanterelle mushrooms, brushed clean',
@@ -182,37 +284,269 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-morel-mushrooms', mushroomSlug: 'morels', label: 'Morels', badge: 'Spring luxury', title: "How to Cook Morel Mushrooms: Butter, Garlic, White Wine", description: 'Halve verified morels, dry-sauté for 2 minutes, then cook in butter and garlic for 5–7 minutes before finishing with white wine.', minutes: '6 min', updated: '2026-07-10', image: '/images/cookmushroom-morel-hero.jpg', imageAlt: 'Butter-seared morel mushrooms with lemon in a cast-iron skillet', isoTime: 'PT9M', heat: 'Medium-high', cut: 'Halved or sliced', finish: 'Butter, garlic, white wine',
-    steps: ['Slice morels in half from top to bottom to confirm the hollow interior.', 'Dry sauté sliced morels for 2 minutes.', 'Add butter and a smashed garlic clove; sauté 5–7 minutes.', 'Deglaze with white wine, reduce, and season with flaky salt.'],
-    tips: ['True morels have deeply pitted honeycomb caps.', 'True morels are fully hollow when sliced lengthwise.', 'Do not treat false morels as edible.'], pairings: ['buttered toast', 'white wine sauce', 'eggs', 'spring pasta'],
+    slug: 'how-to-cook-morel-mushrooms', mushroomSlug: 'morels', label: 'Morels', badge: 'Spring luxury', title: 'How to Cook Morel Mushrooms', description: 'Learn how to clean and cook morel mushrooms safely with butter, garlic, and herbs for a crisp outside and tender, earthy center.', minutes: '7 min', updated: '2026-07-11', image: '/images/cookmushroom-morel-hero.jpg', imageAlt: 'Butter-seared morel mushrooms with lemon in a cast-iron skillet', isoTime: 'PT15M', prepIsoTime: 'PT20M', heat: 'Medium, then medium-low', cut: 'Halve lengthwise to inspect and clean the cavities', finish: 'Lemon juice and fresh chives',
+    recipeName: 'Buttery Pan-Cooked Morel Mushrooms', yieldText: '2 side servings',
+    ingredients: [
+      '6 oz (170 g) fresh morel mushrooms, market-purchased or expert-verified, halved',
+      '2 tbsp (28 g) unsalted butter',
+      '1 tbsp (15 ml) olive oil',
+      '1 small shallot, about 2 oz (56 g), finely chopped',
+      '1 garlic clove (3 g), minced',
+      '1/2 tsp (3 g) kosher salt',
+      '1/4 tsp black pepper',
+      '1 tbsp (3 g) chopped fresh chives',
+      '1 tsp (5 ml) lemon juice'
+    ],
+    steps: [
+      'Halve each morel lengthwise and inspect the cavities. Brush or quickly rinse away dirt, then pat the mushrooms very dry.',
+      'Heat the olive oil and 1 tbsp of the butter in a wide skillet over medium heat.',
+      'Add the shallot and cook for 2 minutes, until soft and lightly sweet.',
+      'Add the morels in one layer, cut side down. Cook for 4 minutes without moving them, until the bottoms are browned and their moisture begins to evaporate.',
+      'Turn the morels. Add the remaining butter, garlic, salt, and pepper. Lower the heat to medium-low and cook for 6 to 7 minutes, turning once, until the mushrooms are tender and fully cooked throughout.',
+      'Add the chives and lemon juice. Toss for 30 seconds, then serve hot.'
+    ],
+    tips: [
+      'If the source or identification is uncertain, do not cook or eat the mushrooms.',
+      'Dry the morels well after cleaning so they brown instead of boil.',
+      'Keep the pan in a single layer. Cook in batches if necessary.'
+    ],
+    pairings: ['toasted country bread', 'soft polenta', 'scrambled eggs', 'roast chicken', 'creamy pasta'],
     sections: [
+      { heading: 'Safety first', text: 'Use morels purchased from a reputable market or a wild sample verified by a qualified mushroom expert. Never eat an unknown wild mushroom. Clean morels carefully and cook them thoroughly; do not eat them raw or undercooked.' },
       { heading: 'Identification: true morels vs. false morels', bullets: ['True morels have a distinctive cap covered in deeply pitted honeycomb-like hollows.', 'Slice the mushroom completely from top to bottom. True morels are 100% hollow.'] },
-      { heading: 'Recipe: classic butter and garlic sauté', text: 'Dry sauté sliced morels for 2 minutes, then add butter and garlic. Finish with white wine, reduce for 60 seconds, season, and serve.' }
+      { heading: 'Why halve morels?', text: 'The hollow stems and honeycomb caps can hold grit or small insects. Halving them makes those spaces easy to inspect and lets heat reach the center. Brush away loose dirt; if needed, place the halved morels in cool water for up to 5 minutes, lift them out, rinse once, and dry them well. Do not leave them soaking.' }
+    ],
+    faqs: [
+      { question: 'Can I eat morel mushrooms raw?', answer: 'No. Morels should be cooked thoroughly and served hot. Do not eat them raw or undercooked.' },
+      { question: 'How should I clean morel mushrooms?', answer: 'Halve them lengthwise, brush away dirt, and briefly rinse or soak them only if needed. Lift them out of the water and dry them well.' },
+      { question: 'Can I cook morels that I found myself?', answer: 'Only use a wild sample after qualified expert verification. Do not rely on a photo, app, or casual comparison for identification.' },
+      { question: 'How do I know when morels are done?', answer: 'They should be tender throughout, steaming hot, and no longer firm or rubbery in the center.' },
+      { question: 'Can I use dried morels?', answer: 'Yes. Rehydrate them according to the package directions, rinse away any grit, dry them, and cook them thoroughly in the same way.' },
+      { question: 'Why do morels shrink when cooked?', answer: 'Morels release water as they heat, so their volume naturally decreases. Cut larger pieces generously and cook them in a wide pan.' }
+    ],
+    storage: [
+      'Store fresh, unwashed morels in a paper bag in the refrigerator for up to 2 to 3 days.',
+      'Refrigerate cooked morels in a covered container within 2 hours.',
+      'Use cooked morels within 3 to 4 days.',
+      'Freeze cooked morels for up to 2 months for best quality, then reheat them in a skillet until hot.'
+    ],
+    variations: [
+      'Creamed morels: add 1/3 cup (80 ml) heavy cream after the mushrooms finish cooking and simmer until lightly thickened.',
+      'Thyme morels: add 1 tsp fresh thyme leaves with the garlic.',
+      'Flour-dusted morels: toss the dried, halved morels with 1 tbsp all-purpose flour before pan-frying.',
+      'Morel toast: spoon the cooked mushrooms over toasted bread and add a fried egg.',
+      'Morel pasta: toss with 8 oz (225 g) cooked pasta and 1/4 cup (60 ml) pasta water.'
     ]
   },
   {
-    slug: 'how-to-cook-lions-mane-mushrooms', mushroomSlug: 'lions-mane', label: "Lion's mane", badge: 'Seafood texture', title: "How to Cook Lion's Mane Mushrooms (Crab-Like Texture)", description: "Dry-sauté lion's mane to remove moisture, then sear thick slices or bind shredded pieces into crisp, crab-style mushroom cakes.", minutes: '5 min', updated: '2026-07-10', image: '/images/cookmushroom-lions-mane-hero.jpg', imageAlt: 'Golden seared lion’s mane mushroom slabs with lemon in a cast-iron skillet', isoTime: 'PT14M', heat: 'Medium', cut: 'Thick slabs or shreds', finish: 'Butter, lemon, Old Bay',
-    steps: ['Tear lion’s mane into shreds or slice into slabs.', 'Dry sauté 5 minutes to drive off moisture and compress the fibers.', 'Mix with mayonnaise, Dijon, Old Bay, and breadcrumbs if making cakes.', 'Form patties and shallow fry 3–4 minutes per side.'],
-    tips: ['Pre-cook before forming crab-style cakes.', 'Keep pieces large when you want meaty texture.', 'Do not over-wet the mix.'], pairings: ['crabless cakes', 'sandwiches', 'rice bowls', 'lemon butter'],
-    sections: [{ heading: 'Recipe: vegan lion’s mane crab cakes', text: 'Tear lion’s mane into small shreds and dry sauté. Mix with mayonnaise, Dijon mustard, Old Bay, and breadcrumbs, then form patties and shallow fry until crisp.' }]
+    slug: 'how-to-cook-lions-mane-mushrooms', mushroomSlug: 'lions-mane', label: "Lion's mane", badge: 'Seafood texture', title: "How to Cook Lion's Mane Mushrooms", description: "Turn lion's mane mushrooms golden and tender in a skillet with butter, garlic, and lemon. Gentle pressing brings out crisp, savory edges.", minutes: '6 min', updated: '2026-07-11', image: '/images/cookmushroom-lions-mane-hero.jpg', imageAlt: 'Golden seared lion’s mane mushroom slabs with lemon in a cast-iron skillet', isoTime: 'PT15M', prepIsoTime: 'PT10M', heat: 'Medium, then medium-low', cut: 'Slice into 1-inch slabs or tear into large, even pieces', finish: 'Lemon juice and fresh parsley',
+    recipeName: "Golden Skillet Lion's Mane Mushrooms", yieldText: '2 side servings',
+    ingredients: [
+      "12 oz (340 g) fresh lion's mane mushrooms, cut or torn",
+      '1 tbsp (15 ml) olive oil',
+      '2 tbsp (28 g) unsalted butter',
+      '1 garlic clove (3 g), minced',
+      '1/2 tsp (3 g) kosher salt',
+      '1/4 tsp black pepper',
+      '1 tbsp (15 ml) lemon juice',
+      '1 tbsp (4 g) chopped fresh parsley'
+    ],
+    steps: [
+      'Brush the mushrooms clean and trim the base. Cut them into 1-inch slabs or tear them into large pieces.',
+      'Heat the olive oil in a wide skillet over medium heat. Add the mushrooms in one layer.',
+      'Cook for about 4 minutes, pressing each piece gently with a spatula every 30 seconds as the bottom turns golden and the mushroom begins to shrink.',
+      'Turn the pieces and cook for 4 minutes more, pressing lightly until the second side is browned and the centers feel tender.',
+      'Lower the heat to medium-low. Add the butter, garlic, salt, and pepper. Cook for 4 to 5 minutes, turning once, until the garlic is fragrant and the mushroom is fully cooked through.',
+      'Add the lemon juice and parsley. Toss for 30 seconds, then serve hot.'
+    ],
+    tips: [
+      'Use a wide pan and leave space around each piece for better browning.',
+      'Press gently rather than flattening the mushroom completely.',
+      'Add butter after the first browning stage so it does not burn before the mushroom cooks through.'
+    ],
+    pairings: ['toasted sourdough', 'rice or barley', 'roasted vegetables', 'eggs', 'sesame noodles'],
+    sections: [
+      { heading: 'What to expect', text: "Lion's mane has a soft, layered texture and releases moisture as it cooks. Gentle pressing helps the mushroom make good contact with the pan, so the outside turns golden while the middle stays tender." },
+      { heading: 'Before you start', text: 'Brush away dirt and trim only the dry base. Avoid soaking the mushroom because its sponge-like texture absorbs water. Cut or tear it into pieces of similar thickness.' }
+    ],
+    faqs: [
+      { question: "How do I clean lion's mane mushrooms?", answer: 'Brush off dirt and trim the dry base. Avoid soaking them because they absorb water easily.' },
+      { question: "Should I slice or tear lion's mane mushrooms?", answer: 'Either works. Slice thick slabs for browned faces, or tear the mushroom into pieces for more crisp edges.' },
+      { question: "Why do lion's mane mushrooms release water?", answer: 'Their soft, porous structure holds moisture. A wide pan, moderate heat, and gentle pressing help that moisture cook away.' },
+      { question: "How long should lion's mane mushrooms cook?", answer: 'Thick pieces usually take 12 to 15 minutes in a skillet, depending on their size and moisture.' },
+      { question: "Can I eat lion's mane mushrooms raw?", answer: 'They are usually cooked for better texture and flavor. Cook them until tender and hot throughout.' },
+      { question: "Can I use dried lion's mane mushrooms?", answer: 'Yes. Rehydrate them according to the package directions, squeeze out excess water, and cook until tender and hot.' }
+    ],
+    storage: [
+      "Refrigerate fresh lion's mane mushrooms in a paper bag for up to 5 days.",
+      'Store cooked mushrooms in a covered container within 2 hours of cooking.',
+      "Use cooked lion's mane within 3 to 4 days.",
+      'Reheat in a skillet over medium heat until hot; add a small splash of water if the pieces seem dry.'
+    ],
+    variations: [
+      'Soy-garlic: add 1 tsp soy sauce with the butter.',
+      'Crispy herb: add 1 tsp fresh thyme leaves with the parsley.',
+      'Spicy: add 1/4 tsp red pepper flakes with the garlic.',
+      'Toast: serve the finished mushroom over toast with a soft-boiled egg.',
+      'Lemon pasta: toss with 8 oz (225 g) cooked pasta and 1/4 cup (60 ml) pasta water.'
+    ]
   },
   {
-    slug: 'how-to-cook-porcini-mushrooms', mushroomSlug: 'porcini', label: 'King porcini', badge: 'Umami depth', title: 'How to Cook Porcini Mushrooms, Fresh or Dried', description: 'Soak dried porcini for 20 minutes, strain the liquid, then sauté the mushrooms and reduce the filtered broth into pasta or risotto.', minutes: '5 min', updated: '2026-07-10', image: '/images/porcini-garlic-butter-hero.jpg', imageAlt: 'Garlic-butter porcini mushrooms with parsley and lemon in a skillet', isoTime: 'PT20M', heat: 'Boiling soak, then medium', cut: 'Sliced or rehydrated pieces', finish: 'Use the strained soaking broth',
-    steps: ['Soak dried porcini in boiling water for 20 minutes.', 'Strain the soaking liquid through fine mesh or paper towel.', 'Sauté the rehydrated mushrooms.', 'Reduce the strained broth into sauces, grains, or pasta.'],
-    tips: ['Never discard strained porcini soaking liquid.', 'Filter the liquid carefully to remove grit.', 'Use dried porcini when fresh porcini are unavailable.'], pairings: ['risotto', 'pasta', 'grain sauces', 'ragù'],
-    sections: [{ heading: 'Deep umami: maximizing dried porcini', text: 'The soaking liquid carries a potent concentration of mushroom flavor. Strain it well, then reduce it into sauces instead of throwing it away.', ordered: ['Soak dried pieces in boiling water for 20 minutes.', 'Filter through a fine mesh sieve or paper towel.', 'Use the mushrooms in a sauté and reduce the broth into sauces.'] }]
+    slug: 'how-to-cook-porcini-mushrooms', mushroomSlug: 'porcini', label: 'King porcini', badge: 'Umami depth', title: 'How to Cook Porcini Mushrooms', description: 'Learn how to cook porcini mushrooms in a hot skillet for browned edges, a tender center, and a bright garlic-butter finish.', minutes: '6 min', updated: '2026-07-11', image: '/images/porcini-garlic-butter-hero.jpg', imageAlt: 'Garlic-butter porcini mushrooms with parsley and lemon in a skillet', isoTime: 'PT12M', prepIsoTime: 'PT15M', heat: 'Medium-high, then medium', cut: 'Brush clean; trim the stem base; slice caps and stems 1/4 inch thick', finish: 'Lemon juice and chopped parsley off the heat',
+    recipeName: 'Garlic-Butter Porcini Mushrooms', yieldText: '2 servings',
+    ingredients: [
+      '12 oz (340 g) fresh porcini mushrooms',
+      '1 tbsp (15 ml) olive oil',
+      '2 tbsp (28 g) unsalted butter',
+      '1 small shallot (40 g), finely diced',
+      '2 garlic cloves (6 g), thinly sliced',
+      '1/2 tsp (3 g) fine salt',
+      '1/4 tsp freshly ground black pepper',
+      '1 tsp (5 ml) lemon juice',
+      '2 tbsp (8 g) chopped flat-leaf parsley'
+    ],
+    steps: [
+      'Brush the porcini clean, trim the base, and slice them 1/4 inch thick. Keep the slices as even as possible so they finish together.',
+      'Heat a wide skillet over medium-high heat. Add the olive oil and wait until it shimmers.',
+      'Add the porcini in a single layer. Cook without stirring for 2 minutes, then turn and cook for 2 more minutes, until the edges are browned and the centers feel tender.',
+      'Reduce the heat to medium. Add the butter and shallot; cook for 1 1/2 to 2 minutes until the shallot softens and the pan smells nutty.',
+      'Add the garlic, salt, and pepper. Toss for 30 to 45 seconds, just until the garlic is fragrant.',
+      'Remove from the heat. Stir in the lemon juice and parsley, taste, and serve immediately.'
+    ],
+    tips: [
+      'Use a wide pan and cook in batches if the porcini crowd the surface.',
+      'Keep the heat high enough to evaporate moisture, but lower it as soon as the butter goes in.',
+      'Slice the stems too; they are firm and flavorful when young and clean.'
+    ],
+    pairings: ['creamy polenta', 'tagliatelle', 'scrambled eggs', 'grilled sourdough', 'roast chicken'],
+    sections: [
+      { heading: 'Why this method works', text: 'Porcini have a firm, meaty texture that holds up well to a quick skillet sauté. Starting with a hot pan helps the slices brown before butter, garlic, and shallot add their softer flavors.' },
+      { heading: 'Buy and prep', text: 'Buy porcini from a reputable market, or use wild specimens only after expert verification. This guide does not identify mushrooms or establish that a wild find is safe to eat. Brush away soil, trim any tough stem base, and avoid soaking the mushrooms, which can make them watery.' },
+      { heading: 'Deep umami: maximizing dried porcini', text: 'The soaking liquid carries a potent concentration of mushroom flavor. Strain it well, then reduce it into sauces instead of throwing it away.', ordered: ['Soak dried pieces in boiling water for 20 minutes.', 'Filter through a fine mesh sieve or paper towel.', 'Use the mushrooms in a sauté and reduce the broth into sauces.'] }
+    ],
+    faqs: [
+      { question: 'Can I wash porcini mushrooms?', answer: 'Brush them first. If they are heavily soiled, rinse them briefly under cool water and dry them thoroughly before cooking.' },
+      { question: 'Should I cook porcini whole or sliced?', answer: 'Slice them for this recipe so the cut surfaces brown quickly and the centers cook evenly.' },
+      { question: 'Can I use dried porcini?', answer: 'Yes, but use a separate rehydration method. Soak dried porcini in hot water, strain the soaking liquid through a fine filter, and add the softened mushrooms to a sauce or pasta dish.' },
+      { question: 'Why are my porcini releasing so much water?', answer: 'The pan may be crowded, the mushrooms may be wet, or the heat may be too low. Cook in a single layer and let the moisture evaporate before adding butter.' },
+      { question: 'Can I make this recipe dairy-free?', answer: 'Yes. Replace the butter with another tablespoon of olive oil or a dairy-free butter alternative.' }
+    ],
+    storage: [
+      'Refrigerate cooked porcini in a covered container for up to 3 days.',
+      'Cool them promptly; do not leave cooked mushrooms at room temperature for extended periods.',
+      'Reheat gently in a skillet over medium heat until hot.',
+      'For best texture, freeze porcini only after cooking, then use them in sauces, soups, or fillings.'
+    ],
+    variations: [
+      'Cream sauce: add 1/4 cup (60 ml) heavy cream after the garlic cooks and simmer for 2 minutes.',
+      'Thyme finish: add 1 tsp fresh thyme leaves with the shallot.',
+      'Wine deglaze: add a splash of dry white wine after the garlic and let it reduce.',
+      'Pasta: toss the finished mushrooms with cooked tagliatelle and a little pasta water.'
+    ]
   },
   {
-    slug: 'how-to-cook-shaggy-mane-mushrooms', mushroomSlug: 'shaggy-mane', label: 'Shaggy manes', badge: 'Time critical', title: 'How to Cook Shaggy Mane Mushrooms Before They Turn', description: 'Cook expert-verified, pristine white shaggy manes in butter for 6–8 minutes, until their released liquid reduces to a glossy glaze.', minutes: '4 min', updated: '2026-07-10', image: '/images/shaggy-mane-mushrooms-on-toast-hero.jpg', imageAlt: 'Sautéed shaggy mane mushrooms with chives on toasted sourdough', isoTime: 'PT8M', heat: 'Medium', cut: 'Halved lengthwise', finish: 'Parmesan',
-    steps: ['Use only pristine white specimens.', 'Slice in half lengthwise.', 'Cook with butter and a little minced garlic.', 'Reduce released juices to a glaze and finish with grated parmesan.'],
-    tips: ['Cook the same day they are picked.', 'Discard specimens already turning inky.', 'The released liquid should cook away before finishing.'], pairings: ['parmesan', 'toast', 'eggs', 'simple pasta'],
-    sections: [{ heading: 'Preparation and skillet sauté', text: 'Slice pristine white specimens in half lengthwise. Cook with butter and garlic until the released juices reduce into a shiny glaze, then finish with grated parmesan.' }]
+    slug: 'how-to-cook-shaggy-mane-mushrooms', mushroomSlug: 'shaggy-mane', label: 'Shaggy manes', badge: 'Time critical', title: 'How to Cook Shaggy Mane Mushrooms', description: 'Cook shaggy mane mushrooms quickly with shallot, garlic, and butter, then spoon them over toast while their texture is tender.', minutes: '6 min', updated: '2026-07-11', image: '/images/shaggy-mane-mushrooms-on-toast-hero.jpg', imageAlt: 'Sautéed shaggy mane mushrooms with chives on toasted sourdough', isoTime: 'PT10M', prepIsoTime: 'PT10M', heat: 'Medium-high, then medium', cut: 'Trim the base; halve small mushrooms or slice larger ones lengthwise', finish: 'Chives and black pepper over crisp toast',
+    recipeName: 'Shaggy Mane Mushrooms on Buttered Toast', yieldText: '2 servings',
+    ingredients: [
+      '10 oz (280 g) shaggy mane mushrooms',
+      '1 tbsp (15 ml) olive oil',
+      '1 tbsp (14 g) unsalted butter',
+      '1 small shallot (40 g), finely diced',
+      '1 garlic clove (3 g), minced',
+      '1/2 tsp (3 g) fine salt',
+      '1/4 tsp freshly ground black pepper',
+      '2 slices sourdough bread (90 g)',
+      '1 tbsp (3 g) chopped fresh chives'
+    ],
+    steps: [
+      'Brush the mushrooms clean, trim the stem bases, and halve or slice them lengthwise. Pat away any surface moisture.',
+      'Toast the sourdough until crisp at the edges. Keep it warm while you cook the mushrooms.',
+      'Heat a wide skillet over medium-high heat. Add the olive oil, then arrange the mushrooms in a loose single layer.',
+      'Cook for 2 minutes without stirring. Turn gently and cook for another 2 minutes, until the mushrooms soften and their edges begin to color.',
+      'Lower the heat to medium. Add the butter, shallot, garlic, salt, and pepper. Toss for 1 to 2 minutes, until the shallot is soft and the garlic smells sweet.',
+      'Spoon the mushrooms over the toast and scatter with chives. Serve while the toast is crisp.'
+    ],
+    tips: [
+      'Cook shaggy mane mushrooms soon after buying them; their quality changes quickly.',
+      'Use a gentle turn rather than aggressive stirring because the cooked mushrooms can become fragile.',
+      'Toast the bread before starting the skillet so the mushrooms go straight from the pan to the plate.'
+    ],
+    pairings: ['soft-poached eggs', 'green salad', 'goat cheese', 'roasted tomatoes'],
+    sections: [
+      { heading: 'Why this method works', text: 'Shaggy mane mushrooms are delicate and cook quickly. A brief sauté keeps their texture soft without letting them sit in their own moisture, while toast gives the tender mushrooms a crisp contrast.' },
+      { heading: 'Buy and prep', text: 'Buy shaggy mane mushrooms from a reputable market, or use wild specimens only after expert verification. This guide does not identify mushrooms or establish that a wild find is safe to eat. Cook them promptly after purchase or verification, and discard any specimen that is deteriorating, leaking dark liquid, or otherwise questionable.' }
+    ],
+    faqs: [
+      { question: 'How soon should I cook shaggy mane mushrooms?', answer: 'Cook them as soon as practical after purchase or expert verification, preferably the same day.' },
+      { question: 'Why do shaggy mane mushrooms turn dark?', answer: 'They naturally break down as they age, which can cause darkening and an ink-like appearance. Do not use mushrooms that are deteriorating or questionable.' },
+      { question: 'Should I boil shaggy mane mushrooms first?', answer: 'Not for this recipe. A direct skillet sauté is enough for the tender texture of fresh, properly sourced mushrooms.' },
+      { question: 'Can I store shaggy mane mushrooms overnight?', answer: 'Yes, for a short period. Keep them dry in a paper bag in the refrigerator and cook them promptly.' },
+      { question: 'What bread works best with shaggy mane mushrooms?', answer: 'Use a sturdy sourdough, country loaf, or rye bread that can hold the mushrooms without becoming soggy.' }
+    ],
+    storage: [
+      'Refrigerate uncooked mushrooms in a paper bag and use them promptly.',
+      'Refrigerate cooked mushrooms in a covered container for up to 2 days.',
+      'Store toast separately so it does not soften.',
+      'Reheat the mushrooms in a skillet over medium heat; toast fresh bread for serving.'
+    ],
+    variations: [
+      'Creamy: add 2 tbsp (30 ml) heavy cream after the garlic and simmer for 1 minute.',
+      'Herb: replace the chives with 1 tbsp chopped tarragon or parsley.',
+      'Spicy: add a pinch of red pepper flakes with the garlic.',
+      'Beans: serve the mushrooms over warm white beans instead of toast.'
+    ]
   },
   {
-    slug: 'how-to-cook-oyster-mushrooms', mushroomSlug: 'oyster', label: 'Oyster', badge: 'Fast umami', title: 'How to Cook Oyster Mushrooms: Crisp Edges, Fast Umami', description: 'Oyster mushrooms grow in shelf-like clusters and cook quickly into tender, savory strips with crisp edges.', minutes: '4 min', updated: '2026-07-10', image: '/images/crisp-garlic-oyster-mushrooms-hero.jpg', imageAlt: 'Crisp-edged oyster mushrooms with garlic butter and lemon in a skillet', isoTime: 'PT9M', heat: 'High, then lower', cut: 'Separated caps or torn strips', finish: 'Garlic and parsley',
-    steps: ['Separate caps or tear clusters into strips.', 'Heat olive oil on high.', 'Sear in a single layer untouched for 3 minutes.', 'Flip, lower heat, add sliced garlic and parsley, and cook 60 seconds.'],
-    tips: ['Tearing gives better texture than slicing.', 'Use a single layer for crisp rims.', 'They shrink a lot; start with more than you think.'], pairings: ['tacos', 'noodles', 'fried rice', 'toast'],
-    sections: [{ heading: 'Recipe: crispy sautéed garlic oysters', text: 'Heat olive oil on high, add separated caps in one layer, and leave them alone until the bottom rims turn dark gold. Flip, lower the heat, add garlic and parsley, and finish quickly.' }]
+    slug: 'how-to-cook-oyster-mushrooms', mushroomSlug: 'oyster', label: 'Oyster', badge: 'Fast umami', title: 'How to Cook Oyster Mushrooms', description: 'Learn how to cook oyster mushrooms until their edges turn crisp, then finish them with garlic, butter, soy, lemon, and scallions.', minutes: '6 min', updated: '2026-07-11', image: '/images/crisp-garlic-oyster-mushrooms-hero.jpg', imageAlt: 'Crisp-edged oyster mushrooms with garlic butter and lemon in a skillet', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high', cut: 'Trim the clustered base; tear caps into bite-size pieces', finish: 'Soy, lemon juice, smoked paprika, and scallions',
+    recipeName: 'Crisp-Edged Garlic Oyster Mushrooms', yieldText: '2 servings',
+    ingredients: [
+      '14 oz (400 g) oyster mushrooms',
+      '1 tbsp (15 ml) neutral oil',
+      '1 tbsp (14 g) unsalted butter',
+      '2 garlic cloves (6 g), minced',
+      '1 tsp (5 ml) soy sauce',
+      '1 tsp (5 ml) lemon juice',
+      '1/4 tsp (1 g) smoked paprika',
+      '1/4 tsp fine salt',
+      '2 tbsp (12 g) sliced scallions'
+    ],
+    steps: [
+      'Trim away the tough clustered base. Tear the oyster mushroom caps into bite-size pieces and brush off any debris.',
+      'Heat a wide skillet over medium-high heat. Add the oil and wait until it shimmers.',
+      'Add the mushrooms in a single layer. Cook for 3 to 4 minutes without moving them much, until the bottoms are browned and the pieces begin to soften.',
+      'Turn the mushrooms and cook for another minute, allowing the second side to pick up color.',
+      'Add the butter, garlic, smoked paprika, and salt. Toss for 1 to 1 1/2 minutes, until the garlic is fragrant and the mushroom edges look crisp.',
+      'Stir in the soy sauce and lemon juice. Remove from the heat, scatter with scallions, and serve immediately.'
+    ],
+    tips: [
+      'Tear rather than finely slice the caps to create better browned edges.',
+      'If the skillet looks crowded, cook the mushrooms in two batches.',
+      'Add soy sauce near the end so it seasons the mushrooms without making the pan too wet.'
+    ],
+    pairings: ['steamed rice', 'soba noodles', 'toasted sourdough', 'polenta', 'fried eggs'],
+    sections: [
+      { heading: 'Why this method works', text: 'Tearing oyster mushrooms creates irregular edges that brown well. The mushrooms need room in the pan, so the recipe builds color first and adds butter, garlic, and seasoning only after the moisture has cooked away.' },
+      { heading: 'Buy and prep', text: 'Cultivated oyster mushrooms are the simplest choice for this recipe. If using wild-harvested oyster mushrooms, use only market-purchased specimens or mushrooms verified by a qualified expert. This guide does not identify mushrooms or establish that a wild find is safe to eat.' }
+    ],
+    faqs: [
+      { question: 'Should I wash oyster mushrooms?', answer: 'Brush them clean first. If they need a rinse, do it quickly and dry them thoroughly before they hit the pan.' },
+      { question: 'Do I eat the oyster mushroom stems?', answer: 'Tender stems can be eaten. Trim away only the dry, woody, or tightly clustered base.' },
+      { question: 'Why are my oyster mushrooms soggy?', answer: 'The pan may be crowded, the mushrooms may be wet, or the heat may be too low. Use a wide pan and let the first side brown before stirring.' },
+      { question: 'Can I use oyster mushrooms in a sauce?', answer: 'Yes. Brown them first, then add them to pasta sauce, gravy, soup, or a stir-fry near the end of cooking.' },
+      { question: 'How do I handle wild oyster mushrooms?', answer: 'Use market-purchased mushrooms or have wild specimens verified by a qualified expert. This recipe cannot confirm the identity or safety of a wild find.' }
+    ],
+    storage: [
+      'Refrigerate uncooked oyster mushrooms in a paper bag for up to 5 days, checking their condition before use.',
+      'Refrigerate cooked mushrooms in a covered container for up to 3 days.',
+      'Reheat in a hot skillet to restore some edge texture.',
+      'Freeze cooked mushrooms only if you plan to use them later in soup, sauce, or a filling.'
+    ],
+    variations: [
+      'Sesame: replace the butter with 1 tsp toasted sesame oil and finish with sesame seeds.',
+      'Herb: omit the smoked paprika and add 1 tbsp chopped parsley.',
+      'Chili-lime: replace lemon juice with lime juice and add a pinch of chili flakes.',
+      'Miso: replace the soy sauce with 1 tsp white miso loosened with 1 tsp water.'
+    ]
   },
   {
     slug: 'how-to-cook-maitake-mushrooms', mushroomSlug: 'maitake', label: 'Maitake', badge: 'Ruffled clusters', title: 'How to Cook Maitake (Hen of the Woods) Mushrooms', description: 'Hot pan sear maitake mushrooms until the fronds turn golden and crisp, finished with garlic butter. Ready in about 12 minutes.', minutes: '5 min', updated: '2026-07-05', isoTime: 'PT12M', prepIsoTime: 'PT5M', heat: 'Medium-high', cut: 'Break into large clusters or 1-inch pieces', finish: 'Garlic butter, soy, scallion',
@@ -268,84 +602,727 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-lobster-mushrooms', mushroomSlug: 'lobster', label: 'Lobster mushrooms', badge: 'Seafood illusion', title: 'How to Cook Lobster Mushrooms: Slow Butter Sear', description: 'Slice verified lobster mushrooms into 1/2-inch pieces and sear slowly in butter for about 12 minutes, then finish with lemon and chives.', minutes: '4 min', updated: '2026-07-10', image: '/images/lemon-thyme-lobster-mushrooms-hero.jpg', imageAlt: 'Orange lobster mushrooms sautéed with lemon and thyme in a skillet', isoTime: 'PT12M', heat: 'Medium, then high', cut: '½-inch medallions', finish: 'Lemon and chives',
-    steps: ['Slice dense mushrooms into ½-inch medallions.', 'Melt butter over medium heat.', 'Cook 5 minutes per side.', 'Raise heat for 1 minute, then finish with lemon and chives.'],
-    tips: ['Use dense, clean specimens.', 'Cook slowly before browning hard.', 'Lemon cuts the richness.'], pairings: ['buttered pasta', 'toast', 'rice', 'chives'],
-    sections: [{ heading: 'Recipe: pan-seared butter lobster medallions', text: 'Cook thick medallions slowly in butter, then raise the heat briefly to brown the edges. Finish off heat with lemon juice and chives.' }]
+    slug: 'how-to-cook-lobster-mushrooms', mushroomSlug: 'lobster', label: 'Lobster mushrooms', badge: 'Seafood illusion', title: 'How to Cook Lobster Mushrooms', description: 'Cook lobster mushrooms in butter, shallot, garlic, and thyme for a firm, savory side with a clean lemon finish.', minutes: '6 min', updated: '2026-07-11', image: '/images/lemon-thyme-lobster-mushrooms-hero.jpg', imageAlt: 'Orange lobster mushrooms sautéed with lemon and thyme in a skillet', isoTime: 'PT15M', prepIsoTime: 'PT15M', heat: 'Medium-high, then medium', cut: 'Brush clean; trim the base; slice 1/4 inch thick', finish: 'White wine, lemon juice, and fresh thyme',
+    recipeName: 'Lemon-Thyme Sautéed Lobster Mushrooms', yieldText: '2 servings',
+    ingredients: [
+      '12 oz (340 g) fresh lobster mushrooms',
+      '1 tbsp (15 ml) olive oil',
+      '2 tbsp (28 g) unsalted butter',
+      '1 small shallot (40 g), finely diced',
+      '2 garlic cloves (6 g), minced',
+      '1/2 tsp fresh thyme leaves',
+      '1 tbsp (15 ml) dry white wine',
+      '1/2 tsp (3 g) fine salt',
+      '1 tbsp (15 ml) lemon juice'
+    ],
+    steps: [
+      'Brush or scrub the lobster mushrooms clean. Trim the base and slice the mushrooms 1/4 inch thick.',
+      'Heat a wide skillet over medium-high heat. Add the olive oil and wait until it shimmers.',
+      'Add the mushrooms in a single layer. Cook for 2 1/2 minutes without moving, then turn and cook for another 2 1/2 minutes until browned at the edges.',
+      'Lower the heat to medium. Add the butter and shallot; cook for 1 1/2 to 2 minutes until the shallot softens.',
+      'Add the garlic, thyme, and salt. Toss for 30 to 45 seconds, then pour in the wine and scrape up the browned bits.',
+      'Simmer until the wine nearly disappears. Remove from the heat, stir in the lemon juice, and serve while hot.'
+    ],
+    tips: [
+      'Slice dense lobster mushrooms evenly so the thicker pieces do not lag behind.',
+      'Do not add the wine until the mushrooms have browned; early liquid can prevent good color.',
+      'Taste before adding extra salt because the wine reduction concentrates the seasoning.'
+    ],
+    pairings: ['creamy polenta', 'roasted potatoes', 'buttered noodles', 'grilled steak', 'wilted greens'],
+    sections: [
+      { heading: 'Why this method works', text: 'Lobster mushrooms have a dense texture, so thin slices and steady heat help them become tender without losing their bite. A short splash of wine loosens the browned bits, while lemon keeps the finish bright.' },
+      { heading: 'Buy and prep', text: 'Buy lobster mushrooms from a reputable market, or use wild specimens only after expert verification. This guide does not identify mushrooms or establish that a wild find is safe to eat. Choose clean, firm mushrooms from a known source and trim away any tough or damaged areas.' }
+    ],
+    faqs: [
+      { question: 'What are lobster mushrooms?', answer: 'They are firm, orange-red mushrooms sold fresh or dried. For this recipe, use fresh mushrooms from a reputable market or an expert-verified wild source.' },
+      { question: 'Do lobster mushrooms taste like lobster?', answer: 'No. Their name refers to their orange-red appearance and firm texture, not a seafood flavor.' },
+      { question: 'Why are my lobster mushrooms tough?', answer: 'The slices may be too thick, the mushrooms may need more time, or the pan may be too hot. Slice them evenly and cook until the centers are tender.' },
+      { question: 'Can I use dried lobster mushrooms?', answer: 'Yes, but rehydrate them first and drain them well. Add them to a sauce, stew, or pasta dish after they soften.' },
+      { question: 'How should I clean lobster mushrooms?', answer: 'Brush or lightly scrub away debris, then trim the base and any damaged sections. Avoid soaking them for a long time.' },
+      { question: 'Can I use a wild lobster mushroom from my own collection?', answer: 'Only use a wild specimen after qualified expert verification. This guide does not identify mushrooms or establish that a wild find is safe to eat.' }
+    ],
+    storage: [
+      'Refrigerate uncooked lobster mushrooms in a paper bag and use them promptly.',
+      'Refrigerate cooked mushrooms in a covered container for up to 3 days.',
+      'Reheat gently in a skillet with a small splash of water or stock.',
+      'Freeze cooked mushrooms for later use in soups, sauces, or stews rather than for serving as a crisp side.'
+    ],
+    variations: [
+      'Cream sauce: add 1/4 cup (60 ml) heavy cream after the wine reduces, then simmer for 2 minutes.',
+      'Garlic-herb: add 1 tbsp chopped parsley with the lemon juice.',
+      'Spicy: add a pinch of chili flakes with the garlic.',
+      'Vegan: replace the butter with another tablespoon of olive oil or a plant-based butter.'
+    ]
   },
   {
-    slug: 'how-to-cook-black-trumpet-mushrooms', mushroomSlug: 'black-trumpet', label: 'Black trumpets', badge: 'Wild truffle note', title: 'How to Cook Black Trumpet Mushrooms', description: 'Split and clean black trumpet mushrooms, sauté them for 3 minutes, then reduce with brandy and cream for a smoky pasta sauce.', minutes: '5 min', updated: '2026-07-10', image: '/images/black-trumpet-butter-pasta-hero.jpg', imageAlt: 'Black trumpet mushroom butter pasta with Parmesan and lemon zest', isoTime: 'PT10M', heat: 'Medium', cut: 'Split and cleaned', finish: 'Brandy and cream',
-    steps: ['Sauté minced shallots in butter.', 'Add split black trumpets and cook 3 minutes.', 'Deglaze with brandy.', 'Add heavy cream and simmer until thick, then toss with pasta.'],
-    tips: ['Split and clean the hollow centers.', 'Use cream to capture the smoky fragrance.', 'Brandy is optional but useful for depth.'], pairings: ['tagliatelle', 'cream sauce', 'eggs', 'toast'],
-    sections: [{ heading: 'Recipe: creamy black trumpet pasta reduction', text: 'Sauté shallots in butter, add black trumpets, deglaze with brandy, then simmer cream until thick enough to coat tagliatelle.' }]
+    slug: 'how-to-cook-black-trumpet-mushrooms', mushroomSlug: 'black-trumpet', label: 'Black trumpets', badge: 'Wild truffle note', title: 'How to Cook Black Trumpet Mushrooms', description: 'Learn how to cook black trumpet mushrooms in a glossy butter-wine pasta, with careful cleaning, quick sautéing, and a clear wild-mushroom safety note.', minutes: '7 min', updated: '2026-07-11', image: '/images/black-trumpet-butter-pasta-hero.jpg', imageAlt: 'Black trumpet mushroom butter pasta with Parmesan and lemon zest', isoTime: 'PT15M', prepIsoTime: 'PT10M', heat: 'Medium-high for the mushrooms, then medium-low for the sauce', cut: 'Split or tear mushrooms into 1–2-inch pieces', finish: 'Parmesan, lemon zest, and the last spoonful of butter',
+    recipeName: 'Black Trumpet Mushroom Butter Pasta', yieldText: '2 servings',
+    ingredients: [
+      '8 oz (225 g) fresh black trumpet mushrooms, cleaned and torn',
+      '8 oz (225 g) linguine',
+      '1 tbsp (15 g) kosher salt for the pasta water',
+      '2 tbsp (28 g) unsalted butter, divided',
+      '2 garlic cloves (6 g), thinly sliced',
+      '1/2 cup (120 ml) dry white wine',
+      '1/2 cup (120 ml) reserved pasta water',
+      '1/4 cup (25 g) finely grated Parmesan',
+      '1 tsp (2 g) finely grated lemon zest'
+    ],
+    steps: [
+      'Brush away debris and split the mushrooms to check for grit. If they are sandy, rinse briefly in cold water, then dry thoroughly.',
+      'Bring salted water to a boil and cook the linguine until one minute shy of al dente. Reserve the pasta water before draining.',
+      'Melt 1 tbsp butter in a wide skillet over medium-high heat. Add the mushrooms in one layer. Cook 3 to 4 minutes, until their moisture evaporates and the edges begin to crisp.',
+      'Lower the heat to medium-low. Add the remaining butter and garlic; cook for 30 seconds, until fragrant. Pour in the wine and simmer until slightly reduced.',
+      'Add the drained pasta and reserved water. Toss until the sauce clings to the noodles and looks glossy.',
+      'Remove from the heat. Toss with Parmesan and lemon zest. Serve immediately.'
+    ],
+    tips: [
+      'Dry the mushrooms well before sautéing; surface water steams them instead of browning them.',
+      'A wide skillet gives the delicate mushrooms room to cook without turning soggy.',
+      'Strain any mushroom rinsing water through a fine filter before using it in another dish; gritty water is not worth saving.'
+    ],
+    pairings: ['roasted chicken', 'seared scallops', 'arugula salad', 'roasted asparagus', 'grilled sourdough'],
+    sections: [
+      { heading: 'Why this method works', text: 'Black trumpet mushrooms cook quickly. A hot pan drives off their moisture and concentrates their earthy, smoky flavor before butter, wine, and pasta water turn the browned bits into a light sauce.' },
+      { heading: 'Safety first', text: 'Use market-purchased black trumpet mushrooms, or wild specimens verified by a qualified local mushroom expert. A mushroom found outdoors and identified by appearance alone should not be eaten.' }
+    ],
+    faqs: [
+      { question: 'Can I use dried black trumpet mushrooms?', answer: 'Yes. Soak them in warm water until pliable, rinse away grit, dry well, and use the strained soaking liquid in place of part of the pasta water.' },
+      { question: 'Do black trumpet mushrooms need their stems removed?', answer: 'No. They are naturally hollow and have no tough central stem like shiitakes.' },
+      { question: 'How do I keep black trumpet mushrooms from tasting gritty?', answer: 'Split them open, inspect the folds, rinse briefly only when needed, and dry them completely before cooking.' },
+      { question: 'How do I know when black trumpets are done?', answer: 'They should smell deeply savory, feel tender, and have slightly crisp edges after their moisture cooks away.' },
+      { question: 'Can I eat a wild black trumpet mushroom I found?', answer: 'Only after qualified expert verification. Do not cook or taste an uncertain wild mushroom.' }
+    ],
+    storage: [
+      'Refrigerate fresh mushrooms unwashed in a paper bag and use within 2–3 days.',
+      'Refrigerate leftover pasta in an airtight container for up to 3 days.',
+      'Reheat gently in a skillet with a splash of water; avoid prolonged microwaving, which can make the pasta rubbery.',
+      'Discard any mushroom that develops a sour odor, excessive slime, or unusual discoloration.'
+    ],
+    variations: [
+      'Polenta: replace the linguine with creamy polenta.',
+      'Spicy: add 1/4 tsp red pepper flakes with the garlic.',
+      'Thyme: stir in 1 tsp fresh thyme with the wine.',
+      'Alcohol-free: use vegetable stock instead of wine and finish with extra lemon zest.'
+    ]
   },
   {
-    slug: 'how-to-cook-wood-ear-mushrooms', mushroomSlug: 'wood-ear', label: 'Wood ear', badge: 'Snap and texture', title: 'How to Cook Wood Ear Mushrooms: Keep the Crunch', description: 'Slice wood ear mushrooms into ribbons and simmer for 10 minutes with broth, soy sauce, and black vinegar so they stay pleasantly crisp.', minutes: '4 min', updated: '2026-07-10', image: '/images/wood-ear-sesame-stir-fry-hero.jpg', imageAlt: 'Sesame-glazed wood ear mushroom stir-fry with ginger and scallions', isoTime: 'PT10M', heat: 'Simmer', cut: 'Julienned ribbons', finish: 'Black vinegar and soy',
-    steps: ['Slice wood ears into thin ribbons.', 'Bring stock to a simmer.', 'Add wood ear, soy sauce, black vinegar, and bamboo shoots.', 'Simmer 10 minutes and thicken with cornstarch slurry if desired.'],
-    tips: ['Texture is the point; do not cook it to mush.', 'Julienne for the best soup bite.', 'Black vinegar sharpens the broth.'], pairings: ['hot and sour soup', 'noodles', 'stir-fries', 'broths'],
-    sections: [{ heading: 'Recipe: classic hot and sour mushroom broth', text: 'Simmer julienned wood ear ribbons with stock, soy sauce, black vinegar, and bamboo shoots. Thicken with cornstarch slurry for a classic hot-and-sour texture.' }]
+    slug: 'how-to-cook-wood-ear-mushrooms', mushroomSlug: 'wood-ear', label: 'Wood ear', badge: 'Snap and texture', title: 'How to Cook Wood Ear Mushrooms', description: 'Learn how to cook wood ear mushrooms until springy and lightly crisp, then glaze them with garlic, ginger, soy, and sesame.', minutes: '6 min', updated: '2026-07-11', image: '/images/wood-ear-sesame-stir-fry-hero.jpg', imageAlt: 'Sesame-glazed wood ear mushroom stir-fry with ginger and scallions', isoTime: 'PT8M', prepIsoTime: 'PT12M', heat: 'High heat for a quick wok or skillet stir-fry', cut: 'Slice large lobes into 1/2-inch strips; leave small lobes whole', finish: 'Soy, rice vinegar, sugar, and toasted sesame oil',
+    recipeName: 'Garlic-Ginger Wood Ear Mushroom Stir-Fry', yieldText: '2 servings',
+    ingredients: [
+      '8 oz (225 g) fresh wood ear mushrooms, trimmed',
+      '1 tbsp (15 ml) neutral oil',
+      '2 garlic cloves (6 g), minced',
+      '1 tbsp (15 g) fresh ginger, minced',
+      '2 scallions (30 g), thinly sliced',
+      '2 tbsp (30 ml) soy sauce',
+      '1 tbsp (15 ml) rice vinegar',
+      '1 tsp (5 ml) toasted sesame oil',
+      '1/2 tsp (2 g) granulated sugar'
+    ],
+    steps: [
+      'Rinse the mushrooms, trim away any tough attachment point, and cut large lobes into 1/2-inch strips. Pat them dry.',
+      'Drop the mushrooms into boiling water for 2 minutes. Drain well and let excess moisture steam away.',
+      'Place a wok or wide skillet over high heat. Add the neutral oil and heat until it shimmers.',
+      'Add the mushrooms. Stir frequently for 3 to 4 minutes, until the edges curl slightly and develop a light crispness.',
+      'Add the garlic and ginger. Toss until fragrant but not browned, about 30 seconds.',
+      'Add soy sauce, rice vinegar, and sugar. Toss for 1 minute until the sauce coats the mushrooms, then remove from the heat, stir in the scallions and sesame oil, and serve hot.'
+    ],
+    tips: [
+      'Dry the mushrooms after blanching so the hot pan can sear them instead of steaming them.',
+      'Dried wood ears expand substantially; soak only what you need and trim them after rehydration.',
+      'Keep the sauce brief and concentrated so the mushrooms stay springy.'
+    ],
+    pairings: ['jasmine rice', 'garlic noodles', 'bok choy', 'charred tofu', 'roast pork'],
+    sections: [
+      { heading: 'Why wood ear mushrooms are different', text: 'Wood ear mushrooms are valued for texture rather than a deep mushroom flavor. Their thin, ear-shaped lobes stay springy after cooking and pick up sauces without becoming soft or heavy.' },
+      { heading: 'Fresh or dried', text: 'Fresh wood ears need trimming and rinsing. Dried wood ears must be soaked until fully expanded, then rinsed carefully because grit can collect in their folds. This recipe uses fresh mushrooms.' },
+      { heading: 'The best pan technique', text: 'A brief blanch removes surface grit and gives the mushrooms an even start. The final high-heat stir-fry should leave the edges lightly curled and crisp while the centers remain pleasantly chewy.' }
+    ],
+    faqs: [
+      { question: 'Should I soak dried wood ear mushrooms before cooking?', answer: 'Yes. Soak them in plenty of water until fully expanded, then rinse, trim, and cook thoroughly.' },
+      { question: 'Do wood ear mushrooms need blanching?', answer: 'Blanching is useful for this recipe because it cleans the lobes and gives them an even texture before stir-frying.' },
+      { question: 'Why are my wood ear mushrooms crunchy?', answer: 'A springy, lightly crunchy texture is normal and is one of their defining qualities.' },
+      { question: 'Can I substitute dried wood ears for fresh by volume?', answer: 'No. Dried mushrooms expand as they soak, so rehydrate them first and measure the prepared mushrooms.' },
+      { question: 'Are all brown, ear-shaped wild mushrooms safe to eat?', answer: 'No. Use packaged mushrooms or wild specimens verified by a qualified mushroom expert.' }
+    ],
+    storage: [
+      'Keep fresh wood ears refrigerated and use them within 3–5 days.',
+      'Store soaked mushrooms in a covered container in the refrigerator and use within 1–2 days.',
+      'Refrigerate cooked leftovers for up to 3 days.',
+      'Keep dried wood ears sealed in a cool, dry cupboard until needed.'
+    ],
+    variations: [
+      'Chili crisp: add 1 tbsp chili crisp with the soy sauce.',
+      'Miso: replace the sugar with 1 tsp white miso for a rounder glaze.',
+      'Vegetables: add thinly sliced bell pepper or snap peas for a fuller stir-fry.',
+      'Cilantro-lime: finish with cilantro and a squeeze of lime instead of sesame oil.'
+    ]
   },
   {
-    slug: 'how-to-cook-shiitake-mushrooms', mushroomSlug: 'shiitake', label: 'Shiitake', badge: 'Asian standard', title: 'How to Cook Shiitake Mushrooms: Caps, Not Stems', description: 'Remove the fibrous stems, then sauté shiitake caps over medium-high heat for 6–8 minutes and finish with soy, ginger, or mirin.', minutes: '4 min', updated: '2026-07-10', image: '/images/shiitake-garlic-thyme-hero.jpg', imageAlt: 'Seared shiitake mushrooms with garlic and thyme on a ceramic plate', isoTime: 'PT8M', heat: 'Medium-high', cut: 'Stemmed caps', finish: 'Soy, ginger, mirin',
-    steps: ['Twist off tough stems.', 'Slice or leave caps whole.', 'Sauté caps until browned and velvety.', 'Use stems for stock instead of chewing them.'],
-    tips: ['Always remove fibrous stems before quick cooking.', 'Save stems for soup stock.', 'Dry shiitake soaking liquid is useful after straining.'], pairings: ['miso soup', 'noodles', 'fried rice', 'dumplings'],
-    sections: [{ heading: 'Chef’s tip: remove stems', text: 'Always twist the fibrous stems off before cooking; they are too tough to chew but make excellent soup stock bases.' }]
+    slug: 'how-to-cook-shiitake-mushrooms', mushroomSlug: 'shiitake', label: 'Shiitake', badge: 'Asian standard', title: 'How to Cook Shiitake Mushrooms', description: 'Learn how to cook shiitake mushrooms until browned and tender, then finish them with garlic, thyme, soy sauce, and lemon.', minutes: '6 min', updated: '2026-07-11', image: '/images/shiitake-garlic-thyme-hero.jpg', imageAlt: 'Seared shiitake mushrooms with garlic and thyme on a ceramic plate', isoTime: 'PT10M', prepIsoTime: 'PT10M', heat: 'Medium-high for browning, then medium', cut: 'Remove the woody stems and slice caps 1/4 inch thick', finish: 'Butter, garlic, thyme, soy sauce, and lemon',
+    recipeName: 'Garlic-Thyme Seared Shiitake Mushrooms', yieldText: '2 servings',
+    ingredients: [
+      '12 oz (340 g) fresh shiitake mushrooms, stems removed',
+      '1 tbsp (15 ml) olive oil',
+      '1 tbsp (14 g) unsalted butter',
+      '2 garlic cloves (6 g), thinly sliced',
+      '1 tsp fresh thyme leaves',
+      '1 tbsp (15 ml) soy sauce',
+      '1 tsp (5 ml) lemon juice',
+      '1/4 tsp kosher salt',
+      '2 tbsp (30 ml) water'
+    ],
+    steps: [
+      'Brush the caps clean or rinse them quickly and dry them well. Remove the woody stems and slice the caps 1/4 inch thick.',
+      'Heat a wide skillet over medium-high heat. Add the olive oil when the pan is hot.',
+      'Add the shiitakes in a single layer. Cook for 3 minutes without moving, then turn and cook until both sides are browned and the caps feel tender.',
+      'Lower the heat to medium. Add butter, garlic, and thyme. Stir until the butter foams and the garlic smells fragrant.',
+      'Add the soy sauce, water, and lemon juice. Toss until the liquid reduces to a thin, shiny coating.',
+      'Taste and add the kosher salt only if needed. Serve immediately.'
+    ],
+    tips: [
+      'Do not crowd the pan; cook in two batches if the caps overlap.',
+      'Dry shiitakes thoroughly after rinsing to prevent steaming.',
+      'Reserve the stems for stock instead of throwing them away.'
+    ],
+    pairings: ['grilled steak', 'creamy polenta', 'soba noodles', 'white beans', 'steamed rice'],
+    sections: [
+      { heading: 'Why shiitakes brown well', text: 'Shiitake caps have a meaty texture and a strong savory flavor. Cooking them in a single layer gives their exposed surfaces time to brown before the finishing butter and aromatics go into the pan.' },
+      { heading: 'What to do with the stems', text: 'Fresh shiitake stems are usually too fibrous to enjoy whole. Trim them off and save them for stock, broth, or a mushroom-scrap freezer bag.' },
+      { heading: 'The finishing sauce', text: 'Butter softens the edges of the mushrooms, while soy sauce adds salt and savoriness. Lemon juice keeps the finished dish bright instead of heavy.' }
+    ],
+    faqs: [
+      { question: 'Should I remove shiitake stems before cooking?', answer: 'Yes. Fresh stems are often fibrous, so remove them and reserve them for stock.' },
+      { question: 'Should shiitake mushrooms be washed?', answer: 'Brush them clean when possible. If they need rinsing, do it quickly and dry them completely before cooking.' },
+      { question: 'Why did my shiitakes release so much water?', answer: 'The pan may have been crowded, the mushrooms may have been wet, or the heat may have been too low. A wide hot pan helps moisture evaporate.' },
+      { question: 'How do I know when shiitakes are done?', answer: 'The caps should be browned, tender, and flexible, with no firm raw center.' },
+      { question: 'Can I use dried shiitakes in this recipe?', answer: 'Yes. Soak them until soft, remove the stems, squeeze them dry, and pat the caps dry before searing.' }
+    ],
+    storage: [
+      'Refrigerate fresh shiitakes in a paper bag and use them within 5–7 days.',
+      'Store cooked mushrooms in an airtight container for up to 3 days.',
+      'Reheat in a skillet over medium heat to restore some of their browned texture.',
+      'Freeze reserved stems in a labeled freezer bag for stock.'
+    ],
+    variations: [
+      'Scallion: replace the thyme with rosemary or sliced scallions.',
+      'Ginger: add 1 tsp grated ginger with the garlic.',
+      'Miso: stir in 1 tsp white miso with the soy sauce.',
+      'Toast: serve the finished mushrooms over toast with a poached egg.'
+    ]
   },
   {
-    slug: 'how-to-cook-enoki-mushrooms', mushroomSlug: 'enoki', label: 'Enoki', badge: 'Crisp strands', title: 'How to Cook Enoki Mushrooms: Quick Heat or Foil Bake', description: 'Trim the dense base, separate the enoki strands, and bake them with garlic-soy butter at 400°F for 10 minutes until tender.', minutes: '3 min', updated: '2026-07-10', image: '/images/enoki-garlic-butter-hero.jpg', imageAlt: 'Garlic-butter enoki mushroom clusters with soy and scallions in a skillet', isoTime: 'PT10M', heat: '400°F / 200°C or quick high heat', cut: 'Trimmed strands', finish: 'Garlic soy butter',
-    steps: ['Trim the bottom 1 inch from the root cluster.', 'Separate strands.', 'Wrap in foil with butter, minced garlic, and soy sauce.', 'Bake at 400°F for 10 minutes.'],
-    tips: ['Trim the dense base.', 'Do not overcook; enoki turns limp fast.', 'Small bundles season more evenly.'], pairings: ['hot pot', 'ramen', 'rice', 'foil packets'],
-    sections: [{ heading: 'Foil-baked garlic soy enoki', text: 'Trim the bottom inch away, separate the strands, and seal them in foil with butter, garlic, and soy sauce. Bake at 400°F for 10 minutes.' }]
+    slug: 'how-to-cook-enoki-mushrooms', mushroomSlug: 'enoki', label: 'Enoki', badge: 'Crisp strands', title: 'How to Cook Enoki Mushrooms', description: 'Learn how to cook enoki mushrooms thoroughly in a quick garlic-butter skillet, keeping their long stems tender and their small caps intact.', minutes: '5 min', updated: '2026-07-11', image: '/images/enoki-garlic-butter-hero.jpg', imageAlt: 'Garlic-butter enoki mushroom clusters with soy and scallions in a skillet', isoTime: 'PT7M', prepIsoTime: 'PT8M', heat: 'Medium heat for even cooking without scorching the fine stems', cut: 'Trim off the compact root base and separate into small bundles', finish: 'Garlic butter, soy sauce, rice vinegar, chili flakes, and scallions',
+    recipeName: 'Garlic-Butter Enoki Mushroom Skillet', yieldText: '2 servings',
+    ingredients: [
+      '2 packages fresh enoki mushrooms, 3.5 oz (100 g) each',
+      '1 tbsp (15 ml) neutral oil',
+      '1 tbsp (14 g) unsalted butter',
+      '1 garlic clove (3 g), minced',
+      '1 tbsp (15 ml) soy sauce',
+      '1 tsp (5 ml) rice vinegar',
+      '1 scallion (30 g), thinly sliced',
+      '1/4 tsp red pepper flakes'
+    ],
+    steps: [
+      'Cut away the compact root base from each package. Separate the mushrooms into small bundles, rinse briefly, and dry gently.',
+      'Warm a wide skillet over medium heat. Add the neutral oil.',
+      'Arrange the enoki bundles in the pan. Cook for about 2 minutes, until the bottoms soften and begin to turn lightly golden.',
+      'Turn the bundles with tongs. Cook for 2 to 3 minutes more, until the long stems are fully wilted and hot throughout.',
+      'Lower the heat. Add the butter and garlic, tossing until fragrant, then add soy sauce, rice vinegar, and red pepper flakes and toss gently until the sauce coats the mushrooms.',
+      'Remove from the heat and scatter over the scallion. Serve at once.'
+    ],
+    tips: [
+      'Cut off only the dense root base; trimming too high can make the small caps fall apart.',
+      'Avoid high heat, which can scorch the thin stems before the center is cooked.',
+      'Use tongs or chopsticks to turn the bundles gently instead of stirring them into fragments.'
+    ],
+    pairings: ['steamed rice', 'miso soup', 'grilled salmon', 'lettuce wraps', 'cold soba'],
+    sections: [
+      { heading: 'Enoki’s delicate structure', text: 'Enoki mushrooms have long, slender white stems and tiny rounded caps that grow in dense clusters. Their texture is tender and slightly springy when cooked, so the goal is to soften the stems without burning the caps.' },
+      { heading: 'Cook them thoroughly', text: 'For food safety, cook enoki mushrooms thoroughly rather than serving them raw or undercooked. The finished stems should be fully wilted and hot throughout.' },
+      { heading: 'Keep the bundles manageable', text: 'After trimming the root base, separate the mushrooms into small bundles. This gives the stems contact with the pan while keeping the tiny caps attached.' }
+    ],
+    faqs: [
+      { question: 'Do enoki mushrooms need to be fully cooked?', answer: 'Yes. Cook them until the stems are completely wilted and hot throughout rather than serving them raw or undercooked.' },
+      { question: 'How do I trim enoki mushrooms?', answer: 'Slice off the compact, dense root base, then separate the remaining stems into small bundles.' },
+      { question: 'Why are my enoki mushrooms still crunchy?', answer: 'They need more time in the skillet. Continue cooking until the stems soften and lose their rigid, raw texture.' },
+      { question: 'Are long white stems and tiny caps normal for enoki mushrooms?', answer: 'Yes. Those features are characteristic of cultivated enoki mushrooms.' },
+      { question: 'What can I use instead of enoki mushrooms?', answer: 'Shimeji mushrooms make the closest textural substitute, though they need a longer cooking time and have broader caps.' }
+    ],
+    storage: [
+      'Keep unopened enoki mushrooms refrigerated in their original package and follow the package date.',
+      'Once opened, use them promptly, ideally within 1–2 days.',
+      'Refrigerate cooked leftovers in an airtight container for up to 3 days.',
+      'Discard mushrooms with a sour odor, dark wet patches, or excessive slime.'
+    ],
+    variations: [
+      'Dairy-free: replace the butter with 1 tsp toasted sesame oil.',
+      'Miso: add 1 tsp white miso with the soy sauce.',
+      'Nori: wrap each cooked bundle in a small piece of nori before serving.',
+      'Fuller meal: add sliced tofu for a fuller skillet dish.'
+    ]
   },
   {
-    slug: 'how-to-cook-matsutake-mushrooms', mushroomSlug: 'matsutake', label: 'Matsutake', badge: 'Autumn aroma', title: 'How to Cook Matsutake Mushrooms Without Losing the Aroma', description: 'Matsutake mushrooms have a pungent pine-and-cinnamon aroma that should be protected with gentle steaming.', minutes: '4 min', updated: '2026-07-10', image: '/images/matsutake-butter-soy-hero.jpg', imageAlt: 'Butter-seared matsutake mushroom slices with soy and scallions in a skillet', isoTime: 'PT30M', heat: 'Steam', cut: 'Paper-thin lengthwise slices', finish: 'Dashi, sake, light soy',
-    steps: ['Clean gently.', 'Slice dense stems paper-thin lengthwise.', 'Lay over washed rice with dashi, sake, and light soy sauce.', 'Run the normal rice-cooker steam cycle.'],
-    tips: ['Avoid heavy browning that drives off aroma.', 'Slice thinly to perfume the rice.', 'Simple seasonings work best.'], pairings: ['rice', 'dashi', 'sake', 'light soy'],
-    sections: [{ heading: 'Matsutake rice', text: 'To preserve aromatic oils, slice clean stems paper-thin lengthwise and steam them over rice with dashi broth, sake, and light soy sauce.' }]
+    slug: 'how-to-cook-matsutake-mushrooms', mushroomSlug: 'matsutake', label: 'Matsutake', badge: 'Autumn aroma', title: 'How to Cook Matsutake Mushrooms', description: 'Learn how to cook market-bought matsutake mushrooms with gentle cleaning, a hot pan, and a simple butter-soy finish that keeps their aroma clear.', minutes: '6 min', updated: '2026-07-11', image: '/images/matsutake-butter-soy-hero.jpg', imageAlt: 'Butter-seared matsutake mushroom slices with soy and scallions in a skillet', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high, then medium', cut: 'Wipe clean and slice lengthwise into 1/4-inch pieces', finish: 'Butter, soy sauce, sake, and citrus',
+    recipeName: 'Butter-Seared Matsutake Mushrooms with Soy and Citrus', yieldText: '2 servings',
+    ingredients: [
+      '8 oz (225 g) market-bought matsutake mushrooms, trimmed',
+      '1 tbsp (14 g) unsalted butter',
+      '1 tsp (5 ml) neutral oil',
+      '1 tbsp (15 ml) soy sauce',
+      '2 tsp (10 ml) sake',
+      '1 tsp (5 ml) lemon or yuzu juice',
+      '1 scallion, thinly sliced, about 1 oz (30 g)',
+      '1/4 tsp (1 g) kosher salt'
+    ],
+    steps: [
+      'Trim away the dirty ends and wipe the mushrooms clean. Slice them lengthwise into 1/4-inch pieces so the caps and stems stay intact.',
+      'Heat a wide skillet over medium-high heat. Add the oil. When it shimmers, place the mushrooms in one layer; the pan should give a quiet sizzle.',
+      'Cook without moving for 2 minutes, until the undersides turn golden. Turn the slices and cook for 1 to 2 minutes more, until the stems feel tender but still springy.',
+      'Lower the heat to medium. Add the butter and salt, then spoon the foaming butter over the mushrooms until they smell nutty.',
+      'Add the soy sauce and sake around the mushrooms. Toss for 30 to 45 seconds, just until the liquid lightly coats the slices.',
+      'Remove from the heat. Add the citrus juice and scallion, then serve immediately while the edges are warm and fragrant.'
+    ],
+    tips: [
+      'Do not crowd the skillet; cook in two batches if the slices overlap.',
+      'Keep the slices fairly thick so the mushrooms retain their firm, meaty bite.',
+      'Add the citrus off the heat to keep the finish bright.'
+    ],
+    pairings: ['steamed rice', 'soba noodles', 'miso soup', 'roasted kabocha', 'cucumber salad'],
+    sections: [
+      { heading: 'Why this method works', text: 'Matsutake mushrooms have a firm texture and a strong pine-like aroma. A quick sear gives the edges color without burying their flavor under a heavy sauce.' },
+      { heading: 'Before you start', text: 'Use matsutake mushrooms purchased from a reputable market or produce supplier, or use mushrooms verified by a qualified local expert. Never treat a wild mushroom find as safe based on appearance alone. Wipe the mushrooms with a damp cloth or soft brush instead of soaking them.' }
+    ],
+    faqs: [
+      { question: 'Should matsutake mushrooms be washed?', answer: 'Wipe them with a damp cloth or soft brush. Avoid soaking them, which can make them waterlogged and dilute their aroma.' },
+      { question: 'Do you eat the stems?', answer: 'Yes. Trim away the dirty base, then cook the stems along with the caps.' },
+      { question: 'How do you know when matsutake mushrooms are cooked?', answer: 'They should be hot throughout, lightly browned at the edges, and tender with some springiness in the stems.' },
+      { question: 'Can I use dried matsutake mushrooms?', answer: 'Yes, but rehydrate them according to the package directions and pat them dry before searing. The texture and aroma will differ from fresh mushrooms.' },
+      { question: 'Can I replace sake?', answer: 'Use dry sherry, dry white wine, or an equal amount of water with a small splash of rice vinegar.' }
+    ],
+    storage: [
+      'Refrigerate leftovers in a shallow airtight container within 2 hours.',
+      'Use cooked mushrooms within 3 to 4 days.',
+      'Reheat gently in a skillet over medium heat until hot; avoid prolonged microwaving.',
+      'Keep fresh mushrooms unwashed in a paper bag in the refrigerator and cook them promptly.'
+    ],
+    variations: [
+      'Sesame: replace the citrus with 1 tsp (5 ml) toasted sesame oil added at the end.',
+      'Ginger: add 1 tsp (3 g) grated ginger with the butter.',
+      'Rice bowl: serve over buttered rice with a soft-boiled egg.',
+      'Herbs: finish with minced mitsuba, parsley, or cilantro instead of scallion.'
+    ]
   },
   {
-    slug: 'how-to-cook-shimeji-mushrooms', mushroomSlug: 'shimeji', label: 'Shimeji beech', badge: 'Beech bouquets', title: 'How to Cook Shimeji (Beech) Mushrooms', description: 'Cut away the cluster base and sauté separated shimeji mushrooms in sesame oil over high heat for 5 minutes, until tender and nutty.', minutes: '3 min', updated: '2026-07-10', image: '/images/shimeji-garlic-butter-hero.jpg', imageAlt: 'Golden shimeji mushrooms with garlic butter, soy, and scallions in a skillet', isoTime: 'PT5M', heat: 'High', cut: 'Separated stems', finish: 'Sesame seeds',
-    steps: ['Cut away the thick cluster base.', 'Separate the small stems.', 'Sauté in hot sesame oil over high heat for 5 minutes.', 'Garnish with white sesame seeds.'],
-    tips: ['Do not eat shimeji raw.', 'Cut away the dense base cleanly.', 'High heat removes bitterness.'], pairings: ['rice bowls', 'noodles', 'stir-fries', 'sesame'],
-    sections: [{ heading: 'Sesame sautéed shimeji', text: 'Cut the base away, separate the stems, and toss in hot sesame oil for 5 minutes until the stems soften. Finish with white sesame seeds.' }]
+    slug: 'how-to-cook-shimeji-mushrooms', mushroomSlug: 'shimeji', label: 'Shimeji beech', badge: 'Beech bouquets', title: 'How to Cook Shimeji Mushrooms', description: 'Learn how to cook shimeji mushrooms until their clustered caps turn golden, their stems tender, and their savory flavor fits any weeknight meal.', minutes: '5 min', updated: '2026-07-11', image: '/images/shimeji-garlic-butter-hero.jpg', imageAlt: 'Golden shimeji mushrooms with garlic butter, soy, and scallions in a skillet', isoTime: 'PT10M', prepIsoTime: 'PT8M', heat: 'Medium-high, then medium', cut: 'Trim the clustered base and separate the stems', finish: 'Garlic butter, soy sauce, rice vinegar, and sesame oil',
+    recipeName: 'Golden Garlic-Butter Shimeji Mushrooms', yieldText: '2 servings',
+    ingredients: [
+      '10 oz (280 g) shimeji mushrooms, trimmed',
+      '1 tbsp (15 ml) neutral oil',
+      '1 tbsp (14 g) unsalted butter',
+      '2 garlic cloves (6 g), finely chopped',
+      '1 tbsp (15 ml) soy sauce',
+      '1 tsp (5 ml) rice vinegar',
+      '1 tsp (5 ml) toasted sesame oil',
+      '1 scallion (30 g), sliced'
+    ],
+    steps: [
+      'Trim the base and separate the shimeji into small clusters. Pat them dry; the caps should feel clean and slightly firm.',
+      'Heat a wide skillet over medium-high heat. Add the oil and wait until it shimmers.',
+      'Add the mushrooms in one layer. Cook for 2 minutes without stirring, then toss and cook for another 1 to 2 minutes until the edges are golden and the pan looks mostly dry.',
+      'Lower the heat to medium. Add the butter and garlic. Stir for 30 to 45 seconds, until the garlic smells sweet and the butter lightly foams.',
+      'Add the soy sauce and rice vinegar. Toss for 30 seconds, letting the sauce cling to the caps and stems.',
+      'Turn off the heat and add the sesame oil and scallion. Toss once more, then serve hot.'
+    ],
+    tips: [
+      'Dry shimeji thoroughly so they brown rather than steam.',
+      'Keep the clusters small enough to pick up easily but large enough to retain texture.',
+      'Add sesame oil at the end; high heat can flatten its aroma.'
+    ],
+    pairings: ['jasmine rice', 'udon or ramen', 'grilled chicken', 'seared tofu', 'bok choy'],
+    sections: [
+      { heading: 'Why this method works', text: 'Shimeji mushrooms release moisture as they cook. Starting in a hot, lightly oiled skillet lets that moisture evaporate before the butter and sauce go in, so the caps brown instead of steam.' },
+      { heading: 'Before you start', text: 'Cut away the compact base, then pull the mushrooms into bite-size clusters. A quick rinse is fine if needed, but dry them well before they hit the pan.' }
+    ],
+    faqs: [
+      { question: 'Do I need to remove the base of shimeji mushrooms?', answer: 'Yes. The dense base is fibrous and holds the cluster together. Trim it away, then separate the individual stems or small clusters.' },
+      { question: 'Why are my shimeji mushrooms bitter?', answer: 'Undercooked shimeji can taste bitter or harsh. Cook them until the moisture has evaporated and the caps and stems are tender.' },
+      { question: 'Can I eat shimeji mushrooms raw?', answer: 'Cook shimeji mushrooms before eating. Heat softens their texture and mellows their flavor.' },
+      { question: 'Can I use white and brown shimeji together?', answer: 'Yes. White and brown shimeji can be cooked in the same skillet with the same timing.' },
+      { question: 'What can replace soy sauce?', answer: 'Use tamari for a similar flavor, or use 1/2 tsp salt plus 1 tsp water for a soy-free version.' }
+    ],
+    storage: [
+      'Refrigerate cooked shimeji in a shallow airtight container within 2 hours.',
+      'Use leftovers within 3 to 4 days.',
+      'Reheat in a skillet over medium heat until hot and lightly sizzling.',
+      'Store fresh shimeji unwashed in the refrigerator and trim them just before cooking.'
+    ],
+    variations: [
+      'Spicy: add 1/2 tsp chili flakes with the garlic.',
+      'Creamy: stir in 1 tbsp (15 ml) heavy cream for a creamy skillet sauce.',
+      'Sweet-savory: add 1 tsp (5 ml) maple syrup with the soy sauce.',
+      'Soba bowl: toss the finished mushrooms with cooked soba and sliced cucumber.'
+    ]
   },
   {
-    slug: 'how-to-cook-king-oyster-mushrooms', mushroomSlug: 'king-oyster', label: 'King oyster', badge: 'Flesh density', title: 'How to Cook King Oyster Mushrooms Like Scallops', description: 'Score thick king oyster stem rounds, sear for 3 minutes per side, then baste with garlic butter for a deep golden crust.', minutes: '4 min', updated: '2026-07-10', image: '/images/king-oyster-seared-medallions-hero.jpg', imageAlt: 'Seared king oyster mushroom medallions with garlic butter in a cast-iron skillet', isoTime: 'PT8M', heat: 'High', cut: '1-inch scored rounds', finish: 'Butter and garlic baste',
-    steps: ['Slice stems into 1-inch discs.', 'Score shallow crosshatches on both faces.', 'Sear in hot oil for 3 minutes per side.', 'Add butter and garlic, then baste constantly.'],
-    tips: ['Use the thick white stem for scallop-style rounds.', 'Score lightly; do not cut through.', 'Baste after the crust forms.'], pairings: ['vegan scallops', 'rice', 'noodles', 'garlic butter'],
-    sections: [{ heading: 'Vegan scallop-style sear', text: 'Slice the stem into thick discs, score the faces, sear until deeply golden, then baste with butter and garlic.' }]
+    slug: 'how-to-cook-king-oyster-mushrooms', mushroomSlug: 'king-oyster', label: 'King oyster', badge: 'Flesh density', title: 'How to Cook King Oyster Mushrooms', description: 'Learn how to cook king oyster mushrooms into browned, meaty slices with a crisp edge, tender center, and quick garlic-butter pan sauce.', minutes: '6 min', updated: '2026-07-11', image: '/images/king-oyster-seared-medallions-hero.jpg', imageAlt: 'Seared king oyster mushroom medallions with garlic butter in a cast-iron skillet', isoTime: 'PT14M', prepIsoTime: 'PT10M', heat: 'Medium-high, then medium-low', cut: 'Slice stems into 1-inch medallions and score the cut faces', finish: 'Garlic butter, soy sauce, maple syrup, and black pepper',
+    recipeName: 'Seared King Oyster Mushroom Medallions', yieldText: '2 servings',
+    ingredients: [
+      '1 lb (450 g) king oyster mushrooms',
+      '1 tbsp (15 ml) neutral oil',
+      '1 tbsp (14 g) unsalted butter',
+      '2 garlic cloves (6 g), finely chopped',
+      '1 tbsp (15 ml) soy sauce',
+      '1 tsp (5 ml) maple syrup',
+      '1/2 tsp freshly ground black pepper',
+      '1 tbsp (4 g) chopped parsley'
+    ],
+    steps: [
+      'Wipe the mushrooms clean. Slice the stems into 1-inch medallions and halve the caps if they are large.',
+      'Lightly score a crosshatch pattern on both flat sides of each medallion without cutting all the way through.',
+      'Heat a wide skillet over medium-high heat and add the oil. Place the medallions cut-side down and cook for 2 minutes, until the bottoms are deeply golden.',
+      'Turn the medallions, add the caps, and cook for 2 minutes more. The centers should feel tender when pressed with a spatula.',
+      'Lower the heat to medium-low. Add the butter and garlic, then baste for 30 to 45 seconds until the butter smells nutty and the garlic is pale gold.',
+      'Stir the soy sauce and maple syrup together, pour them into the skillet, and toss for 30 seconds. Add black pepper and parsley, then serve.'
+    ],
+    tips: [
+      'Leave space between the medallions so their cut faces can brown.',
+      'Press the slices gently with a spatula for even contact, but do not flatten them.',
+      'Add the sweet soy mixture at the end to prevent it from burning.'
+    ],
+    pairings: ['creamy polenta', 'steamed rice', 'mashed potatoes', 'charred broccolini', 'green salad'],
+    sections: [
+      { heading: 'Why this method works', text: 'King oyster stems are dense and hold their shape when sliced thickly. Scoring the cut faces creates more surface area for browning and lets the pan sauce settle into the ridges.' },
+      { heading: 'Before you start', text: 'Wipe the mushrooms clean and trim only the dry ends. Save the caps for the skillet, too; they cook faster, so add them after the thicker stem pieces.' }
+    ],
+    faqs: [
+      { question: 'Do you eat the caps of king oyster mushrooms?', answer: 'Yes. The caps are edible and can be cooked with the thicker stems. Add them a little later because they soften faster.' },
+      { question: 'How thick should king oyster mushroom slices be?', answer: 'Cut the stems into slices about 1 inch thick. This gives the outside time to brown while the center stays tender.' },
+      { question: 'Why are my king oyster mushrooms watery?', answer: 'The pan may be crowded or not hot enough. Cook in batches if needed and wait until the oil shimmers before adding the mushrooms.' },
+      { question: 'Can I grill king oyster mushrooms?', answer: 'Yes. Brush thick slices with oil and grill over medium-high heat for about 3 to 4 minutes per side, then add the sauce after grilling.' },
+      { question: 'What can replace maple syrup?', answer: 'Use honey, brown sugar, or 1 tsp (5 ml) mirin.' }
+    ],
+    storage: [
+      'Refrigerate cooked mushrooms in a shallow airtight container within 2 hours.',
+      'Use leftovers within 3 to 4 days.',
+      'Reheat in a lightly oiled skillet over medium heat to restore the browned edges.',
+      'Store fresh king oyster mushrooms in a paper bag in the refrigerator and wipe them clean before slicing.'
+    ],
+    variations: [
+      'Lemon-herb: replace the soy-maple finish with lemon juice and chopped parsley.',
+      'Smoky: add 1/2 tsp smoked paprika to the black pepper.',
+      'Miso butter: brush the cooked medallions with 1 tbsp butter mashed with 1 tsp white miso.',
+      'Sandwich: serve the medallions in toasted buns with shredded cabbage and pickles.'
+    ]
   },
   {
-    slug: 'how-to-cook-paddy-straw-mushrooms', mushroomSlug: 'paddy-straw', label: 'Paddy straw', badge: 'Broth catchers', title: 'How to Cook Paddy Straw Mushrooms in Broths', description: 'Halve market-bought paddy straw mushrooms and simmer them in broth for 5–8 minutes, until the egg-shaped caps are tender and velvety.', minutes: '3 min', updated: '2026-07-10', image: '/images/paddy-straw-ginger-garlic-stir-fry-hero.jpg', imageAlt: 'Paddy straw mushroom stir-fry with ginger, garlic, lime, and cilantro in a wok', isoTime: 'PT8M', heat: 'Simmer', cut: 'Halved if large', finish: 'Broth seasoning',
-    steps: ['Use verified edible paddy straw mushrooms.', 'Halve larger egg-stage mushrooms.', 'Simmer briefly in Southeast Asian broths.', 'Serve when velvety and filled with broth.'],
-    tips: ['Immature wild look-alikes can resemble deadly Amanita species.', 'Never forage look-alikes without expert authentication.', 'Best used in broth rather than hard searing.'], pairings: ['tom yum', 'clear broths', 'curries', 'noodles'],
-    sections: [{ heading: 'Wild warning', quote: 'In the field, immature wild straw mushrooms look nearly identical to deadly Death Cap mushrooms. Never forage look-alikes without expert authentication.' }]
+    slug: 'how-to-cook-paddy-straw-mushrooms', mushroomSlug: 'paddy-straw', label: 'Paddy straw', badge: 'Broth catchers', title: 'How to Cook Paddy Straw Mushrooms', description: 'Learn how to cook market-bought paddy straw mushrooms safely in a fast ginger-garlic stir-fry with tender centers and a glossy savory sauce.', minutes: '6 min', updated: '2026-07-11', image: '/images/paddy-straw-ginger-garlic-stir-fry-hero.jpg', imageAlt: 'Paddy straw mushroom stir-fry with ginger, garlic, lime, and cilantro in a wok', isoTime: 'PT8M', prepIsoTime: 'PT10M', heat: 'High', cut: 'Halve large mushrooms; leave small mushrooms whole', finish: 'Soy sauce, lime juice, and fresh cilantro',
+    recipeName: 'Ginger-Garlic Paddy Straw Mushroom Stir-Fry', yieldText: '2 servings',
+    ingredients: [
+      '14 oz (400 g) market-bought paddy straw mushrooms, fresh or drained canned',
+      '1 tbsp (15 ml) neutral oil',
+      '2 garlic cloves (6 g), finely chopped',
+      '1 tbsp (15 g) fresh ginger, finely grated',
+      '1/2 red bell pepper, thinly sliced, about 3 oz (85 g)',
+      '1 tbsp (15 ml) soy sauce',
+      '1 tsp (5 ml) fresh lime juice',
+      '2 tbsp (8 g) chopped cilantro'
+    ],
+    steps: [
+      'Prepare the mushrooms. Halve large fresh or canned mushrooms and leave small ones whole. Pat canned mushrooms dry so they do not flood the wok.',
+      'Heat a wok or wide skillet over high heat. Add the oil and wait until it shimmers.',
+      'Add the ginger and garlic. Stir for 20 to 30 seconds, until fragrant but not browned.',
+      'Add the bell pepper and stir-fry for 1 minute, keeping it bright and slightly crisp.',
+      'Add the mushrooms and soy sauce. Toss for 2 to 3 minutes, until the mushrooms are hot, tender, and coated in a glossy sauce.',
+      'Turn off the heat. Add the lime juice and cilantro, toss once, and serve immediately.'
+    ],
+    tips: [
+      'Dry canned mushrooms thoroughly before stir-frying.',
+      'Keep the pan wide and hot so the mushrooms heat quickly instead of simmering.',
+      'Add lime juice after cooking for a cleaner, fresher finish.'
+    ],
+    pairings: ['jasmine rice', 'rice noodles', 'coconut rice', 'stir-fried greens', 'cucumber salad'],
+    sections: [
+      { heading: 'Safety and preparation', text: 'Use paddy straw mushrooms purchased from a reputable market or supplier, or mushrooms verified by a qualified local expert. Never treat a wild mushroom find as safe based on appearance alone. If using canned mushrooms, drain and rinse them well. If using fresh market mushrooms, wipe them clean and halve any large ones.' },
+      { heading: 'Wild warning', quote: 'In the field, immature wild straw mushrooms look nearly identical to deadly Death Cap mushrooms. Never forage look-alikes without expert authentication.' },
+      { heading: 'Why this method works', text: 'Paddy straw mushrooms are delicate and cook quickly. High heat keeps the stir-fry lively while the ginger, garlic, and soy sauce give the mild mushrooms a clear savory finish.' }
+    ],
+    faqs: [
+      { question: 'Should paddy straw mushrooms be washed?', answer: 'Rinse canned paddy straw mushrooms and pat them dry. For fresh market mushrooms, wipe them clean or rinse briefly, then dry them thoroughly.' },
+      { question: 'Can I eat paddy straw mushrooms raw?', answer: 'Cook paddy straw mushrooms before eating. This recipe heats them fully and softens their texture.' },
+      { question: 'Can I use canned paddy straw mushrooms?', answer: 'Yes. Drain, rinse, and pat them dry before adding them to the hot pan. They need only a few minutes to heat through.' },
+      { question: 'How do I cut paddy straw mushrooms?', answer: 'Leave small mushrooms whole and halve larger ones from top to bottom. This keeps the pieces substantial without making them difficult to eat.' },
+      { question: 'How do I know when they are done?', answer: 'They should be hot throughout, tender in the center, and evenly coated with the sauce. Fresh mushrooms should no longer look raw at the center.' }
+    ],
+    storage: [
+      'Refrigerate cooked mushrooms in a shallow airtight container within 2 hours.',
+      'Use leftovers within 3 to 4 days.',
+      'Reheat in a hot skillet until steaming and hot throughout.',
+      "Refrigerate opened canned mushrooms in a covered container and follow the can's storage guidance."
+    ],
+    variations: [
+      'Thai chili: add 1 sliced Thai chili with the ginger and garlic.',
+      'Snow peas: replace the bell pepper with snow peas or thinly sliced green beans.',
+      'Coconut: stir in 2 tbsp (30 ml) coconut milk at the end for a softer sauce.',
+      'Sesame-scallion: finish with 1 tsp (5 ml) toasted sesame oil and sliced scallions instead of cilantro.'
+    ]
   },
   {
-    slug: 'how-to-cook-cremini-mushrooms', mushroomSlug: 'cremini', label: 'Cremini', badge: 'Kitchen staple', title: 'How to Cook Cremini Mushrooms: Everyday Roasting', description: 'Toss whole cremini mushrooms with olive oil, balsamic, and thyme, then roast at 400°F for 20 minutes until browned and concentrated.', minutes: '3 min', updated: '2026-07-10', image: '/images/cookmushroom-cremini-skillet-hero.jpg', imageAlt: 'Golden-brown cremini mushrooms with garlic, thyme, and lemon in a skillet', isoTime: 'PT20M', heat: '400°F / 200°C', cut: 'Whole caps', finish: 'Balsamic and thyme',
-    steps: ['Toss whole cremini caps with olive oil.', 'Add balsamic vinegar and thyme.', 'Spread across a tray.', 'Bake at 400°F for 20 minutes.'],
-    tips: ['Roasting concentrates flavor.', 'Do not crowd the tray.', 'Use balsamic lightly so the mushrooms still brown.'], pairings: ['steak', 'pasta', 'toast', 'grain bowls'],
-    sections: [{ heading: 'Everyday roasted cremini', text: 'Toss whole caps with olive oil, balsamic vinegar, and thyme. Roast at 400°F for 20 minutes to evaporate moisture and concentrate the flavor.' }]
+    slug: 'how-to-cook-cremini-mushrooms', mushroomSlug: 'cremini', label: 'Cremini', badge: 'Kitchen staple', title: 'How to Cook Cremini Mushrooms', description: 'Learn how to cook cremini mushrooms until browned and juicy, with garlic, thyme, and a quick pan finish for weeknight meals.', minutes: '4 min', updated: '2026-07-11', image: '/images/cookmushroom-cremini-skillet-hero.jpg', imageAlt: 'Golden-brown cremini mushrooms with garlic, thyme, and lemon in a skillet', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high skillet heat, then medium for the aromatics', cut: 'Halve small mushrooms and quarter large ones', finish: 'Lemon juice, parsley, and a final pinch of salt',
+    recipeName: 'Garlic-Butter Skillet Cremini Mushrooms', yieldText: '4 servings',
+    ingredients: [
+      '1 lb (454 g) cremini mushrooms',
+      '2 tbsp (30 ml) olive oil',
+      '2 tbsp (28 g) unsalted butter',
+      '3 garlic cloves (9 g), thinly sliced',
+      '1 tsp (5 g) kosher salt',
+      '1/2 tsp freshly ground black pepper',
+      '1 tsp fresh thyme leaves',
+      '1 tbsp (15 ml) lemon juice',
+      '2 tbsp (8 g) chopped fresh parsley'
+    ],
+    steps: [
+      'Wipe the mushrooms clean, trim the ends, and halve or quarter them. Pat them dry so they sear instead of steam.',
+      'Warm the olive oil in a wide skillet over medium-high heat until it shimmers.',
+      'Add the mushrooms in a single layer. Cook undisturbed for 2 minutes, then toss every 30–60 seconds until the edges are golden and the released moisture has cooked away.',
+      'Add the butter, salt, pepper, and thyme. Toss until the mushrooms look glossy and lightly browned.',
+      'Stir in the sliced garlic and cook just until fragrant, keeping it pale rather than brown.',
+      'Remove from the heat and toss with lemon juice and parsley. Taste and adjust the salt before serving.'
+    ],
+    tips: [
+      'Use the widest skillet available so the mushrooms remain in contact with the hot surface.',
+      'Salt after the mushrooms begin to brown for a firmer texture and deeper color.',
+      'Add garlic near the end; early garlic can burn before the mushrooms finish cooking.'
+    ],
+    pairings: ['creamy polenta', 'buttered noodles', 'grilled sourdough', 'roast chicken or steak', 'arugula salad'],
+    sections: [
+      { heading: 'Why this method works', text: 'Cremini mushrooms brown best when they have room in the pan. A hot skillet drives off moisture first, then creates a savory golden crust.' },
+      { heading: 'Before you start', text: 'Wipe the mushrooms clean with a damp towel and trim only the dry ends. Avoid crowding the pan; cook in two batches if needed.' }
+    ],
+    faqs: [
+      { question: 'Should cremini mushrooms be washed?', answer: 'Yes, they may be rinsed briefly if needed, but dry them thoroughly before cooking. A damp towel is usually enough for lightly soiled mushrooms.' },
+      { question: 'Why are my mushrooms watery?', answer: 'The pan is probably crowded or not hot enough. Cook in batches and let the moisture evaporate before adding butter.' },
+      { question: 'Do cremini mushrooms need to be peeled?', answer: 'No. Clean them, trim the dry stem ends, and leave the caps intact.' },
+      { question: 'Can I use dried thyme?', answer: 'Yes. Use 1/3 tsp dried thyme instead of 1 tsp fresh.' },
+      { question: 'How do I know when they are done?', answer: 'They are ready when tender throughout, browned at the edges, and no longer releasing a large amount of liquid.' }
+    ],
+    storage: [
+      'Refrigerate cooled mushrooms in a covered container for up to 3 days.',
+      'Reheat in a skillet over medium heat until hot and lightly crisped.',
+      'Avoid sealing them while warm, which can create excess condensation.',
+      'Freeze only if texture is secondary; thawed mushrooms will be softer.'
+    ],
+    variations: [
+      'Balsamic finish: add 1 tsp balsamic vinegar with the lemon juice.',
+      'Chili-garlic: add 1/4 tsp crushed red pepper with the butter.',
+      'Creamy skillet: stir in 1/4 cup (60 ml) heavy cream after the garlic cooks.',
+      'Soy-sesame: replace half the salt with 1 tsp soy sauce and finish with 1 tsp toasted sesame oil.'
+    ]
   },
   {
-    slug: 'how-to-prepare-chaga', mushroomSlug: 'chaga', label: 'Chaga', badge: 'Functional herb', title: 'How to Prepare Chaga: Tea and Tonic Basics', description: 'Chaga is woody and rock-hard, so it is prepared as a long-simmered tonic rather than eaten like a mushroom.', minutes: '3 min', updated: '2026-07-10', image: '/images/cookmushroom-chaga-orange-infusion-hero.jpg', imageAlt: 'Chaga culinary infusion with dried chaga, cinnamon, and orange peel', isoTime: 'PT45M', heat: 'Low simmer', cut: 'Crushed powder or chunks', finish: 'Dark tonic',
-    steps: ['Crush chaga into powder or small chunks.', 'Add 2 tablespoons to 4 cups water.', 'Simmer over low heat for 45 minutes.', 'Drink when the water turns dark and vanilla-hinted.'],
-    tips: ['Chaga is not sautéed or chewed.', 'Use hot water extraction.', 'Harvest responsibly from birch only when properly identified.'], pairings: ['tea', 'tonics', 'vanilla', 'warming spices'],
-    sections: [{ heading: 'Chaga tonic', text: 'Because chaga is woody and hard, simmer 2 tablespoons of crushed chaga in 4 cups of water for 45 minutes until the water turns into a dark tonic.' }]
+    slug: 'how-to-prepare-chaga', mushroomSlug: 'chaga', label: 'Chaga', badge: 'Functional herb', title: 'How to Prepare Chaga', description: 'Prepare dried chaga as a simple, low-simmer culinary infusion with clear timing, gentle heat, and practical storage guidance.', minutes: '5 min', updated: '2026-07-11', image: '/images/cookmushroom-chaga-orange-infusion-hero.jpg', imageAlt: 'Chaga culinary infusion with dried chaga, cinnamon, and orange peel', isoTime: 'PT50M', prepIsoTime: 'PT5M', heat: 'Gentle simmer, 185–195°F / 85–91°C; avoid a rolling boil', cut: 'Use small dried pieces as supplied; do not pulverize woody pieces', finish: 'Strain completely, then add optional maple syrup and salt',
+    recipeName: 'Cinnamon-Orange Chaga Infusion', yieldText: '4 cups',
+    ingredients: [
+      '1 oz (28 g) dried chaga pieces',
+      '4 cups (946 ml) filtered water',
+      '1 cinnamon stick (about 3 g)',
+      '2 wide strips orange peel (about 4 g)',
+      '1 tsp (5 ml) maple syrup, optional',
+      '1/8 tsp fine sea salt, optional'
+    ],
+    steps: [
+      'Check the dried pieces for loose debris and brush or rinse them briefly. Drain well.',
+      'Place the chaga, water, cinnamon stick, and orange peel in a saucepan.',
+      'Warm over medium heat until the liquid begins to steam and small bubbles form around the edge, about 8 minutes.',
+      'Reduce the heat to low. Keep the infusion gently simmering for about 40 minutes, until it turns deep amber-brown and smells woody with citrus.',
+      'Pour through a fine-mesh strainer into a heatproof jug, removing all solid pieces.',
+      'Stir in maple syrup and salt, if using. Serve warm or cool the infusion before refrigerating.'
+    ],
+    tips: [
+      'Keep the lid slightly ajar so the liquid reduces slowly without becoming concentrated too quickly.',
+      'Use a fine strainer or coffee filter if small particles pass through the first straining.',
+      'Add sweetener after straining so you can adjust the flavor without masking the infusion’s aroma.'
+    ],
+    pairings: ['oat biscuits', 'rye toast', 'pear compote', 'dark chocolate cake', 'rice pudding'],
+    sections: [
+      { heading: 'What to expect', text: 'Chaga produces a dark amber-brown infusion with a woody aroma and a mild, earthy flavor. Cinnamon and orange peel give the finished drink a warmer, brighter profile. This guide covers culinary preparation only. Use dried chaga that is labeled and sold for culinary use; strain and discard the woody pieces rather than chewing them.' },
+      { heading: 'Gentle heat matters', text: 'A low simmer extracts color and flavor without aggressively boiling the liquid. Keep the surface just active enough to show occasional small bubbles.' }
+    ],
+    faqs: [
+      { question: 'Does chaga need to be boiled?', answer: 'No. A gentle simmer is sufficient for this culinary infusion and helps preserve a clean, rounded flavor.' },
+      { question: 'How long should chaga simmer?', answer: 'Simmer dried pieces for about 40–50 minutes, or until the liquid is deeply colored and aromatic.' },
+      { question: 'Can I eat the prepared chaga pieces?', answer: 'No. Treat them as woody infusion material: strain them out and discard them rather than chewing them.' },
+      { question: 'Can I use powdered chaga?', answer: 'Use only a product labeled for culinary preparation and follow its package directions. Powder can pass through a standard strainer, so filter it carefully.' },
+      { question: 'Can the infusion be sweetened?', answer: 'Yes. Add maple syrup, honey, or another sweetener after straining and adjust to taste.' }
+    ],
+    storage: [
+      'Refrigerate the strained infusion in a covered container for up to 3 days.',
+      'Cool it promptly before sealing and refrigerating.',
+      'Reheat gently in a saucepan or microwave; do not boil it hard.',
+      'Discard if it develops an off smell, unusual cloudiness, or visible spoilage.'
+    ],
+    variations: [
+      'Ginger-orange: add 1 oz (28 g) sliced fresh ginger with the chaga.',
+      'Apple-spice: add 1/2 cup thinly sliced apple and a pinch of ground clove.',
+      'Vanilla-cinnamon: add 1/2 tsp vanilla extract after straining.',
+      'Unsweetened citrus: omit maple syrup and add 1 tsp fresh orange juice to each serving.'
+    ]
   },
   {
-    slug: 'how-to-prepare-reishi-mushrooms', mushroomSlug: 'reishi', label: 'Reishi', badge: 'Wellness tonic', title: 'How to Prepare Reishi Mushrooms (Tea and Tincture)', description: 'Slice verified reishi thinly and prepare it as a long-simmered tea or dual extraction; the tough, bitter mushroom is not sautéed for eating.', minutes: '4 min', updated: '2026-07-10', image: '/images/cookmushroom-reishi-ginger-infusion-hero.jpg', imageAlt: 'Reishi culinary infusion with dried reishi, ginger, and orange peel', isoTime: 'PT2H', heat: 'Long simmer', cut: 'Thin slices', finish: 'Dual extraction',
-    steps: ['Slice reishi thinly.', 'Simmer in water for hours.', 'Infuse in high-proof spirits for about a month.', 'Combine extracts according to your tincture ratio.'],
-    tips: ['Do not try to sauté reishi for eating.', 'Water extracts water-soluble compounds.', 'Alcohol extracts triterpenes.'], pairings: ['tea', 'tinctures', 'bitter tonics'],
-    sections: [{ heading: 'Dual extraction', text: 'Reishi is simmered in water for hours for water-soluble compounds and infused in high-proof spirits for about a month for triterpenes.' }]
+    slug: 'how-to-prepare-reishi-mushrooms', mushroomSlug: 'reishi', label: 'Reishi', badge: 'Wellness tonic', title: 'How to Prepare Reishi Mushrooms', description: 'Prepare dried reishi as a measured, low-simmer culinary infusion with gentle heat, clear timing, and storage guidance.', minutes: '5 min', updated: '2026-07-11', image: '/images/cookmushroom-reishi-ginger-infusion-hero.jpg', imageAlt: 'Reishi culinary infusion with dried reishi, ginger, and orange peel', isoTime: 'PT1H', prepIsoTime: 'PT5M', heat: 'Low simmer, 185–195°F / 85–91°C; avoid a rolling boil', cut: 'Use dried slices as supplied, or split large pieces with kitchen shears', finish: 'Strain fully, then balance the bitterness with ginger, citrus, or sweetener',
+    recipeName: 'Ginger-Citrus Reishi Infusion', yieldText: '4 cups',
+    ingredients: [
+      '1 oz (28 g) dried reishi slices or pieces',
+      '4 cups (946 ml) filtered water',
+      '1 oz (28 g) fresh ginger, thinly sliced',
+      '1 cinnamon stick (about 3 g)',
+      '2 wide strips orange peel (about 4 g)',
+      '1 tbsp brown sugar or maple syrup',
+      '1/8 tsp fine sea salt'
+    ],
+    steps: [
+      'Brush away loose debris from the dried reishi and rinse briefly only if needed. Drain it well.',
+      'If the pieces are large, split them into smaller sections with kitchen shears. Do not grind them into powder.',
+      'Add the reishi, water, ginger, cinnamon, and orange peel to a saucepan.',
+      'Warm over medium heat until steam rises and small bubbles appear around the edge, about 8 minutes.',
+      'Reduce to low and simmer gently for about 50 minutes, until the liquid is deep brown and smells woody, spicy, and citrusy.',
+      'Strain through a fine-mesh sieve. Stir in the sugar or syrup and salt while warm, then taste before serving.'
+    ],
+    tips: [
+      'Expect a bitter note; use citrus, ginger, or sweetener to shape the final flavor rather than trying to remove it.',
+      'Keep the liquid below a rolling boil to avoid excessive reduction.',
+      'Strain twice if the dried material is crumbly or produces fine particles.'
+    ],
+    pairings: ['ginger biscuits', 'sesame shortbread', 'poached pear', 'rice pudding', 'citrus cake'],
+    sections: [
+      { heading: 'Flavor and texture', text: 'Reishi creates a dark, woody infusion with a pronounced bitter finish. Ginger, cinnamon, and orange peel add warmth and fragrance without requiring a complicated preparation. This guide covers culinary preparation only. Use dried reishi that is labeled and sold for culinary use; strain and discard the woody pieces rather than chewing them.' },
+      { heading: 'Keep the process gentle', text: 'A low simmer is easier to control than a hard boil and gives the liquid time to develop color. Keep the saucepan uncovered or partly covered so you can monitor the heat.' }
+    ],
+    faqs: [
+      { question: 'How long should reishi simmer?', answer: 'Simmer dried reishi for about 50–60 minutes, or until the infusion is dark and aromatic.' },
+      { question: 'Does reishi need to boil?', answer: 'No. A low simmer is enough for this culinary preparation and produces a more controlled reduction.' },
+      { question: 'Can I eat the reishi pieces after simmering?', answer: 'No. Strain them out and discard them because the pieces remain woody and tough.' },
+      { question: 'How can I balance the bitter flavor?', answer: 'Add ginger, orange peel, a small amount of brown sugar or maple syrup, or a pinch of salt after straining.' },
+      { question: 'Can I prepare it ahead?', answer: 'Yes. Strain the infusion, cool it promptly, and refrigerate it in a covered container for up to 3 days.' }
+    ],
+    storage: [
+      'Refrigerate the strained infusion in a covered container for up to 3 days.',
+      'Do not store the liquid with the reishi pieces still submerged.',
+      'Reheat gently until warm, avoiding a hard boil.',
+      'Discard if the infusion develops an off smell, unusual cloudiness, or visible spoilage.'
+    ],
+    variations: [
+      'Cardamom-citrus: add 3 lightly crushed cardamom pods with the cinnamon.',
+      'Apple-ginger: add 1/2 cup sliced apple during the simmer.',
+      'Vanilla-orange: stir in 1/2 tsp vanilla extract after straining.',
+      'Cocoa-spice: add 1 tsp unsweetened cocoa powder and a pinch of cinnamon after straining.'
+    ]
   },
   {
-    slug: 'how-to-use-truffles', mushroomSlug: 'truffles', label: 'Truffles', badge: 'Gourmet luxury', title: 'How to Use Truffles: Buying, Shaving, Serving', description: 'Shave fresh truffles paper-thin over warm buttered pasta, risotto, or eggs at serving time so their volatile aroma reaches the plate.', minutes: '3 min', updated: '2026-07-10', image: '/images/cookmushroom-truffle-buttered-pasta-hero.jpg', imageAlt: 'Fresh truffle shavings over buttered tagliatelle with Parmesan', isoTime: 'PT1M', heat: 'No direct heat', cut: 'Paper-thin shavings', finish: 'Warm pasta or risotto',
-    steps: ['Keep truffles cool and aromatic.', 'Do not heat white truffles directly.', 'Use a truffle razor or shaver.', 'Shave paper-thin slices over warm buttered pasta or risotto right before serving.'],
-    tips: ['White truffles should never be cooked.', 'Warm food releases aroma without destroying it.', 'A little goes a long way.'], pairings: ['buttered pasta', 'risotto', 'eggs', 'cream sauces'],
-    sections: [{ heading: 'Use truffles without killing the aroma', text: 'Truffle aromatics are volatile. White truffles should never be heated; shave them raw over warm buttered pasta or risotto at the last moment.' }]
+    slug: 'how-to-use-truffles', mushroomSlug: 'truffles', label: 'Truffles', badge: 'Gourmet luxury', title: 'How to Use Truffles at the Table', description: 'Use truffles with restraint: warm a simple buttered pasta, then add shavings at the table so their aroma stays vivid.', minutes: '5 min', updated: '2026-07-11', image: '/images/cookmushroom-truffle-buttered-pasta-hero.jpg', imageAlt: 'Fresh truffle shavings over buttered tagliatelle with Parmesan', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high for the pasta water, then low for the butter sauce', cut: 'Shave the truffle paper-thin just before serving', finish: 'Add the truffle off heat so its aroma blooms over the warm dish',
+    recipeName: 'Fresh Truffle Buttered Pasta', yieldText: '4 servings',
+    ingredients: [
+      '12 oz (340 g) tagliatelle or fettuccine',
+      '2 tbsp (28 g) unsalted butter',
+      '1 tbsp (15 ml) extra-virgin olive oil',
+      '1/2 cup (120 ml) reserved pasta water',
+      '1 oz (28 g) finely grated Parmigiano-Reggiano',
+      '1 small fresh truffle, 1/2–1 oz (15–30 g)',
+      '1/2 tsp fine sea salt for the pasta water',
+      '1/4 tsp freshly ground black pepper'
+    ],
+    steps: [
+      'Gently brush the truffle clean, pat it dry, and keep it whole until the pasta is nearly ready.',
+      'Bring a large pot of salted water to a boil. Cook the pasta until just tender, following the package timing.',
+      'Scoop out 1/2 cup of pasta water, then drain the pasta.',
+      'Melt the butter with the olive oil in a skillet over low heat. Add the pasta and enough reserved water to make a glossy coating.',
+      'Remove from the heat. Toss with the Parmigiano-Reggiano and black pepper until smooth and lightly creamy.',
+      'Divide among warm plates and shave the truffle paper-thin over each portion. Serve immediately while the heat carries the aroma upward.'
+    ],
+    tips: [
+      'Shave the truffle at the last possible moment for the clearest aroma.',
+      'Use warm plates so the pasta stays hot without requiring extra cooking.',
+      'Add truffle shavings off heat; prolonged high heat can flatten their aroma.'
+    ],
+    pairings: ['soft scrambled eggs', 'creamy polenta', 'roasted potatoes', 'buttered asparagus', 'grilled sourdough'],
+    sections: [
+      { heading: 'Use truffles at the finish', text: 'Truffles are most expressive when shaved over a hot but finished dish. The warmth releases their serving aroma without subjecting the delicate shavings to prolonged cooking.' },
+      { heading: 'Keep the base simple', text: 'Butter, pasta water, and hard cheese create a glossy background that carries the truffle without competing with it. Serve immediately after shaving.' }
+    ],
+    faqs: [
+      { question: 'Should truffles be cooked?', answer: 'No. Add fresh shavings off heat, directly over the warm finished dish.' },
+      { question: 'How much truffle should I use?', answer: 'Use about 1/2–1 oz (15–30 g) for four servings, adjusting for the truffle’s aroma and your preference.' },
+      { question: 'How thin should truffle slices be?', answer: 'Shave them paper-thin so the warm pasta can release their aroma evenly.' },
+      { question: 'Can I use truffle oil instead?', answer: 'Yes. Add a few drops after plating, but expect a different flavor and aroma from fresh truffle shavings.' },
+      { question: 'When should truffle pasta be served?', answer: 'Serve it immediately after shaving because the aroma is strongest while the pasta is hot.' }
+    ],
+    storage: [
+      'Store an uncut fresh truffle wrapped in a dry paper towel inside a covered container in the refrigerator.',
+      'Change the paper towel daily and use the truffle as soon as practical.',
+      'Refrigerate leftover pasta in a covered container for up to 2 days.',
+      'Reheat leftover pasta gently with a splash of water; add any fresh truffle only after reheating.'
+    ],
+    variations: [
+      'Truffle eggs: shave truffle over soft scrambled eggs just before serving.',
+      'Truffle polenta: spoon hot polenta into bowls and finish with butter, cheese, and thin shavings.',
+      'Truffle potatoes: add shavings to hot roasted or mashed potatoes off heat.',
+      'Truffle mushroom toast: spoon sautéed mushrooms onto toast and shave truffle over the top at the table.'
+    ]
   },
-  { slug: 'how-to-cook-portobello-mushrooms', mushroomSlug: 'portobello', label: 'Portobello', title: 'How to Cook Portobello Mushrooms', description: 'Grill or pan-sear portobello caps for 4–6 minutes per side, or roast at 425°F for 15–20 minutes, until flexible and browned.', minutes: '4 min', updated: '2026-07-10', image: '/images/cookmushroom-portobello-grill-hero.jpg', imageAlt: 'Balsamic-grilled portobello mushroom caps with lemon and garlic', isoTime: 'PT20M', heat: 'Medium-high or 425°F', cut: 'Whole caps or slices', finish: 'Rest before slicing', steps: ['Remove the stem. Scrape dark gills only if you want a cleaner-looking dish.', 'Brush with oil, salt, pepper, and a small splash of balsamic or soy sauce.', 'Grill or pan sear 4–6 minutes per side, or roast at 425°F / 220°C for 15–20 minutes.', 'Rest 2 minutes before slicing so juices settle.'], tips: ['Do not over-marinate; portobellos soak up liquid fast.', 'Cook cap side down first for a flatter sear.', 'Use as a burger only after cooking off moisture.'], pairings: ['burgers', 'sandwiches', 'salads', 'polenta'] }
+  {
+    slug: 'how-to-cook-portobello-mushrooms', mushroomSlug: 'portobello', label: 'Portobello', title: 'How to Cook Portobello Mushrooms', description: 'Cook portobello mushrooms until tender and browned, using a savory marinade, high heat, and a clean finish for plates or buns.', minutes: '5 min', updated: '2026-07-11', image: '/images/cookmushroom-portobello-grill-hero.jpg', imageAlt: 'Balsamic-grilled portobello mushroom caps with lemon and garlic', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high grill or grill pan, 425–450°F / 220–230°C', cut: 'Keep the caps whole for cooking; slice after resting if serving in strips', finish: 'Lemon juice and pan juices, served whole or in thick slices',
+    recipeName: 'Balsamic-Grilled Portobello Caps', yieldText: '4 servings',
+    ingredients: [
+      '4 large portobello mushroom caps, about 1 1/4 lb (567 g)',
+      '3 tbsp (45 ml) olive oil',
+      '2 tbsp (30 ml) balsamic vinegar',
+      '1 tbsp (15 ml) soy sauce or tamari',
+      '2 garlic cloves (6 g), finely grated',
+      '1 tbsp (15 g) Dijon mustard',
+      '1/2 tsp (2.5 g) kosher salt',
+      '1/2 tsp freshly ground black pepper',
+      '1 tbsp (15 ml) lemon juice'
+    ],
+    steps: [
+      'Wipe the caps clean, remove the stems, and scrape out the gills if desired. Keep the caps whole and pat them dry.',
+      'Whisk the olive oil, balsamic vinegar, soy sauce, garlic, Dijon, salt, and pepper. Brush over both sides of the caps and let them stand for 10 minutes.',
+      'Preheat a grill or grill pan to medium-high, approximately 425–450°F / 220–230°C. The surface should be hot enough to sizzle on contact.',
+      'Place the caps gill-side down. Cook for about 5 minutes, until grill marks appear and the edges begin to soften.',
+      'Turn the caps and cook for 4 to 6 minutes more, until tender, browned, and slightly glossy from the marinade. Avoid pressing out the juices.',
+      'Rest the mushrooms for 2 minutes, then drizzle with lemon juice. Serve whole or slice into thick strips.'
+    ],
+    tips: [
+      'Brush on the marinade instead of leaving the caps submerged; excess liquid can prevent browning.',
+      'Cook gill-side down first to help the caps hold their shape.',
+      'Let the mushrooms rest before slicing so their juices stay in the cap.'
+    ],
+    pairings: ['brioche buns', 'herbed couscous', 'grilled asparagus', 'arugula salad', 'roasted potatoes'],
+    sections: [
+      { heading: 'Make portobellos tender and flavorful', text: 'Portobello caps have a meaty texture and absorb marinades quickly. High heat browns the surface while keeping the center juicy.' },
+      { heading: 'Prepare the caps carefully', text: 'Wipe the caps clean rather than soaking them. Remove the stems, and scrape out the dark gills only if you prefer a cleaner-looking marinade and lighter-colored juices.' }
+    ],
+    faqs: [
+      { question: 'Should portobello gills be removed?', answer: 'No. They are edible, but removing them gives the finished dish a cleaner appearance and lighter-colored juices.' },
+      { question: 'How long should portobello mushrooms marinate?', answer: 'Ten minutes is enough for this recipe. Longer marinating can make the surface overly soft.' },
+      { question: 'How do I know when a portobello is done?', answer: 'It is ready when the cap is tender, browned at the edges, and yields slightly when pressed with tongs.' },
+      { question: 'Can portobellos be cooked in a skillet?', answer: 'Yes. Use a hot, lightly oiled skillet and cook the caps for about 5 minutes per side.' },
+      { question: 'Why did my portobello release so much liquid?', answer: 'The pan may not have been hot enough, or the caps may have been crowded. Use high heat and cook in batches if needed.' }
+    ],
+    storage: [
+      'Refrigerate cooked portobellos in a covered container for up to 3 days.',
+      'Reheat in a skillet or oven until warmed through.',
+      'Store leftover marinade separately only if it has not touched raw mushrooms.',
+      'Freeze cooked caps only when a softer texture is acceptable after thawing.'
+    ],
+    variations: [
+      'Herb-garlic: add 1 tbsp chopped rosemary or parsley to the marinade.',
+      'Smoky: add 1/2 tsp smoked paprika and replace half the balsamic with lemon juice.',
+      'Miso-sesame: replace the Dijon with 1 tbsp white miso and finish with 1 tsp sesame oil.',
+      'Mediterranean: add 1/2 tsp dried oregano and serve with crumbled feta and sliced cucumber.'
+    ]
+  }
 ];
 
 export const guideArticles: GuideArticle[] = [...methodGuides, ...speciesGuides];
@@ -353,12 +1330,12 @@ export const guideArticles: GuideArticle[] = [...methodGuides, ...speciesGuides]
 export const recipeCards = [
   { name: 'Golden garlic-butter mushrooms', mushroom: 'Cremini or white button', time: '15 min', guide: 'how-to-cook-mushrooms', description: 'Sear sliced mushrooms in a wide hot skillet, then finish with garlic butter once the pan is dry.' },
   { name: 'Dry-sautéed chanterelles', mushroom: 'Golden chanterelles', time: '10 min', guide: 'how-to-cook-chanterelle-mushrooms', description: 'Cook without fat first, then finish with butter, shallot, and thyme.' },
-  { name: 'Classic butter morels', mushroom: 'Morels', time: '12 min', guide: 'how-to-cook-morel-mushrooms', description: 'Dry sauté, foam in butter and garlic, then deglaze with white wine.' },
-  { name: "Lion's mane crab cakes", mushroom: "Lion's mane", time: '25 min', guide: 'how-to-cook-lions-mane-mushrooms', description: 'Dry-sauté shreds, bind with Old Bay and breadcrumbs, then shallow fry.' },
-  { name: 'Crispy garlic oyster mushrooms', mushroom: 'Oyster', time: '9 min', guide: 'how-to-cook-oyster-mushrooms', description: 'Sear separated caps hard, then finish with garlic and parsley.' },
+  { name: 'Buttery pan-cooked morels', mushroom: 'Morels', time: '15 min', guide: 'how-to-cook-morel-mushrooms', description: 'Brown halved morels in butter with shallot and garlic, then finish with lemon and chives.' },
+  { name: "Golden skillet lion's mane", mushroom: "Lion's mane", time: '15 min', guide: 'how-to-cook-lions-mane-mushrooms', description: 'Press slabs gently in a hot skillet until golden, then finish with garlic butter and lemon.' },
+  { name: 'Crisp-edged garlic oyster mushrooms', mushroom: 'Oyster', time: '12 min', guide: 'how-to-cook-oyster-mushrooms', description: 'Sear torn caps hard, then glaze with garlic butter, soy, and lemon.' },
   { name: 'Garlic-butter seared maitake', mushroom: 'Maitake', time: '17 min', guide: 'how-to-cook-maitake-mushrooms', description: 'Hot pan sear maitake until crisp and golden, then finish with garlic butter and soy.' },
   { name: 'Pressed maitake steaks', mushroom: 'Maitake', time: '25 min', guide: 'how-to-cook-maitake-mushrooms', description: 'Roast thick slabs under cast iron until the ruffled edges crisp.' },
-  { name: 'Black trumpet cream pasta', mushroom: 'Black trumpet', time: '15 min', guide: 'how-to-cook-black-trumpet-mushrooms', description: 'Sauté trumpets, deglaze with brandy, and reduce with cream.' },
-  { name: 'King oyster scallops', mushroom: 'King oyster', time: '12 min', guide: 'how-to-cook-king-oyster-mushrooms', description: 'Score stem rounds, sear deeply, then baste with garlic butter.' },
-  { name: 'Roasted cremini caps', mushroom: 'Cremini', time: '20 min', guide: 'how-to-cook-cremini-mushrooms', description: 'Roast whole caps with olive oil, balsamic, and thyme.' }
+  { name: 'Black trumpet butter pasta', mushroom: 'Black trumpet', time: '15 min', guide: 'how-to-cook-black-trumpet-mushrooms', description: 'Sauté trumpets, then toss with linguine, white wine, Parmesan, and lemon zest.' },
+  { name: 'King oyster scallops', mushroom: 'King oyster', time: '14 min', guide: 'how-to-cook-king-oyster-mushrooms', description: 'Score stem rounds, sear deeply, then baste with garlic butter.' },
+  { name: 'Garlic-butter skillet cremini', mushroom: 'Cremini', time: '12 min', guide: 'how-to-cook-cremini-mushrooms', description: 'Brown halved cremini in a hot skillet with garlic, thyme, and lemon.' }
 ];
