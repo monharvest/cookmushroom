@@ -8,6 +8,7 @@ export type GuideSection = {
 };
 
 export type GuideFaq = { question: string; answer: string };
+export type GuideLink = { href: string; label: string };
 
 export type GuideArticle = {
   slug: string;
@@ -29,6 +30,8 @@ export type GuideArticle = {
   imageAlt?: string;
   badge?: string;
   sections?: GuideSection[];
+  relatedLinks?: GuideLink[];
+  showCookTimes?: boolean;
   // Full recipe-template fields. When `ingredients` is present the page emits
   // Recipe schema instead of Article schema. See how-to-cook-chanterelle-mushrooms
   // for the exemplar every guide should grow into.
@@ -44,8 +47,10 @@ export type GuideArticle = {
 export const cookTimes = [
   { mushroom: 'Button / cremini', mushroomSlug: 'button-cremini', method: 'Pan sauté', methodSlug: 'pan', time: '8–10 min', heat: 'Medium-high', fat: '1 tbsp oil per 8 oz / 225 g', done: 'Deep brown edges, no pooled water.' },
   { mushroom: 'Button / cremini', mushroomSlug: 'button-cremini', method: 'Air fryer', methodSlug: 'air-fryer', time: '10–12 min', heat: '390°F / 200°C', fat: '2 tsp oil per 8 oz / 225 g', done: 'Shrunk, browned, lightly crisp.' },
+  { mushroom: 'Button / cremini', mushroomSlug: 'button-cremini', method: 'Oven roast', methodSlug: 'oven', time: '20–25 min', heat: '400°F / 200°C', fat: '1 tbsp oil per 8 oz / 225 g', done: 'Browned edges, concentrated centers, no pooled liquid.' },
   { mushroom: 'Oyster', mushroomSlug: 'oyster', method: 'Pan sauté', methodSlug: 'pan', time: '7–9 min', heat: 'Medium-high', fat: '1 tbsp oil per 8 oz / 225 g', done: 'Lacy edges turn golden and tender.' },
   { mushroom: 'Oyster', mushroomSlug: 'oyster', method: 'Air fryer', methodSlug: 'air-fryer', time: '8–10 min', heat: '375°F / 190°C', fat: '2 tsp oil per 8 oz / 225 g', done: 'Edges crisp, centers still juicy.' },
+  { mushroom: 'Oyster', mushroomSlug: 'oyster', method: 'Oven roast', methodSlug: 'oven', time: '15–18 min', heat: '400°F / 200°C', fat: '1 tbsp oil per 8 oz / 225 g', done: 'Torn edges browned and crisp.' },
   { mushroom: "Lion's mane", mushroomSlug: 'lions-mane', method: 'Pan sear', methodSlug: 'pan', time: '10–14 min', heat: 'Medium', fat: '1 tbsp oil, butter at finish', done: 'Pressed slices are browned and meaty.' },
   { mushroom: "Lion's mane", mushroomSlug: 'lions-mane', method: 'Air fryer', methodSlug: 'air-fryer', time: '10–12 min', heat: '375°F / 190°C', fat: 'Light oil spray', done: 'Golden ridges, firm bite.' },
   { mushroom: 'Enoki', mushroomSlug: 'enoki', method: 'Pan quick cook', methodSlug: 'pan', time: '2–4 min', heat: 'Medium-high', fat: '1 tsp oil', done: 'Just wilted; stems still springy.' },
@@ -67,7 +72,9 @@ export const cookTimes = [
   { mushroom: 'Matsutake', mushroomSlug: 'matsutake', method: 'Butter sear', methodSlug: 'pan', time: '4–6 min', heat: 'Medium-high, then medium', fat: 'Oil, butter to baste', done: 'Golden edges; stems tender but springy.' },
   { mushroom: 'Shimeji', mushroomSlug: 'shimeji', method: 'Garlic-butter sauté', methodSlug: 'pan', time: '4–6 min', heat: 'Medium-high', fat: 'Oil, butter at finish', done: 'Golden caps and a mostly dry pan.' },
   { mushroom: 'King oyster', mushroomSlug: 'king-oyster', method: 'Scallop sear', methodSlug: 'pan', time: '6–8 min', heat: 'High', fat: 'Oil, butter to baste', done: 'Deep gold crust on scored faces.' },
+  { mushroom: 'King oyster', mushroomSlug: 'king-oyster', method: 'Oven roast', methodSlug: 'oven', time: '18–22 min', heat: '400°F / 200°C', fat: '1 tbsp oil per 8 oz / 225 g', done: 'Slices tender with browned cut faces.' },
   { mushroom: 'Paddy straw', mushroomSlug: 'paddy-straw', method: 'Stir-fry', methodSlug: 'pan', time: '3–5 min', heat: 'High', fat: '1 tbsp neutral oil', done: 'Hot throughout and glossy with sauce.' },
+  { mushroom: 'Dried mushrooms', mushroomSlug: 'dried-mushrooms', method: 'Rehydrate + pan finish', methodSlug: 'rehydrate', time: '20–30 min soak + 4 min pan', heat: 'Hot water, then medium', fat: '1 tsp oil or butter, optional', done: 'Mushrooms tender; broth strained clear of grit.' },
   { mushroom: 'Chaga', mushroomSlug: 'chaga', method: 'Culinary infusion', methodSlug: 'simmer', time: '40–50 min', heat: 'Low simmer', fat: 'None', done: 'Liquid deep amber-brown and aromatic.' },
   { mushroom: 'Reishi', mushroomSlug: 'reishi', method: 'Culinary infusion', methodSlug: 'simmer', time: '50–60 min', heat: 'Low simmer', fat: 'None', done: 'Liquid dark, woody, and aromatic; solids strained.' },
   { mushroom: 'Truffles', mushroomSlug: 'truffles', method: 'Raw shave', methodSlug: 'finish', time: 'At serving', heat: 'No direct heat', fat: 'Warm butter or cream dish', done: 'Paper-thin shavings hit warm food.' }
@@ -158,6 +165,11 @@ const methodGuides: GuideArticle[] = [
       { heading: 'Why this method works', text: 'A hot, uncrowded pan lets mushroom moisture evaporate before the butter goes in. That gives the mushrooms browned edges instead of a soft, steamed texture.' },
       { heading: 'Before you start', text: 'Wipe the mushrooms with a damp towel or brush off dirt. Trim the dry ends, then cut the mushrooms into similar-sized pieces so they finish together.' }
     ],
+    relatedLinks: [
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
+      { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
+      { href: '/how-to-cook-button-mushrooms/', label: 'How to cook button mushrooms' },
+    ],
     faqs: [
       { question: 'Should I wash mushrooms before pan-frying?', answer: 'Brush or wipe them first. If they are muddy, rinse them quickly and dry them very well before cooking.' },
       { question: 'Why are my mushrooms releasing so much water?', answer: 'Mushrooms naturally contain a lot of water. A crowded or cooler pan makes them steam instead of brown.' },
@@ -210,6 +222,10 @@ const methodGuides: GuideArticle[] = [
       { heading: 'Why use an air fryer?', text: 'Moving hot air browns the mushroom edges quickly while the centers stay tender. The best results come from a dry basket with enough space for the air to circulate.' },
       { heading: 'Before you start', text: 'Brush off dirt and trim the stems. If the mushrooms need rinsing, dry them thoroughly before seasoning. Cut them evenly so small pieces do not overcook.' }
     ],
+    relatedLinks: [
+      { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
+      { href: '/how-to-cook-button-mushrooms/', label: 'How to cook button mushrooms' },
+    ],
     faqs: [
       { question: 'How long do mushrooms take in an air fryer?', answer: 'At 400°F (200°C), halved or quartered mushrooms usually take 8 to 12 minutes.' },
       { question: 'Do I need to preheat the air fryer?', answer: 'Preheating helps the mushrooms begin browning as soon as they enter the basket. Three minutes is usually enough.' },
@@ -228,6 +244,176 @@ const methodGuides: GuideArticle[] = [
       'Lemon pepper: skip the smoked paprika and use 1/2 tsp lemon pepper.',
       'Parmesan: add 2 tbsp grated Parmesan during the final minute.',
       'Chili-lime: replace the lemon juice with 1 tbsp lime juice and add 1/4 tsp chili powder.'
+    ]
+  },
+  {
+    slug: 'how-to-clean-mushrooms', label: 'Cleaning mushrooms', badge: 'Start here', title: 'How to Clean Mushrooms Before Cooking', description: 'Clean mushrooms with a brush, damp towel, or a quick rinse—never a soak. What to use for each variety so they brown instead of steam.', minutes: '4 min', updated: '2026-07-11', isoTime: 'PT5M', prepIsoTime: 'PT2M', heat: 'No heat', cut: 'Clean whole before cutting', finish: 'Dry completely before cooking', showCookTimes: false,
+    quickFacts: [
+      { label: 'Tools', value: 'Soft brush or damp towel' },
+      { label: 'Time', value: '2–5 minutes' },
+      { label: 'Water', value: 'Quick rinse only if muddy' },
+      { label: 'Rule', value: 'Dry completely before the pan' },
+    ],
+    image: '/images/cookmushroom-cleaning-hero.webp', imageAlt: 'Hands brushing dirt from cremini mushrooms beside a damp towel and colander',
+    steps: [
+      'Brush off loose dirt with a soft mushroom brush or a dry paper towel.',
+      'Wipe any remaining soil with a barely damp towel.',
+      'If mushrooms are muddy, rinse them briefly in a colander under cool running water instead of soaking them.',
+      'Spread them on a clean towel and pat dry until the caps and stems no longer feel wet.',
+      'Trim only the dry stem ends, then cut and cook the mushrooms right away.'
+    ],
+    tips: [
+      'A short rinse does not ruin mushrooms; leaving surface water on them slows browning.',
+      'Lift grit-prone mushrooms out of rinse water instead of pouring the water over them again.',
+      'Clean mushrooms just before cooking, not before storage.'
+    ],
+    pairings: ['the pan mushroom method', 'air-fryer mushrooms', 'roasted mushrooms', 'garlic-butter mushrooms'],
+    sections: [
+      { heading: 'The 30-second answer', text: 'Brush or wipe most mushrooms clean. Use a quick rinse only when they are truly muddy, then dry them thoroughly. Never leave mushrooms soaking in a bowl of water.' },
+      { heading: 'The golden rule', quote: 'Clean mushrooms quickly, then dry them completely before they reach a hot pan.' },
+      { heading: 'Why soaking gets in the way', text: 'Mushrooms already release water as they cook. Soaking leaves extra water on and in the surface, which keeps the pan wet longer and delays the browned edges you want.' },
+      { heading: 'Choose the right tool', bullets: ['Soft brush: best for loose soil on smooth button, cremini, portobello, and king oyster caps.', 'Damp towel: useful for a few stubborn spots when the mushrooms are otherwise clean.', 'Colander rinse: use for muddy mushrooms, then dry them on a towel right away.'] },
+      { heading: 'Clean by variety', bullets: ['Smooth caps: brush or wipe button, cremini, and portobello mushrooms.', 'Delicate clusters: trim the base of oyster, enoki, or shimeji, then brush or rinse gently and dry well.', 'Folded wild types: market-purchased chanterelles, morels, and black trumpets can trap grit; brush first, then rinse briefly only if needed.', 'Dense stems: wipe lobster and king oyster mushrooms; trim the dry end instead of peeling them.'] },
+      { heading: 'Sliced, pre-cut, and stored mushrooms', text: 'Use pre-sliced mushrooms as packed unless you can see dirt. If you rinse them, dry them especially well because their cut surfaces hold water. Keep fresh mushrooms unwashed in a paper bag, then clean them immediately before cooking.' }
+    ],
+    faqs: [
+      { question: 'Should you wash mushrooms or just wipe them?', answer: 'Brush or wipe lightly soiled mushrooms. A brief rinse is fine when they are muddy, as long as you dry them thoroughly before cooking.' },
+      { question: 'Can you soak mushrooms to clean them?', answer: 'No. Soaking leaves them waterlogged and makes browning harder. Use a brief rinse instead when water is necessary.' },
+      { question: 'How do you clean baby bella mushrooms?', answer: 'Baby bella mushrooms are cremini mushrooms. Brush or wipe the caps, trim dry stem ends, and rinse only if visible soil remains.' },
+      { question: 'How do you get grit out of morels or wild mushrooms?', answer: 'Use only market-purchased mushrooms or mushrooms verified by a qualified expert. Halve hollow morels, brush away loose grit, rinse briefly if needed, then dry them well.' },
+      { question: 'Do pre-sliced mushrooms need cleaning?', answer: 'Usually no. If they are visibly dirty, rinse them briefly and dry the cut surfaces very well before cooking.' }
+    ],
+    storage: [
+      'Keep fresh mushrooms unwashed in a paper bag in the refrigerator until you are ready to cook.',
+      'Use cleaned mushrooms immediately when possible; surface moisture shortens their best texture window.',
+      'If you must hold cleaned mushrooms, refrigerate them loosely covered on a towel and use them the same day.'
+    ],
+    variations: [
+      'Muddy caps: rinse in a colander for a few seconds, then dry on a towel.',
+      'Morels: halve lengthwise so you can inspect the hollow center before cooking.',
+      'Pre-sliced mushrooms: skip rinsing unless dirt is visible, then dry the cut sides well.'
+    ],
+    relatedLinks: [
+      { href: '/how-to-cook-cremini-mushrooms/', label: 'How to cook cremini mushrooms' },
+      { href: '/how-to-cook-oyster-mushrooms/', label: 'How to cook oyster mushrooms' },
+      { href: '/how-to-cook-chanterelle-mushrooms/', label: 'How to cook chanterelle mushrooms' },
+      { href: '/how-to-cook-morel-mushrooms/', label: 'How to cook morel mushrooms' },
+      { href: '/how-to-cook-king-oyster-mushrooms/', label: 'How to cook king oyster mushrooms' },
+      { href: '/how-to-cook-portobello-mushrooms/', label: 'How to cook portobello mushrooms' },
+    ]
+  },
+  {
+    slug: 'how-to-cook-dried-mushrooms', mushroomSlug: 'dried-mushrooms', label: 'Dried mushrooms', badge: 'Broth included', title: 'How to Cook Dried Mushrooms: Rehydrate and Use the Broth', description: 'Rehydrate dried mushrooms in hot water for 20–30 minutes, strain the soaking liquid, and use both in soups, pasta, risotto, and rice.', minutes: '6 min', updated: '2026-07-11', isoTime: 'PT4M', prepIsoTime: 'PT25M', heat: 'Hot-water soak, then medium pan', cut: 'Slice after rehydrating', finish: 'Strained broth into the dish',
+    image: '/images/cookmushroom-dried-rehydrate-hero.webp', imageAlt: 'Dried porcini mushrooms soaking in amber liquid beside a jug of strained mushroom broth',
+    recipeName: 'Rehydrated Mushrooms with Strained Mushroom Broth', yieldText: 'About 1 cup rehydrated mushrooms and 1 1/2 cups broth',
+    ingredients: [
+      '1 oz (28 g) dried mushrooms, such as porcini, shiitake, morels, or a mixed pack',
+      '2 cups (475 ml) hot water',
+      '1 tsp olive oil or butter, optional for a pan finish',
+      'Fine salt and black pepper, to taste'
+    ],
+    steps: [
+      'Put the dried mushrooms in a heatproof bowl and cover with the hot water.',
+      'Soak for 20 to 30 minutes, until the mushrooms are pliable and the liquid is deep brown.',
+      'Lift the mushrooms out with tongs or a slotted spoon. Do not pour the bowl out yet because grit settles at the bottom.',
+      'Strain the soaking liquid through a fine-mesh sieve lined with a paper towel or coffee filter.',
+      'Squeeze the softened mushrooms gently, trim any tough stems, and slice larger pieces.',
+      'For a quick finish, warm oil or butter in a skillet over medium heat and cook the mushrooms for 3 to 4 minutes. Add the strained broth to the dish, not the pan, unless you want a sauce.'
+    ],
+    tips: [
+      'Hot water works quickly, but avoid a rolling boil that can make delicate dried mushrooms tougher.',
+      'Always strain the soaking liquid; a clear-looking bowl can still hold fine grit.',
+      'Use the rehydrated mushrooms for tenderness and the broth for concentrated flavor.'
+    ],
+    pairings: ['pasta', 'risotto', 'ramen', 'rice', 'gravy', 'cream sauces'],
+    sections: [
+      { heading: 'Why this method works', text: 'Drying concentrates mushroom flavor. A soak gives you two useful ingredients: tender mushrooms for the dish and a savory broth for the sauce, stock, or rice.' },
+      { heading: 'Soak times by mushroom', bullets: ['Porcini: soak about 20 minutes, then slice or chop.', 'Shiitake: soak 25 to 30 minutes; remove tough stems after softening.', 'Wood ear: soak until fully expanded, then rinse, trim, and cook thoroughly.', 'Morels: soak 15 to 20 minutes, rinse away any remaining grit, and cook thoroughly.'] },
+      { heading: 'Use the strained broth', text: 'Stir the broth into pasta sauce, replace part of risotto stock, add it to a ramen base, cook rice with it, or reduce it into gravy. Keep the last spoonful in the bowl if you can see sediment.' },
+      { heading: 'What to expect', text: 'Rehydrated mushrooms are tender and savory, but they do not sear as crisply as fresh mushrooms. Use a brief pan finish for color, then let the broth carry the deeper flavor.' }
+    ],
+    faqs: [
+      { question: 'How long do you soak dried mushrooms?', answer: 'Most dried mushrooms need 20 to 30 minutes in hot water. Thin or delicate pieces can soften sooner; dense shiitakes may need the full half hour.' },
+      { question: 'Can you use boiling water?', answer: 'Use hot water rather than aggressively boiling water. It rehydrates mushrooms quickly while being gentler on their texture.' },
+      { question: 'Do you have to strain the soaking liquid?', answer: 'Yes. Fine grit settles in the bowl, so strain the liquid through a fine sieve lined with paper towel or a coffee filter.' },
+      { question: 'Can you cook dried mushrooms without soaking?', answer: 'Not for this method. Dried mushrooms need moisture to become tender; add them directly only when a soup or braise gives them enough time and liquid to rehydrate.' },
+      { question: 'How do you store leftover mushroom broth?', answer: 'Cool strained broth promptly and refrigerate it in a covered container for up to 3 days, or freeze it in small portions.' },
+      { question: 'Are dried mushrooms as good as fresh?', answer: 'They are different. Dried mushrooms bring concentrated flavor and broth, while fresh mushrooms give a firmer, browner texture.' }
+    ],
+    storage: [
+      'Keep unopened dried mushrooms sealed in a cool, dry cupboard.',
+      'Refrigerate rehydrated mushrooms in a covered container and use within 2 days.',
+      'Cool strained broth promptly and refrigerate for up to 3 days or freeze in portions.'
+    ],
+    variations: [
+      'Pasta: reduce 1/2 cup strained broth with cream, butter, or tomato sauce.',
+      'Risotto: replace part of the stock with warm strained broth.',
+      'Ramen: add strained broth to the base, then finish with rehydrated shiitakes or porcini.'
+    ],
+    relatedLinks: [
+      { href: '/how-to-cook-porcini-mushrooms/', label: 'How to cook porcini mushrooms' },
+      { href: '/how-to-cook-shiitake-mushrooms/', label: 'How to cook shiitake mushrooms' },
+      { href: '/how-to-cook-wood-ear-mushrooms/', label: 'How to cook wood ear mushrooms' },
+      { href: '/how-to-cook-morel-mushrooms/', label: 'How to cook morel mushrooms' },
+    ]
+  },
+  {
+    slug: 'how-to-roast-mushrooms-in-oven', mushroomSlug: 'button-cremini', label: 'Oven-roasted mushrooms', badge: 'Hands-off batch', title: 'How to Roast Mushrooms in the Oven (Crisp, Not Soggy)', description: 'Roast mushrooms at 400°F for 20–25 minutes on an uncrowded sheet pan, flipping once, until browned and concentrated—not steamed or soggy.', minutes: '6 min', updated: '2026-07-11', isoTime: 'PT25M', prepIsoTime: 'PT10M', heat: '400°F / 200°C', cut: 'Halved, even pieces', finish: 'Balsamic and thyme out of the oven',
+    image: '/images/cookmushroom-oven-roast-hero.webp', imageAlt: 'Halved cremini mushrooms roasted on a sheet pan with thyme and balsamic nearby',
+    recipeName: 'Crispy Oven-Roasted Mushrooms', yieldText: '4 side servings',
+    ingredients: [
+      '1 lb (454 g) button or cremini mushrooms, halved',
+      '1 tbsp (15 ml) olive oil',
+      '1/2 tsp kosher salt',
+      '1/4 tsp black pepper',
+      '1 tsp fresh thyme leaves',
+      '1 tsp balsamic vinegar'
+    ],
+    steps: [
+      'Heat the oven to 400°F (200°C). Set a large rimmed sheet pan inside for 5 minutes if you want a stronger first sizzle.',
+      'Pat the mushrooms dry and halve them so the pieces are similar in size.',
+      'Toss the mushrooms with olive oil and pepper. Spread them cut-side down in one loose layer on the hot or room-temperature pan.',
+      'Roast for 15 minutes, then turn the mushrooms and scatter over the salt and thyme.',
+      'Roast for 5 to 10 minutes more, until the edges are browned, the centers are tender, and the pan has no pooled liquid.',
+      'Move the mushrooms to a bowl and toss with balsamic vinegar. Serve hot.'
+    ],
+    tips: [
+      'Use two sheet pans when a pound of mushrooms overlaps heavily.',
+      'A shallow rimmed pan lets steam escape better than a deep roasting dish.',
+      'Parchment is fine at 400°F, but bare metal usually gives the cut sides more color.'
+    ],
+    pairings: ['steak', 'pasta', 'grain bowls', 'eggs', 'roast chicken', 'toast'],
+    sections: [
+      { heading: 'Why roasting works', text: 'A hot oven is the easiest way to cook a pound or more of mushrooms at once. Give the pieces room on a sheet pan and the moisture can evaporate instead of collecting in a crowded dish.' },
+      { heading: 'Choose the temperature', bullets: ['375°F / 190°C: gentler for delicate mushrooms that can dry quickly.', '400°F / 200°C: the default for button and cremini mushrooms.', '425°F / 220°C: useful for thick portobello caps and dense king oyster slices; watch the edges closely.'] },
+      { heading: 'Times by variety', bullets: ['Button or cremini: 20 to 25 minutes at 400°F / 200°C.', 'Oyster: 15 to 18 minutes at 400°F / 200°C.', 'King oyster slices: 18 to 22 minutes at 400°F / 200°C.', 'Portobello caps: 15 to 20 minutes at 425°F / 220°C.'] },
+      { heading: 'Sheet-pan rules', text: 'Do not crowd the pan, and do not add watery vegetables until the mushrooms have started browning. Flip once at about 15 minutes, then finish when the pan looks dry and the cut edges are bronzed.' }
+    ],
+    faqs: [
+      { question: 'What temperature is best for roasting mushrooms?', answer: 'Use 400°F (200°C) for button and cremini mushrooms. Raise the oven to 425°F (220°C) for thick portobello caps or dense king oyster slices.' },
+      { question: 'How long do mushrooms take at 400°F?', answer: 'Halved button or cremini mushrooms usually take 20 to 25 minutes, with one turn after about 15 minutes.' },
+      { question: 'Should you flip mushrooms when roasting?', answer: 'Yes. Turn them once after the first 15 minutes so the exposed sides can brown and the pan can finish drying.' },
+      { question: 'Why did my roasted mushrooms come out soggy?', answer: 'The pan was crowded, the mushrooms went in wet, or the oven was too cool. Use a wide sheet pan, dry the mushrooms, and roast in a loose layer.' },
+      { question: 'Can you roast mushrooms with vegetables?', answer: 'Yes, but choose dry, quick-roasting vegetables or use a second pan. Watery vegetables can make the mushrooms steam.' },
+      { question: 'Do you need to pre-cook mushrooms before roasting?', answer: 'No. Start with dry, evenly cut mushrooms and give them room on the sheet pan.' }
+    ],
+    storage: [
+      'Refrigerate cooled roasted mushrooms in a covered container for up to 3 days.',
+      'Reheat on a sheet pan at 400°F (200°C) for 5 to 8 minutes, until hot and dry at the edges.',
+      'Freeze only when you plan to use the mushrooms later in sauce, soup, or a filling.'
+    ],
+    variations: [
+      'Garlic: add sliced garlic for the final 8 minutes so it does not burn.',
+      'Soy-sesame: replace balsamic with 2 tsp soy sauce and finish with a few drops of sesame oil.',
+      'Lemon-herb: replace balsamic with lemon juice and parsley after roasting.'
+    ],
+    relatedLinks: [
+      { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
+      { href: '/how-to-cook-mushrooms-in-air-fryer/', label: 'How to cook mushrooms in an air fryer' },
+      { href: '/how-to-cook-cremini-mushrooms/', label: 'How to cook cremini mushrooms' },
+      { href: '/how-to-cook-portobello-mushrooms/', label: 'How to cook portobello mushrooms' },
+      { href: '/how-to-cook-king-oyster-mushrooms/', label: 'How to cook king oyster mushrooms' },
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
     ]
   }
 ];
@@ -263,6 +449,9 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'Why the dry pan matters', text: 'Chanterelles hold a lot of water. Fat added too early traps that water and the mushrooms boil in it, turning slimy. Starting in a dry pan lets the moisture escape first, which concentrates the fruity, apricot-like aroma chanterelles are prized for and leaves the edges free to crisp in the butter at the end.' },
       { heading: 'Safety first: true chanterelles vs. false look-alikes', text: 'True chanterelles have ridges, or false gills, rather than true blade-like gills. These blunt, wavy folds run down the stem and do not separate easily from the cap.', bullets: ['The spore print is white to creamy yellow.', "Jack-O'Lantern mushrooms have true, sharp, unbranched gills and grow in clusters on decaying wood.", 'Buy from a market or have an experienced forager verify your find — this page is a cooking guide, not an identification manual.'] },
       { heading: 'The golden rule of cleaning', quote: 'Never soak chanterelles in water. They absorb excess moisture and turn slimy when cooked.' }
+    ],
+    relatedLinks: [
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
     ],
     faqs: [
       { question: 'Can you eat chanterelles raw?', answer: 'No. Raw chanterelles are hard to digest and can cause stomach upset, and their apricot-like aroma only develops with heat. Always cook them through.' },
@@ -316,6 +505,10 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'Safety first', text: 'Use morels purchased from a reputable market or a wild sample verified by a qualified mushroom expert. Never eat an unknown wild mushroom. Clean morels carefully and cook them thoroughly; do not eat them raw or undercooked.' },
       { heading: 'Identification: true morels vs. false morels', bullets: ['True morels have a distinctive cap covered in deeply pitted honeycomb-like hollows.', 'Slice the mushroom completely from top to bottom. True morels are 100% hollow.'] },
       { heading: 'Why halve morels?', text: 'The hollow stems and honeycomb caps can hold grit or small insects. Halving them makes those spaces easy to inspect and lets heat reach the center. Brush away loose dirt; if needed, place the halved morels in cool water for up to 5 minutes, lift them out, rinse once, and dry them well. Do not leave them soaking.' }
+    ],
+    relatedLinks: [
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
+      { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
     ],
     faqs: [
       { question: 'Can I eat morel mushrooms raw?', answer: 'No. Morels should be cooked thoroughly and served hot. Do not eat them raw or undercooked.' },
@@ -425,6 +618,9 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'Buy and prep', text: 'Buy porcini from a reputable market, or use wild specimens only after expert verification. This guide does not identify mushrooms or establish that a wild find is safe to eat. Brush away soil, trim any tough stem base, and avoid soaking the mushrooms, which can make them watery.' },
       { heading: 'Deep umami: maximizing dried porcini', text: 'The soaking liquid carries a potent concentration of mushroom flavor. Strain it well, then reduce it into sauces instead of throwing it away.', ordered: ['Soak dried pieces in boiling water for 20 minutes.', 'Filter through a fine mesh sieve or paper towel.', 'Use the mushrooms in a sauté and reduce the broth into sauces.'] }
     ],
+    relatedLinks: [
+      { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
+    ],
     faqs: [
       { question: 'Can I wash porcini mushrooms?', answer: 'Brush them first. If they are heavily soiled, rinse them briefly under cool water and dry them thoroughly before cooking.' },
       { question: 'Should I cook porcini whole or sliced?', answer: 'Slice them for this recipe so the cut surfaces brown quickly and the centers cook evenly.' },
@@ -528,6 +724,10 @@ const speciesGuides: GuideArticle[] = [
     sections: [
       { heading: 'Why this method works', text: 'Tearing oyster mushrooms creates irregular edges that brown well. The mushrooms need room in the pan, so the recipe builds color first and adds butter, garlic, and seasoning only after the moisture has cooked away.' },
       { heading: 'Buy and prep', text: 'Cultivated oyster mushrooms are the simplest choice for this recipe. If using wild-harvested oyster mushrooms, use only market-purchased specimens or mushrooms verified by a qualified expert. This guide does not identify mushrooms or establish that a wild find is safe to eat.' }
+    ],
+    relatedLinks: [
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
+      { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
     ],
     faqs: [
       { question: 'Should I wash oyster mushrooms?', answer: 'Brush them clean first. If they need a rinse, do it quickly and dry them thoroughly before they hit the pan.' },
@@ -740,6 +940,9 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'Fresh or dried', text: 'Fresh wood ears need trimming and rinsing. Dried wood ears must be soaked until fully expanded, then rinsed carefully because grit can collect in their folds. This recipe uses fresh mushrooms.' },
       { heading: 'The best pan technique', text: 'A brief blanch removes surface grit and gives the mushrooms an even start. The final high-heat stir-fry should leave the edges lightly curled and crisp while the centers remain pleasantly chewy.' }
     ],
+    relatedLinks: [
+      { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
+    ],
     faqs: [
       { question: 'Should I soak dried wood ear mushrooms before cooking?', answer: 'Yes. Soak them in plenty of water until fully expanded, then rinse, trim, and cook thoroughly.' },
       { question: 'Do wood ear mushrooms need blanching?', answer: 'Blanching is useful for this recipe because it cleans the lobes and gives them an even texture before stir-frying.' },
@@ -792,6 +995,9 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'Why shiitakes brown well', text: 'Shiitake caps have a meaty texture and a strong savory flavor. Cooking them in a single layer gives their exposed surfaces time to brown before the finishing butter and aromatics go into the pan.' },
       { heading: 'What to do with the stems', text: 'Fresh shiitake stems are usually too fibrous to enjoy whole. Trim them off and save them for stock, broth, or a mushroom-scrap freezer bag.' },
       { heading: 'The finishing sauce', text: 'Butter softens the edges of the mushrooms, while soy sauce adds salt and savoriness. Lemon juice keeps the finished dish bright instead of heavy.' }
+    ],
+    relatedLinks: [
+      { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
     ],
     faqs: [
       { question: 'Should I remove shiitake stems before cooking?', answer: 'Yes. Fresh stems are often fibrous, so remove them and reserve them for stock.' },
@@ -1102,6 +1308,11 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'Why this method works', text: 'Cremini mushrooms brown best when they have room in the pan. A hot skillet drives off moisture first, then creates a savory golden crust.' },
       { heading: 'Before you start', text: 'Wipe the mushrooms clean with a damp towel and trim only the dry ends. Avoid crowding the pan; cook in two batches if needed.' }
     ],
+    relatedLinks: [
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
+      { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
+      { href: '/how-to-cook-button-mushrooms/', label: 'How to cook button mushrooms' },
+    ],
     faqs: [
       { question: 'Should cremini mushrooms be washed?', answer: 'Yes, they may be rinsed briefly if needed, but dry them thoroughly before cooking. A damp towel is usually enough for lightly soiled mushrooms.' },
       { question: 'Why are my mushrooms watery?', answer: 'The pan is probably crowded or not hot enough. Cook in batches and let the moisture evaporate before adding butter.' },
@@ -1322,6 +1533,70 @@ const speciesGuides: GuideArticle[] = [
       'Smoky: add 1/2 tsp smoked paprika and replace half the balsamic with lemon juice.',
       'Miso-sesame: replace the Dijon with 1 tbsp white miso and finish with 1 tsp sesame oil.',
       'Mediterranean: add 1/2 tsp dried oregano and serve with crumbled feta and sliced cucumber.'
+    ],
+    relatedLinks: [
+      { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
+      { href: '/how-to-cook-button-mushrooms/', label: 'How to cook button mushrooms' },
+    ]
+  },
+  {
+    slug: 'how-to-cook-button-mushrooms', mushroomSlug: 'button-cremini', label: 'White button mushrooms', badge: 'Everyday staple', title: 'How to Cook Button Mushrooms in a Pan, Oven, or Air Fryer', description: 'Cook button mushrooms in a hot pan for 8–10 minutes, roast at 400°F for 20, or air-fry at 390°F for 10–12—timings and seasoning for their mild flavor.', minutes: '6 min', updated: '2026-07-11', isoTime: 'PT10M', prepIsoTime: 'PT8M', heat: 'Medium-high pan, 400°F oven, or 390°F air fryer', cut: 'Whole if small; halve or quarter larger mushrooms', finish: 'Garlic butter and parsley',
+    image: '/images/cookmushroom-button-hero.webp', imageAlt: 'White button mushrooms browning in a skillet with garlic and parsley',
+    recipeName: 'Everyday Garlic Button Mushrooms', yieldText: '4 side servings',
+    ingredients: [
+      '1 lb (454 g) white button mushrooms, whole if small or halved if large',
+      '1 tbsp (15 ml) neutral oil',
+      '2 tbsp (28 g) unsalted butter',
+      '2 garlic cloves (6 g), thinly sliced',
+      '1/2 tsp kosher salt',
+      '1/4 tsp black pepper',
+      '1 tbsp (4 g) chopped parsley'
+    ],
+    steps: [
+      'Brush or wipe the mushrooms clean, trim the dry ends, and leave small mushrooms whole or halve larger ones.',
+      'Heat a wide skillet over medium-high heat. Add the oil and wait until it shimmers.',
+      'Add the mushrooms in one loose layer. Cook for 3 minutes without stirring, until the contact points begin to turn golden.',
+      'Turn or toss the mushrooms and cook for 4 to 5 minutes more, until the pan looks dry and the mushrooms are tender.',
+      'Lower the heat to medium. Add butter, garlic, salt, and pepper and toss for 1 to 2 minutes, until the garlic is fragrant and pale gold.',
+      'Remove from the heat, add parsley, and serve while the edges are browned.'
+    ],
+    tips: [
+      'Buy whole button mushrooms when you can; they stay drier and give you control over the cut.',
+      'Do not crowd the skillet. Button mushrooms hold plenty of water and need room for it to evaporate.',
+      'Add garlic after the mushrooms have browned so it stays sweet instead of burning.'
+    ],
+    pairings: ['eggs', 'pasta', 'burgers', 'steak', 'toast', 'rice bowls'],
+    sections: [
+      { heading: 'What button mushrooms are', text: 'White button mushrooms are the youngest common form of Agaricus bisporus. Cremini are the same mushroom, harvested later with a browner cap; portobellos are the fully mature form. Button mushrooms have the mildest flavor, so they respond well to salt, butter, garlic, and herbs.' },
+      { heading: 'What their mild flavor means in the pan', text: 'Dry button mushrooms well and give them room in the skillet. Their high moisture content needs time to cook away, while their mild flavor benefits from a clear finishing seasoning rather than a heavy sauce.' },
+      { heading: 'Oven and air-fryer options', text: 'For a hands-off batch, roast halved button mushrooms at 400°F (200°C) for 20 to 25 minutes. For a faster side, air-fry them at 390°F (200°C) for 10 to 12 minutes. Use the dedicated method guides for full sheet-pan and basket rules.' },
+      { heading: 'Whole, halved, or sliced', text: 'Leave small buttons whole for a juicy center, halve medium mushrooms for more browned surface, and quarter large mushrooms for pasta or breakfast hash. Thin slices cook quickly but dry out sooner.' }
+    ],
+    faqs: [
+      { question: 'Are button mushrooms and white mushrooms the same?', answer: 'Yes. White button mushroom is the common name for the small, pale form of Agaricus bisporus.' },
+      { question: 'What is the difference between button mushrooms and cremini?', answer: 'They are the same species. Cremini are more mature and browner, with a slightly deeper flavor; portobellos are the mature large-cap form.' },
+      { question: 'Can you cook button mushrooms whole?', answer: 'Yes. Leave small ones whole, but give them a few extra minutes and turn them so the outside browns evenly.' },
+      { question: 'How do you cook button mushrooms for breakfast?', answer: 'Halve or quarter them, brown them in a hot skillet, then finish with butter and herbs. Serve with eggs, toast, or breakfast potatoes.' },
+      { question: 'Why are my button mushrooms rubbery?', answer: 'They were likely crowded, cooked in a wet pan, or removed before their moisture cooked away. Keep going until the pan looks dry and the edges are browned.' },
+      { question: 'Should you peel button mushrooms?', answer: 'No. Brush or wipe them clean, trim the dry stem end, and leave the cap skin intact.' }
+    ],
+    storage: [
+      'Store fresh button mushrooms unwashed in a paper bag in the refrigerator for up to 5 days.',
+      'Refrigerate cooked mushrooms in a covered container for up to 3 days.',
+      'Reheat in a hot skillet for 2 to 3 minutes to restore some browned texture.'
+    ],
+    variations: [
+      'Breakfast: add thyme and serve with eggs or potatoes.',
+      'Pasta: add a splash of pasta water and Parmesan after the garlic.',
+      'Burgers: cook whole small buttons or thick halves, then pile them onto a burger with cheese.'
+    ],
+    relatedLinks: [
+      { href: '/how-to-cook-cremini-mushrooms/', label: 'How to cook cremini mushrooms' },
+      { href: '/how-to-cook-portobello-mushrooms/', label: 'How to cook portobello mushrooms' },
+      { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
+      { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
+      { href: '/how-to-cook-mushrooms-in-air-fryer/', label: 'How to cook mushrooms in an air fryer' },
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
     ]
   }
 ];

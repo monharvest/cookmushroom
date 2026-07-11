@@ -126,7 +126,7 @@ const schema = [contentSchema, breadcrumbSchema];
         </section>
       )}
 
-      {relatedRows.length > 0 && (
+      {guide.showCookTimes !== false && relatedRows.length > 0 && (
         <section>
           <h2>Cook times</h2>
           <div class="table-wrap compact">
@@ -170,6 +170,12 @@ const schema = [contentSchema, breadcrumbSchema];
         <h2>Good with</h2>
         <p>{guide.pairings.join(', ')}.</p>
       </section>
+      {guide.relatedLinks && guide.relatedLinks.length > 0 && (
+        <section>
+          <h2>Related guides</h2>
+          <ul>{guide.relatedLinks.map((link) => <li><a href={link.href}>{link.label}</a></li>)}</ul>
+        </section>
+      )}
       {relatedRecipes.length > 0 && (
         <section>
           <h2>Use it in</h2>
