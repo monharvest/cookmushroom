@@ -14,6 +14,10 @@ const primaryCookTime = relatedRows[0]?.time ?? guide.isoTime.replace(/^PT/, '')
 const updatedDisplay = new Date(`${guide.updated}T00:00:00Z`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 const pageUrl = new URL(`/${guide.slug}/`, 'https://cookmushroom.com').toString();
 const imageUrl = guide.image ? new URL(guide.image, 'https://cookmushroom.com').toString() : undefined;
+const heroImageSizes = '(max-width: 720px) 100vw, (max-width: 1120px) 90vw, 960px';
+const heroImageSrcset = guide.image?.endsWith('.webp')
+  ? [600, 900, 1200].map((width) => `${width === 1200 ? guide.image : guide.image.replace(/\.webp$/, `-${width}.webp`)} ${width}w`).join(', ')
+  : undefined;
 const author = { '@type': 'Organization', name: 'CookMushroom', url: 'https://cookmushroom.com/about/' };
 
 const minutesOf = (iso?: string) => iso?.match(/^PT(\d+)M$/)?.[1];
@@ -72,7 +76,7 @@ const breadcrumbSchema = {
 };
 const schema = [contentSchema, breadcrumbSchema];
 ---
-<Layout title={seoTitle} description={guide.description} schema={schema}>
+<Layout title={seoTitle} description={guide.description} schema={schema} heroImage={guide.image} heroImageSrcset={heroImageSrcset} heroImageSizes={heroImageSizes}>
   <main id="content" class="guide">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <a href="/">Home</a> › <a href="/guides/">Guides</a> › <span>{guide.label}</span>
@@ -83,7 +87,7 @@ const schema = [contentSchema, breadcrumbSchema];
     <p class="updated">By <a href="/about/">CookMushroom Kitchen</a> · Updated {updatedDisplay}</p>
     <div class="notice">Use store-bought or positively identified edible mushrooms. Identification notes on this page are safety reminders, not a foraging manual — never eat a wild mushroom without expert verification.</div>
 
-    {guide.image && <img class="guide-hero-image" src={guide.image} alt={guide.imageAlt ?? guide.title} width="1200" height="800" />}
+    {guide.image && <img class="guide-hero-image" src={guide.image} srcset={heroImageSrcset} sizes={heroImageSrcset ? heroImageSizes : undefined} alt={guide.imageAlt ?? guide.title} width="1200" height="800" loading="eager" decoding="async" fetchpriority="high" />}
 
     <section class="quick-grid" aria-label="Quick answer">
       {quickFacts.map((fact) => <div class="fact"><span>{fact.label}</span><strong>{fact.value}</strong></div>)}

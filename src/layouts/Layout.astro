@@ -4,6 +4,9 @@ const {
   title = 'CookMushroom — How to Cook Mushrooms Properly',
   description = 'CookMushroom is a focused guide to cooking mushrooms: cook times, pan methods, air-fryer tips, and simple mushroom recipes.',
   schema = [],
+  heroImage,
+  heroImageSrcset,
+  heroImageSizes,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, 'https://cookmushroom.com').toString();
 const image = 'https://cookmushroom.com/og-image.png';
@@ -24,6 +27,7 @@ const schemas = [baseSchema, ...(Array.isArray(schema) ? schema : [schema]).filt
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {heroImage && <link rel="preload" as="image" href={heroImage} imagesrcset={heroImageSrcset} imagesizes={heroImageSizes} fetchpriority="high" />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
