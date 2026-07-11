@@ -20,6 +20,12 @@ const minutesOf = (iso?: string) => iso?.match(/^PT(\d+)M$/)?.[1];
 const prepMinutes = minutesOf(guide.prepIsoTime);
 const cookMinutes = minutesOf(guide.isoTime);
 const totalIsoTime = prepMinutes && cookMinutes ? `PT${Number(prepMinutes) + Number(cookMinutes)}M` : guide.isoTime;
+const quickFacts = guide.quickFacts ?? [
+  { label: 'Best heat', value: guide.heat },
+  { label: 'Cut', value: guide.cut },
+  { label: 'Cook time', value: primaryCookTime },
+  { label: 'Finish', value: guide.finish },
+];
 
 // Recipe schema (Google rich results) when the guide has a full ingredient list;
 // Article schema otherwise. HowTo is deliberately not used: Google dropped HowTo
@@ -80,10 +86,7 @@ const schema = [contentSchema, breadcrumbSchema];
     {guide.image && <img class="guide-hero-image" src={guide.image} alt={guide.imageAlt ?? guide.title} width="1200" height="800" />}
 
     <section class="quick-grid" aria-label="Quick answer">
-      <div class="fact"><span>Best heat</span><strong>{guide.heat}</strong></div>
-      <div class="fact"><span>Cut</span><strong>{guide.cut}</strong></div>
-      <div class="fact"><span>Cook time</span><strong>{primaryCookTime}</strong></div>
-      <div class="fact"><span>Finish</span><strong>{guide.finish}</strong></div>
+      {quickFacts.map((fact) => <div class="fact"><span>{fact.label}</span><strong>{fact.value}</strong></div>)}
     </section>
     <p class="chart-link">
       {guide.ingredients && <a href="#recipe">Jump to the recipe ↓</a>}

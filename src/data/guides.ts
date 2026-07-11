@@ -20,6 +20,7 @@ export type GuideArticle = {
   heat: string;
   cut: string;
   finish: string;
+  quickFacts?: { label: string; value: string }[];
   steps: string[];
   tips: string[];
   pairings: string[];
