@@ -75,7 +75,7 @@ export const cookTimes = [
 const methodGuides: GuideArticle[] = [
   {
     slug: 'how-to-cook-mushrooms', label: 'All mushrooms', badge: 'Start here', title: 'How to Cook Mushrooms So They Brown, Not Steam', description: 'Cook sliced mushrooms in a wide hot skillet for 8–10 minutes, then add garlic butter once the pan is dry and the edges are deep brown.', minutes: '7 min', updated: '2026-07-10', isoTime: 'PT10M', prepIsoTime: 'PT5M', heat: 'Medium-high', cut: '1/4-inch slices', finish: 'Garlic butter, parsley, lemon',
-    image: '/images/garlic-butter-mushrooms.jpg', imageAlt: 'Golden-brown garlic-butter cremini and white button mushrooms in a cast-iron skillet with parsley',
+    image: '/images/garlic-butter-mushrooms.webp', imageAlt: 'Golden-brown garlic-butter cremini and white button mushrooms in a cast-iron skillet with parsley',
     recipeName: 'Golden Garlic-Butter Mushrooms', yieldText: '4 servings as a side',
     ingredients: [
       '1 lb (450 g) cremini or white button mushrooms',
@@ -127,7 +127,7 @@ const methodGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-mushrooms-in-a-pan', label: 'Pan mushrooms', title: 'How to Cook Mushrooms in a Pan', description: 'Cook mushrooms in a hot pan until browned and juicy, with simple timing for tender centers, crisp edges, and a savory finish.', minutes: '6 min', updated: '2026-07-11', image: '/images/cookmushroom-pan-hero.jpg', imageAlt: 'Golden-brown garlic-butter button mushrooms with parsley in a cast-iron skillet', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high to brown, then medium', cut: 'Quarter small mushrooms; halve or slice large ones into 1/4-inch pieces', finish: 'Lemon juice and fresh parsley',
+    slug: 'how-to-cook-mushrooms-in-a-pan', label: 'Pan mushrooms', title: 'How to Cook Mushrooms in a Pan', description: 'Cook mushrooms in a hot pan until browned and juicy, with simple timing for tender centers, crisp edges, and a savory finish.', minutes: '6 min', updated: '2026-07-11', image: '/images/cookmushroom-pan-hero.webp', imageAlt: 'Golden-brown garlic-butter button mushrooms with parsley in a cast-iron skillet', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high to brown, then medium', cut: 'Quarter small mushrooms; halve or slice large ones into 1/4-inch pieces', finish: 'Lemon juice and fresh parsley',
     recipeName: 'Garlic Butter Pan-Fried Mushrooms', yieldText: '4 side servings',
     ingredients: [
       '1 lb (454 g) cremini or button mushrooms, cleaned and cut',
@@ -178,7 +178,7 @@ const methodGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-mushrooms-in-air-fryer', label: 'Air fryer', title: 'How to Cook Mushrooms in an Air Fryer', description: 'Air-fry mushrooms with browned edges and tender centers in minutes. Use dry, evenly cut mushrooms and finish with lemon or herbs.', minutes: '5 min', updated: '2026-07-11', image: '/images/cookmushroom-air-fryer-hero.jpg', imageAlt: 'Golden air-fried cremini mushrooms with lemon and parsley', isoTime: 'PT10M', prepIsoTime: 'PT10M', heat: '400°F (200°C)', cut: 'Halve small mushrooms; cut large ones into even 1/2-inch pieces', finish: 'Lemon juice and chopped parsley',
+    slug: 'how-to-cook-mushrooms-in-air-fryer', label: 'Air fryer', title: 'How to Cook Mushrooms in an Air Fryer', description: 'Air-fry mushrooms with browned edges and tender centers in minutes. Use dry, evenly cut mushrooms and finish with lemon or herbs.', minutes: '5 min', updated: '2026-07-11', image: '/images/cookmushroom-air-fryer-hero.webp', imageAlt: 'Golden air-fried cremini mushrooms with lemon and parsley', isoTime: 'PT10M', prepIsoTime: 'PT10M', heat: '400°F (200°C)', cut: 'Halve small mushrooms; cut large ones into even 1/2-inch pieces', finish: 'Lemon juice and chopped parsley',
     recipeName: 'Crispy Air-Fryer Mushrooms', yieldText: '4 side servings',
     ingredients: [
       '1 lb (454 g) cremini or button mushrooms, halved or quartered',
@@ -238,7 +238,7 @@ const speciesGuides: GuideArticle[] = [
   // Grow every other guide into this shape.
   {
     slug: 'how-to-cook-chanterelle-mushrooms', mushroomSlug: 'chanterelles', label: 'Golden chanterelles', badge: 'Foraging essential', title: 'How to Cook Chanterelle Mushrooms (Dry-Sauté Method)', description: 'Dry-sauté chanterelles until their water cooks off, then add butter, shallot, and thyme for tender centers and lightly crisp edges.', minutes: '7 min', updated: '2026-07-11', isoTime: 'PT10M', prepIsoTime: 'PT5M', heat: 'Hot pan, then medium', cut: 'Tear large pieces', finish: 'Butter, shallot, thyme',
-    image: '/images/chanterelles-skillet.jpg', imageAlt: 'Golden chanterelle mushrooms with butter, shallot, and thyme in a cast-iron skillet',
+    image: '/images/chanterelles-skillet.webp', imageAlt: 'Golden chanterelle mushrooms with butter, shallot, and thyme in a cast-iron skillet',
     recipeName: 'Dry-Sautéed Chanterelles with Butter and Thyme', yieldText: '2 servings as a side',
     ingredients: [
       '1 lb (450 g) fresh chanterelle mushrooms, brushed clean',
@@ -284,7 +284,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-morel-mushrooms', mushroomSlug: 'morels', label: 'Morels', badge: 'Spring luxury', title: 'How to Cook Morel Mushrooms', description: 'Learn how to clean and cook morel mushrooms safely with butter, garlic, and herbs for a crisp outside and tender, earthy center.', minutes: '7 min', updated: '2026-07-11', image: '/images/cookmushroom-morel-hero.jpg', imageAlt: 'Butter-seared morel mushrooms with lemon in a cast-iron skillet', isoTime: 'PT15M', prepIsoTime: 'PT20M', heat: 'Medium, then medium-low', cut: 'Halve lengthwise to inspect and clean the cavities', finish: 'Lemon juice and fresh chives',
+    slug: 'how-to-cook-morel-mushrooms', mushroomSlug: 'morels', label: 'Morels', badge: 'Spring luxury', title: 'How to Cook Morel Mushrooms', description: 'Learn how to clean and cook morel mushrooms safely with butter, garlic, and herbs for a crisp outside and tender, earthy center.', minutes: '7 min', updated: '2026-07-11', image: '/images/cookmushroom-morel-hero.webp', imageAlt: 'Butter-seared morel mushrooms with lemon in a cast-iron skillet', isoTime: 'PT15M', prepIsoTime: 'PT20M', heat: 'Medium, then medium-low', cut: 'Halve lengthwise to inspect and clean the cavities', finish: 'Lemon juice and fresh chives',
     recipeName: 'Buttery Pan-Cooked Morel Mushrooms', yieldText: '2 side servings',
     ingredients: [
       '6 oz (170 g) fresh morel mushrooms, market-purchased or expert-verified, halved',
@@ -339,7 +339,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-lions-mane-mushrooms', mushroomSlug: 'lions-mane', label: "Lion's mane", badge: 'Seafood texture', title: "How to Cook Lion's Mane Mushrooms", description: "Turn lion's mane mushrooms golden and tender in a skillet with butter, garlic, and lemon. Gentle pressing brings out crisp, savory edges.", minutes: '6 min', updated: '2026-07-11', image: '/images/cookmushroom-lions-mane-hero.jpg', imageAlt: 'Golden seared lion’s mane mushroom slabs with lemon in a cast-iron skillet', isoTime: 'PT15M', prepIsoTime: 'PT10M', heat: 'Medium, then medium-low', cut: 'Slice into 1-inch slabs or tear into large, even pieces', finish: 'Lemon juice and fresh parsley',
+    slug: 'how-to-cook-lions-mane-mushrooms', mushroomSlug: 'lions-mane', label: "Lion's mane", badge: 'Seafood texture', title: "How to Cook Lion's Mane Mushrooms", description: "Turn lion's mane mushrooms golden and tender in a skillet with butter, garlic, and lemon. Gentle pressing brings out crisp, savory edges.", minutes: '6 min', updated: '2026-07-11', image: '/images/cookmushroom-lions-mane-hero.webp', imageAlt: 'Golden seared lion’s mane mushroom slabs with lemon in a cast-iron skillet', isoTime: 'PT15M', prepIsoTime: 'PT10M', heat: 'Medium, then medium-low', cut: 'Slice into 1-inch slabs or tear into large, even pieces', finish: 'Lemon juice and fresh parsley',
     recipeName: "Golden Skillet Lion's Mane Mushrooms", yieldText: '2 side servings',
     ingredients: [
       "12 oz (340 g) fresh lion's mane mushrooms, cut or torn",
@@ -392,7 +392,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-porcini-mushrooms', mushroomSlug: 'porcini', label: 'King porcini', badge: 'Umami depth', title: 'How to Cook Porcini Mushrooms', description: 'Learn how to cook porcini mushrooms in a hot skillet for browned edges, a tender center, and a bright garlic-butter finish.', minutes: '6 min', updated: '2026-07-11', image: '/images/porcini-garlic-butter-hero.jpg', imageAlt: 'Garlic-butter porcini mushrooms with parsley and lemon in a skillet', isoTime: 'PT12M', prepIsoTime: 'PT15M', heat: 'Medium-high, then medium', cut: 'Brush clean; trim the stem base; slice caps and stems 1/4 inch thick', finish: 'Lemon juice and chopped parsley off the heat',
+    slug: 'how-to-cook-porcini-mushrooms', mushroomSlug: 'porcini', label: 'King porcini', badge: 'Umami depth', title: 'How to Cook Porcini Mushrooms', description: 'Learn how to cook porcini mushrooms in a hot skillet for browned edges, a tender center, and a bright garlic-butter finish.', minutes: '6 min', updated: '2026-07-11', image: '/images/porcini-garlic-butter-hero.webp', imageAlt: 'Garlic-butter porcini mushrooms with parsley and lemon in a skillet', isoTime: 'PT12M', prepIsoTime: 'PT15M', heat: 'Medium-high, then medium', cut: 'Brush clean; trim the stem base; slice caps and stems 1/4 inch thick', finish: 'Lemon juice and chopped parsley off the heat',
     recipeName: 'Garlic-Butter Porcini Mushrooms', yieldText: '2 servings',
     ingredients: [
       '12 oz (340 g) fresh porcini mushrooms',
@@ -445,7 +445,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-shaggy-mane-mushrooms', mushroomSlug: 'shaggy-mane', label: 'Shaggy manes', badge: 'Time critical', title: 'How to Cook Shaggy Mane Mushrooms', description: 'Cook shaggy mane mushrooms quickly with shallot, garlic, and butter, then spoon them over toast while their texture is tender.', minutes: '6 min', updated: '2026-07-11', image: '/images/shaggy-mane-mushrooms-on-toast-hero.jpg', imageAlt: 'Sautéed shaggy mane mushrooms with chives on toasted sourdough', isoTime: 'PT10M', prepIsoTime: 'PT10M', heat: 'Medium-high, then medium', cut: 'Trim the base; halve small mushrooms or slice larger ones lengthwise', finish: 'Chives and black pepper over crisp toast',
+    slug: 'how-to-cook-shaggy-mane-mushrooms', mushroomSlug: 'shaggy-mane', label: 'Shaggy manes', badge: 'Time critical', title: 'How to Cook Shaggy Mane Mushrooms', description: 'Cook shaggy mane mushrooms quickly with shallot, garlic, and butter, then spoon them over toast while their texture is tender.', minutes: '6 min', updated: '2026-07-11', image: '/images/shaggy-mane-mushrooms-on-toast-hero.webp', imageAlt: 'Sautéed shaggy mane mushrooms with chives on toasted sourdough', isoTime: 'PT10M', prepIsoTime: 'PT10M', heat: 'Medium-high, then medium', cut: 'Trim the base; halve small mushrooms or slice larger ones lengthwise', finish: 'Chives and black pepper over crisp toast',
     recipeName: 'Shaggy Mane Mushrooms on Buttered Toast', yieldText: '2 servings',
     ingredients: [
       '10 oz (280 g) shaggy mane mushrooms',
@@ -497,7 +497,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-oyster-mushrooms', mushroomSlug: 'oyster', label: 'Oyster', badge: 'Fast umami', title: 'How to Cook Oyster Mushrooms', description: 'Learn how to cook oyster mushrooms until their edges turn crisp, then finish them with garlic, butter, soy, lemon, and scallions.', minutes: '6 min', updated: '2026-07-11', image: '/images/crisp-garlic-oyster-mushrooms-hero.jpg', imageAlt: 'Crisp-edged oyster mushrooms with garlic butter and lemon in a skillet', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high', cut: 'Trim the clustered base; tear caps into bite-size pieces', finish: 'Soy, lemon juice, smoked paprika, and scallions',
+    slug: 'how-to-cook-oyster-mushrooms', mushroomSlug: 'oyster', label: 'Oyster', badge: 'Fast umami', title: 'How to Cook Oyster Mushrooms', description: 'Learn how to cook oyster mushrooms until their edges turn crisp, then finish them with garlic, butter, soy, lemon, and scallions.', minutes: '6 min', updated: '2026-07-11', image: '/images/crisp-garlic-oyster-mushrooms-hero.webp', imageAlt: 'Crisp-edged oyster mushrooms with garlic butter and lemon in a skillet', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high', cut: 'Trim the clustered base; tear caps into bite-size pieces', finish: 'Soy, lemon juice, smoked paprika, and scallions',
     recipeName: 'Crisp-Edged Garlic Oyster Mushrooms', yieldText: '2 servings',
     ingredients: [
       '14 oz (400 g) oyster mushrooms',
@@ -550,7 +550,7 @@ const speciesGuides: GuideArticle[] = [
   },
   {
     slug: 'how-to-cook-maitake-mushrooms', mushroomSlug: 'maitake', label: 'Maitake', badge: 'Ruffled clusters', title: 'How to Cook Maitake (Hen of the Woods) Mushrooms', description: 'Hot pan sear maitake mushrooms until the fronds turn golden and crisp, finished with garlic butter. Ready in about 12 minutes.', minutes: '5 min', updated: '2026-07-05', isoTime: 'PT12M', prepIsoTime: 'PT5M', heat: 'Medium-high', cut: 'Break into large clusters or 1-inch pieces', finish: 'Garlic butter, soy, scallion',
-    image: '/images/maitake-seared.jpg', imageAlt: 'Golden-brown seared maitake mushrooms with crisp ruffled edges in a cast-iron skillet, garnished with garlic butter and scallions',
+    image: '/images/maitake-seared.webp', imageAlt: 'Golden-brown seared maitake mushrooms with crisp ruffled edges in a cast-iron skillet, garnished with garlic butter and scallions',
     recipeName: 'Garlic-Butter Seared Maitake', yieldText: '2-3 servings as a side',
     ingredients: [
       '12 oz (340 g) fresh maitake mushrooms',
@@ -602,7 +602,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-lobster-mushrooms', mushroomSlug: 'lobster', label: 'Lobster mushrooms', badge: 'Seafood illusion', title: 'How to Cook Lobster Mushrooms', description: 'Cook lobster mushrooms in butter, shallot, garlic, and thyme for a firm, savory side with a clean lemon finish.', minutes: '6 min', updated: '2026-07-11', image: '/images/lemon-thyme-lobster-mushrooms-hero.jpg', imageAlt: 'Orange lobster mushrooms sautéed with lemon and thyme in a skillet', isoTime: 'PT15M', prepIsoTime: 'PT15M', heat: 'Medium-high, then medium', cut: 'Brush clean; trim the base; slice 1/4 inch thick', finish: 'White wine, lemon juice, and fresh thyme',
+    slug: 'how-to-cook-lobster-mushrooms', mushroomSlug: 'lobster', label: 'Lobster mushrooms', badge: 'Seafood illusion', title: 'How to Cook Lobster Mushrooms', description: 'Cook lobster mushrooms in butter, shallot, garlic, and thyme for a firm, savory side with a clean lemon finish.', minutes: '6 min', updated: '2026-07-11', image: '/images/lemon-thyme-lobster-mushrooms-hero.webp', imageAlt: 'Orange lobster mushrooms sautéed with lemon and thyme in a skillet', isoTime: 'PT15M', prepIsoTime: 'PT15M', heat: 'Medium-high, then medium', cut: 'Brush clean; trim the base; slice 1/4 inch thick', finish: 'White wine, lemon juice, and fresh thyme',
     recipeName: 'Lemon-Thyme Sautéed Lobster Mushrooms', yieldText: '2 servings',
     ingredients: [
       '12 oz (340 g) fresh lobster mushrooms',
@@ -655,7 +655,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-black-trumpet-mushrooms', mushroomSlug: 'black-trumpet', label: 'Black trumpets', badge: 'Wild truffle note', title: 'How to Cook Black Trumpet Mushrooms', description: 'Learn how to cook black trumpet mushrooms in a glossy butter-wine pasta, with careful cleaning, quick sautéing, and a clear wild-mushroom safety note.', minutes: '7 min', updated: '2026-07-11', image: '/images/black-trumpet-butter-pasta-hero.jpg', imageAlt: 'Black trumpet mushroom butter pasta with Parmesan and lemon zest', isoTime: 'PT15M', prepIsoTime: 'PT10M', heat: 'Medium-high for the mushrooms, then medium-low for the sauce', cut: 'Split or tear mushrooms into 1–2-inch pieces', finish: 'Parmesan, lemon zest, and the last spoonful of butter',
+    slug: 'how-to-cook-black-trumpet-mushrooms', mushroomSlug: 'black-trumpet', label: 'Black trumpets', badge: 'Wild truffle note', title: 'How to Cook Black Trumpet Mushrooms', description: 'Learn how to cook black trumpet mushrooms in a glossy butter-wine pasta, with careful cleaning, quick sautéing, and a clear wild-mushroom safety note.', minutes: '7 min', updated: '2026-07-11', image: '/images/black-trumpet-butter-pasta-hero.webp', imageAlt: 'Black trumpet mushroom butter pasta with Parmesan and lemon zest', isoTime: 'PT15M', prepIsoTime: 'PT10M', heat: 'Medium-high for the mushrooms, then medium-low for the sauce', cut: 'Split or tear mushrooms into 1–2-inch pieces', finish: 'Parmesan, lemon zest, and the last spoonful of butter',
     recipeName: 'Black Trumpet Mushroom Butter Pasta', yieldText: '2 servings',
     ingredients: [
       '8 oz (225 g) fresh black trumpet mushrooms, cleaned and torn',
@@ -707,7 +707,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-wood-ear-mushrooms', mushroomSlug: 'wood-ear', label: 'Wood ear', badge: 'Snap and texture', title: 'How to Cook Wood Ear Mushrooms', description: 'Learn how to cook wood ear mushrooms until springy and lightly crisp, then glaze them with garlic, ginger, soy, and sesame.', minutes: '6 min', updated: '2026-07-11', image: '/images/wood-ear-sesame-stir-fry-hero.jpg', imageAlt: 'Sesame-glazed wood ear mushroom stir-fry with ginger and scallions', isoTime: 'PT8M', prepIsoTime: 'PT12M', heat: 'High heat for a quick wok or skillet stir-fry', cut: 'Slice large lobes into 1/2-inch strips; leave small lobes whole', finish: 'Soy, rice vinegar, sugar, and toasted sesame oil',
+    slug: 'how-to-cook-wood-ear-mushrooms', mushroomSlug: 'wood-ear', label: 'Wood ear', badge: 'Snap and texture', title: 'How to Cook Wood Ear Mushrooms', description: 'Learn how to cook wood ear mushrooms until springy and lightly crisp, then glaze them with garlic, ginger, soy, and sesame.', minutes: '6 min', updated: '2026-07-11', image: '/images/wood-ear-sesame-stir-fry-hero.webp', imageAlt: 'Sesame-glazed wood ear mushroom stir-fry with ginger and scallions', isoTime: 'PT8M', prepIsoTime: 'PT12M', heat: 'High heat for a quick wok or skillet stir-fry', cut: 'Slice large lobes into 1/2-inch strips; leave small lobes whole', finish: 'Soy, rice vinegar, sugar, and toasted sesame oil',
     recipeName: 'Garlic-Ginger Wood Ear Mushroom Stir-Fry', yieldText: '2 servings',
     ingredients: [
       '8 oz (225 g) fresh wood ear mushrooms, trimmed',
@@ -760,7 +760,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-shiitake-mushrooms', mushroomSlug: 'shiitake', label: 'Shiitake', badge: 'Asian standard', title: 'How to Cook Shiitake Mushrooms', description: 'Learn how to cook shiitake mushrooms until browned and tender, then finish them with garlic, thyme, soy sauce, and lemon.', minutes: '6 min', updated: '2026-07-11', image: '/images/shiitake-garlic-thyme-hero.jpg', imageAlt: 'Seared shiitake mushrooms with garlic and thyme on a ceramic plate', isoTime: 'PT10M', prepIsoTime: 'PT10M', heat: 'Medium-high for browning, then medium', cut: 'Remove the woody stems and slice caps 1/4 inch thick', finish: 'Butter, garlic, thyme, soy sauce, and lemon',
+    slug: 'how-to-cook-shiitake-mushrooms', mushroomSlug: 'shiitake', label: 'Shiitake', badge: 'Asian standard', title: 'How to Cook Shiitake Mushrooms', description: 'Learn how to cook shiitake mushrooms until browned and tender, then finish them with garlic, thyme, soy sauce, and lemon.', minutes: '6 min', updated: '2026-07-11', image: '/images/shiitake-garlic-thyme-hero.webp', imageAlt: 'Seared shiitake mushrooms with garlic and thyme on a ceramic plate', isoTime: 'PT10M', prepIsoTime: 'PT10M', heat: 'Medium-high for browning, then medium', cut: 'Remove the woody stems and slice caps 1/4 inch thick', finish: 'Butter, garlic, thyme, soy sauce, and lemon',
     recipeName: 'Garlic-Thyme Seared Shiitake Mushrooms', yieldText: '2 servings',
     ingredients: [
       '12 oz (340 g) fresh shiitake mushrooms, stems removed',
@@ -813,7 +813,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-enoki-mushrooms', mushroomSlug: 'enoki', label: 'Enoki', badge: 'Crisp strands', title: 'How to Cook Enoki Mushrooms', description: 'Learn how to cook enoki mushrooms thoroughly in a quick garlic-butter skillet, keeping their long stems tender and their small caps intact.', minutes: '5 min', updated: '2026-07-11', image: '/images/enoki-garlic-butter-hero.jpg', imageAlt: 'Garlic-butter enoki mushroom clusters with soy and scallions in a skillet', isoTime: 'PT7M', prepIsoTime: 'PT8M', heat: 'Medium heat for even cooking without scorching the fine stems', cut: 'Trim off the compact root base and separate into small bundles', finish: 'Garlic butter, soy sauce, rice vinegar, chili flakes, and scallions',
+    slug: 'how-to-cook-enoki-mushrooms', mushroomSlug: 'enoki', label: 'Enoki', badge: 'Crisp strands', title: 'How to Cook Enoki Mushrooms', description: 'Learn how to cook enoki mushrooms thoroughly in a quick garlic-butter skillet, keeping their long stems tender and their small caps intact.', minutes: '5 min', updated: '2026-07-11', image: '/images/enoki-garlic-butter-hero.webp', imageAlt: 'Garlic-butter enoki mushroom clusters with soy and scallions in a skillet', isoTime: 'PT7M', prepIsoTime: 'PT8M', heat: 'Medium heat for even cooking without scorching the fine stems', cut: 'Trim off the compact root base and separate into small bundles', finish: 'Garlic butter, soy sauce, rice vinegar, chili flakes, and scallions',
     recipeName: 'Garlic-Butter Enoki Mushroom Skillet', yieldText: '2 servings',
     ingredients: [
       '2 packages fresh enoki mushrooms, 3.5 oz (100 g) each',
@@ -865,7 +865,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-matsutake-mushrooms', mushroomSlug: 'matsutake', label: 'Matsutake', badge: 'Autumn aroma', title: 'How to Cook Matsutake Mushrooms', description: 'Learn how to cook market-bought matsutake mushrooms with gentle cleaning, a hot pan, and a simple butter-soy finish that keeps their aroma clear.', minutes: '6 min', updated: '2026-07-11', image: '/images/matsutake-butter-soy-hero.jpg', imageAlt: 'Butter-seared matsutake mushroom slices with soy and scallions in a skillet', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high, then medium', cut: 'Wipe clean and slice lengthwise into 1/4-inch pieces', finish: 'Butter, soy sauce, sake, and citrus',
+    slug: 'how-to-cook-matsutake-mushrooms', mushroomSlug: 'matsutake', label: 'Matsutake', badge: 'Autumn aroma', title: 'How to Cook Matsutake Mushrooms', description: 'Learn how to cook market-bought matsutake mushrooms with gentle cleaning, a hot pan, and a simple butter-soy finish that keeps their aroma clear.', minutes: '6 min', updated: '2026-07-11', image: '/images/matsutake-butter-soy-hero.webp', imageAlt: 'Butter-seared matsutake mushroom slices with soy and scallions in a skillet', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high, then medium', cut: 'Wipe clean and slice lengthwise into 1/4-inch pieces', finish: 'Butter, soy sauce, sake, and citrus',
     recipeName: 'Butter-Seared Matsutake Mushrooms with Soy and Citrus', yieldText: '2 servings',
     ingredients: [
       '8 oz (225 g) market-bought matsutake mushrooms, trimmed',
@@ -916,7 +916,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-shimeji-mushrooms', mushroomSlug: 'shimeji', label: 'Shimeji beech', badge: 'Beech bouquets', title: 'How to Cook Shimeji Mushrooms', description: 'Learn how to cook shimeji mushrooms until their clustered caps turn golden, their stems tender, and their savory flavor fits any weeknight meal.', minutes: '5 min', updated: '2026-07-11', image: '/images/shimeji-garlic-butter-hero.jpg', imageAlt: 'Golden shimeji mushrooms with garlic butter, soy, and scallions in a skillet', isoTime: 'PT10M', prepIsoTime: 'PT8M', heat: 'Medium-high, then medium', cut: 'Trim the clustered base and separate the stems', finish: 'Garlic butter, soy sauce, rice vinegar, and sesame oil',
+    slug: 'how-to-cook-shimeji-mushrooms', mushroomSlug: 'shimeji', label: 'Shimeji beech', badge: 'Beech bouquets', title: 'How to Cook Shimeji Mushrooms', description: 'Learn how to cook shimeji mushrooms until their clustered caps turn golden, their stems tender, and their savory flavor fits any weeknight meal.', minutes: '5 min', updated: '2026-07-11', image: '/images/shimeji-garlic-butter-hero.webp', imageAlt: 'Golden shimeji mushrooms with garlic butter, soy, and scallions in a skillet', isoTime: 'PT10M', prepIsoTime: 'PT8M', heat: 'Medium-high, then medium', cut: 'Trim the clustered base and separate the stems', finish: 'Garlic butter, soy sauce, rice vinegar, and sesame oil',
     recipeName: 'Golden Garlic-Butter Shimeji Mushrooms', yieldText: '2 servings',
     ingredients: [
       '10 oz (280 g) shimeji mushrooms, trimmed',
@@ -967,7 +967,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-king-oyster-mushrooms', mushroomSlug: 'king-oyster', label: 'King oyster', badge: 'Flesh density', title: 'How to Cook King Oyster Mushrooms', description: 'Learn how to cook king oyster mushrooms into browned, meaty slices with a crisp edge, tender center, and quick garlic-butter pan sauce.', minutes: '6 min', updated: '2026-07-11', image: '/images/king-oyster-seared-medallions-hero.jpg', imageAlt: 'Seared king oyster mushroom medallions with garlic butter in a cast-iron skillet', isoTime: 'PT14M', prepIsoTime: 'PT10M', heat: 'Medium-high, then medium-low', cut: 'Slice stems into 1-inch medallions and score the cut faces', finish: 'Garlic butter, soy sauce, maple syrup, and black pepper',
+    slug: 'how-to-cook-king-oyster-mushrooms', mushroomSlug: 'king-oyster', label: 'King oyster', badge: 'Flesh density', title: 'How to Cook King Oyster Mushrooms', description: 'Learn how to cook king oyster mushrooms into browned, meaty slices with a crisp edge, tender center, and quick garlic-butter pan sauce.', minutes: '6 min', updated: '2026-07-11', image: '/images/king-oyster-seared-medallions-hero.webp', imageAlt: 'Seared king oyster mushroom medallions with garlic butter in a cast-iron skillet', isoTime: 'PT14M', prepIsoTime: 'PT10M', heat: 'Medium-high, then medium-low', cut: 'Slice stems into 1-inch medallions and score the cut faces', finish: 'Garlic butter, soy sauce, maple syrup, and black pepper',
     recipeName: 'Seared King Oyster Mushroom Medallions', yieldText: '2 servings',
     ingredients: [
       '1 lb (450 g) king oyster mushrooms',
@@ -1018,7 +1018,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-paddy-straw-mushrooms', mushroomSlug: 'paddy-straw', label: 'Paddy straw', badge: 'Broth catchers', title: 'How to Cook Paddy Straw Mushrooms', description: 'Learn how to cook market-bought paddy straw mushrooms safely in a fast ginger-garlic stir-fry with tender centers and a glossy savory sauce.', minutes: '6 min', updated: '2026-07-11', image: '/images/paddy-straw-ginger-garlic-stir-fry-hero.jpg', imageAlt: 'Paddy straw mushroom stir-fry with ginger, garlic, lime, and cilantro in a wok', isoTime: 'PT8M', prepIsoTime: 'PT10M', heat: 'High', cut: 'Halve large mushrooms; leave small mushrooms whole', finish: 'Soy sauce, lime juice, and fresh cilantro',
+    slug: 'how-to-cook-paddy-straw-mushrooms', mushroomSlug: 'paddy-straw', label: 'Paddy straw', badge: 'Broth catchers', title: 'How to Cook Paddy Straw Mushrooms', description: 'Learn how to cook market-bought paddy straw mushrooms safely in a fast ginger-garlic stir-fry with tender centers and a glossy savory sauce.', minutes: '6 min', updated: '2026-07-11', image: '/images/paddy-straw-ginger-garlic-stir-fry-hero.webp', imageAlt: 'Paddy straw mushroom stir-fry with ginger, garlic, lime, and cilantro in a wok', isoTime: 'PT8M', prepIsoTime: 'PT10M', heat: 'High', cut: 'Halve large mushrooms; leave small mushrooms whole', finish: 'Soy sauce, lime juice, and fresh cilantro',
     recipeName: 'Ginger-Garlic Paddy Straw Mushroom Stir-Fry', yieldText: '2 servings',
     ingredients: [
       '14 oz (400 g) market-bought paddy straw mushrooms, fresh or drained canned',
@@ -1070,7 +1070,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-cremini-mushrooms', mushroomSlug: 'cremini', label: 'Cremini', badge: 'Kitchen staple', title: 'How to Cook Cremini Mushrooms', description: 'Learn how to cook cremini mushrooms until browned and juicy, with garlic, thyme, and a quick pan finish for weeknight meals.', minutes: '4 min', updated: '2026-07-11', image: '/images/cookmushroom-cremini-skillet-hero.jpg', imageAlt: 'Golden-brown cremini mushrooms with garlic, thyme, and lemon in a skillet', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high skillet heat, then medium for the aromatics', cut: 'Halve small mushrooms and quarter large ones', finish: 'Lemon juice, parsley, and a final pinch of salt',
+    slug: 'how-to-cook-cremini-mushrooms', mushroomSlug: 'cremini', label: 'Cremini', badge: 'Kitchen staple', title: 'How to Cook Cremini Mushrooms', description: 'Learn how to cook cremini mushrooms until browned and juicy, with garlic, thyme, and a quick pan finish for weeknight meals.', minutes: '4 min', updated: '2026-07-11', image: '/images/cookmushroom-cremini-skillet-hero.webp', imageAlt: 'Golden-brown cremini mushrooms with garlic, thyme, and lemon in a skillet', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high skillet heat, then medium for the aromatics', cut: 'Halve small mushrooms and quarter large ones', finish: 'Lemon juice, parsley, and a final pinch of salt',
     recipeName: 'Garlic-Butter Skillet Cremini Mushrooms', yieldText: '4 servings',
     ingredients: [
       '1 lb (454 g) cremini mushrooms',
@@ -1122,7 +1122,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-prepare-chaga', mushroomSlug: 'chaga', label: 'Chaga', badge: 'Functional herb', title: 'How to Prepare Chaga', description: 'Prepare dried chaga as a simple, low-simmer culinary infusion with clear timing, gentle heat, and practical storage guidance.', minutes: '5 min', updated: '2026-07-11', image: '/images/cookmushroom-chaga-orange-infusion-hero.jpg', imageAlt: 'Chaga culinary infusion with dried chaga, cinnamon, and orange peel', isoTime: 'PT50M', prepIsoTime: 'PT5M', heat: 'Gentle simmer, 185–195°F / 85–91°C; avoid a rolling boil', cut: 'Use small dried pieces as supplied; do not pulverize woody pieces', finish: 'Strain completely, then add optional maple syrup and salt',
+    slug: 'how-to-prepare-chaga', mushroomSlug: 'chaga', label: 'Chaga', badge: 'Functional herb', title: 'How to Prepare Chaga', description: 'Prepare dried chaga as a simple, low-simmer culinary infusion with clear timing, gentle heat, and practical storage guidance.', minutes: '5 min', updated: '2026-07-11', image: '/images/cookmushroom-chaga-orange-infusion-hero.webp', imageAlt: 'Chaga culinary infusion with dried chaga, cinnamon, and orange peel', isoTime: 'PT50M', prepIsoTime: 'PT5M', heat: 'Gentle simmer, 185–195°F / 85–91°C; avoid a rolling boil', cut: 'Use small dried pieces as supplied; do not pulverize woody pieces', finish: 'Strain completely, then add optional maple syrup and salt',
     recipeName: 'Cinnamon-Orange Chaga Infusion', yieldText: '4 cups',
     ingredients: [
       '1 oz (28 g) dried chaga pieces',
@@ -1171,7 +1171,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-prepare-reishi-mushrooms', mushroomSlug: 'reishi', label: 'Reishi', badge: 'Wellness tonic', title: 'How to Prepare Reishi Mushrooms', description: 'Prepare dried reishi as a measured, low-simmer culinary infusion with gentle heat, clear timing, and storage guidance.', minutes: '5 min', updated: '2026-07-11', image: '/images/cookmushroom-reishi-ginger-infusion-hero.jpg', imageAlt: 'Reishi culinary infusion with dried reishi, ginger, and orange peel', isoTime: 'PT1H', prepIsoTime: 'PT5M', heat: 'Low simmer, 185–195°F / 85–91°C; avoid a rolling boil', cut: 'Use dried slices as supplied, or split large pieces with kitchen shears', finish: 'Strain fully, then balance the bitterness with ginger, citrus, or sweetener',
+    slug: 'how-to-prepare-reishi-mushrooms', mushroomSlug: 'reishi', label: 'Reishi', badge: 'Wellness tonic', title: 'How to Prepare Reishi Mushrooms', description: 'Prepare dried reishi as a measured, low-simmer culinary infusion with gentle heat, clear timing, and storage guidance.', minutes: '5 min', updated: '2026-07-11', image: '/images/cookmushroom-reishi-ginger-infusion-hero.webp', imageAlt: 'Reishi culinary infusion with dried reishi, ginger, and orange peel', isoTime: 'PT1H', prepIsoTime: 'PT5M', heat: 'Low simmer, 185–195°F / 85–91°C; avoid a rolling boil', cut: 'Use dried slices as supplied, or split large pieces with kitchen shears', finish: 'Strain fully, then balance the bitterness with ginger, citrus, or sweetener',
     recipeName: 'Ginger-Citrus Reishi Infusion', yieldText: '4 cups',
     ingredients: [
       '1 oz (28 g) dried reishi slices or pieces',
@@ -1221,7 +1221,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-use-truffles', mushroomSlug: 'truffles', label: 'Truffles', badge: 'Gourmet luxury', title: 'How to Use Truffles at the Table', description: 'Use truffles with restraint: warm a simple buttered pasta, then add shavings at the table so their aroma stays vivid.', minutes: '5 min', updated: '2026-07-11', image: '/images/cookmushroom-truffle-buttered-pasta-hero.jpg', imageAlt: 'Fresh truffle shavings over buttered tagliatelle with Parmesan', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high for the pasta water, then low for the butter sauce', cut: 'Shave the truffle paper-thin just before serving', finish: 'Add the truffle off heat so its aroma blooms over the warm dish',
+    slug: 'how-to-use-truffles', mushroomSlug: 'truffles', label: 'Truffles', badge: 'Gourmet luxury', title: 'How to Use Truffles at the Table', description: 'Use truffles with restraint: warm a simple buttered pasta, then add shavings at the table so their aroma stays vivid.', minutes: '5 min', updated: '2026-07-11', image: '/images/cookmushroom-truffle-buttered-pasta-hero.webp', imageAlt: 'Fresh truffle shavings over buttered tagliatelle with Parmesan', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high for the pasta water, then low for the butter sauce', cut: 'Shave the truffle paper-thin just before serving', finish: 'Add the truffle off heat so its aroma blooms over the warm dish',
     recipeName: 'Fresh Truffle Buttered Pasta', yieldText: '4 servings',
     ingredients: [
       '12 oz (340 g) tagliatelle or fettuccine',
@@ -1272,7 +1272,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-portobello-mushrooms', mushroomSlug: 'portobello', label: 'Portobello', title: 'How to Cook Portobello Mushrooms', description: 'Cook portobello mushrooms until tender and browned, using a savory marinade, high heat, and a clean finish for plates or buns.', minutes: '5 min', updated: '2026-07-11', image: '/images/cookmushroom-portobello-grill-hero.jpg', imageAlt: 'Balsamic-grilled portobello mushroom caps with lemon and garlic', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high grill or grill pan, 425–450°F / 220–230°C', cut: 'Keep the caps whole for cooking; slice after resting if serving in strips', finish: 'Lemon juice and pan juices, served whole or in thick slices',
+    slug: 'how-to-cook-portobello-mushrooms', mushroomSlug: 'portobello', label: 'Portobello', title: 'How to Cook Portobello Mushrooms', description: 'Cook portobello mushrooms until tender and browned, using a savory marinade, high heat, and a clean finish for plates or buns.', minutes: '5 min', updated: '2026-07-11', image: '/images/cookmushroom-portobello-grill-hero.webp', imageAlt: 'Balsamic-grilled portobello mushroom caps with lemon and garlic', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high grill or grill pan, 425–450°F / 220–230°C', cut: 'Keep the caps whole for cooking; slice after resting if serving in strips', finish: 'Lemon juice and pan juices, served whole or in thick slices',
     recipeName: 'Balsamic-Grilled Portobello Caps', yieldText: '4 servings',
     ingredients: [
       '4 large portobello mushroom caps, about 1 1/4 lb (567 g)',
