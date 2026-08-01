@@ -25,14 +25,23 @@ const schema = {
   cookTime: recipe.cookIsoTime,
   totalTime: recipe.totalIsoTime,
   recipeYield: recipe.yieldText,
-  keywords: ['mushrooms and onions', 'cremini mushrooms', ...recipe.pairings].join(', '),
+  keywords: [...recipe.keywords, ...recipe.pairings].join(', '),
   recipeIngredient: recipe.ingredients,
   recipeInstructions: recipe.steps.map((text, index) => ({ '@type': 'HowToStep', position: index + 1, text })),
   mainEntityOfPage: pageUrl,
 };
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://cookmushroom.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Recipe ideas', item: 'https://cookmushroom.com/mushroom-recipe-index/' },
+    { '@type': 'ListItem', position: 3, name: recipe.title, item: pageUrl },
+  ],
+};
 const minutesOf = (iso: string) => iso.match(/^PT(\d+)M$/)?.[1] ?? iso;
 ---
-<Layout title={seoTitle} description={recipe.description} schema={schema} heroImage={recipe.image} heroImageSrcset={heroImageSrcset} heroImageSizes={heroImageSizes}>
+<Layout title={seoTitle} description={recipe.description} schema={[schema, breadcrumbSchema]} heroImage={recipe.image} heroImageSrcset={heroImageSrcset} heroImageSizes={heroImageSizes}>
   <main id="content" class="guide">
     <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/mushroom-recipe-index/">Recipe ideas</a> › <span>{recipe.title}</span></nav>
     <p class="eyebrow">Recipe · {recipe.minutes}</p>

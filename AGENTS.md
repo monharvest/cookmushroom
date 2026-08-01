@@ -15,7 +15,9 @@ cookmushroom.com — an Astro static site about cooking mushrooms, deployed auto
 ## Architecture
 
 - Guides: `src/data/guides.ts` (`GuideArticle[]`), rendered by `src/pages/[slug].astro`. `ingredients` present → Recipe schema; absent → Article schema. `quickFacts` overrides the default Heat/Cut/Time/Finish grid (see `how-to-clean-mushrooms` for the pattern).
-- Recipes: `src/data/recipes.ts` (`RecipeArticle[]`) + `src/components/RecipePage.astro`. NOTE: currently one hardcoded page (`sauteed-mushrooms-and-onions.astro`); the planned refactor is a dynamic route with `getStaticPaths` — do that before adding recipe #2.
+- Recipes: `src/data/recipes.ts` (`RecipeArticle[]`) + `src/components/RecipePage.astro`. Adding a recipe = one entry in `recipes.ts`, nothing else.
+- Routing: `src/pages/[slug].astro` is a thin router over BOTH collections — guides and recipes share the root URL space (`/<slug>/`). It dispatches to `GuidePage.astro` or `RecipePage.astro`. Guide body markup lives in `src/components/GuidePage.astro`, not in the route.
+- Recipe cards on guide pages come from `recipeCards` in `guides.ts`, which derives from `recipeArticles`; each recipe's `cardGuide` decides which guide's "Use it in" section shows it, and `keywords`/`cardMushroom` are per-recipe (never hardcode these in the component).
 - Cook-time chart rows: `cookTimes` in `guides.ts`. Recipe cards: `recipeCards` in `guides.ts`.
 - Images: `public/images/`, WebP only, 1200×800 hero + `-600`/`-900` variants for srcset. Hero ≤110 KB.
 

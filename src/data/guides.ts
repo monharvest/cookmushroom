@@ -115,6 +115,11 @@ const methodGuides: GuideArticle[] = [
       'Add garlic during the final minute. Garlic added at the start can burn before the mushrooms brown.'
     ],
     pairings: ['steak', 'eggs', 'pasta', 'toast', 'rice bowls', 'polenta'],
+    relatedLinks: [
+      { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' },
+      { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
+      { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' }
+    ],
     sections: [
       { heading: 'Why a wide hot pan works for mushrooms', text: 'Fresh mushrooms release water as they heat. A wide skillet gives that water room to evaporate, while medium-high heat browns the exposed surfaces once the pan dries. Leaving the first side alone for 3 minutes builds color before stirring. Oil handles the early heat; butter and garlic go in only after the water is gone, so they coat the browned slices instead of forming a thin sauce in the pan.' },
       { heading: 'Which mushrooms work with this method', text: 'Cremini and white button mushrooms are the easiest place to start. The same sequence works for sliced portobello caps, stemmed shiitake caps, and torn oyster mushrooms, but delicate pieces may finish sooner. Keep the pieces similar in size and cook in batches when they cannot sit mostly flat against the skillet.' },
@@ -176,6 +181,8 @@ const methodGuides: GuideArticle[] = [
       { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
       { href: '/how-to-grill-mushrooms/', label: 'How to grill mushrooms' },
       { href: '/how-to-cook-button-mushrooms/', label: 'How to cook button mushrooms' },
+      { href: '/garlic-mushroom-pasta/', label: 'Garlic mushroom pasta recipe' },
+      { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' }
     ],
     faqs: [
       { question: 'Should I wash mushrooms before pan-frying?', answer: 'Brush or wipe them first. If they are muddy, rinse them quickly and dry them very well before cooking.' },
@@ -362,6 +369,9 @@ const methodGuides: GuideArticle[] = [
       { href: '/how-to-cook-shiitake-mushrooms/', label: 'How to cook shiitake mushrooms' },
       { href: '/how-to-cook-wood-ear-mushrooms/', label: 'How to cook wood ear mushrooms' },
       { href: '/how-to-cook-morel-mushrooms/', label: 'How to cook morel mushrooms' },
+      { href: '/shiitake-mushroom-ramen/', label: 'Shiitake mushroom ramen recipe' },
+      { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' },
+      { href: '/garlic-mushroom-pasta/', label: 'Garlic mushroom pasta recipe' }
     ]
   },
   {
@@ -499,6 +509,73 @@ const methodGuides: GuideArticle[] = [
 ];
 
 const speciesGuides: GuideArticle[] = [
+  {
+    slug: 'how-to-cook-frozen-mushrooms', label: 'Frozen mushrooms', badge: 'No thawing', title: 'How to Cook Frozen Mushrooms (Without Thawing)', description: 'Cook frozen mushrooms straight from the freezer in a hot dry pan. Skip the thaw, drive off the ice water, then brown and season at the end.', minutes: '5 min', updated: '2026-08-01', isoTime: 'PT12M', prepIsoTime: 'PT2M', heat: 'Medium-high, dry pan first', cut: 'Use as frozen', finish: 'Butter and salt at the end',
+    image: '/images/cookmushroom-frozen-mushrooms-hero.webp', imageAlt: 'Frozen mushroom pieces cooking in a hot skillet with steam rising as the ice water evaporates',
+    recipeName: 'Skillet Frozen Mushrooms', yieldText: '2–3 side servings',
+    quickFacts: [
+      { label: 'Thaw first?', value: 'No — cook from frozen' },
+      { label: 'Pan', value: 'Dry and hot, no oil to start' },
+      { label: 'Time', value: '10–14 minutes' },
+      { label: 'Best for', value: 'Sautés, soups, sauces, pasta' },
+    ],
+    showCookTimes: false,
+    ingredients: [
+      '1 lb (454 g) frozen mushrooms, straight from the freezer',
+      '1 tbsp (15 ml) neutral oil',
+      '2 tbsp (28 g) unsalted butter',
+      '2 garlic cloves, minced',
+      '1/2 tsp kosher salt',
+      '1/4 tsp black pepper',
+      '1 tsp fresh thyme leaves or chopped parsley (optional)'
+    ],
+    steps: [
+      'Do not thaw. Take the mushrooms straight from the freezer — thawed mushrooms leak their water onto the cutting board and go limp before they ever reach the pan.',
+      'Heat a wide skillet over medium-high for 2 minutes. Add the frozen mushrooms to the dry pan with no oil. They will hiss and release ice water immediately.',
+      'Cook 6 to 8 minutes, stirring occasionally, letting the water boil off. The pan will look flooded at first; keep going until the liquid is gone and you hear sizzling instead of bubbling.',
+      'Add the oil once the pan is dry. Spread the mushrooms in one layer and leave them undisturbed for 2 to 3 minutes so the edges can brown.',
+      'Lower the heat to medium. Add the butter, garlic, salt, and pepper and cook 1 minute more, until the garlic is fragrant and the mushrooms are glossy.',
+      'Stir in the herbs off the heat and serve. Expect softer mushrooms than fresh — freezing ruptures the cell walls, and no technique fully reverses that.'
+    ],
+    tips: [
+      'Oil added at the start just floats on the melting ice and spits. Wait until the pan is dry.',
+      'Frozen mushrooms release far more liquid than fresh, so use a wider pan than you think you need.',
+      'Never refreeze mushrooms that have thawed. The texture collapses and the water loss is permanent.',
+      'Commercially frozen mushrooms are usually blanched first, so they soften faster than ones you froze at home raw.'
+    ],
+    pairings: ['soups', 'pasta sauces', 'gravy', 'risotto', 'omelets', 'stews'],
+    sections: [
+      { heading: 'Why you should not thaw frozen mushrooms', text: 'Mushrooms are roughly 90 percent water. Freezing turns that water into ice crystals that puncture the cell walls, so a thawed mushroom slumps and weeps liquid before it ever hits heat. Cooking from frozen skips that stage: the ice goes straight to steam in a hot pan, and the mushrooms hold their shape long enough to brown at the end.' },
+      { heading: 'What frozen mushrooms are good for', text: 'Frozen mushrooms will never sear like fresh ones — the texture is softer no matter how carefully you cook them. That makes them excellent where they are one component among many, and poor where they are the star.', bullets: ['Good: soups, stews, pasta sauces, gravies, risotto, pizza toppings, omelets.', 'Poor: standalone sautéed side dishes, salads, anything raw, or dishes where a firm bite is the point.', 'If you want a browned mushroom side, buy fresh — see the pan guide for the method.'] },
+      { heading: 'Freezing mushrooms yourself', text: 'If you are freezing your own, cook them first. Sauté or steam them, cool them completely, then freeze in a single layer before bagging. Raw home-frozen mushrooms hold far less structure than commercially blanched ones and turn watery on cooking.' }
+    ],
+    faqs: [
+      { question: 'Can you cook mushrooms straight from frozen?', answer: 'Yes, and you should. Put them in a hot dry pan without thawing and let the ice water boil off first. Thawing beforehand makes them limp and watery.' },
+      { question: 'Why are my frozen mushrooms slimy?', answer: 'Either they were thawed before cooking, or the water was never fully driven off in the pan. Keep cooking until the liquid has evaporated and you hear sizzling rather than bubbling.' },
+      { question: 'Do frozen mushrooms taste as good as fresh?', answer: 'The flavor holds up well; the texture does not. Use them where softness does not matter — soups, sauces, gravies — and use fresh when you want browned, meaty pieces.' },
+      { question: 'Do you need to wash frozen mushrooms?', answer: 'No. Commercially frozen mushrooms are cleaned before freezing, and rinsing only adds more water for you to cook off.' },
+      { question: 'How long do frozen mushrooms keep?', answer: 'About 9 to 12 months at 0°F / −18°C for commercially frozen, and closer to 3 months for ones you cooked and froze at home. They stay safe longer but lose flavor.' }
+    ],
+    storage: [
+      'Keep frozen at 0°F / −18°C until the moment you cook; do not let the bag sit out on the counter.',
+      'Cooked leftovers keep in the fridge for up to 3 days in an airtight container.',
+      'Never refreeze thawed mushrooms — texture and food safety both suffer.',
+      'To freeze your own: sauté or steam first, cool completely, freeze in a single layer, then bag for up to 3 months.'
+    ],
+    variations: [
+      'Straight to soup: skip the browning step and add the frozen mushrooms directly to simmering broth.',
+      'Cream sauce: after browning, add 1/2 cup heavy cream and reduce 3 minutes, then toss with pasta.',
+      'Garlic butter toast: chop finer after cooking and pile onto sourdough with the pan butter.',
+      'Gravy base: deglaze the browned mushrooms with stock and thicken with a cornstarch slurry.'
+    ],
+    relatedLinks: [
+      { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
+      { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
+      { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
+      { href: '/how-to-cook-cremini-mushrooms/', label: 'How to cook cremini mushrooms' },
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' }
+    ]
+  },
   // ── TEMPLATE EXEMPLAR ─────────────────────────────────────────────────────
   // This guide carries every field of the full recipe template: intro sections,
   // ingredients (triggers Recipe schema), FAQs, storage, and variations.
@@ -700,6 +777,7 @@ const speciesGuides: GuideArticle[] = [
     ],
     relatedLinks: [
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
+      { href: '/garlic-mushroom-pasta/', label: 'Garlic mushroom pasta recipe' }
     ],
     faqs: [
       { question: 'Can I wash porcini mushrooms?', answer: 'Brush them first. If they are heavily soiled, rinse them briefly under cool water and dry them thoroughly before cooking.' },
@@ -1023,6 +1101,7 @@ const speciesGuides: GuideArticle[] = [
     ],
     relatedLinks: [
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
+      { href: '/shiitake-mushroom-ramen/', label: 'Shiitake mushroom ramen recipe' }
     ],
     faqs: [
       { question: 'Should I soak dried wood ear mushrooms before cooking?', answer: 'Yes. Soak them in plenty of water until fully expanded, then rinse, trim, and cook thoroughly.' },
@@ -1080,6 +1159,7 @@ const speciesGuides: GuideArticle[] = [
     relatedLinks: [
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
       { href: '/how-to-grill-mushrooms/', label: 'How to grill mushrooms' },
+      { href: '/shiitake-mushroom-ramen/', label: 'Shiitake mushroom ramen recipe' }
     ],
     faqs: [
       { question: 'Should I remove shiitake stems before cooking?', answer: 'Yes. Fresh stems are often fibrous, so remove them and reserve them for stock.' },
@@ -1128,6 +1208,10 @@ const speciesGuides: GuideArticle[] = [
       'Use tongs or chopsticks to turn the bundles gently instead of stirring them into fragments.'
     ],
     pairings: ['steamed rice', 'miso soup', 'grilled salmon', 'lettuce wraps', 'cold soba'],
+    relatedLinks: [
+      { href: '/shiitake-mushroom-ramen/', label: 'Shiitake mushroom ramen recipe' },
+      { href: '/how-to-cook-shiitake-mushrooms/', label: 'How to cook shiitake mushrooms' }
+    ],
     sections: [
       { heading: 'Enoki’s delicate structure', text: 'Enoki mushrooms have long, slender white stems and tiny rounded caps that grow in dense clusters. Their texture is tender and slightly springy when cooked, so the goal is to soften the stems without burning the caps.' },
       { heading: 'Cook them thoroughly', text: 'For food safety, cook enoki mushrooms thoroughly rather than serving them raw or undercooked. The finished stems should be fully wilted and hot throughout.' },
@@ -1394,6 +1478,8 @@ const speciesGuides: GuideArticle[] = [
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
       { href: '/how-to-cook-button-mushrooms/', label: 'How to cook button mushrooms' },
+      { href: '/garlic-mushroom-pasta/', label: 'Garlic mushroom pasta recipe' },
+      { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' }
     ],
     faqs: [
       { question: 'Should cremini mushrooms be washed?', answer: 'Yes, they may be rinsed briefly if needed, but dry them thoroughly before cooking. A damp towel is usually enough for lightly soiled mushrooms.' },
@@ -1703,9 +1789,10 @@ const guideRecipeCards = [
 export const recipeCards = [
   ...recipeArticles.map((recipe) => ({
     name: recipe.title,
-    mushroom: 'Cremini mushrooms and onions',
+    mushroom: recipe.cardMushroom,
     time: recipe.minutes,
-    guide: 'how-to-cook-cremini-mushrooms',
+    // Which guide's "Use it in" section this recipe surfaces on.
+    guide: recipe.cardGuide,
     href: `/${recipe.slug}/`,
     description: recipe.description,
   })),
