@@ -50,16 +50,19 @@ export const cookTimes = [
   { mushroom: 'Button / cremini', mushroomSlug: 'button-cremini', method: 'Pan sauté', methodSlug: 'pan', time: '8–10 min', heat: 'Medium-high', fat: '1 tbsp oil per 8 oz / 225 g', done: 'Deep brown edges, no pooled water.' },
   { mushroom: 'Button / cremini', mushroomSlug: 'button-cremini', method: 'Air fryer', methodSlug: 'air-fryer', time: '10–12 min', heat: '390°F / 200°C', fat: '2 tsp oil per 8 oz / 225 g', done: 'Shrunk, browned, lightly crisp.' },
   { mushroom: 'Button / cremini', mushroomSlug: 'button-cremini', method: 'Oven roast', methodSlug: 'oven', time: '20–25 min', heat: '400°F / 200°C', fat: '1 tbsp oil per 8 oz / 225 g', done: 'Browned edges, concentrated centers, no pooled liquid.' },
+  { mushroom: 'Button / cremini', mushroomSlug: 'button-cremini', method: 'Grill (skewers)', methodSlug: 'grill', time: '8–12 min', heat: 'Medium-high direct, 425–450°F / 220–230°C', fat: 'Oil-based baste, brushed on', done: 'Shrunk by half, grill-marked, no resistance to a knife.' },
   { mushroom: 'Oyster', mushroomSlug: 'oyster', method: 'Pan sauté', methodSlug: 'pan', time: '7–9 min', heat: 'Medium-high', fat: '1 tbsp oil per 8 oz / 225 g', done: 'Lacy edges turn golden and tender.' },
   { mushroom: 'Oyster', mushroomSlug: 'oyster', method: 'Air fryer', methodSlug: 'air-fryer', time: '8–10 min', heat: '375°F / 190°C', fat: '2 tsp oil per 8 oz / 225 g', done: 'Edges crisp, centers still juicy.' },
   { mushroom: 'Oyster', mushroomSlug: 'oyster', method: 'Oven roast', methodSlug: 'oven', time: '15–18 min', heat: '400°F / 200°C', fat: '1 tbsp oil per 8 oz / 225 g', done: 'Torn edges browned and crisp.' },
+  { mushroom: 'Oyster', mushroomSlug: 'oyster', method: 'Grill (foil packet)', methodSlug: 'grill', time: '8–10 min', heat: 'Medium-high direct, 425–450°F / 220–230°C', fat: 'Butter sealed in the packet', done: 'Clusters wilted and glossy; open for a final minute to brown.' },
   { mushroom: "Lion's mane", mushroomSlug: 'lions-mane', method: 'Pan sear', methodSlug: 'pan', time: '10–14 min', heat: 'Medium', fat: '1 tbsp oil, butter at finish', done: 'Pressed slices are browned and meaty.' },
   { mushroom: "Lion's mane", mushroomSlug: 'lions-mane', method: 'Air fryer', methodSlug: 'air-fryer', time: '10–12 min', heat: '375°F / 190°C', fat: 'Light oil spray', done: 'Golden ridges, firm bite.' },
   { mushroom: 'Enoki', mushroomSlug: 'enoki', method: 'Pan quick cook', methodSlug: 'pan', time: '2–4 min', heat: 'Medium-high', fat: '1 tsp oil', done: 'Just wilted; stems still springy.' },
   { mushroom: 'Enoki', mushroomSlug: 'enoki', method: 'Broil', methodSlug: 'broil', time: '3–5 min', heat: 'High broil', fat: 'Sauce or 1 tsp oil', done: 'Tips browned, bundles softened.' },
   { mushroom: 'Shiitake', mushroomSlug: 'shiitake', method: 'Pan sauté', methodSlug: 'pan', time: '6–8 min', heat: 'Medium-high', fat: '1 tbsp oil per 8 oz / 225 g', done: 'Caps browned; stems removed or very tender.' },
   { mushroom: 'Shiitake', mushroomSlug: 'shiitake', method: 'Soup simmer', methodSlug: 'soup', time: '10–15 min', heat: 'Gentle simmer', fat: 'None required', done: 'Caps are silky and broth smells savory.' },
-  { mushroom: 'Portobello', mushroomSlug: 'portobello', method: 'Grill / pan sear', methodSlug: 'pan', time: '8–12 min', heat: 'Medium-high', fat: 'Brush with oil', done: 'Flexible, browned, juices released.' },
+  { mushroom: 'Shiitake', mushroomSlug: 'shiitake', method: 'Grill (whole caps)', methodSlug: 'grill', time: '6–8 min', heat: 'Medium-high direct, 425–450°F / 220–230°C', fat: 'Oil-based baste, brushed on', done: 'Caps darkened and pliable; stems removed before grilling.' },
+  { mushroom: 'Portobello', mushroomSlug: 'portobello', method: 'Grill / pan sear', methodSlug: 'grill', time: '8–12 min', heat: 'Medium-high', fat: 'Brush with oil', done: 'Flexible, browned, juices released.' },
   { mushroom: 'Portobello', mushroomSlug: 'portobello', method: 'Oven roast', methodSlug: 'oven', time: '15–20 min', heat: '425°F / 220°C', fat: 'Brush with oil', done: 'Tender center, browned rim.' },
   { mushroom: 'Chanterelles', mushroomSlug: 'chanterelles', method: 'Dry sauté', methodSlug: 'pan', time: '8–10 min', heat: 'Hot pan, then medium', fat: 'Butter after water cooks off', done: 'Pan dry, edges lightly crisp.' },
   { mushroom: 'Morels', mushroomSlug: 'morels', method: 'Butter sauté', methodSlug: 'pan', time: '10–14 min', heat: 'Medium, then medium-low', fat: 'Butter and olive oil', done: 'Tender throughout and browned at the edges.' },
@@ -75,6 +78,7 @@ export const cookTimes = [
   { mushroom: 'Shimeji', mushroomSlug: 'shimeji', method: 'Garlic-butter sauté', methodSlug: 'pan', time: '4–6 min', heat: 'Medium-high', fat: 'Oil, butter at finish', done: 'Golden caps and a mostly dry pan.' },
   { mushroom: 'King oyster', mushroomSlug: 'king-oyster', method: 'Scallop sear', methodSlug: 'pan', time: '6–8 min', heat: 'High', fat: 'Oil, butter to baste', done: 'Deep gold crust on scored faces.' },
   { mushroom: 'King oyster', mushroomSlug: 'king-oyster', method: 'Oven roast', methodSlug: 'oven', time: '18–22 min', heat: '400°F / 200°C', fat: '1 tbsp oil per 8 oz / 225 g', done: 'Slices tender with browned cut faces.' },
+  { mushroom: 'King oyster', mushroomSlug: 'king-oyster', method: 'Grill (planks)', methodSlug: 'grill', time: '6–8 min', heat: 'Medium-high direct, 425–450°F / 220–230°C', fat: 'Oil-based baste, brushed on', done: 'Cut faces striped and gold; center gives easily.' },
   { mushroom: 'Paddy straw', mushroomSlug: 'paddy-straw', method: 'Stir-fry', methodSlug: 'pan', time: '3–5 min', heat: 'High', fat: '1 tbsp neutral oil', done: 'Hot throughout and glossy with sauce.' },
   { mushroom: 'Dried mushrooms', mushroomSlug: 'dried-mushrooms', method: 'Rehydrate + pan finish', methodSlug: 'rehydrate', time: '20–30 min soak + 4 min pan', heat: 'Hot water, then medium', fat: '1 tsp oil or butter, optional', done: 'Mushrooms tender; broth strained clear of grit.' },
   { mushroom: 'Chaga', mushroomSlug: 'chaga', method: 'Culinary infusion', methodSlug: 'simmer', time: '40–50 min', heat: 'Low simmer', fat: 'None', done: 'Liquid deep amber-brown and aromatic.' },
@@ -170,6 +174,7 @@ const methodGuides: GuideArticle[] = [
     relatedLinks: [
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
+      { href: '/how-to-grill-mushrooms/', label: 'How to grill mushrooms' },
       { href: '/how-to-cook-button-mushrooms/', label: 'How to cook button mushrooms' },
     ],
     faqs: [
@@ -416,6 +421,79 @@ const methodGuides: GuideArticle[] = [
       { href: '/how-to-cook-portobello-mushrooms/', label: 'How to cook portobello mushrooms' },
       { href: '/how-to-cook-king-oyster-mushrooms/', label: 'How to cook king oyster mushrooms' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
+    ]
+  },
+  {
+    slug: 'how-to-grill-mushrooms', mushroomSlug: 'button-cremini', label: 'Grilled mushrooms', badge: 'Grill season', title: 'How to Grill Mushrooms (Caps, Skewers, and Foil Packets)', description: 'Grill mushrooms over medium-high direct heat for 8–12 minutes. Whole caps go on the grate, small mushrooms on skewers, delicate ones in foil.', minutes: '7 min', updated: '2026-08-01', image: '/images/cookmushroom-grilled-mushrooms-hero.webp', imageAlt: 'Garlic-herb cremini and white button mushroom skewers with grill marks over glowing coals', isoTime: 'PT12M', prepIsoTime: 'PT15M', heat: 'Medium-high direct heat, 425–450°F / 220–230°C', cut: 'Whole if small; halve larger mushrooms; 1/2-inch planks for dense stems', finish: 'Garlic-herb baste and lemon off the grill',
+    recipeName: 'Garlic-Herb Grilled Mushroom Skewers', yieldText: '4 servings as a side',
+    ingredients: [
+      '1 1/2 lb (680 g) cremini or white button mushrooms, whole if small or halved if large',
+      '3 tbsp (45 ml) olive oil',
+      '2 tbsp (28 g) unsalted butter, melted',
+      '3 garlic cloves (9 g), finely grated',
+      '1 tbsp (15 ml) soy sauce or tamari',
+      '1 tsp (5 ml) lemon juice, plus more to finish',
+      '1 tbsp (3 g) chopped fresh thyme or rosemary',
+      '1/2 tsp (2.5 g) kosher salt',
+      '1/4 tsp freshly ground black pepper',
+      '8 metal skewers, or bamboo skewers soaked in water for 30 minutes'
+    ],
+    steps: [
+      'Brush or wipe the mushrooms clean and dry them well. Leave small mushrooms whole and halve any that are wider than about 1 1/2 inches so every piece is the same thickness.',
+      'Whisk the olive oil, melted butter, garlic, soy sauce, lemon juice, herbs, salt, and pepper into a baste. Reserve about a third of it in a separate bowl for after grilling.',
+      'Thread the mushrooms onto skewers through the cap and stem, leaving a small gap between pieces so heat can reach the sides. Brush them with the baste.',
+      'Heat the grill to medium-high, about 425–450°F (220–230°C), and scrape the grates clean. Oil the grates with a folded paper towel held in tongs.',
+      'Lay the skewers over direct heat. Grill for 3 minutes without moving them, until the contact points show grill marks.',
+      'Turn the skewers a quarter rotation every 2 to 3 minutes for 8 to 12 minutes total, brushing with baste after each turn, until the mushrooms have shrunk, darkened, and feel tender when pierced.',
+      'Move the skewers to a platter, brush with the reserved clean baste, and add a final squeeze of lemon. Serve hot.'
+    ],
+    tips: [
+      'Dry mushrooms take grill marks; wet ones steam. Clean them ahead of time and let the surface dry before the baste goes on.',
+      'Keep a third of the baste back before it touches raw mushrooms so you have a clean sauce for the platter.',
+      'Two skewers side by side through each mushroom stop the pieces from spinning when you turn them.',
+      'Mushrooms shrink by roughly half on the grill. Buy more than looks necessary.'
+    ],
+    pairings: ['steak', 'grilled chicken', 'burgers', 'couscous', 'grilled corn', 'crusty bread'],
+    sections: [
+      { heading: 'What this page covers, and what it does not', text: 'This is the cross-variety grilling method: how to set up the fire, which mushrooms suit the grate, the skewer, or the foil packet, and how to tell each one is done. Whole portobello caps have their own marinade and timing on the portobello guide, and scored king oyster medallions are covered on the king oyster guide. Start here to choose the approach, then follow those pages for their specific recipes.' },
+      { heading: 'Set up the grill before the mushrooms', text: 'Mushrooms grill fast and burn faster, so the fire matters more than the seasoning. Build a two-zone fire: coals banked to one side, or half the gas burners on high and the rest off. The hot zone gives the char, and the cool zone is where anything cooking too fast can finish without scorching. Scrape the grates while they are hot, then wipe them with oil so the caps release cleanly.' },
+      { heading: 'Three ways to get mushrooms over fire', bullets: ['Straight on the grate: for anything wide enough not to fall through — portobello caps, thick king oyster planks, large shiitake caps, halved lengthwise clusters of maitake.', 'Skewers: for button, cremini, and small shiitake. Threading them keeps the pieces together and lets you turn eight at once.', 'Foil packets: for oyster clusters, enoki, shimeji, and anything small or fragile. The mushrooms steam in their own liquid with butter and aromatics, then get a minute on the open grate at the end if you want color.'], text: 'A perforated grill basket is a fourth option and works like a hybrid of the skewer and the foil packet: pieces stay contained but still get direct heat.' },
+      { heading: 'Grill times by variety', bullets: ['Button or cremini on skewers: 8–12 minutes total, quarter-turning every 2–3 minutes.', 'Portobello caps, whole: 8–12 minutes, gill-side down first, turned once.', 'King oyster planks, 1/2-inch thick: 6–8 minutes, turned once at the halfway point.', 'Shiitake caps, stems removed: 6–8 minutes, cap-side down first.', 'Oyster or maitake clusters: 4–6 minutes on the grate, or 8–10 minutes in a foil packet.', 'Enoki or shimeji bundles: 8–10 minutes in a foil packet only. They fall through and scorch on an open grate.'] },
+      { heading: 'How to tell grilled mushrooms are done', text: 'Look for three signs together: the mushrooms have visibly shrunk, the surface has gone from matte to glossy as their juices come out, and a skewer or paring knife slides through the thickest part with no resistance. Grill marks alone are not doneness — a mushroom can be striped on the outside and squeaky in the middle. If the outside is charring before the center softens, move the pieces to the cool zone and close the lid for two minutes.' },
+      { heading: 'Marinate or baste?', text: 'Baste. A long soak in a wet marinade loads the mushroom with liquid that then has to boil off on the grate, which is how grilled mushrooms end up steamed and floppy. Brushing oil, garlic, and herbs on before and during grilling puts the flavor on the surface where the fire can work on it. Salt goes on with the baste rather than an hour ahead, for the same reason.' },
+      { heading: 'The one rule that decides everything', quote: 'Dry mushroom, hot grate, oil on the surface — not in the mushroom.' }
+    ],
+    faqs: [
+      { question: 'How long do mushrooms take on the grill?', answer: 'Most take 8 to 12 minutes over medium-high direct heat. Button and cremini on skewers need 8 to 12 minutes with a quarter turn every 2 to 3 minutes; whole portobello caps take 8 to 12; king oyster planks and shiitake caps take 6 to 8.' },
+      { question: 'What temperature should the grill be for mushrooms?', answer: 'Medium-high, about 425–450°F (220–230°C). Hotter than that chars the outside before the center is tender; much cooler and the mushrooms release their water and stew instead of browning.' },
+      { question: 'Do you have to soak mushrooms before grilling?', answer: 'No. Soaking waterlogs them. Brush them clean, dry them, and brush on an oil-based baste instead — the fat carries the seasoning and helps the surface brown.' },
+      { question: 'How do you keep mushrooms from falling through the grill grates?', answer: 'Thread small mushrooms onto skewers, use a perforated grill basket, or wrap fragile varieties like oyster and enoki in a foil packet. Only caps wider than the grate spacing belong directly on the bars.' },
+      { question: 'Should you grill mushrooms gill-side up or down?', answer: 'Gill-side down first. The gills face the fire while the cap holds its shape, and when you turn the cap over the released juices collect in the bowl instead of dripping into the coals.' },
+      { question: 'Can you grill mushrooms in foil?', answer: 'Yes, and it is the right method for small or delicate varieties. Seal them in a foil packet with butter and aromatics and cook for 8 to 10 minutes; the mushrooms steam in their own liquid. Open the packet for the last minute over direct heat if you want browned edges.' },
+      { question: 'Why did my grilled mushrooms turn out rubbery?', answer: 'They came off too early. Rubbery means the interior water has not cooked away yet. Keep going until the pieces have shrunk noticeably and a knife meets no resistance — usually a few minutes past the point the grill marks appear.' }
+    ],
+    storage: [
+      'Refrigerate grilled mushrooms in a covered container for up to 3 days. Pull them off the skewers first so they cool faster.',
+      'Reheat in a hot skillet for 2 to 3 minutes rather than a microwave; the pan dries the surface again instead of softening it.',
+      'Grilled mushrooms are good cold. Chop leftovers into grain bowls, sandwiches, or a salad with vinaigrette.',
+      'Freeze cooled grilled mushrooms in a sealed container for up to 2 months, and plan to use them in sauces or fillings where a softer texture does not matter.'
+    ],
+    variations: [
+      'Balsamic: replace the lemon juice with 1 tbsp balsamic vinegar and brush it on only during the final two minutes so the sugars do not burn.',
+      'Smoky: add 1/2 tsp smoked paprika to the baste, or drop a handful of soaked wood chips onto the coals once the skewers go on.',
+      'Miso-butter: whisk 1 tbsp white miso into the melted butter and skip the soy sauce.',
+      'Mixed skewers: alternate mushrooms with red onion wedges and cherry tomatoes; keep the pieces the same thickness so everything finishes together.',
+      'Chimichurri: skip the herbs in the baste and spoon chimichurri over the platter instead.'
+    ],
+    relatedLinks: [
+      { href: '/how-to-cook-portobello-mushrooms/', label: 'How to cook portobello mushrooms' },
+      { href: '/how-to-cook-king-oyster-mushrooms/', label: 'How to cook king oyster mushrooms' },
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
+      { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
+      { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
+      { href: '/how-to-cook-oyster-mushrooms/', label: 'How to cook oyster mushrooms' },
+      { href: '/how-to-cook-shiitake-mushrooms/', label: 'How to cook shiitake mushrooms' },
+      { href: '/mushroom-cook-time-chart/', label: 'Mushroom cook time chart' },
     ]
   }
 ];
@@ -730,6 +808,7 @@ const speciesGuides: GuideArticle[] = [
     relatedLinks: [
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
+      { href: '/how-to-grill-mushrooms/', label: 'How to grill mushrooms' },
     ],
     faqs: [
       { question: 'Should I wash oyster mushrooms?', answer: 'Brush them clean first. If they need a rinse, do it quickly and dry them thoroughly before they hit the pan.' },
@@ -1000,6 +1079,7 @@ const speciesGuides: GuideArticle[] = [
     ],
     relatedLinks: [
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
+      { href: '/how-to-grill-mushrooms/', label: 'How to grill mushrooms' },
     ],
     faqs: [
       { question: 'Should I remove shiitake stems before cooking?', answer: 'Yes. Fresh stems are often fibrous, so remove them and reserve them for stock.' },
@@ -1210,7 +1290,7 @@ const speciesGuides: GuideArticle[] = [
       { question: 'Do you eat the caps of king oyster mushrooms?', answer: 'Yes. The caps are edible and can be cooked with the thicker stems. Add them a little later because they soften faster.' },
       { question: 'How thick should king oyster mushroom slices be?', answer: 'Cut the stems into slices about 1 inch thick. This gives the outside time to brown while the center stays tender.' },
       { question: 'Why are my king oyster mushrooms watery?', answer: 'The pan may be crowded or not hot enough. Cook in batches if needed and wait until the oil shimmers before adding the mushrooms.' },
-      { question: 'Can I grill king oyster mushrooms?', answer: 'Yes. Brush thick slices with oil and grill over medium-high heat for about 3 to 4 minutes per side, then add the sauce after grilling.' },
+      { question: 'Can I grill king oyster mushrooms?', answer: 'Yes. Brush 1/2-inch planks with oil and grill over medium-high direct heat for 6 to 8 minutes, turning once, then add the sauce after grilling. See the full grilling guide for fire setup and times by variety.' },
       { question: 'What can replace maple syrup?', answer: 'Use honey, brown sugar, or 1 tsp (5 ml) mirin.' }
     ],
     storage: [
@@ -1537,6 +1617,7 @@ const speciesGuides: GuideArticle[] = [
       'Mediterranean: add 1/2 tsp dried oregano and serve with crumbled feta and sliced cucumber.'
     ],
     relatedLinks: [
+      { href: '/how-to-grill-mushrooms/', label: 'How to grill mushrooms' },
       { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
       { href: '/how-to-cook-button-mushrooms/', label: 'How to cook button mushrooms' },
     ]
@@ -1615,7 +1696,8 @@ const guideRecipeCards = [
   { name: 'Pressed maitake steaks', mushroom: 'Maitake', time: '25 min', guide: 'how-to-cook-maitake-mushrooms', description: 'Roast thick slabs under cast iron until the ruffled edges crisp.' },
   { name: 'Black trumpet butter pasta', mushroom: 'Black trumpet', time: '15 min', guide: 'how-to-cook-black-trumpet-mushrooms', description: 'Sauté trumpets, then toss with linguine, white wine, Parmesan, and lemon zest.' },
   { name: 'King oyster scallops', mushroom: 'King oyster', time: '14 min', guide: 'how-to-cook-king-oyster-mushrooms', description: 'Score stem rounds, sear deeply, then baste with garlic butter.' },
-  { name: 'Garlic-butter skillet cremini', mushroom: 'Cremini', time: '12 min', guide: 'how-to-cook-cremini-mushrooms', description: 'Brown halved cremini in a hot skillet with garlic, thyme, and lemon.' }
+  { name: 'Garlic-butter skillet cremini', mushroom: 'Cremini', time: '12 min', guide: 'how-to-cook-cremini-mushrooms', description: 'Brown halved cremini in a hot skillet with garlic, thyme, and lemon.' },
+  { name: 'Garlic-herb grilled mushroom skewers', mushroom: 'Cremini or white button', time: '27 min', guide: 'how-to-grill-mushrooms', description: 'Thread whole mushrooms on skewers, grill over direct heat, and baste with garlic, herbs, and butter.' }
 ];
 
 export const recipeCards = [
