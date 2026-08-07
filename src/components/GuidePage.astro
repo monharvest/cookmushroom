@@ -106,6 +106,14 @@ const schema = [contentSchema, breadcrumbSchema];
           {section.quote && <blockquote>{section.quote}</blockquote>}
           {section.bullets && <ul>{section.bullets.map((item) => <li>{item}</li>)}</ul>}
           {section.ordered && <ol>{section.ordered.map((item) => <li>{item}</li>)}</ol>}
+          {section.table && (
+            <div class="table-wrap compact">
+              <table>
+                <thead><tr>{section.table.headings.map((heading) => <th>{heading}</th>)}</tr></thead>
+                <tbody>{section.table.rows.map((row) => <tr>{row.map((cell) => <td>{cell}</td>)}</tr>)}</tbody>
+              </table>
+            </div>
+          )}
         </section>
       ))}
 

@@ -44,7 +44,9 @@ Storage/shelf-life queries are huge, evergreen, and the site answers them only i
 | 2.3 | `/how-to-freeze-mushrooms/` | Guide (method) | "Can you freeze mushrooms" + "how to freeze mushrooms raw/cooked". The guides say "freeze after cooking" 24 times without ever explaining the sauté-first method. |
 | 2.4 | `/how-to-dry-mushrooms/` | Guide (method) | Completes preservation coverage; two-way links with `/how-to-cook-dried-mushrooms/`. Oven and dehydrator methods; note which species dry well (porcini) vs badly (chanterelles — the chanterelle guide already says this, link it). |
 
-**Improvements this month:** add a "Storage & prep" section to the guides index page grouping cleaning/storage/freezing/drying references · per-page og:image (use each page's hero instead of the sitewide og-image.png; generate JPG og variants if scraper compatibility is a concern).
+**Improvements this month:** add a "Storage & prep" section to the guides index page grouping cleaning/storage/freezing/drying references (do this once 2.3 and 2.4 exist) · per-page og:image (use each page's hero instead of the sitewide og-image.png; generate JPG og variants if scraper compatibility is a concern).
+
+**Done 2026-08-07:** recipe template gained `sections` + `faqs` (recipe pages were the thinnest content on the site at 750–980 words); all three existing recipes deepened to 1,330–1,550 words.
 
 **Checkpoint (mid-Sep):** first meaningful GSC data expected. Which of the four July pages rank? Do storage pages get impressions within 2 weeks (fast-index signal)?
 

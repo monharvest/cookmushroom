@@ -10,12 +10,13 @@ cookmushroom.com — an Astro static site about cooking mushrooms, deployed auto
 
 - **`docs/content-calendar-2026-h2.md`** — the 6-month content roadmap (July 2026 → Jan 2027). Check the current month's table for what to build next. Its "Standing rules" section is binding. GSC data overrides the calendar at monthly checkpoints (the Search Console property exists and collects data).
 - **`docs/briefs/next-four-guides.md`** — completed batch (all four shipped); useful as the reference example of brief quality and structure.
+- **`docs/image-briefs/`** — one file per hero batch. Claude writes the brief (exact filename, prompt, reject criteria); the user generates the image and runs `./scripts/make-hero.sh`. **Do not delegate image generation to Hermes** (user instruction, 2026-08-07).
 - **`docs/drafts/remaining-recipe-upgrades.md`** — fully applied, historical only.
 
 ## Architecture
 
-- Guides: `src/data/guides.ts` (`GuideArticle[]`), rendered by `src/pages/[slug].astro`. `ingredients` present → Recipe schema; absent → Article schema. `quickFacts` overrides the default Heat/Cut/Time/Finish grid (see `how-to-clean-mushrooms` for the pattern).
-- Recipes: `src/data/recipes.ts` (`RecipeArticle[]`) + `src/components/RecipePage.astro`. Adding a recipe = one entry in `recipes.ts`, nothing else.
+- Guides: `src/data/guides.ts` (`GuideArticle[]`), rendered by `src/pages/[slug].astro`. `ingredients` present → Recipe schema; absent → Article schema. `quickFacts` overrides the default Heat/Cut/Time/Finish grid (see `how-to-clean-mushrooms` for the pattern). A `GuideSection` may carry an optional `table: { headings, rows }` — see the shelf-life table in `how-to-store-mushrooms`.
+- Recipes: `src/data/recipes.ts` (`RecipeArticle[]`) + `src/components/RecipePage.astro`. Adding a recipe = one entry in `recipes.ts`, nothing else. Recipes accept optional `sections` and `faqs` (same shapes as guides): sections render above the recipe card, FAQs below storage. **Use them on every new recipe** — without them a recipe page is a bare card and lands ~750 words.
 - Routing: `src/pages/[slug].astro` is a thin router over BOTH collections — guides and recipes share the root URL space (`/<slug>/`). It dispatches to `GuidePage.astro` or `RecipePage.astro`. Guide body markup lives in `src/components/GuidePage.astro`, not in the route.
 - Recipe cards on guide pages come from `recipeCards` in `guides.ts`, which derives from `recipeArticles`; each recipe's `cardGuide` decides which guide's "Use it in" section shows it, and `keywords`/`cardMushroom` are per-recipe (never hardcode these in the component).
 - Cook-time chart rows: `cookTimes` in `guides.ts`. Recipe cards: `recipeCards` in `guides.ts`.

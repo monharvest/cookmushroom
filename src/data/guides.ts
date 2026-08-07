@@ -6,6 +6,7 @@ export type GuideSection = {
   bullets?: string[];
   ordered?: string[];
   quote?: string;
+  table?: { headings: string[]; rows: string[][] };
   image?: { src: string; alt: string };
 };
 
