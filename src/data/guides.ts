@@ -119,7 +119,8 @@ const methodGuides: GuideArticle[] = [
     relatedLinks: [
       { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' },
       { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
-      { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' }
+      { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
+      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms so they stay firm' }
     ],
     sections: [
       { heading: 'Why a wide hot pan works for mushrooms', text: 'Fresh mushrooms release water as they heat. A wide skillet gives that water room to evaporate, while medium-high heat browns the exposed surfaces once the pan dries. Leaving the first side alone for 3 minutes builds color before stirring. Oil handles the early heat; butter and garlic go in only after the water is gone, so they coat the browned slices instead of forming a thin sauce in the pan.' },
@@ -315,6 +316,102 @@ const methodGuides: GuideArticle[] = [
       { href: '/how-to-cook-morel-mushrooms/', label: 'How to cook morel mushrooms' },
       { href: '/how-to-cook-king-oyster-mushrooms/', label: 'How to cook king oyster mushrooms' },
       { href: '/how-to-cook-portobello-mushrooms/', label: 'How to cook portobello mushrooms' },
+      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms after cleaning' },
+    ]
+  },
+  {
+    slug: 'how-to-store-mushrooms', label: 'Storing mushrooms', badge: 'Start here', title: 'How to Store Mushrooms So They Stay Firm, Not Slimy', description: 'Store mushrooms unwashed in their vented carton or a paper bag on a main fridge shelf, never sealed plastic. Shelf life by variety and when to cook them.', minutes: '6 min', updated: '2026-08-07', isoTime: 'PT2M', prepIsoTime: 'PT1M', heat: 'No heat', cut: 'Store whole; slice only before cooking', finish: 'Cook them before the caps wrinkle', showCookTimes: false,
+    quickFacts: [
+      { label: 'Where', value: 'Main fridge shelf, at or below 40°F / 4°C' },
+      { label: 'Wrapper', value: 'Vented carton or paper bag' },
+      { label: 'Washing', value: 'Only in the minute before cooking' },
+      { label: 'Typical window', value: '3–7 days, by variety' },
+    ],
+    image: '/images/cookmushroom-storing-mushrooms-hero.webp', imageAlt: 'Cremini mushrooms in an open paper bag beside a vented carton on a refrigerator shelf',
+    steps: [
+      'Do not wash mushrooms before storing them. Surface water is what turns caps slimy in the bag — clean them in the minute before they reach the pan instead.',
+      'Leave store-bought mushrooms in the carton they came in. The film lid is perforated on purpose and the tray keeps air moving underneath.',
+      'For loose or opened mushrooms, use a paper bag and fold the top over once. Paper absorbs the moisture they give off while still letting them breathe.',
+      'Put the bag or carton on a main shelf toward the back, the coldest part of the fridge. If you use the crisper drawer, set its vent to low humidity so moisture does not collect around the bag.',
+      'Keep mushrooms away from onions, garlic, and anything strongly aromatic. They are porous and pick up smells from their neighbours.',
+      'Check them each day. Firm and dry to the touch means keep going; damp, dark, or wrinkled means cook them tonight.'
+    ],
+    tips: [
+      'An opened carton still works. Re-cover it loosely with the original film or a paper towel instead of switching to a zip-top bag.',
+      'A folded paper towel in the container catches condensation. Swap it out once it feels damp.',
+      'Slice mushrooms only when you are ready to cook. Cut surfaces dry out, brown, and lose their window far faster than whole caps.',
+      'Buy the quantity you will cook that week. No storage method beats a mushroom that was in the ground four days ago.'
+    ],
+    pairings: ['the pan method', 'oven-roasted mushrooms', 'grilled mushrooms', 'dried mushroom broth'],
+    sections: [
+      { heading: 'The 30-second answer', text: 'Unwashed, in the fridge, in something that breathes. The vented carton mushrooms come in is already the right container; a paper bag is the right replacement once you open it. Sealed plastic is the one real mistake — it traps the moisture the mushrooms give off and returns it to their surfaces as slime.' },
+      { heading: 'The rule', quote: 'Mushrooms spoil from water and warmth. Every good storage decision is about removing one of the two.' },
+      { heading: 'Why mushrooms last nine days at the farm and three at home', text: 'Post-harvest handling research puts the optimum for mushrooms at 32–34°F with 95% relative humidity, which gives a shelf life of roughly 7 to 9 days. At 36°F — still a cold fridge by any home standard — that window falls to 3 to 5 days, because surface browning, stem elongation, and veil opening all accelerate. Home refrigerators run around 37–40°F and much drier than 95%, so the honest expectation for most mushrooms is a handful of days, not a week. That is the single biggest reason mushrooms bought on Sunday look tired by Wednesday, and it is why the coldest shelf beats a fancier container every time.' },
+      { heading: 'Paper bag, original carton, or zip-top?', bullets: [
+        'Original carton: the best option and the one already in your hand. The perforated film and the tray were designed for the mushroom respiration rate.',
+        'Paper bag: the right container for loose mushrooms or an opened pack. It absorbs surface moisture and still lets air through. Fold the top over rather than rolling it shut.',
+        'Zip-top or sealed container: the mistake. Mushrooms respire quickly, and a sealed bag turns that moisture straight back into condensation on the caps.',
+        'Bare on a shelf: they will not go slimy, but they dehydrate — caps shrivel, edges curl, and the texture goes leathery in the pan.',
+        'Reused cardboard or a food container: fine if it is clean and not sealed. Line it with parchment or a paper bag if it has held anything else.'
+      ] },
+      { heading: 'Shelf life by variety', text: 'These are texture windows for whole, unwashed mushrooms in a fridge held at or below 40°F. Treat them as quality guides, not safety deadlines — the checks in the next section beat the calendar every time. Denser mushrooms hold longest; thin-edged and delicate ones go first.',
+        table: {
+          headings: ['Mushroom', 'Whole, unwashed', 'Sliced or opened', 'First thing to go'],
+          rows: [
+            ['Button / cremini', '5–7 days', '3–5 days', 'Caps darken; gills open out underneath'],
+            ['Portobello', '4–6 days', '2–3 days', 'Gills turn black and damp'],
+            ['Shiitake', '7–10 days', '4–5 days', 'Caps dry and curl at the rim'],
+            ['King oyster', '7–10 days', '3–4 days', 'Cut stem end dries and yellows'],
+            ['Oyster', '3–5 days', '2–3 days', 'Thin edges wilt and go translucent'],
+            ['Maitake', '4–6 days', '2–3 days', 'Frond tips soften and darken'],
+            ['Enoki', '5–7 days', '2 days', 'Stems turn slippery near the base'],
+            ['Shimeji', '5–7 days', '3 days', 'The clustered base browns'],
+            ["Lion's mane", '3–5 days', '2 days', 'Spines yellow and the surface weeps'],
+            ['Chanterelles, morels (market-bought)', '3–5 days', 'Cook the day you cut them', 'Caps go limp and smell sour'],
+            ['Wood ear (fresh)', '5–7 days', '3 days', 'Loses its snap'],
+            ['Dried, any variety', 'Months in a sealed jar', 'Use within a year', 'Aroma fades long before it looks different']
+          ]
+        }
+      },
+      { heading: 'Where in the fridge they should sit', text: 'The back of a main shelf is colder and steadier than the door or the front. The crisper drawer is a reasonable second choice, but only with the vent open to low humidity; a drawer sealed for greens holds exactly the moisture mushrooms need to shed. Keep them off the very bottom of the fridge if that is where condensation collects, and keep them away from cut onions and garlic, which they will taste like by day three.' },
+      { heading: 'Cleaned, sliced, and cooked mushrooms', text: 'Cleaned mushrooms are on a different clock. Once you have brushed or rinsed them, cook them the same day — the moisture you added is now working against them. Sliced mushrooms hold two to three days at best, and their cut faces brown as they sit. Cooked mushrooms are the easiest of the three: cooled and refrigerated in a closed container, they keep about 3 days and reheat best in a hot dry skillet rather than a microwave.' },
+      { heading: 'The signs they are going', bullets: [
+        'Slime: a wet, tacky film on the cap. This is the end of the line — cook them immediately or throw them out.',
+        'Wrinkles and a light feel: dehydration, not spoilage. Still perfectly good in a soup, gravy, or anything with liquid.',
+        'Dark patches and open gills: past their best texture but fine cooked hard, and often better browned than a fresh mushroom.',
+        'Sour or fishy smell: throw them out. A fresh mushroom smells faintly earthy and of very little else.',
+        'Visible fuzz or wet spots that spread: throw the whole container out rather than trimming around them.'
+      ] },
+      { heading: 'When to stop storing and start cooking', text: 'The best answer to a fridge full of aging mushrooms is a pan, not a better container. Mushrooms two or three days past their best brown better than fresh ones, because they have already lost some of their water. Cook the whole batch down, then store what you made: cooked mushrooms hold 3 days in the fridge and freeze usefully for a couple of months, while raw mushrooms frozen without cooking turn watery on thawing.' }
+    ],
+    faqs: [
+      { question: 'Should you store mushrooms in paper or plastic?', answer: 'Paper, or the vented carton they came in. A sealed plastic bag traps the moisture mushrooms give off and returns it to their surfaces, which is what makes caps slimy. Paper absorbs it while still letting air through.' },
+      { question: 'How long do mushrooms last in the fridge?', answer: 'Most whole button and cremini mushrooms hold 5 to 7 days; dense shiitake and king oyster stretch to about 10; delicate oyster and lion’s mane go first at 3 to 5. Sliced mushrooms lose roughly half that window.' },
+      { question: 'Should you wash mushrooms before storing them?', answer: 'No. Washing adds the surface water that causes sliminess in storage. Clean mushrooms in the minute before they go into the pan instead, and dry them well.' },
+      { question: 'Can you store mushrooms at room temperature?', answer: 'Only for a few hours. Mushrooms respire quickly and warmth accelerates browning, stem elongation, and veil opening — at a counter temperature they visibly decline within a day.' },
+      { question: 'Are wrinkled mushrooms still good?', answer: 'Usually yes. Wrinkling is dehydration rather than spoilage, and the flavor is concentrated. Use them somewhere with liquid — soup, gravy, a braise. Sliminess and sour smells are the signals to stop.' },
+      { question: 'Should mushrooms go in the crisper drawer?', answer: 'Only with the vent set to low humidity. A drawer sealed for leafy greens holds the exact moisture mushrooms need to release. A main shelf toward the back is simpler and colder.' },
+      { question: 'How do you store mushrooms you cannot cook in time?', answer: 'Cook them first, then store what you made. Sautéed mushrooms keep about 3 days refrigerated and freeze for a couple of months; raw mushrooms frozen without cooking thaw watery and soft.' }
+    ],
+    storage: [
+      'Fresh, whole: unwashed, in the vented carton or a folded paper bag, on a main fridge shelf.',
+      'Cleaned or sliced: cook the same day if cleaned, within 2 to 3 days if sliced.',
+      'Cooked: cool completely, then refrigerate in a closed container for up to 3 days.',
+      'Reheating: a hot dry skillet for 2 to 3 minutes crisps the edges again; a microwave leaves them soft.'
+    ],
+    variations: [
+      'Bought loose in bulk: split them into two paper bags rather than one crowded one, so air reaches the mushrooms in the middle.',
+      'Pre-sliced packs: leave them sealed as sold and use them by the date on the pack — the cut faces are already exposed.',
+      'Market-purchased or expert-verified wild mushrooms: store them in a single layer on a towel-lined tray, loosely covered, and cook them within a few days.',
+      'Dried mushrooms: an airtight jar in a dark cupboard, away from the stove. They keep for many months, but the aroma fades long before they look any different.'
+    ],
+    relatedLinks: [
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
+      { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
+      { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' },
+      { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
+      { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
+      { href: '/mushroom-cook-time-chart/', label: 'Mushroom cook time chart' }
     ]
   },
   {
@@ -372,7 +469,8 @@ const methodGuides: GuideArticle[] = [
       { href: '/how-to-cook-morel-mushrooms/', label: 'How to cook morel mushrooms' },
       { href: '/shiitake-mushroom-ramen/', label: 'Shiitake mushroom ramen recipe' },
       { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' },
-      { href: '/garlic-mushroom-pasta/', label: 'Garlic mushroom pasta recipe' }
+      { href: '/garlic-mushroom-pasta/', label: 'Garlic mushroom pasta recipe' },
+      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms, fresh and dried' }
     ]
   },
   {
@@ -574,7 +672,8 @@ const speciesGuides: GuideArticle[] = [
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
       { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
       { href: '/how-to-cook-cremini-mushrooms/', label: 'How to cook cremini mushrooms' },
-      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' }
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
+      { href: '/how-to-store-mushrooms/', label: 'How to store fresh mushrooms before they get here' }
     ]
   },
   // ── TEMPLATE EXEMPLAR ─────────────────────────────────────────────────────
@@ -1480,7 +1579,8 @@ const speciesGuides: GuideArticle[] = [
       { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
       { href: '/how-to-cook-button-mushrooms/', label: 'How to cook button mushrooms' },
       { href: '/garlic-mushroom-pasta/', label: 'Garlic mushroom pasta recipe' },
-      { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' }
+      { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' },
+      { href: '/how-to-store-mushrooms/', label: 'How to store cremini so they stay firm' }
     ],
     faqs: [
       { question: 'Should cremini mushrooms be washed?', answer: 'Yes, they may be rinsed briefly if needed, but dry them thoroughly before cooking. A damp towel is usually enough for lightly soiled mushrooms.' },
