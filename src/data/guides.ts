@@ -34,6 +34,11 @@ export type GuideArticle = {
   badge?: string;
   sections?: GuideSection[];
   relatedLinks?: GuideLink[];
+  // External citations, rendered as a "Sources" list at the end of the article.
+  // Only for pages where a reader makes a real food-safety decision, and only
+  // when the linked page actually states the claim. Followed links (no nofollow)
+  // — that is the point of the citation.
+  sources?: GuideLink[];
   showCookTimes?: boolean;
   // Full recipe-template fields. When `ingredients` is present the page emits
   // Recipe schema instead of Article schema. See how-to-cook-chanterelle-mushrooms
@@ -405,6 +410,10 @@ const methodGuides: GuideArticle[] = [
       'Market-purchased or expert-verified wild mushrooms: store them in a single layer on a towel-lined tray, loosely covered, and cook them within a few days.',
       'Dried mushrooms: an airtight jar in a dark cupboard, away from the stove. They keep for many months, but the aroma fades long before they look any different.'
     ],
+    sources: [
+      { href: 'https://www.foodsafety.gov/keep-food-safe/foodkeeper-app', label: 'USDA FoodKeeper — storage timelines for fresh produce' },
+      { href: 'https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts', label: 'FoodSafety.gov — Cold Food Storage Chart' },
+    ],
     relatedLinks: [
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
@@ -666,6 +675,9 @@ const speciesGuides: GuideArticle[] = [
       'Cream sauce: after browning, add 1/2 cup heavy cream and reduce 3 minutes, then toss with pasta.',
       'Garlic butter toast: chop finer after cooking and pile onto sourdough with the pan butter.',
       'Gravy base: deglaze the browned mushrooms with stock and thicken with a cornstarch slurry.'
+    ],
+    sources: [
+      { href: 'https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety', label: 'USDA FSIS — Freezing and Food Safety' },
     ],
     relatedLinks: [
       { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },

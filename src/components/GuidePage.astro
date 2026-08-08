@@ -198,6 +198,12 @@ const schema = [contentSchema, breadcrumbSchema];
           <ul>{relatedRecipes.map((recipe) => <li><a href={recipe.href}><strong>{recipe.name}:</strong> {recipe.description}</a></li>)}</ul>
         </section>
       )}
+      {guide.sources && guide.sources.length > 0 && (
+        <section>
+          <h2>Sources</h2>
+          <ul>{guide.sources.map((source) => <li><a href={source.href}>{source.label}</a></li>)}</ul>
+        </section>
+      )}
     </article>
   </main>
 </Layout>
