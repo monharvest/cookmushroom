@@ -21,6 +21,7 @@ cookmushroom.com — an Astro static site about cooking mushrooms, deployed auto
 - Recipe cards on guide pages come from `recipeCards` in `guides.ts`, which derives from `recipeArticles`; each recipe's `cardGuide` decides which guide's "Use it in" section shows it, and `keywords`/`cardMushroom` are per-recipe (never hardcode these in the component).
 - Cook-time chart rows: `cookTimes` in `guides.ts`. Recipe cards: `recipeCards` in `guides.ts`.
 - Images: `public/images/`, WebP only, 1200×800 hero + `-600`/`-900` variants for srcset. Hero ≤110 KB.
+- Toolchain: Astro 7, static output, no adapter — do not re-add `@astrojs/node`, it was removed as unused. Requires **Node >=22.12.0**; `.nvmrc` pins 22 and Cloudflare Pages needs `NODE_VERSION=22` or the build fails.
 
 ## Publication gate (every page, no exceptions)
 

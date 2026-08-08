@@ -355,9 +355,11 @@ curl https://cookmushroom.com/wp-json/wp/v2/posts
 
 **Check Node version:**
 ```bash
-# Cloudflare Pages requires Node 18+
-# Set in Cloudflare: Environment variables → NODE_VERSION = 18
+# Astro 7 requires Node >=22.12.0 — Node 18 and 20 will fail the build
+# Set in Cloudflare: Environment variables → NODE_VERSION = 22
 ```
+
+The repo pins the same major in `.nvmrc` so local builds match Pages.
 
 ### DNS Not Updating
 

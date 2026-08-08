@@ -456,7 +456,7 @@ Enter: `https://cookmushroom.com`
 **Check build logs in Cloudflare Pages dashboard.**
 
 Common issues:
-- Node version mismatch → Add env var `NODE_VERSION=18`
+- Node version mismatch → Add env var `NODE_VERSION=22` (Astro 7 needs >=22.12.0)
 - Missing dependencies → Check `package.json`
 - API unreachable → Check `WP_API_URL` environment variable
 
