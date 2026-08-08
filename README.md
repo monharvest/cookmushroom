@@ -1,319 +1,103 @@
-# 🍄 CookMushroom - WordPress + Astro Hybrid
+# 🍄 CookMushroom
 
-Complete setup for migrating **cookmushroom.com** from WordPress to Astro while keeping WordPress as a headless CMS.
+[cookmushroom.com](https://cookmushroom.com) — a static Astro site about cooking mushrooms. 31 guides and a growing recipe collection, 42 pages in all.
 
-## 🏗️ Architecture
+There is no CMS and no database. All content lives in two TypeScript files and is rendered at build time.
 
-```
-cookmushroom.com/          → Astro (fast frontend)
-cookmushroom.com/admin     → WordPress (admin + content)
-cookmushroom.com/wp-json   → WordPress REST API
-cookmushroom.com/wp-content → Media files
-```
-
-## 📁 Project Structure
+## Architecture
 
 ```
-cookmushroom/
-├── src/
-│   ├── pages/
-│   │   ├── index.astro           # Homepage
-│   │   ├── blog.astro            # Blog listing
-│   │   └── blog/[slug].astro     # Individual posts
-│   └── lib/
-│       ├── wordpress.ts          # WP API client
-│       └── utils.ts              # Helper functions
-├── server-config/
-│   ├── root-htaccess.conf        # Apache config for root
-│   ├── admin-htaccess.conf       # Apache config for /admin
-│   └── nginx.conf                # Nginx alternative
-├── scripts/
-│   ├── migrate-to-admin.sh       # Move WP to /admin
-│   └── deploy.sh                 # Deploy Astro
-└── dist/                          # Built Astro site
+src/
+├── data/
+│   ├── guides.ts              # GuideArticle[]  — every guide page
+│   └── recipes.ts             # RecipeArticle[] — every recipe page
+├── pages/
+│   ├── [slug].astro           # router over BOTH collections
+│   ├── index.astro
+│   ├── guides.astro
+│   ├── mushroom-cook-time-chart.astro
+│   ├── mushroom-recipe-index.astro
+│   └── about | contact | privacy | 404
+├── components/
+│   ├── GuidePage.astro        # guide body markup
+│   └── RecipePage.astro       # recipe body markup
+├── layouts/Layout.astro
+└── styles/global.css
 ```
 
-## 🚀 Quick Start (Local Development)
+Guides and recipes **share the root URL space** (`/<slug>/`). `[slug].astro` is a thin router that dispatches to `GuidePage` or `RecipePage`; the body markup lives in the components, not the route.
 
-### 1. Install Dependencies
+Adding a recipe is one entry in `recipes.ts` — nothing else. Adding a guide is one entry in `guides.ts`.
+
+Schema is chosen by shape: a guide with `ingredients` emits **Recipe** schema, without it emits **Article**. Byline is Ana (Person); CookMushroom is the publisher Organization.
+
+### Images
+
+`public/images/`, WebP only. Each hero is a trio — `name.webp` (1200×800, ≤110 KB) plus `-900` and `-600` variants for srcset:
 
 ```bash
-npm install
+./scripts/make-hero.sh ~/Downloads/photo.png cookmushroom-garlic-mushroom-pasta-hero
 ```
 
-### 2. Configure Environment
+## Local development
 
-The `.env` file is already set to connect to your live site:
+Requires **Node ≥22.12.0** (`.nvmrc` pins 22).
 
-```env
-WP_API_URL=https://cookmushroom.com/wp-json/wp/v2
+```bash
+nvm use && npm ci
 ```
-
-### 3. Start Development Server
 
 ```bash
 npm run dev
 ```
 
-Visit: http://localhost:4321
+Then visit http://localhost:4321.
 
-The site will fetch content from your **live WordPress site** via the API.
-
-## 📦 Production Deployment (Zero Downtime)
-
-### Phase 1: Move WordPress to /admin
-
-**⚠️ IMPORTANT: Do this on server (via SSH or cPanel Terminal)**
-
-1. **Backup everything first!**
-   ```bash
-   # You already have: u720079989.cookmushroom-com.20260122122046.tar.gz
-   # Keep this safe!
-   ```
-
-2. **SSH into your server:**
-   ```bash
-   ssh your_username@cookmushroom.com
-   cd public_html
-   ```
-
-3. **Run the migration script:**
-   ```bash
-   # Upload migrate-to-admin.sh to your server first
-   chmod +x migrate-to-admin.sh
-   ./migrate-to-admin.sh
-   ```
-
-   Or do it manually:
-   ```bash
-   mkdir admin
-   mv wp-admin wp-content wp-includes *.php admin/
-   # Keep wp-config.php in root
-   ```
-
-4. **Update `wp-config.php`** (in root):
-   ```php
-   define('WP_HOME', 'https://cookmushroom.com/admin');
-   define('WP_SITEURL', 'https://cookmushroom.com/admin');
-   ```
-
-5. **Fix `/admin/index.php`:**
-   ```php
-   require __DIR__ . '/../wp-blog-header.php';
-   ```
-
-6. **Copy `/server-config/admin-htaccess.conf` to `/admin/.htaccess`**
-
-7. **Test WordPress admin:**
-   - Visit: https://cookmushroom.com/admin/wp-admin
-   - Login and verify everything works
-
-8. **Test API:**
-   - Visit: https://cookmushroom.com/wp-json
-   - Should return JSON
-
-### Phase 2: Deploy Astro
-
-1. **Build Astro locally:**
-   ```bash
-   npm run build
-   ```
-
-2. **Upload `dist/` contents to server root:**
-   - Via FTP: Upload all files from `dist/` to `/public_html/`
-   - Via cPanel: Zip `dist/`, upload, extract
-   - Via rsync (SSH):
-     ```bash
-     rsync -avz --delete dist/ user@cookmushroom.com:/public_html/ \
-       --exclude='admin' \
-       --exclude='wp-config.php'
-     ```
-
-3. **Copy root .htaccess:**
-   - Upload `/server-config/root-htaccess.conf` as `/public_html/.htaccess`
-
-4. **Test the site:**
-   - Homepage: https://cookmushroom.com
-   - Blog: https://cookmushroom.com/blog
-   - Admin: https://cookmushroom.com/admin/wp-admin
-
-### Phase 3: Verify Everything
-
-✅ **Checklist:**
-- [ ] Homepage loads (Astro)
-- [ ] Blog posts load (Astro fetching from WP)
-- [ ] Images display correctly
-- [ ] WordPress admin accessible at `/admin/wp-admin`
-- [ ] WordPress API works: `/wp-json`
-- [ ] Media uploads work in WP admin
-- [ ] Old URLs redirect or work (check 301s if needed)
-
-## 🔧 Configuration Files
-
-### For Apache (most shared hosting)
-
-- **Root:** Use `server-config/root-htaccess.conf` as `.htaccess`
-- **Admin:** Use `server-config/admin-htaccess.conf` as `admin/.htaccess`
-
-### For Nginx (VPS/Cloud)
-
-- Use `server-config/nginx.conf`
-- Adjust PHP-FPM socket path
-- Reload: `sudo nginx -t && sudo systemctl reload nginx`
-
-## 🎨 Customization
-
-### Update WordPress Connection
-
-Edit [src/lib/wordpress.ts](src/lib/wordpress.ts):
-
-```typescript
-const WP_API_URL = 'https://cookmushroom.com/wp-json/wp/v2';
-```
-
-### Add Custom Post Types
-
-```typescript
-export async function getRecipes() {
-  return fetchWP('/recipes', { per_page: 100 });
-}
-```
-
-### Styling
-
-- Edit component styles directly in `.astro` files
-- Or add a global CSS file in `src/styles/`
-
-### Add More Pages
-
-```bash
-# Create new page
-touch src/pages/about.astro
-```
-
-## 🔒 Security Recommendations
-
-1. **Password protect `/admin`** (via .htpasswd)
-2. **Disable XML-RPC** (already in .htaccess)
-3. **Use strong WP admin passwords**
-4. **Install Wordfence or similar**
-5. **Keep WordPress updated**
-6. **Restrict `/wp-admin` by IP** (optional)
-
-## 📊 Performance
-
-**Before (WordPress only):**
-- Load time: ~2-4s
-- Multiple DB queries
-- PHP processing overhead
-
-**After (Astro + WP):**
-- Load time: ~300-500ms
-- Static HTML
-- Content fetched at build time
-
-## 🐛 Troubleshooting
-
-### Issue: API not accessible
-
-**Solution:** Check `.htaccess` allows `/wp-json`
-
-```apache
-RewriteRule ^wp-json(/.*)?$ admin/index.php [L,QSA]
-```
-
-### Issue: Images broken
-
-**Solution:** Fix media URLs in `src/lib/utils.ts`:
-
-```typescript
-export function fixMediaUrl(url: string): string {
-  return url.replace('old-domain.com', 'cookmushroom.com');
-}
-```
-
-### Issue: WordPress admin 404
-
-**Solution:** Verify `/admin/index.php` path:
-
-```php
-require __DIR__ . '/../wp-blog-header.php';
-```
-
-### Issue: Permalinks not working
-
-**Solution:** Regenerate `.htaccess` in WP admin:
-- Settings → Permalinks → Save Changes
-
-## 🔄 Updating Content
-
-### Option 1: Rebuild + Redeploy (Static)
+## Build
 
 ```bash
 npm run build
-# Upload dist/ to server
 ```
 
-### Option 2: Switch to SSR (Dynamic)
-
-Edit [astro.config.mjs](astro.config.mjs):
-
-```javascript
-export default defineConfig({
-  output: 'server',  // Change from 'static'
-  adapter: node(),
-});
-```
-
-Now content updates instantly (no rebuild needed).
-
-## 📚 Useful Commands
+This runs `astro check && astro build` — type errors fail the build. Output is static HTML in `dist/`, no adapter and no server runtime.
 
 ```bash
-# Development
-npm run dev              # Start dev server
-
-# Build
-npm run build            # Build for production
-npm run preview          # Preview production build
-
-# Deployment
-chmod +x scripts/*.sh    # Make scripts executable
-./scripts/deploy.sh      # Deploy to production
+npm run preview
 ```
 
-## 🆘 Need Help?
+## Deployment
 
-Common issues and solutions:
+Push to `origin/main`. Cloudflare Pages builds and deploys automatically; there is no manual upload step.
 
-1. **Can't access WP admin after migration**
-   - Check `WP_HOME` and `WP_SITEURL` in `wp-config.php`
-   - Verify `/admin/.htaccess` exists
+| Setting | Value |
+|---|---|
+| Build command | `npm run build` |
+| Output directory | `dist` |
+| Build system | v3 (Node 22.16.0, npm 10.9.2) |
+| Node version | ≥22.12.0 — do not set `NODE_VERSION` below 22 |
 
-2. **Astro can't fetch posts**
-   - Test API manually: `https://cookmushroom.com/wp-json/wp/v2/posts`
-   - Check CORS (shouldn't be an issue, same domain)
+Generate the lockfile with the **npm version the build image uses** (10.9.2). A lockfile written by npm 11 prunes optional wasm transitives that npm 10's `npm ci` demands, and the deploy fails.
 
-3. **Images 404**
-   - Ensure `wp-content` is accessible
-   - Check root `.htaccess` rules
+After a deploy, verify a live URL. Old URLs may serve stale edge-cached HTML until a Cloudflare cache purge, which is a dashboard action.
 
-## 📝 Next Steps
+## Content workflow
 
-1. ✅ **Test locally** - `npm run dev`
-2. ✅ **Backup live site** - Download everything
-3. ✅ **Move WP to /admin** - Run migration script
-4. ✅ **Deploy Astro** - Upload `dist/`
-5. ✅ **Verify** - Test all pages
-6. 🎉 **Go live!**
+The roadmap lives in [`docs/content-calendar-2026-h2.md`](docs/content-calendar-2026-h2.md); its standing rules are binding, and Search Console data overrides the calendar at monthly checkpoints.
 
-## 📄 License
+Every page must clear the publication gate in [`AGENTS.md`](AGENTS.md) before shipping — hero image, title and meta length, internal links in both directions, a cannibalization check, and a clean build.
 
-Your website, your rules! 🍄
+Two editorial rules are permanent: this is a **cooking-only** site with no identification or foraging guidance, and it makes **no health, medical, or supplement claims**.
 
----
+```bash
+npm run grok    # duplicate-guard block for the recipe prompt
+```
 
-**Built with:**
-- [Astro](https://astro.build) - Frontend
-- [WordPress](https://wordpress.org) - CMS
-- ❤️ Love for mushrooms
+## Agent instructions
+
+[`AGENTS.md`](AGENTS.md) is the persistent brief for any agent working in this repo, and `CLAUDE.md` is a symlink to it. Read it before making changes — it carries the publication gate, the editorial rules, and the architecture notes that are easy to violate by accident.
+
+## Built with
+
+- [Astro 7](https://astro.build) — static output, no adapter
+- [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
+- Cloudflare Pages

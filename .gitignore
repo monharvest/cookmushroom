@@ -33,9 +33,8 @@ backup-*/
 *.bak
 *.backup
 
-# WordPress
-wp-config.php
-.htaccess
+# Wrangler
+.wrangler/
 
 # Compressed archives
 *.tar.gz

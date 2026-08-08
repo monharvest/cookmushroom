@@ -1,120 +1,50 @@
 # CookMushroom AI Coding Instructions
 
-## Architecture Overview
+**Read [`AGENTS.md`](../AGENTS.md) first.** It is the authoritative brief for this repo — publication gate, editorial rules, architecture. This file is a summary; where the two disagree, `AGENTS.md` wins.
 
-This is a **hybrid WordPress + Astro setup** where:
-- **Astro** generates static frontend (fast pages)
-- **WordPress** runs as headless CMS (content management + REST API)
-- **Cloudflare Pages** hosts the Astro build (optional deployment)
-- **Cloudflare Worker** triggers scheduled rebuilds via cron
+## What this is
 
-```
-Production Architecture:
-├── cookmushroom.com/          → Astro static site
-├── cookmushroom.com/admin     → WordPress admin panel
-└── cookmushroom.com/wp-json   → WordPress REST API
-```
+cookmushroom.com — a **static Astro 7 site** about cooking mushrooms. Static output, **no adapter, no server runtime, no CMS, no database**. Deployed by Cloudflare Pages on push to `origin/main`.
 
-## Critical Knowledge
+There is no WordPress. Do not add an API client, a headless CMS, or `@astrojs/node` — the adapter was removed as unused and must not come back.
 
-### WordPress API Integration
-- WordPress REST API is the **single source of truth** for all content
-- API URL configured via `WP_API_URL` env var (defaults to production endpoint)
-- All WordPress interaction happens through `src/lib/wordpress.ts`
-- Uses `_embed` parameter to fetch related data (featured images, categories) in single request
-- Error handling returns empty arrays to prevent build failures if API is unreachable
+## Where content lives
 
-### Build & Deployment Strategy
-- **Static mode** (default): Build locally, content fetched at build time
-- **SSR mode** (optional): Set `output: 'server'` in astro.config.mjs for dynamic content
-- Deploy to Cloudflare Pages via GitHub (auto-deploy on push) or manual upload
-- Cloudflare Worker cron (`cloudflare-worker/rebuild-cron.js`) triggers rebuilds every 12 hours
+All content is TypeScript, rendered at build time:
 
-### Key Files & Their Purpose
-- `src/lib/wordpress.ts`: WordPress API client with TypeScript interfaces
-- `src/lib/utils.ts`: Content sanitization, date formatting, reading time calculation
-- `src/pages/blog/[slug].astro`: Dynamic post pages using `getStaticPaths()`
-- `astro.config.mjs`: Build configuration, API URL injection via Vite
+- `src/data/guides.ts` — `GuideArticle[]`
+- `src/data/recipes.ts` — `RecipeArticle[]`
 
-## Development Workflow
+`src/pages/[slug].astro` is a thin router over **both** collections — guides and recipes share the root URL space (`/<slug>/`) — dispatching to `src/components/GuidePage.astro` or `RecipePage.astro`. Body markup belongs in those components, never in the route.
 
-### Local Development
+Adding a recipe is one entry in `recipes.ts`. Adding a guide is one entry in `guides.ts`. Give new recipes `sections` and `faqs`, or the page lands as a bare card at ~750 words.
+
+Derived data also lives in `guides.ts`: `recipeCards` (which recipe shows on which guide, via each recipe's `cardGuide`) and `cookTimes` (chart rows). Never hardcode these in a component.
+
+Schema follows shape: `ingredients` present → **Recipe**, absent → **Article**.
+
+## Commands
+
 ```bash
-npm run dev              # Start dev server at localhost:4321
-npm run build            # Build + type-check
-npm run preview          # Preview production build
+npm run dev        # localhost:4321
+npm run build      # astro check && astro build — type errors fail the build
+npm run preview
 ```
 
-**Important**: Local dev fetches from **live WordPress API** (no local WordPress required)
+Requires **Node ≥22.12.0**; `.nvmrc` pins 22. Generate lockfiles with **npm 10.9.2**, the version on the Pages build image — a lockfile from npm 11 prunes optional wasm transitives that npm 10's `npm ci` requires, and the deploy fails.
 
-### Deployment Commands
-```bash
-# Manual deployment to Hostinger
-./scripts/deploy.sh      # Build + upload instructions
+## Images
 
-# Cloudflare Pages (via GitHub)
-git push origin main     # Auto-deploys via GitHub Actions
-```
+`public/images/`, WebP only. Hero trio per page: 1200×800 (≤110 KB) plus `-900` and `-600` for srcset. Build them with `./scripts/make-hero.sh <source> <hero-name>`.
 
-### Cloudflare Worker Setup
-```bash
-cd cloudflare-worker
-wrangler login
-wrangler secret put PAGES_DEPLOY_HOOK  # Add Cloudflare Pages deploy hook URL
-wrangler deploy
-```
+Claude writes image briefs into `docs/image-briefs/`; the user generates the actual images. Do not delegate image generation.
 
-## Project-Specific Patterns
+## Non-negotiable editorial rules
 
-### Content Fetching Pattern
-Always use TypeScript interfaces from `src/lib/wordpress.ts`:
-```typescript
-const posts = await getAllPosts();        // Returns WPPost[]
-const post = await getPostBySlug(slug);   // Returns WPPost | null
-```
+- **Cooking only.** No identification or foraging guides. Wild-species wording never confirms a find is safe — use "market-purchased or expert-verified" framing.
+- **No health, medical, or supplement claims.** This applies especially to chaga, reishi, and lion's mane. Culinary preparation only.
+- Voice is concise and practical, built on observable cues ("pan looks dry", "edges turn golden"). No filler.
 
-### Static Path Generation
-All dynamic routes use `getStaticPaths()` to pre-render pages:
-```typescript
-export async function getStaticPaths() {
-  const slugs = await getAllPostSlugs();
-  return slugs.map(slug => ({ params: { slug } }));
-}
-```
+## Before shipping a page
 
-### Content Sanitization
-WordPress content must be cleaned before rendering:
-```typescript
-import { cleanContent } from '../../lib/utils';
-const cleaned = cleanContent(post.content.rendered);  // Removes WordPress artifacts
-```
-
-## Critical Gotchas
-
-1. **WordPress Location**: Production WordPress lives at `/admin` subdirectory, not root
-   - Update `WP_HOME` and `WP_SITEURL` in wp-config.php after migration
-   - Fix `/admin/index.php` to require `../wp-blog-header.php`
-
-2. **API CORS**: Same-domain setup means no CORS issues (API at same domain as frontend)
-
-3. **Media URLs**: WordPress media served from `/wp-content/uploads/` - ensure path accessible
-
-4. **Build Failures**: If WordPress API is down, build continues with empty arrays (graceful degradation)
-
-5. **Cloudflare Worker Secrets**: Deploy hook URL stored as Wrangler secret, not in code
-
-## Testing Checklist
-
-After making changes, verify:
-- [ ] `npm run build` completes without errors
-- [ ] Blog posts load at `/blog` and `/blog/[slug]`
-- [ ] Featured images display correctly
-- [ ] WordPress API accessible at `/wp-json`
-- [ ] Admin accessible at `/admin/wp-admin`
-
-## Documentation References
-
-- `README.md`: Complete setup & migration guide
-- `CLOUDFLARE-DEPLOYMENT.md`: Cloudflare Pages deployment
-- `HOSTINGER-CLOUDFLARE-GITHUB-DEPLOY.md`: GitHub auto-deploy setup
-- `cloudflare-worker/README.md`: Cron worker setup
+The full gate is in `AGENTS.md`. In short: hero image exists and is species-accurate; title ≤65 chars and meta description 120–160; at least 4 outbound internal links and 3 existing pages edited to link back; check for cannibalization against existing slugs; `npm run build` passes with 0 diagnostics. Never ship a partial page or a broken image reference.
