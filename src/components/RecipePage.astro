@@ -9,7 +9,12 @@ const imageUrl = new URL(recipe.image, 'https://cookmushroom.com').toString();
 const heroImageSizes = '(max-width: 720px) 100vw, (max-width: 1120px) 90vw, 960px';
 const heroImageSrcset = [600, 900, 1200].map((width) => `${width === 1200 ? recipe.image : recipe.image.replace(/\.webp$/, `-${width}.webp`)} ${width}w`).join(', ');
 const author = { '@type': 'Person', name: 'Ana' };
-const publisher = { '@type': 'Organization', name: 'CookMushroom', url: 'https://cookmushroom.com/about/' };
+const publisher = {
+  '@type': 'Organization',
+  name: 'CookMushroom',
+  url: 'https://cookmushroom.com/about/',
+  logo: { '@type': 'ImageObject', url: 'https://cookmushroom.com/logo.png' },
+};
 const pageUrl = new URL(`/${recipe.slug}/`, 'https://cookmushroom.com').toString();
 const schema = {
   '@context': 'https://schema.org',

@@ -15,7 +15,7 @@ const mushroomGuides = guideArticles.filter((guide) => guide.mushroomSlug);
         {methodGuides.map((guide) => (
           <a class="card" href={`/${guide.slug}/`}>
             <span class="badge">{guide.minutes}</span>
-            <h3>{guide.title}</h3>
+            <h2>{guide.title}</h2>
             <p>{guide.description}</p>
           </a>
         ))}
@@ -27,7 +27,7 @@ const mushroomGuides = guideArticles.filter((guide) => guide.mushroomSlug);
         {mushroomGuides.map((guide) => (
           <a class="card" href={`/${guide.slug}/`}>
             <span class="badge">{guide.minutes}</span>
-            <h3>{guide.title}</h3>
+            <h2>{guide.title}</h2>
             <p>{guide.description}</p>
           </a>
         ))}

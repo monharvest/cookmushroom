@@ -1062,7 +1062,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-lobster-mushrooms', mushroomSlug: 'lobster', label: 'Lobster mushrooms', badge: 'Seafood illusion', title: 'How to Cook Lobster Mushrooms', description: 'Cook lobster mushrooms in butter, shallot, garlic, and thyme for a firm, savory side with a clean lemon finish.', minutes: '6 min', updated: '2026-07-11', image: '/images/lemon-thyme-lobster-mushrooms-hero.webp', imageAlt: 'Orange lobster mushrooms sautéed with lemon and thyme in a skillet', isoTime: 'PT15M', prepIsoTime: 'PT15M', heat: 'Medium-high, then medium', cut: 'Brush clean; trim the base; slice 1/4 inch thick', finish: 'White wine, lemon juice, and fresh thyme',
+    slug: 'how-to-cook-lobster-mushrooms', mushroomSlug: 'lobster', label: 'Lobster mushrooms', badge: 'Seafood illusion', title: 'How to Cook Lobster Mushrooms', description: 'Cook lobster mushrooms in butter with shallot, garlic, and thyme for about 15 minutes, until the edges brown and a clean lemon finish lifts them.', minutes: '6 min', updated: '2026-07-11', image: '/images/lemon-thyme-lobster-mushrooms-hero.webp', imageAlt: 'Orange lobster mushrooms sautéed with lemon and thyme in a skillet', isoTime: 'PT15M', prepIsoTime: 'PT15M', heat: 'Medium-high, then medium', cut: 'Brush clean; trim the base; slice 1/4 inch thick', finish: 'White wine, lemon juice, and fresh thyme',
     recipeName: 'Lemon-Thyme Sautéed Lobster Mushrooms', yieldText: '2 servings',
     ingredients: [
       '12 oz (340 g) fresh lobster mushrooms',
@@ -1652,7 +1652,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-prepare-reishi-mushrooms', mushroomSlug: 'reishi', label: 'Reishi', badge: 'Wellness tonic', title: 'How to Prepare Reishi Mushrooms', description: 'Prepare dried reishi as a measured, low-simmer culinary infusion with gentle heat, clear timing, and storage guidance.', minutes: '5 min', updated: '2026-07-11', image: '/images/cookmushroom-reishi-ginger-infusion-hero.webp', imageAlt: 'Reishi culinary infusion with dried reishi, ginger, and orange peel', isoTime: 'PT1H', prepIsoTime: 'PT5M', heat: 'Low simmer, 185–195°F / 85–91°C; avoid a rolling boil', cut: 'Use dried slices as supplied, or split large pieces with kitchen shears', finish: 'Strain fully, then balance the bitterness with ginger, citrus, or sweetener',
+    slug: 'how-to-prepare-reishi-mushrooms', mushroomSlug: 'reishi', label: 'Reishi', badge: 'Wellness tonic', title: 'How to Prepare Reishi Mushrooms', description: 'Simmer dried reishi slices at 185–195°F for about an hour to make a clear culinary infusion, then strain and balance the bitterness with ginger or citrus.', minutes: '5 min', updated: '2026-07-11', image: '/images/cookmushroom-reishi-ginger-infusion-hero.webp', imageAlt: 'Reishi culinary infusion with dried reishi, ginger, and orange peel', isoTime: 'PT1H', prepIsoTime: 'PT5M', heat: 'Low simmer, 185–195°F / 85–91°C; avoid a rolling boil', cut: 'Use dried slices as supplied, or split large pieces with kitchen shears', finish: 'Strain fully, then balance the bitterness with ginger, citrus, or sweetener',
     recipeName: 'Ginger-Citrus Reishi Infusion', yieldText: '4 cups',
     ingredients: [
       '1 oz (28 g) dried reishi slices or pieces',
@@ -1702,7 +1702,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-use-truffles', mushroomSlug: 'truffles', label: 'Truffles', badge: 'Gourmet luxury', title: 'How to Use Truffles at the Table', description: 'Use truffles with restraint: warm a simple buttered pasta, then add shavings at the table so their aroma stays vivid.', minutes: '5 min', updated: '2026-07-11', image: '/images/cookmushroom-truffle-buttered-pasta-hero.webp', imageAlt: 'Fresh truffle shavings over buttered tagliatelle with Parmesan', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high for the pasta water, then low for the butter sauce', cut: 'Shave the truffle paper-thin just before serving', finish: 'Add the truffle off heat so its aroma blooms over the warm dish',
+    slug: 'how-to-use-truffles', mushroomSlug: 'truffles', label: 'Truffles', badge: 'Gourmet luxury', title: 'How to Use Truffles at the Table', description: 'Use truffles with restraint: toss a simple buttered pasta, then shave them paper-thin at the table and off the heat so their aroma stays vivid.', minutes: '5 min', updated: '2026-07-11', image: '/images/cookmushroom-truffle-buttered-pasta-hero.webp', imageAlt: 'Fresh truffle shavings over buttered tagliatelle with Parmesan', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high for the pasta water, then low for the butter sauce', cut: 'Shave the truffle paper-thin just before serving', finish: 'Add the truffle off heat so its aroma blooms over the warm dish',
     recipeName: 'Fresh Truffle Buttered Pasta', yieldText: '4 servings',
     ingredients: [
       '12 oz (340 g) tagliatelle or fettuccine',
