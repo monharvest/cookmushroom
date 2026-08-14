@@ -125,7 +125,8 @@ const methodGuides: GuideArticle[] = [
       { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' },
       { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
-      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms so they stay firm' }
+      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms so they stay firm' },
+      { href: '/how-to-tell-if-mushrooms-are-bad/', label: 'How to tell if mushrooms are bad' }
     ],
     sections: [
       { heading: 'Why a wide hot pan works for mushrooms', text: 'Fresh mushrooms release water as they heat. A wide skillet gives that water room to evaporate, while medium-high heat browns the exposed surfaces once the pan dries. Leaving the first side alone for 3 minutes builds color before stirring. Oil handles the early heat; butter and garlic go in only after the water is gone, so they coat the browned slices instead of forming a thin sauce in the pan.' },
@@ -322,6 +323,7 @@ const methodGuides: GuideArticle[] = [
       { href: '/how-to-cook-king-oyster-mushrooms/', label: 'How to cook king oyster mushrooms' },
       { href: '/how-to-cook-portobello-mushrooms/', label: 'How to cook portobello mushrooms' },
       { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms after cleaning' },
+      { href: '/how-to-tell-if-mushrooms-are-bad/', label: 'How to tell if mushrooms are bad' },
     ]
   },
   {
@@ -380,13 +382,7 @@ const methodGuides: GuideArticle[] = [
       },
       { heading: 'Where in the fridge they should sit', text: 'The back of a main shelf is colder and steadier than the door or the front. The crisper drawer is a reasonable second choice, but only with the vent open to low humidity; a drawer sealed for greens holds exactly the moisture mushrooms need to shed. Keep them off the very bottom of the fridge if that is where condensation collects, and keep them away from cut onions and garlic, which they will taste like by day three.' },
       { heading: 'Cleaned, sliced, and cooked mushrooms', text: 'Cleaned mushrooms are on a different clock. Once you have brushed or rinsed them, cook them the same day — the moisture you added is now working against them. Sliced mushrooms hold two to three days at best, and their cut faces brown as they sit. Cooked mushrooms are the easiest of the three: cooled and refrigerated in a closed container, they keep about 3 days and reheat best in a hot dry skillet rather than a microwave.' },
-      { heading: 'The signs they are going', bullets: [
-        'Slime: a wet, tacky film on the cap. This is the end of the line — cook them immediately or throw them out.',
-        'Wrinkles and a light feel: dehydration, not spoilage. Still perfectly good in a soup, gravy, or anything with liquid.',
-        'Dark patches and open gills: past their best texture but fine cooked hard, and often better browned than a fresh mushroom.',
-        'Sour or fishy smell: throw them out. A fresh mushroom smells faintly earthy and of very little else.',
-        'Visible fuzz or wet spots that spread: throw the whole container out rather than trimming around them.'
-      ] },
+      { heading: 'The signs they are going', text: 'Three things mean throw them out: a slick, tacky film on the cap, a sour or fishy smell, and fuzzy growth. Wrinkled caps, darkened gills, and dry brown bruises are quality signals rather than safety ones — those mushrooms belong in tonight’s pan, not the bin. Our guide to telling if mushrooms have gone bad works through every symptom in a table, including the ones that look alarming and are not.' },
       { heading: 'When to stop storing and start cooking', text: 'The best answer to a fridge full of aging mushrooms is a pan, not a better container. Mushrooms two or three days past their best brown better than fresh ones, because they have already lost some of their water. Cook the whole batch down, then store what you made: cooked mushrooms hold 3 days in the fridge and freeze usefully for a couple of months, while raw mushrooms frozen without cooking turn watery on thawing.' }
     ],
     faqs: [
@@ -420,7 +416,107 @@ const methodGuides: GuideArticle[] = [
       { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' },
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
       { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
+      { href: '/how-to-tell-if-mushrooms-are-bad/', label: 'How to tell if mushrooms have gone bad' },
       { href: '/mushroom-cook-time-chart/', label: 'Mushroom cook time chart' }
+    ]
+  },
+  {
+    slug: 'how-to-tell-if-mushrooms-are-bad', label: 'Spoiled mushrooms', badge: 'Safety check', title: 'How to Tell If Mushrooms Are Bad (Slime, Smell, Spots)', description: 'Mushrooms have gone bad when they feel slimy, smell sour or fishy, or grow fuzzy mold. Wrinkles and dark caps are usually still fine to cook.', minutes: '6 min', updated: '2026-08-14', isoTime: 'PT2M', prepIsoTime: 'PT1M', heat: 'No heat', cut: 'Halve one mushroom to check the inside', finish: 'Cook the good ones tonight', showCookTimes: false,
+    quickFacts: [
+      { label: 'Throw out', value: 'Slime, fuzz, sour or fishy smell' },
+      { label: 'Still good', value: 'Wrinkled, dry, darkened, open gills' },
+      { label: 'Cook tonight', value: 'Damp patches or a faint musty note' },
+      { label: 'Cooked leftovers', value: 'About 3 days refrigerated' },
+    ],
+    image: '/images/cookmushroom-mushrooms-going-bad-hero.webp', imageAlt: 'Four firm cremini mushrooms on a wooden board beside two older ones with cracked darkened caps, one turned over showing dark open gills',
+    steps: [
+      'Look first. Spread the mushrooms out on a board. You are looking for wet patches that spread, fuzzy growth, and liquid pooled in the carton — not for colour, which changes on every mushroom as it ages.',
+      'Touch one. A good mushroom is dry and slightly suedelike, and it springs back when you press the cap. A tacky, slick film that clings to your fingers is the end of the line.',
+      'Smell the batch, not one mushroom. Put your nose near the open container. Fresh mushrooms smell faintly earthy and of very little else; sour, fishy, or ammonia notes mean throw them out.',
+      'Halve a doubtful one. The interior should be uniformly pale and dry-looking. Brown, wet, or streaked flesh inside means the breakdown has gone past the surface.',
+      'Sort into three piles: bin, cook tonight, keep. Cook the middle pile down in a hot dry pan tonight — cooked mushrooms buy you another three days.'
+    ],
+    tips: [
+      'Weight tells you more than colour. A mushroom that feels light for its size has lost water, which is a texture problem, not a safety one.',
+      'One slimy mushroom does not condemn the pack. Remove it, check its neighbours by hand, and cook the rest immediately.',
+      'Visible mold is different — discard the whole container rather than picking around it. Mold threads run further than the fuzz you can see in a soft, wet food.',
+      'If you have to talk yourself into it, bin it. Mushrooms are cheap and a spoiled batch tastes sour even after hard browning.'
+    ],
+    pairings: ['the pan method', 'oven-roasted mushrooms', 'mushroom storage', 'dried mushroom broth'],
+    sections: [
+      { heading: 'The 30-second answer', text: 'Trust your hands and your nose before the date on the pack. A mushroom that is dry, firm, and smells of almost nothing is good, however dark or wrinkled it looks. Three signals mean throw it out: a slick, tacky film on the cap, a sour or fishy smell, and fuzzy growth. Everything else on this page — wrinkles, brown caps, black gills, stretched stems — is a quality problem, and quality problems are solved in a hot pan tonight.' },
+      { heading: 'The rule', quote: 'Slime, sour smell, and fuzz mean bin it. Wrinkles, dark caps, and open gills just mean cook them tonight.' },
+      { heading: 'Symptom by symptom', text: 'Find what you are actually looking at, then read across. The verdicts assume mushrooms that have been refrigerated the whole time; anything left out overnight on a warm counter gets binned regardless of how it looks.',
+        table: {
+          headings: ['What you see or feel', 'What it is', 'Verdict'],
+          rows: [
+            ['Slick, tacky film on the cap', 'Bacterial breakdown on a wet surface', 'Throw out'],
+            ['Sour, fishy, or ammonia smell', 'Spoilage well underway', 'Throw out'],
+            ['Fuzzy white, green, or grey growth', 'Mold on a high-moisture food', 'Throw out the whole container'],
+            ['Wet dark patches that spread', 'Soft rot moving through the cap', 'Throw out'],
+            ['Liquid pooled in the carton', 'The mushrooms are weeping', 'Smell them: sour means bin, clean means cook now'],
+            ['Wrinkled caps, light in the hand', 'Dehydration, not spoilage', 'Good — use in soup, gravy, or a braise'],
+            ['Caps darkened to tan or brown', 'Normal oxidation with age', 'Good — they brown better than fresh ones'],
+            ['Gills open and dark underneath', 'A mushroom that matured after harvest', 'Good — deeper flavour, darker sauce'],
+            ['Small dry brown spots or bruises', 'Handling marks', 'Good — trim them if you like'],
+            ['Stems stretched, veil torn', 'Growth continued in the fridge', 'Good — quality is falling, cook this week'],
+            ['White fluff at the stem base', 'Usually mycelium, not mold', 'Good if it is dry and smells earthy']
+          ]
+        }
+      },
+      { heading: 'Slime is the signal that ends it', text: 'Sliminess is the one sign with no workaround. It is a wet bacterial film on the cap surface, and it does not cook off — it carries a sour taste straight into the pan and no amount of browning covers it. The test is your fingertips, not your eyes: run a finger across a cap and see whether it drags. A good mushroom feels dry and faintly suedelike; a spoiled one feels like it has been wiped with oil. Once one mushroom in a pack is genuinely slimy, check the rest by hand rather than by sight, because the ones underneath it usually went first.' },
+      { heading: 'Wrinkled and light is not spoiled', text: 'The most common mistake is throwing away perfectly good mushrooms because they shrivelled. Wrinkling is water loss, which is the opposite problem to spoilage, and it concentrates flavour rather than ruining it. A wrinkled mushroom that still smells of nothing much is a soup mushroom, a gravy mushroom, or a braise mushroom — put it somewhere with liquid, where the texture never mattered. It is only a problem if you wanted it whole and glossy on a plate. Mushrooms that have dried to the point of being hard and leathery are also still usable: treat them like a dried mushroom and rehydrate them.' },
+      { heading: 'Dark caps, black gills, and bruises', text: 'Mushrooms brown as they age the way a cut apple does, and the gills of a button mushroom open from pale pink to chocolate brown to near black as the cap flattens out. None of that is spoilage. A darkened cremini browns faster in a pan than a bright white one because it has already given up water, and mature open gills make a noticeably deeper mushroom sauce. Portobellos have black gills the day you buy them. What you are checking on a dark mushroom is whether the darkness is dry or wet: dry and even is age, while a dark patch that is damp and spreading outward from a point is rot.' },
+      { heading: 'What a bad mushroom smells like', text: 'The smell test is the most reliable of the three, and the easiest to do badly. Open the container and put your nose over the whole batch rather than sniffing one mushroom — spoilage smells are concentrated in the trapped air. A fresh mushroom smells faintly of damp earth and almost nothing else; some varieties, like shiitake and matsutake, smell distinctly of themselves and always have. What you are listening for is a change in character rather than strength: sour, fishy, or a sharp ammonia note. Any of those, and the batch goes out even if it looks fine. Smell beats appearance every time, because a mushroom can be well into breaking down before its surface shows it.' },
+      { heading: 'Fuzz: mold, or the mushroom itself?', text: 'Fine white fluff around the base of a stem or between mushrooms in a cluster is usually mycelium — the fungus that grew the mushroom, still alive and still growing. It is dry, it sits where the mushroom met its growing medium, and it smells earthy. That batch is fine. Mold is different: it sits on the cap rather than the base, it is often green, grey, or blue-tinged, it looks damp or cottony, and it comes with a musty smell. Because mushrooms are soft and full of water, food-safety guidance for high-moisture foods is to discard the item rather than cut the mold away — the threads spread further than the visible patch. When you genuinely cannot tell the two apart, use the smell and the surface underneath: dry and earthy stays, damp and musty goes.' },
+      { heading: 'Sliced, cleaned, and cooked mushrooms are on different clocks', bullets: [
+        'Pre-sliced packs go first. Every cut face is exposed surface, so they brown, weep, and sour faster than whole caps — use them by the date on the pack and trust your nose over it.',
+        'Mushrooms you washed are on a same-day clock. The water you added is the water that causes sliminess, which is why cleaning belongs in the minute before cooking.',
+        'Cooked mushrooms keep about 3 days refrigerated in a closed container. They are safe long before they are good — a sour or fizzy note or any sliminess in the container means bin them.',
+        'Cooked mushrooms left out at room temperature for more than 2 hours go out regardless of how they look or smell. That is the general rule for cooked foods, not a mushroom quirk.',
+        'Frozen cooked mushrooms hold a couple of months and cannot really "go bad" in the freezer, but they get watery and flat after that. Raw mushrooms frozen without cooking always thaw soft.'
+      ] },
+      { heading: 'Varieties that mislead you', bullets: [
+        'Portobello: black, damp-looking gills are how it arrives. Judge the cap edge and the cut stem instead — a rim that has gone soft and wet is the real signal.',
+        'Oyster: thin edges wilt and go translucent early. Translucent and dry is tired but usable; translucent and slimy is finished.',
+        'Enoki: the compact base browns and goes slippery well before the caps do. Trim generously; if the slipperiness reaches the stems, bin the bundle.',
+        "Lion's mane: the spines yellow and the surface starts to weep. Yellowing alone is age. Weeping plus a sour smell is spoilage.",
+        'Shiitake: caps dry and curl at the rim, which is nearly harmless — dry shiitake caps are still excellent in broth.',
+        'Chanterelles and morels (market-purchased or expert-verified): both go limp and smell sour quickly. Morels also collect grit and small insects in their pits, so halve them and look inside before deciding.',
+        'Wood ear (fresh): it loses its snap first. A lobe that folds without springing back has passed its point, even with no smell.'
+      ] },
+      { heading: 'Wild mushrooms have one extra rule', text: 'Everything above is about spoilage — mushrooms you already know are edible getting old. It says nothing about whether a wild mushroom was safe to eat in the first place, and no freshness check substitutes for identification. Cook only mushrooms that were market-purchased or verified by an expert who handled the actual specimen, and never eat a wild mushroom on the strength of a photo match. Foraged mushrooms also spoil faster than shop-bought ones because they were rarely chilled straight after picking: store them in a single layer on a towel-lined tray and cook them within a few days.' },
+      { heading: 'The date on the package', text: 'The date printed on a mushroom carton is a quality estimate from the packer, not a safety deadline, and it assumes a colder fridge than most homes run. Whole button mushrooms are often perfectly good three days past it and occasionally sour two days before it, depending on how long they sat in a warm delivery van. Use the date to decide what to cook first when you open the fridge, and use your hands and nose to decide whether to cook it at all.' },
+      { heading: 'When you are not sure', text: 'The honest answer for a borderline batch is that it is a cooking decision, not a gamble. Cook one mushroom in a dry pan and taste it: good mushrooms taste savoury and faintly sweet, and mushrooms on the way out taste sour or metallic in a way that hard browning does not hide. If the smell already gave you pause, skip that step and bin them — a spoiled batch will not improve, and mushrooms are among the cheapest things in the fridge to replace.' }
+    ],
+    faqs: [
+      { question: 'Are slimy mushrooms safe to eat if you cook them?', answer: 'No. Sliminess is a bacterial film on the cap, and cooking does not remove the sour taste it carries. Throw slimy mushrooms out rather than washing or browning them.' },
+      { question: 'Can you eat mushrooms that have turned brown?', answer: 'Usually yes. Browning is oxidation with age, not spoilage, and darkened mushrooms actually brown faster in a hot pan because they have already lost water. Check that the darkness is dry and even rather than a wet patch that is spreading.' },
+      { question: 'Are wrinkled mushrooms still good?', answer: 'Yes, in most cases. Wrinkling is dehydration and it concentrates flavour. Use them where texture does not matter — soup, gravy, a braise. Slime and sour smells are the signals to stop, not shrivelling.' },
+      { question: 'What does a bad mushroom smell like?', answer: 'Sour, fishy, or sharply of ammonia. Fresh mushrooms smell faintly earthy and of little else. Smell the whole open container rather than one mushroom, since spoilage odours concentrate in the trapped air.' },
+      { question: 'Is the white fuzz on my mushrooms mold?', answer: 'Usually not. Dry white fluff at the stem base is mycelium, the fungus itself, and it is harmless. Mold sits on the cap, looks damp or cottony, often carries a green or grey tint, and smells musty — discard the whole container in that case.' },
+      { question: 'How long do mushrooms last in the fridge?', answer: 'Whole button and cremini mushrooms hold about 5 to 7 days, dense shiitake and king oyster closer to 10, and delicate oyster or lion’s mane 3 to 5. Sliced mushrooms lose roughly half that window. Storage method changes those numbers more than the variety does.' },
+      { question: 'Can old mushrooms make you sick?', answer: 'Spoiled mushrooms carry the bacteria and molds that broke them down, and eating them can cause stomach upset. This is ordinary food spoilage rather than mushroom toxicity, and the fix is the same as for any soft, wet food: when it is slimy, smells sour, or has fuzzy growth, throw it out.' },
+      { question: 'Do cooked mushrooms go bad faster than raw ones?', answer: 'They keep about 3 days refrigerated, which is shorter than a whole raw mushroom but longer than a mushroom that was already on its last day. Cooking a tired batch tonight is the standard way to buy time.' }
+    ],
+    storage: [
+      'Still good: back to a vented carton or folded paper bag on a main fridge shelf, unwashed.',
+      'Borderline: cook the whole batch down tonight in a hot dry pan, then refrigerate what you made.',
+      'Cooked: closed container in the fridge for about 3 days; reheat in a hot dry skillet, not a microwave.',
+      'Past it: bin the whole container rather than sorting through it, and wash the tray or drawer it sat in.'
+    ],
+    sources: [
+      { href: 'https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/molds-food-are-they-dangerous', label: 'USDA FSIS — Molds on Food: Are They Dangerous?' },
+      { href: 'https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts', label: 'FoodSafety.gov — Cold Food Storage Chart' },
+      { href: 'https://www.foodsafety.gov/keep-food-safe/foodkeeper-app', label: 'USDA FoodKeeper — storage timelines for fresh produce' },
+    ],
+    relatedLinks: [
+      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms so they stay firm' },
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
+      { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
+      { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
+      { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
+      { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' }
     ]
   },
   {
@@ -1592,7 +1688,8 @@ const speciesGuides: GuideArticle[] = [
       { href: '/how-to-cook-button-mushrooms/', label: 'How to cook button mushrooms' },
       { href: '/garlic-mushroom-pasta/', label: 'Garlic mushroom pasta recipe' },
       { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' },
-      { href: '/how-to-store-mushrooms/', label: 'How to store cremini so they stay firm' }
+      { href: '/how-to-store-mushrooms/', label: 'How to store cremini so they stay firm' },
+      { href: '/how-to-tell-if-mushrooms-are-bad/', label: 'How to tell if mushrooms are bad' }
     ],
     faqs: [
       { question: 'Should cremini mushrooms be washed?', answer: 'Yes, they may be rinsed briefly if needed, but dry them thoroughly before cooking. A damp towel is usually enough for lightly soiled mushrooms.' },

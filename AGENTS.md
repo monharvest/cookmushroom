@@ -4,7 +4,7 @@ Read this first. It is the persistent memory for any agent (Hermes, Claude, or o
 
 ## What this project is
 
-cookmushroom.com — an Astro static site about cooking mushrooms, deployed automatically by Cloudflare on push to `origin/main`. 28 guides + growing recipe collection. Public author byline: **Ana** (Person schema); CookMushroom is the publisher Organization.
+cookmushroom.com — an Astro static site about cooking mushrooms, deployed automatically by Cloudflare on push to `origin/main`. 32 guides + 3 recipes. Public author byline: **Ana** (Person schema); CookMushroom is the publisher Organization.
 
 ## Where the plan lives
 

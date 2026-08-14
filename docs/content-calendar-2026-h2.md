@@ -40,13 +40,15 @@ Storage/shelf-life queries are huge, evergreen, and the site answers them only i
 | # | URL | Type | Why now |
 |---|---|---|---|
 | 2.1 | `/how-to-store-mushrooms/` | Reference (Article + quickFacts) | **Shipped 2026-08-07** — 1,900 words, 12-row shelf-life table, backlinks from 5 pages. Canonical answer for paper bag vs plastic, fridge placement, shelf life by variety. |
-| 2.2 | `/how-to-tell-if-mushrooms-are-bad/` | Reference | Very high-volume safety query (slime, smell, dark spots, wrinkles). Answer-first table by symptom. Pairs with 2.1 as a two-page cluster. |
+| 2.2 | `/how-to-tell-if-mushrooms-are-bad/` | Reference | **Shipped 2026-08-14** — 2,350 words, 11-row symptom table, backlinks from 4 pages, 3 external food-safety citations. 2.1's "signs they are going" section trimmed to a pointer at the same time. |
 | 2.3 | `/how-to-freeze-mushrooms/` | Guide (method) | "Can you freeze mushrooms" + "how to freeze mushrooms raw/cooked". The guides say "freeze after cooking" 24 times without ever explaining the sauté-first method. |
 | 2.4 | `/how-to-dry-mushrooms/` | Guide (method) | Completes preservation coverage; two-way links with `/how-to-cook-dried-mushrooms/`. Oven and dehydrator methods; note which species dry well (porcini) vs badly (chanterelles — the chanterelle guide already says this, link it). |
 
 **Improvements this month:** add a "Storage & prep" section to the guides index page grouping cleaning/storage/freezing/drying references (do this once 2.3 and 2.4 exist) · per-page og:image (use each page's hero instead of the sitewide og-image.png; generate JPG og variants if scraper compatibility is a concern).
 
-**Done 2026-08-07:** recipe template gained `sections` + `faqs` (recipe pages were the thinnest content on the site at 750–980 words); all three existing recipes deepened to 1,330–1,550 words. When 2.2 (`/how-to-tell-if-mushrooms-are-bad/`) ships, trim the "signs they are going" section on 2.1 down to a pointer so the two pages do not compete.
+**Done 2026-08-07:** recipe template gained `sections` + `faqs` (recipe pages were the thinnest content on the site at 750–980 words); all three existing recipes deepened to 1,330–1,550 words.
+
+**Done 2026-08-14:** 2.1's "signs they are going" section trimmed from a five-bullet list to a one-paragraph pointer, so it no longer competes with 2.2.
 
 **Checkpoint (mid-Sep):** first meaningful GSC data expected. Which of the four July pages rank? Do storage pages get impressions within 2 weeks (fast-index signal)?
 
