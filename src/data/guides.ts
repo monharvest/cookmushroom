@@ -417,11 +417,13 @@ const methodGuides: GuideArticle[] = [
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
       { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
       { href: '/how-to-tell-if-mushrooms-are-bad/', label: 'How to tell if mushrooms have gone bad' },
+      { href: '/how-to-freeze-mushrooms/', label: 'How to freeze mushrooms without ruining them' },
+      { href: '/how-to-dry-mushrooms/', label: 'How to dry mushrooms in a dehydrator or oven' },
       { href: '/mushroom-cook-time-chart/', label: 'Mushroom cook time chart' }
     ]
   },
   {
-    slug: 'how-to-tell-if-mushrooms-are-bad', label: 'Spoiled mushrooms', badge: 'Safety check', title: 'How to Tell If Mushrooms Are Bad (Slime, Smell, Spots)', description: 'Mushrooms have gone bad when they feel slimy, smell sour or fishy, or grow fuzzy mold. Wrinkles and dark caps are usually still fine to cook.', minutes: '6 min', updated: '2026-08-14', isoTime: 'PT2M', prepIsoTime: 'PT1M', heat: 'No heat', cut: 'Halve one mushroom to check the inside', finish: 'Cook the good ones tonight', showCookTimes: false,
+    slug: 'how-to-tell-if-mushrooms-are-bad', label: 'Spoiled mushrooms', badge: 'Safety check', title: 'How to Tell If Mushrooms Are Bad (Slime, Smell, Spots)', description: 'Mushrooms have gone bad when they feel slimy, smell sour or fishy, or grow fuzzy mold. Wrinkles and dark caps are usually still fine to cook.', minutes: '6 min', updated: '2026-08-17', isoTime: 'PT2M', prepIsoTime: 'PT1M', heat: 'No heat', cut: 'Halve one mushroom to check the inside', finish: 'Cook the good ones tonight', showCookTimes: false,
     quickFacts: [
       { label: 'Throw out', value: 'Slime, fuzz, sour or fishy smell' },
       { label: 'Still good', value: 'Wrinkled, dry, darkened, open gills' },
@@ -515,8 +517,187 @@ const methodGuides: GuideArticle[] = [
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
       { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
+      { href: '/how-to-freeze-mushrooms/', label: 'How to freeze mushrooms without ruining them' },
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
       { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' }
+    ]
+  },
+  {
+    slug: 'how-to-freeze-mushrooms', label: 'Freezing mushrooms', badge: 'Cook first', title: 'How to Freeze Mushrooms (Sauté First, Not Raw)', description: 'Freeze mushrooms after cooking, not raw: sauté or steam them first, cool them completely, then freeze flat in portions for up to 3 months.', minutes: '6 min', updated: '2026-08-17', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high in the pan, then 0°F / -18°C', cut: 'Slice or quarter before cooking', finish: 'Cool completely, then freeze flat', showCookTimes: false,
+    quickFacts: [
+      { label: 'Best method', value: 'Sauté, cool, then freeze' },
+      { label: 'Raw freezing', value: 'Only for mushrooms headed to soup' },
+      { label: 'Keeps', value: '2–3 months for good texture' },
+      { label: 'Thawing', value: 'Never — cook them from frozen' },
+    ],
+    image: '/images/cookmushroom-freezing-mushrooms-hero.webp', imageAlt: 'Browned sautéed mushroom slices spread in a single layer on a parchment-lined tray, cooled and ready to freeze',
+    steps: [
+      'Clean and cut the mushrooms as you would for cooking: quarter small ones, slice large ones about 1/4 inch thick. Keep the pieces even so they cook at the same rate.',
+      'Sauté them in a wide pan over medium-high heat with a little oil, in batches if the pan is crowded. Cook until the released liquid has evaporated and the edges are browned, about 8 to 10 minutes.',
+      'Season lightly or not at all. Salt draws out more water in the freezer, and you can season properly when you cook the mushrooms for real.',
+      'Cool them completely on a plate or tray. Freezing anything warm builds ice crystals inside the bag and raises the temperature of everything around it.',
+      'Freeze in a single layer on a lined tray for about an hour, until firm. This keeps the pieces separate so you can pour out a handful instead of chiselling at a block.',
+      'Bag them flat, press the air out, label with the date, and stack. Flat bags freeze faster, thaw faster, and store better than lumpy ones.'
+    ],
+    tips: [
+      'Freeze in the portions you actually cook with. A 1-cup bag goes into a pan or a soup; a 2-pound brick has to be defrosted as a whole before you can use any of it.',
+      'Undercook slightly if the mushrooms are destined for a long-simmered dish. They will finish cooking in the pot.',
+      'Squeeze the air out by hand, or lower a nearly-sealed bag into a bowl of water so the pressure pushes the air out through the last inch of the seal.',
+      'Label the variety as well as the date. Frozen cooked mushrooms all look alike, and porcini deserve better than being mistaken for button mushrooms.'
+    ],
+    pairings: ['soups', 'pasta sauces', 'gravy', 'risotto', 'stews', 'fillings'],
+    sections: [
+      { heading: 'The 30-second answer', text: 'Cook mushrooms before you freeze them. Sauté them in a wide pan until the water has cooked off and the edges brown, cool them completely, freeze them in a single layer on a tray, then bag them flat. They keep 2 to 3 months with good texture and cook straight from frozen. Freezing mushrooms raw is the common shortcut and it is the reason so many people think frozen mushrooms are watery — raw mushrooms are roughly 90 percent water, and freezing that water is what wrecks them.' },
+      { heading: 'The rule', quote: 'Freeze cooked mushrooms, not raw ones. The pan removes the water that the freezer would otherwise turn against you.' },
+      { heading: 'Why raw mushrooms freeze badly', text: 'Water expands as it freezes. Inside a raw mushroom that water sits in intact cells, so the ice crystals puncture the cell walls from the inside out. Nothing puts those walls back — when the mushroom thaws, it slumps and leaks the water it was holding, and you get a grey, limp piece that steams instead of browning. Cooking first drives off most of that water before it can do the damage, which is why a sautéed mushroom comes out of the freezer as recognisably a mushroom and a raw one comes out as a wet sponge. This is also why you should never refreeze mushrooms that have thawed: the second round of ice crystals works on tissue that has already been broken once.' },
+      { heading: 'Four ways to freeze, compared', text: 'All four start with clean, dry, evenly cut mushrooms. The difference is how much work you do now versus how much texture you have later.',
+        table: {
+          headings: ['Method', 'Prep time', 'Keeps well', 'Texture after cooking', 'Best for'],
+          rows: [
+            ['Sautéed', '15–20 min', '2–3 months', 'Best — browned and firm', 'Almost everything; the default'],
+            ['Steam-blanched', '10–15 min', '3–4 months', 'Soft but intact', 'Large batches, freezer efficiency'],
+            ['Roasted', '25–30 min', '2–3 months', 'Concentrated, slightly chewy', 'Sheet-pan volume with no stirring'],
+            ['Raw, sliced', '5 min', '1–2 months', 'Watery and limp', 'Soups and stocks only'],
+            ['Duxelles (cooked paste)', '30–40 min', '3 months', 'Excellent — it was already a paste', 'Sauces, fillings, stuffed anything']
+          ]
+        }
+      },
+      { heading: 'The sauté method, in detail', text: 'This is the one to use unless you have a reason not to. Work in batches wide enough that the mushrooms sit mostly flat — a crowded pan steams, and steamed mushrooms carry their water into the freezer with them. Use a little oil rather than butter, because butter solidifies oddly when frozen and browns again unevenly on reheating. Stop when the pan looks dry and the edges are properly browned, not merely softened: any liquid still in the pan is liquid that becomes ice. Skip the garlic, herbs, wine, and cream — aromatics fade or turn bitter over months, and dairy splits on thawing. Season those in when you cook the mushrooms for the dish they are actually going into.' },
+      { heading: 'The steam-blanch method, for volume', text: 'Blanching is how commercial packers do it, and it is worth knowing if you have bought several pounds cheap. Steam the pieces over boiling water for 3 to 5 minutes depending on thickness, until they are heated through and slightly translucent, then plunge them into ice water to stop the cooking and drain them thoroughly. Steaming beats boiling here because boiled mushrooms absorb water rather than losing it. Blanched mushrooms keep a month or so longer than sautéed ones, because the brief cooking deactivates the enzymes that dull flavour over time, but they come out softer and without any browning. They are best where they will be simmered anyway.' },
+      { heading: 'When freezing raw is actually fine', text: 'There is one honest use for raw frozen mushrooms: anything that ends up in liquid and cooks for a long time. Stock, broth, a long-simmered soup, a bolognese. In those dishes the texture was never going to survive anyway, and the flavour transfers fine. If you are doing it, slice the mushrooms first, freeze them in a single layer, bag them, and use them within a month or two — and cook them straight from frozen, without thawing. Shiitake stems and mushroom trimmings are the best candidates of all, since a scrap bag in the freezer becomes stock later at no cost.' },
+      { heading: 'Portion flat, portion small', text: 'How you bag mushrooms matters nearly as much as how you cook them. A flat bag freezes through in a fraction of the time a lumpy one takes, which means smaller ice crystals and less damage, and it thaws evenly and stacks like a file. Press out as much air as you can — air is what causes freezer burn, the dry greyish patches that taste of nothing. Then portion for the way you actually cook: roughly a cup per bag covers a pasta sauce or a risotto, and it is far easier to use two bags than to hack a portion off a frozen block.' },
+      { heading: 'How long they really keep', text: 'Food held constantly at 0°F / -18°C stays safe indefinitely — freezing does not make food unsafe, it just stops the clock. What runs out is quality. Sautéed mushrooms hold their texture and flavour for about 2 to 3 months, blanched ones 3 to 4, and raw ones 1 to 2 before they turn noticeably watery and flat. Past those windows they are still perfectly edible and simply less good, so use the older bags in stews and soups where nobody is examining the texture. A freezer that gets opened constantly, or one that defrost-cycles, shortens all of these numbers.' },
+      { heading: 'Which mushrooms freeze best', bullets: [
+        'Button, cremini, portobello: freeze very well sautéed. The workhorses of this method.',
+        'Shiitake, maitake, king oyster: dense enough to hold their structure; among the best results you will get.',
+        'Porcini, morels, black trumpets (market-purchased or expert-verified): freeze well cooked, though drying suits them even better if you want the flavour concentrated.',
+        'Chanterelles: dry-sauté them first, exactly as you would to cook them, then freeze. Raw-frozen chanterelles turn to mush.',
+        'Oyster and shimeji: acceptable but not exciting — the thin edges go limp. Send them to soups.',
+        "Enoki and lion's mane: skip it. Both are too delicate to come back from freezing in any useful state.",
+        'Wood ear: no reason to bother. It is sold dried and rehydrates perfectly, which is a better route.'
+      ] },
+      { heading: 'What not to do', bullets: [
+        'Do not thaw before cooking. Frozen mushrooms go straight into a hot dry pan; thawed ones leak onto the board and go limp.',
+        'Do not refreeze anything that has thawed. Texture collapses and the food-safety margin narrows.',
+        'Do not freeze in the shop carton. It is vented on purpose, which is the opposite of what a freezer needs.',
+        'Do not salt heavily before freezing. Salt pulls water out and lowers the freezing point, both of which work against you here.',
+        'Do not freeze mushrooms that were already on the edge. The freezer pauses spoilage, it does not reverse it — a mushroom that smelled sour going in smells sour coming out.'
+      ] },
+      { heading: 'Cooking them afterwards', text: 'Take them straight from the freezer into a hot, dry pan and let the ice water boil off before you add fat — the same sequence as fresh mushrooms, just with more water to drive away at the start. Expect them to be softer than fresh no matter how carefully you froze them, and put them where that does not matter: soups, sauces, gravies, risotto, fillings, pizza. Our guide to cooking frozen mushrooms walks through the pan sequence in detail, including the reasons thawing makes it worse.' }
+    ],
+    faqs: [
+      { question: 'Can you freeze mushrooms raw?', answer: 'You can, but they thaw watery and limp because ice crystals rupture the cell walls of a food that is about 90 percent water. Raw freezing only makes sense for mushrooms headed into stock, soup, or a long-simmered sauce, and they should be used within a month or two.' },
+      { question: 'Do you have to cook mushrooms before freezing?', answer: 'For any dish where texture matters, yes. Sautéing drives off most of the water before it can freeze into cell-puncturing crystals, which is the whole reason cooked mushrooms come back from the freezer and raw ones do not.' },
+      { question: 'How long do frozen mushrooms last?', answer: 'Sautéed mushrooms hold good texture for 2 to 3 months, blanched for 3 to 4, raw for 1 to 2. At a constant 0°F they stay safe far longer than that — what expires is quality, not safety.' },
+      { question: 'Should you thaw frozen mushrooms before cooking?', answer: 'No. Cook them straight from frozen in a hot dry pan and let the ice water boil off first. Thawing lets them leak their water and go limp before they reach any heat.' },
+      { question: 'Can you freeze mushrooms whole?', answer: 'You can, but there is rarely a reason to. Whole mushrooms freeze slowly, which means larger ice crystals and worse texture, and they still have to be cut once frozen. Cut them before cooking instead.' },
+      { question: 'Why did my frozen mushrooms turn out slimy?', answer: 'Usually one of three things: they were frozen raw, they were thawed before cooking, or the pan never got hot enough to drive off the ice water. Cook from frozen in a wide, hot, dry pan and wait for the sizzling to replace the bubbling.' },
+      { question: 'Can you refreeze mushrooms?', answer: 'No. The first freeze already broke the cell structure and the thaw released the water; a second cycle leaves you with pulp, and the time spent above freezing narrows the safety margin as well.' },
+      { question: 'Is it better to freeze or dry mushrooms?', answer: 'It depends on the mushroom. Dense, aromatic varieties like porcini, shiitake, and morels concentrate beautifully when dried and store for a year. Everyday button and cremini mushrooms are better sautéed and frozen, since drying them gains little.' }
+    ],
+    storage: [
+      'Sautéed: cooled completely, frozen flat in 1-cup portions, 2 to 3 months for best quality.',
+      'Blanched: drained thoroughly, bagged flat, 3 to 4 months.',
+      'Raw: sliced and single-layer frozen, 1 to 2 months, for soup and stock only.',
+      'All of them: cook from frozen, never thaw, and never refreeze once thawed.'
+    ],
+    sources: [
+      { href: 'https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety', label: 'USDA FSIS — Freezing and Food Safety' },
+      { href: 'https://www.foodsafety.gov/keep-food-safe/foodkeeper-app', label: 'USDA FoodKeeper — storage timelines for fresh produce' },
+    ],
+    relatedLinks: [
+      { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms without thawing' },
+      { href: '/how-to-dry-mushrooms/', label: 'How to dry mushrooms in a dehydrator or oven' },
+      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms so they stay firm' },
+      { href: '/how-to-tell-if-mushrooms-are-bad/', label: 'How to tell if mushrooms are bad' },
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
+      { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' }
+    ]
+  },
+  {
+    slug: 'how-to-dry-mushrooms', label: 'Drying mushrooms', badge: 'Keeps a year', title: 'How to Dry Mushrooms in a Dehydrator or Oven', description: 'Dry mushrooms at 125–135°F until they snap rather than bend — 4 to 10 hours in a dehydrator, 2 to 4 in an oven. Slicing, conditioning, and storage.', minutes: '7 min', updated: '2026-08-17', isoTime: 'PT6H', prepIsoTime: 'PT15M', heat: '125–135°F / 52–57°C', cut: 'Even 1/4-inch slices', finish: 'Condition for a week, then store airtight', showCookTimes: false,
+    quickFacts: [
+      { label: 'Temperature', value: '125–135°F / 52–57°C' },
+      { label: 'Cut', value: 'Even slices, about 1/4 inch' },
+      { label: 'Done when', value: 'They snap, not bend' },
+      { label: 'Keeps', value: 'About a year, airtight and dark' },
+    ],
+    image: '/images/cookmushroom-drying-mushrooms-hero.webp', imageAlt: 'Thin mushroom slices arranged in a single layer on a wire drying rack beside a jar of finished dried mushrooms',
+    steps: [
+      'Brush the mushrooms clean. Do not wash them — you are about to spend hours removing water, so adding more at the start is wasted time.',
+      'Slice evenly, about 1/4 inch thick. Even thickness matters more than the exact number: a tray of mixed thicknesses finishes at wildly different times and the thick pieces are the ones that spoil the jar.',
+      'Lay the slices in a single layer with space around them. Overlapping pieces trap moisture between them and dry unevenly.',
+      'Dry at 125–135°F / 52–57°C. Check at 4 hours, then hourly. Most slices take 4 to 8 hours; thick pieces and whole small mushrooms can take 10 or more.',
+      'Test on a cooled slice, not a warm one. Warm mushrooms feel pliable even when they are done. A properly dried slice snaps cleanly in half; one that bends needs more time.',
+      'Cool completely, then condition: pack loosely into a jar, leave it a week, and shake it daily. Any condensation on the glass means moisture is still in there — return the whole batch to the heat.',
+      'Store airtight in a dark cupboard, away from the stove. Label with the variety and the date.'
+    ],
+    tips: [
+      'Sort by thickness onto separate trays. Then you can pull one tray early instead of over-drying everything to rescue a few thick slices.',
+      'A dehydrator is worth it if you do this more than twice a year. Ovens run hot even at their lowest setting, and the difference between drying and slowly cooking is about 20 degrees.',
+      'Save the crumbs and broken pieces. Blitzed to a powder, they are the most useful thing to come out of this whole process.',
+      'Do not dry different varieties on the same tray if you care which is which. Dried mushrooms are hard to tell apart and the aromas mingle.'
+    ],
+    pairings: ['broths', 'risotto', 'pasta sauces', 'braises', 'rubs and seasoning'],
+    sections: [
+      { heading: 'The 30-second answer', text: 'Slice clean mushrooms about 1/4 inch thick, spread them in a single layer, and dry them at 125–135°F until a cooled slice snaps instead of bending. That is 4 to 8 hours in a dehydrator and 2 to 4 in an oven set to its lowest temperature with the door propped open. Then condition them in a jar for a week to catch any moisture you missed. Done properly they keep about a year, and they rehydrate into something more intensely flavoured than the fresh mushroom you started with.' },
+      { heading: 'The rule', quote: 'Dry until they snap. A slice that bends is still holding water, and water left in the jar is what spoils the whole batch.' },
+      { heading: 'Prep: slice thin, slice even, do not wash', text: 'Brush or wipe the mushrooms rather than rinsing them. Water on the surface simply extends the drying time, and mushrooms that are about to lose 90 percent of their weight in moisture do not need any help getting wetter. Slice about 1/4 inch thick — thinner dries faster and rehydrates quicker but turns brittle and loses pieces; much thicker risks a slice that feels dry outside while holding moisture in the middle, which is the single most common way a jar goes mouldy weeks later. Small mushrooms can be halved, and very small ones dried whole if you are patient. Trim anything soft, bruised, or damp before it goes on the tray: drying preserves a mushroom, it does not improve one.' },
+      { heading: 'Dehydrator method', text: 'A dehydrator is the right tool because it holds a low temperature and moves air, which is exactly the combination drying wants. Set it to 125–135°F / 52–57°C, arrange the slices with space around each one, and rotate the trays every couple of hours if your model heats unevenly. Expect 4 to 8 hours for 1/4-inch slices and up to 10 or 12 for thick pieces or whole caps. Higher temperatures do not save much time and start to cook the mushrooms instead, which darkens them and dulls the aroma you are trying to concentrate.' },
+      { heading: 'Oven method', text: 'An oven works if you accept less control. Set it as low as it goes — 150–170°F on most ovens, which is already above ideal — and prop the door open with a wooden spoon so the moisture escapes instead of recirculating. Use wire racks over sheet pans so air reaches both sides, and turn the slices once an hour. Most batches finish in 2 to 4 hours, but check from 90 minutes because the higher temperature means the margin between dried and toasted is narrow. If your oven has a convection setting, use it; if it has a dedicated dehydrate mode, use that and follow the dehydrator timings instead.' },
+      { heading: 'Air-drying, and when it works', text: 'Threading mushrooms on string and hanging them in a warm, dry, airy spot is the oldest method and still a good one — in the right climate. It needs low humidity and real air movement, and it takes days rather than hours. In a humid kitchen it does not work: the mushrooms sit damp long enough to mould before they dry. If your climate suits it, thread sliced mushrooms with a needle, leave gaps between them, hang them out of direct sun, and cover them loosely with muslin against insects. Otherwise use a machine and spend the time elsewhere.' },
+      { heading: 'The step almost everyone skips: conditioning', text: 'Conditioning is what separates a jar that lasts a year from one that grows mould in November. Individual slices finish at slightly different moisture levels, and sealing them together lets the wetter ones share their moisture with the rest. So: cool the batch completely, pack it loosely into a clear jar at about two-thirds full, seal it, and leave it a week — shaking it once a day so nothing settles into a damp clump. Watch the inside of the glass. Any condensation, any softness returning to the slices, and the whole batch goes back on the trays for another hour or two. Only after a clear week does it go into permanent storage.' },
+      { heading: 'Which mushrooms are worth drying', text: 'Drying rewards dense, aromatic mushrooms and punishes delicate watery ones. Some varieties genuinely taste better dried than fresh, because the process concentrates their savoury compounds; others simply become leathery.',
+        table: {
+          headings: ['Mushroom', 'Dries', 'What to expect'],
+          rows: [
+            ['Porcini (market-purchased or verified)', 'Excellent', 'The classic. Flavour deepens dramatically; the soaking broth is worth as much as the mushroom'],
+            ['Shiitake', 'Excellent', 'Intensifies into something quite different from fresh; stems dry well for stock'],
+            ['Morels (market-purchased or verified)', 'Excellent', 'Traditional and reliable. Halve them first so the hollow interior dries through'],
+            ['Black trumpet', 'Excellent', 'Dries fast and keeps its dark, faintly truffle-like character'],
+            ['Maitake', 'Good', 'Break into fronds first; rehydrates well into soups'],
+            ['Button / cremini', 'Good', 'Works, but gains less than the others — usually better sautéed and frozen'],
+            ['Oyster', 'Fair', 'Thin edges go brittle and crumble; fine for powder'],
+            ['King oyster', 'Fair', 'Slice thin across the stem or it never dries through the middle'],
+            ['Chanterelles', 'Poor', 'A known disappointment — they turn leathery and never fully rehydrate. Sauté and freeze instead'],
+            ["Lion's mane", 'Poor', 'The spines break up and the texture that makes it worth eating does not come back'],
+            ['Enoki', 'Poor', 'Too fine. Dries to fragile threads with little flavour to show for it'],
+            ['Wood ear', 'Excellent', 'Dries and rehydrates perfectly, which is why it is nearly always sold this way']
+          ]
+        }
+      },
+      { heading: 'Storing what you made', text: 'Airtight glass in a dark cupboard, away from the heat of the stove. Light and warmth fade the aroma long before the mushrooms look any different, which is the real failure mode of dried mushrooms — not spoilage, but a jar that quietly stops tasting of anything. A year is a reasonable expectation for good flavour, and they remain usable well beyond that. Vacuum sealing or a food-safe desiccant packet extends it further. Check the jar occasionally for condensation or clumping; either means moisture got in, and a batch showing actual mould goes out entirely rather than being picked through.' },
+      { heading: 'Mushroom powder, the best by-product', text: 'Do not throw away the broken pieces and dust at the bottom of the tray. Blitz dried mushrooms in a spice grinder or blender until they are a fine powder, and you have the most useful seasoning in the cupboard: a spoonful stirred into a stew, a gravy, a risotto, or a burger mix adds savoury depth with no soaking and no texture to accommodate. Shiitake and porcini powder are the strongest. Store it exactly like the slices, airtight and dark, and expect the aroma to fade a little faster than whole pieces because there is so much more surface area.' },
+      { heading: 'What drying does and does not do', text: 'Drying removes the water that bacteria and moulds need, which is why a properly dried mushroom keeps for a year at room temperature. It does not make anything safe that was not safe already. It does not neutralise the toxins in a misidentified mushroom, and it does not rescue a mushroom that was already slimy or sour when it went on the tray — start with mushrooms that were market-purchased or verified by an expert who handled the actual specimen, and start with mushrooms you would happily have cooked that day. Some varieties, including morels, must be cooked after rehydrating rather than eaten as-is.' },
+      { heading: 'Using them afterwards', text: 'Rehydrate in hot water for 20 to 30 minutes, then squeeze the pieces out and strain the soaking liquid through a coffee filter to catch the grit. That liquid is the point as much as the mushrooms are — it is a concentrated broth and it belongs in whatever you are making. Our guide to cooking dried mushrooms covers the soak, the strain, and what to do with both halves of the result.' }
+    ],
+    faqs: [
+      { question: 'What temperature do you dry mushrooms at?', answer: '125–135°F / 52–57°C. Hotter starts to cook them, which darkens the slices and dulls the aroma you are trying to concentrate. In an oven that cannot go that low, use the lowest setting with the door propped open and check much earlier.' },
+      { question: 'How do you know when mushrooms are dry enough?', answer: 'A cooled slice snaps cleanly in half. Test cooled, never warm — warm mushrooms feel pliable even when finished. Anything that bends still holds moisture and needs more time.' },
+      { question: 'Can you dry mushrooms in the oven?', answer: 'Yes. Set the oven to its lowest temperature, prop the door open with a wooden spoon so moisture escapes, and use wire racks so air reaches both sides. Most batches take 2 to 4 hours, but start checking at 90 minutes.' },
+      { question: 'Should you wash mushrooms before drying them?', answer: 'No. Brush or wipe them instead. Washing adds surface water to a process whose entire purpose is removing water, and it lengthens the drying time for no benefit.' },
+      { question: 'How long do dried mushrooms last?', answer: 'About a year with good flavour if they are airtight, dark, and away from heat, and they stay usable longer than that. The aroma fades well before they look any different, which is the real limit.' },
+      { question: 'What is conditioning and do I have to do it?', answer: 'Conditioning means resting the cooled batch in a sealed jar for a week, shaking daily, so moisture equalises between wetter and drier pieces. It is the step that prevents a jar going mouldy weeks later, and skipping it is the most common reason a batch fails.' },
+      { question: 'Which mushrooms should not be dried?', answer: 'Chanterelles turn leathery and never fully rehydrate; lion’s mane loses the texture that makes it worth eating; enoki is too fine to be worth the tray space. Sauté and freeze those instead.' },
+      { question: 'Do you have to cook dried mushrooms after rehydrating?', answer: 'Yes, treat them as you would the fresh mushroom. Rehydrating restores water, not doneness, and varieties that must be thoroughly cooked when fresh — morels among them — must still be thoroughly cooked after soaking.' }
+    ],
+    storage: [
+      'Airtight glass jar in a dark cupboard, away from the stove. Label with variety and date.',
+      'Condition for a week before permanent storage; any condensation means back to the trays.',
+      'About a year for good flavour; vacuum sealing or a desiccant packet extends it.',
+      'Powder keeps the same way but fades faster — make it in small batches.'
+    ],
+    sources: [
+      { href: 'https://nchfp.uga.edu/how/dry/', label: 'National Center for Home Food Preservation — Drying' },
+      { href: 'https://nchfp.uga.edu/how/dry/drying-vegetables/', label: 'NCHFP — Drying vegetables, including conditioning' },
+    ],
+    relatedLinks: [
+      { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms and use the broth' },
+      { href: '/how-to-freeze-mushrooms/', label: 'How to freeze mushrooms without ruining them' },
+      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms so they stay firm' },
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
+      { href: '/how-to-cook-porcini-mushrooms/', label: 'How to cook porcini mushrooms' },
+      { href: '/how-to-cook-shiitake-mushrooms/', label: 'How to cook shiitake mushrooms' }
     ]
   },
   {
@@ -575,7 +756,8 @@ const methodGuides: GuideArticle[] = [
       { href: '/shiitake-mushroom-ramen/', label: 'Shiitake mushroom ramen recipe' },
       { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' },
       { href: '/garlic-mushroom-pasta/', label: 'Garlic mushroom pasta recipe' },
-      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms, fresh and dried' }
+      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms, fresh and dried' },
+      { href: '/how-to-dry-mushrooms/', label: 'How to dry mushrooms in a dehydrator or oven' }
     ]
   },
   {
@@ -751,7 +933,7 @@ const speciesGuides: GuideArticle[] = [
     sections: [
       { heading: 'Why you should not thaw frozen mushrooms', text: 'Mushrooms are roughly 90 percent water. Freezing turns that water into ice crystals that puncture the cell walls, so a thawed mushroom slumps and weeps liquid before it ever hits heat. Cooking from frozen skips that stage: the ice goes straight to steam in a hot pan, and the mushrooms hold their shape long enough to brown at the end.' },
       { heading: 'What frozen mushrooms are good for', text: 'Frozen mushrooms will never sear like fresh ones — the texture is softer no matter how carefully you cook them. That makes them excellent where they are one component among many, and poor where they are the star.', bullets: ['Good: soups, stews, pasta sauces, gravies, risotto, pizza toppings, omelets.', 'Poor: standalone sautéed side dishes, salads, anything raw, or dishes where a firm bite is the point.', 'If you want a browned mushroom side, buy fresh — see the pan guide for the method.'] },
-      { heading: 'Freezing mushrooms yourself', text: 'If you are freezing your own, cook them first. Sauté or steam them, cool them completely, then freeze in a single layer before bagging. Raw home-frozen mushrooms hold far less structure than commercially blanched ones and turn watery on cooking.' }
+      { heading: 'Freezing mushrooms yourself', text: 'Cook them first — sauté or steam, cool completely, then freeze in a single layer before bagging. Raw home-frozen mushrooms hold far less structure than commercially blanched ones and turn watery on cooking. Our guide to freezing mushrooms covers the sauté and blanch methods, portioning, and how long each keeps.' }
     ],
     faqs: [
       { question: 'Can you cook mushrooms straight from frozen?', answer: 'Yes, and you should. Put them in a hot dry pan without thawing and let the ice water boil off first. Thawing beforehand makes them limp and watery.' },
@@ -781,7 +963,8 @@ const speciesGuides: GuideArticle[] = [
       { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
       { href: '/how-to-cook-cremini-mushrooms/', label: 'How to cook cremini mushrooms' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
-      { href: '/how-to-store-mushrooms/', label: 'How to store fresh mushrooms before they get here' }
+      { href: '/how-to-store-mushrooms/', label: 'How to store fresh mushrooms before they get here' },
+      { href: '/how-to-freeze-mushrooms/', label: 'How to freeze mushrooms yourself' }
     ]
   },
   // ── TEMPLATE EXEMPLAR ─────────────────────────────────────────────────────
@@ -817,6 +1000,8 @@ const speciesGuides: GuideArticle[] = [
     ],
     relatedLinks: [
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
+      { href: '/how-to-freeze-mushrooms/', label: 'How to freeze mushrooms without ruining them' },
+      { href: '/how-to-dry-mushrooms/', label: 'How to dry mushrooms (and which ones not to)' },
     ],
     faqs: [
       { question: 'Can you eat chanterelles raw?', answer: 'No. Raw chanterelles are hard to digest and can cause stomach upset, and their apricot-like aroma only develops with heat. Always cook them through.' },
@@ -829,6 +1014,7 @@ const speciesGuides: GuideArticle[] = [
       'Fresh, uncooked: keep in a paper bag in the fridge for 4–5 days. A sealed plastic bag makes them sweat and spoil fast.',
       'Cooked: refrigerate in an airtight container up to 3 days. Reheat in a dry skillet over medium heat — the microwave turns them rubbery.',
       'Freezing: dry-sauté first (through step 4), cool, then freeze up to 3 months. Freezing raw chanterelles ruins the texture.',
+      'Drying: not worth it. Chanterelles turn leathery and never fully rehydrate — sauté and freeze them instead.',
       'Drying is not recommended for chanterelles; unlike porcini, they rehydrate leathery.'
     ],
     variations: [
@@ -985,6 +1171,7 @@ const speciesGuides: GuideArticle[] = [
     ],
     relatedLinks: [
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
+      { href: '/how-to-dry-mushrooms/', label: 'How to dry porcini and other mushrooms' },
       { href: '/garlic-mushroom-pasta/', label: 'Garlic mushroom pasta recipe' }
     ],
     faqs: [
@@ -1366,6 +1553,7 @@ const speciesGuides: GuideArticle[] = [
     ],
     relatedLinks: [
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
+      { href: '/how-to-dry-mushrooms/', label: 'How to dry shiitake and other mushrooms' },
       { href: '/how-to-grill-mushrooms/', label: 'How to grill mushrooms' },
       { href: '/shiitake-mushroom-ramen/', label: 'Shiitake mushroom ramen recipe' }
     ],
