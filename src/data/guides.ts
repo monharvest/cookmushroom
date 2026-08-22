@@ -72,6 +72,8 @@ export const cookTimes = [
   { mushroom: 'Portobello', mushroomSlug: 'portobello', method: 'Oven roast', methodSlug: 'oven', time: '15–20 min', heat: '425°F / 220°C', fat: 'Brush with oil', done: 'Tender center, browned rim.' },
   { mushroom: 'Chanterelles', mushroomSlug: 'chanterelles', method: 'Dry sauté', methodSlug: 'pan', time: '8–10 min', heat: 'Hot pan, then medium', fat: 'Butter after water cooks off', done: 'Pan dry, edges lightly crisp.' },
   { mushroom: 'Morels', mushroomSlug: 'morels', method: 'Butter sauté', methodSlug: 'pan', time: '10–14 min', heat: 'Medium, then medium-low', fat: 'Butter and olive oil', done: 'Tender throughout and browned at the edges.' },
+  { mushroom: 'Chicken of the woods', mushroomSlug: 'chicken-of-the-woods', method: 'Sear + covered finish', methodSlug: 'pan', time: '15–20 min', heat: 'Medium-high, then medium', fat: '2 tbsp oil, butter at finish', done: 'Centres tender and steaming; no dry, chalky core.' },
+  { mushroom: 'Chicken of the woods', mushroomSlug: 'chicken-of-the-woods', method: 'Oven roast', methodSlug: 'oven', time: '25–30 min', heat: '400°F / 200°C', fat: '2 tbsp oil per 12 oz / 340 g', done: 'Edges browned and crisp, centres tender all the way through.' },
   { mushroom: 'Porcini', mushroomSlug: 'porcini', method: 'Pan sauté', methodSlug: 'pan', time: '7–8 min', heat: 'Medium-high, then medium', fat: 'Olive oil, butter at finish', done: 'Browned edges, tender centers.' },
   { mushroom: 'Porcini', mushroomSlug: 'porcini', method: 'Rehydrate + sauté', methodSlug: 'pan', time: '20 min soak + sauté', heat: 'Boiling water, then medium', fat: 'Butter or olive oil', done: 'Broth strained and mushrooms tender.' },
   { mushroom: 'Shaggy mane', mushroomSlug: 'shaggy-mane', method: 'Butter sauté', methodSlug: 'pan', time: '5–6 min', heat: 'Medium-high, then medium', fat: 'Olive oil and butter', done: 'Soft, lightly colored edges.' },
@@ -126,7 +128,8 @@ const methodGuides: GuideArticle[] = [
       { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
       { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms so they stay firm' },
-      { href: '/how-to-tell-if-mushrooms-are-bad/', label: 'How to tell if mushrooms are bad' }
+      { href: '/how-to-tell-if-mushrooms-are-bad/', label: 'How to tell if mushrooms are bad' },
+      { href: '/how-to-cook-chicken-of-the-woods/', label: 'How to cook chicken of the woods' }
     ],
     sections: [
       { heading: 'Why a wide hot pan works for mushrooms', text: 'Fresh mushrooms release water as they heat. A wide skillet gives that water room to evaporate, while medium-high heat browns the exposed surfaces once the pan dries. Leaving the first side alone for 3 minutes builds color before stirring. Oil handles the early heat; butter and garlic go in only after the water is gone, so they coat the browned slices instead of forming a thin sauce in the pan.' },
@@ -611,7 +614,8 @@ const methodGuides: GuideArticle[] = [
       { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms so they stay firm' },
       { href: '/how-to-tell-if-mushrooms-are-bad/', label: 'How to tell if mushrooms are bad' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
-      { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' }
+      { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
+      { href: '/how-to-cook-chicken-of-the-woods/', label: 'How to cook chicken of the woods' }
     ]
   },
   {
@@ -1060,6 +1064,7 @@ const speciesGuides: GuideArticle[] = [
     relatedLinks: [
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
+      { href: '/how-to-cook-chicken-of-the-woods/', label: 'How to cook chicken of the woods' },
     ],
     faqs: [
       { question: 'Can I eat morel mushrooms raw?', answer: 'No. Morels should be cooked thoroughly and served hot. Do not eat them raw or undercooked.' },
@@ -1081,6 +1086,89 @@ const speciesGuides: GuideArticle[] = [
       'Flour-dusted morels: toss the dried, halved morels with 1 tbsp all-purpose flour before pan-frying.',
       'Morel toast: spoon the cooked mushrooms over toasted bread and add a fried egg.',
       'Morel pasta: toss with 8 oz (225 g) cooked pasta and 1/4 cup (60 ml) pasta water.'
+    ]
+  },
+  {
+    slug: 'how-to-cook-chicken-of-the-woods', mushroomSlug: 'chicken-of-the-woods', label: 'Chicken of the woods', badge: 'Poultry texture', title: 'How to Cook Chicken of the Woods', description: 'Chicken of the woods needs longer cooking than most mushrooms — 15 to 20 minutes. Use the young tender growth, slice across the grain, and cook it through.', minutes: '8 min', updated: '2026-08-22', image: '/images/cookmushroom-chicken-of-the-woods-hero.webp', imageAlt: 'Golden pan-seared chicken of the woods slabs with thyme and lemon in a cast-iron skillet', isoTime: 'PT20M', prepIsoTime: 'PT10M', heat: 'Medium-high, then medium', cut: 'Slice across the grain into 1/2-inch slabs', finish: 'Lemon juice and fresh parsley',
+    recipeName: 'Pan-Seared Chicken of the Woods', yieldText: '2 to 3 side servings',
+    ingredients: [
+      '12 oz (340 g) chicken of the woods, market-purchased or expert-verified, from young tender growth',
+      '2 tbsp (30 ml) olive oil',
+      '2 tbsp (28 g) unsalted butter',
+      '2 garlic cloves (6 g), thinly sliced',
+      '3/4 tsp (4 g) kosher salt',
+      '1/4 tsp black pepper',
+      '2 tsp fresh thyme leaves',
+      '3 tbsp (45 ml) water or light stock',
+      '1 tbsp (15 ml) lemon juice',
+      '2 tbsp (8 g) chopped fresh parsley'
+    ],
+    steps: [
+      'Trim away the woody base where the mushroom met the tree, along with any part that has gone pale, dry, or crumbly at the edge. Keep the tender growth — it gives slightly under a thumb and cuts without resistance.',
+      'Brush off dirt and wipe the surface with a damp cloth. Do not soak it. This is a porous shelf mushroom and it will drink the water, then steam instead of brown.',
+      'Slice across the grain into 1/2-inch (1 cm) slabs, so the fibres end up short on the plate rather than stringy.',
+      'Heat the olive oil in a wide skillet over medium-high heat. Lay the slabs in one layer with space between them and cook for 4 minutes, undisturbed, until the undersides are deep golden.',
+      'Turn the pieces and cook for 3 to 4 minutes more, until the second side has colour.',
+      'Add the water, cover the pan, and lower the heat to medium. Cook for 6 to 8 minutes. This is the stage that gets heat into the middle of a slab that is thicker and denser than it looks.',
+      'Uncover and let any remaining liquid cook away. Add the butter, garlic, salt, pepper, and thyme, and cook for 2 minutes more, until the garlic is fragrant and the slabs are glossy.',
+      'Add the lemon juice and parsley, toss for 30 seconds, and serve hot. The centres should be tender and steaming throughout, with no dry, chalky core.'
+    ],
+    tips: [
+      'If the source or the identification is uncertain, do not cook or eat the mushroom.',
+      'The tender edge is the part worth cooking. Anything that resists the knife will resist the fork.',
+      'The covered stage is not optional. Searing alone browns the outside of a slab and leaves the centre undercooked.',
+      'Eat a small portion the first time you try it, even from a verified source. See the note below.'
+    ],
+    pairings: ['toasted sourdough', 'creamy polenta', 'buttered noodles', 'roasted potatoes', 'a sharp green salad'],
+    sections: [
+      { heading: 'Sourcing and safety', text: 'Cook chicken of the woods only from a reputable market or from a wild sample verified by a qualified expert who handled the actual specimen — not a photo, not an app, not a comparison against pictures online. Never eat an unknown wild mushroom. Cook it thoroughly and serve it hot; it is not eaten raw or lightly cooked. One further caution specific to this species: a minority of people report digestive upset after eating chicken of the woods even when it was correctly identified and properly cooked, and reports cluster around older specimens and around mushrooms taken from conifers or eucalyptus rather than oak. The practical response is the one experienced cooks use — eat a small portion the first time, cooked through, and wait a day before eating more.' },
+      { heading: 'Only the young growth is worth cooking', text: 'This is the single decision that determines whether the meal is good. A young bracket is soft, bright, and faintly moist at the edge; it cuts like a firm chicken breast. As it ages it turns pale, dries out, goes chalky or fibrous, and develops a sour edge that no amount of butter fixes. Age runs from the outside in, so a large bracket is often worth harvesting for its outer two or three inches alone with the rest discarded. Test with the knife before you commit the pan to it: if a slice crumbles rather than cuts, or if you feel the blade dragging through fibre, that piece is past it.' },
+      { heading: 'What it actually tastes like', text: 'Mild — far milder than most people expect from something that looks so dramatic. There is a soft savoury flavour with a faint lemony note, and very little of the earthy, dark taste of a cremini or a porcini. The reason for its reputation is texture rather than flavour: dense, layered, and fibrous in a way that pulls apart like poultry meat, which is where the name comes from. That mildness makes it a carrier. It takes a marinade, a hot sauce, or a breadcrumb coating better than almost any other mushroom, and it is why the buffalo and fried preparations below are the ones most people come back to.' },
+      { heading: 'Chicken of the woods vs hen of the woods', text: 'Two different mushrooms with names built to be confused. Chicken of the woods (Laetiporus) grows as a solid, bright orange-and-yellow shelf on the side of a tree, and cooks like a dense slab of meat — it needs long, moist heat to get through the middle. Hen of the woods, better known as maitake (Grifola frondosa), grows as a grey-brown ruffled cluster at the base of a tree, and cooks in half the time because the fronds are thin. If you have a ruffled, feathery cluster rather than a solid orange shelf, our maitake guide is the page you want; the technique here will overcook it.' },
+      { heading: 'Cleaning it', text: 'Brush, wipe, and trim — that is the whole job. Chicken of the woods grows above the ground on a trunk rather than in soil, so it arrives far cleaner than a morel or a chanterelle, and the dirt that is present sits on the surface. Its structure is genuinely absorbent, so a rinse under the tap costs you the browning later. Check the underside pores for insects, which do find it, and cut away any section that has been tunnelled through.' },
+      { heading: 'Why it takes longer than other mushrooms', table: {
+          headings: ['Cut', 'Method', 'Time', 'Best for'],
+          rows: [
+            ['1/2-inch slabs, across the grain', 'Sear, then covered finish', '15–20 min', 'The default. Browned faces, tender centres, works with any sauce'],
+            ['1-inch cubes', 'Oven roast at 400°F / 200°C', '25–30 min', 'Hands-off batches; toss halfway, expect crisp edges'],
+            ['Torn into strips', 'Shallow fry, breaded', '6–8 min after a 10-min pre-steam', 'Nuggets and buffalo pieces — pre-steam or the coating burns first'],
+            ['Thin 1/4-inch slices', 'Pan sauté', '10–12 min', 'Pasta and tacos, where the pieces finish in sauce'],
+            ['Chunks', 'Simmer in broth or soup', '25–30 min', 'Older or firmer pieces that were never going to sear well']
+          ]
+        }, text: 'A cremini is 90% water and mostly air by structure, so it cooks in eight minutes. Chicken of the woods is dense, layered, and low in free water, which means heat travels through it slowly and there is no burst of released moisture to help. Every method below therefore either runs longer than you expect or adds moisture back — a covered pan, a broth, a pre-steam before frying. Skipping that step is the most common way this mushroom disappoints people: the outside looks perfect and the middle is dry and squeaky.' }
+    ],
+    faqs: [
+      { question: 'Can you eat chicken of the woods raw?', answer: 'No. It is cooked thoroughly and served hot, never raw or lightly cooked. Raw or undercooked specimens are the most common cause of the digestive upset this mushroom is sometimes blamed for.' },
+      { question: 'How long do you cook chicken of the woods?', answer: '15 to 20 minutes for 1/2-inch slabs — roughly 8 minutes of searing followed by 6 to 8 minutes covered with a splash of liquid. Oven roasting takes 25 to 30 minutes. It is nearly twice as long as a cremini needs, and the extra time is not optional.' },
+      { question: 'What does chicken of the woods taste like?', answer: 'Mild and softly savoury with a faint lemony note — much less earthy than a cremini or porcini. Its appeal is the dense, layered, pull-apart texture rather than a strong flavour, which is why it carries sauces and coatings so well.' },
+      { question: 'Why does chicken of the woods make some people sick?', answer: 'A minority of people report digestive upset even from correctly identified, properly cooked specimens, and the reports cluster around older mushrooms and around ones taken from conifers or eucalyptus rather than oak. Use young growth, cook it through, and eat a small portion the first time.' },
+      { question: 'How do you know when it is done?', answer: 'The centre of a slab is tender and steaming hot, with no dry or chalky core and no squeak against the teeth. A fork should go in without resistance, the same test you would use on a potato.' },
+      { question: 'How do you clean chicken of the woods?', answer: 'Brush off surface dirt and wipe with a damp cloth. Do not soak or rinse it — the structure is absorbent and the water it takes on will stop it browning. Check the pores underneath for insects and cut away any tunnelled sections.' },
+      { question: 'Can you freeze chicken of the woods?', answer: 'Yes, and it is the best way to keep it. Cook it first — sear or sauté the slices, cool them, and freeze in a single layer. Frozen raw, it turns spongy and watery on thawing. Cooked, it keeps 3 to 4 months with good texture.' },
+      { question: 'Can you dry chicken of the woods?', answer: 'You can, but it is not the mushroom to dry. It rehydrates to a stringy, slightly cottony texture and gains none of the concentrated aroma that makes dried porcini or shiitake worth the effort. Cook it and freeze it instead.' },
+      { question: 'What is the best way to cook chicken of the woods?', answer: 'Pan-searing 1/2-inch slabs and finishing them covered is the method that suits it best, because it browns the faces and still gets heat to the middle. If you want one dish to try first, make the buffalo version — the mild flavour and firm texture are built for it.' }
+    ],
+    storage: [
+      'Refrigerate fresh, unwashed brackets in a paper bag for 3 to 5 days. It holds longer than a morel but the tender edge dries out first — cook that part soonest.',
+      'Refrigerate cooked chicken of the woods in a covered container within 2 hours and use it within 3 to 4 days.',
+      'Freeze it cooked, never raw: sauté the slices, cool them, freeze in a single layer, then bag. 3 to 4 months for good texture.',
+      'Drying is a poor fit for this species — it rehydrates stringy. Cook and freeze instead.'
+    ],
+    variations: [
+      'Buffalo chicken of the woods: pre-steam the strips for 10 minutes, dredge in seasoned flour, shallow fry until crisp, then toss in 1/3 cup (80 ml) hot sauce melted with 2 tbsp (28 g) butter.',
+      'Fried nuggets: cut 1-inch pieces, pre-steam, then coat in buttermilk and seasoned flour and shallow fry for 6 to 8 minutes.',
+      'Tacos: sauté 1/4-inch slices with cumin, smoked paprika, and lime, then finish in the pan with a splash of stock.',
+      'Pasta: toss the seared slabs with 8 oz (225 g) cooked pasta, 1/4 cup (60 ml) pasta water, and plenty of black pepper.',
+      'Soup: simmer chunks in chicken or vegetable broth for 25 to 30 minutes — the method that rescues firmer pieces that would never sear well.',
+      'Sandwich: pile the seared slabs on toasted bread with mayonnaise, lettuce, and a squeeze of lemon.'
+    ],
+    relatedLinks: [
+      { href: '/how-to-cook-maitake-mushrooms/', label: 'How to cook maitake (hen of the woods) mushrooms' },
+      { href: '/how-to-cook-morel-mushrooms/', label: 'How to cook morel mushrooms' },
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
+      { href: '/how-to-freeze-mushrooms/', label: 'How to freeze mushrooms without ruining them' },
+      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms so they stay firm' },
+      { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' }
     ]
   },
   {
@@ -1304,7 +1392,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-maitake-mushrooms', mushroomSlug: 'maitake', label: 'Maitake', badge: 'Ruffled clusters', title: 'How to Cook Maitake (Hen of the Woods) Mushrooms', description: 'Hot pan sear maitake mushrooms until the fronds turn golden and crisp, finished with garlic butter. Ready in about 12 minutes.', minutes: '5 min', updated: '2026-07-05', isoTime: 'PT12M', prepIsoTime: 'PT5M', heat: 'Medium-high', cut: 'Break into large clusters or 1-inch pieces', finish: 'Garlic butter, soy, scallion',
+    slug: 'how-to-cook-maitake-mushrooms', mushroomSlug: 'maitake', label: 'Maitake', badge: 'Ruffled clusters', title: 'How to Cook Maitake (Hen of the Woods) Mushrooms', description: 'Hot pan sear maitake mushrooms until the fronds turn golden and crisp, finished with garlic butter. Ready in about 12 minutes.', minutes: '5 min', updated: '2026-08-22', isoTime: 'PT12M', prepIsoTime: 'PT5M', heat: 'Medium-high', cut: 'Break into large clusters or 1-inch pieces', finish: 'Garlic butter, soy, scallion',
     image: '/images/maitake-seared.webp', imageAlt: 'Golden-brown seared maitake mushrooms with crisp ruffled edges in a cast-iron skillet, garnished with garlic butter and scallions',
     recipeName: 'Garlic-Butter Seared Maitake', yieldText: '2-3 servings as a side',
     ingredients: [
@@ -1335,7 +1423,14 @@ const speciesGuides: GuideArticle[] = [
     pairings: ['rice bowls', 'steak', 'pasta', 'eggs', 'polenta', 'tacos'],
     sections: [
       { heading: 'Why a hot pan sear works for maitake', text: 'Maitake’s ruffled fronds hold a lot of moisture. High heat and space in the pan drive off water quickly so the edges can crisp and brown instead of steaming. The final butter-garlic toss coats the delicate layers without making them soggy. This method highlights the mushroom’s meaty texture and nutty flavor in under 12 minutes.' },
-      { heading: 'Safety first: look-alikes', text: 'Maitake has few dangerous look-alikes, but always buy from a trusted market or supplier.', bullets: ['Confirm the grey-brown ruffled overlapping fronds growing in a dense cluster at the base of oaks.', 'Buy from a market or get expert verification before eating any wild find.'] }
+      { heading: 'Safety first: look-alikes', text: 'Maitake has few dangerous look-alikes, but always buy from a trusted market or supplier.', bullets: ['Confirm the grey-brown ruffled overlapping fronds growing in a dense cluster at the base of oaks.', 'Buy from a market or get expert verification before eating any wild find.'] },
+      { heading: 'Hen of the woods is not chicken of the woods', text: 'The names invite the mix-up, but these are different mushrooms that cook nothing alike. Maitake — hen of the woods — is the grey-brown ruffled cluster, and its thin fronds crisp in about 12 minutes in a hot pan. Chicken of the woods is a solid orange-and-yellow shelf growing on the side of a trunk, dense enough that it needs 15 to 20 minutes with a covered stage to get heat into the middle. Cook a chicken of the woods slab with this maitake method and the centre will still be undercooked when the outside looks done.' }
+    ],
+    relatedLinks: [
+      { href: '/how-to-cook-chicken-of-the-woods/', label: 'How to cook chicken of the woods' },
+      { href: '/how-to-cook-oyster-mushrooms/', label: 'How to cook oyster mushrooms' },
+      { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' }
     ],
     faqs: [
       { question: 'Can you eat maitake raw?', answer: 'No, raw maitake is tough and bitter. Cooking softens the texture and improves flavor and digestibility.' },
