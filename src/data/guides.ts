@@ -1089,7 +1089,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-chicken-of-the-woods', mushroomSlug: 'chicken-of-the-woods', label: 'Chicken of the woods', badge: 'Poultry texture', title: 'How to Cook Chicken of the Woods', description: 'Chicken of the woods needs longer cooking than most mushrooms — 15 to 20 minutes. Use the young tender growth, slice across the grain, and cook it through.', minutes: '8 min', updated: '2026-08-22', image: '/images/cookmushroom-chicken-of-the-woods-hero.webp', imageAlt: 'Golden pan-seared chicken of the woods slabs with thyme and lemon in a cast-iron skillet', isoTime: 'PT20M', prepIsoTime: 'PT10M', heat: 'Medium-high, then medium', cut: 'Slice across the grain into 1/2-inch slabs', finish: 'Lemon juice and fresh parsley',
+    slug: 'how-to-cook-chicken-of-the-woods', mushroomSlug: 'chicken-of-the-woods', label: 'Chicken of the woods', badge: 'Poultry texture', title: 'How to Cook Chicken of the Woods', description: 'Chicken of the woods needs longer cooking than most mushrooms — 15 to 20 minutes. Use the young tender growth, slice across the grain, and cook it through.', minutes: '8 min', updated: '2026-08-22', image: '/images/cookmushroom-chicken-of-the-woods-hero.webp', imageAlt: 'Golden pan-cooked chicken of the woods pieces with thyme and lemon in a cast-iron skillet', isoTime: 'PT20M', prepIsoTime: 'PT10M', heat: 'Medium-high, then medium', cut: 'Slice across the grain into 1/2-inch slabs', finish: 'Lemon juice and fresh parsley',
     recipeName: 'Pan-Seared Chicken of the Woods', yieldText: '2 to 3 side servings',
     ingredients: [
       '12 oz (340 g) chicken of the woods, market-purchased or expert-verified, from young tender growth',
