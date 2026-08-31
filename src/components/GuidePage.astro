@@ -189,6 +189,7 @@ const schema = [contentSchema, breadcrumbSchema];
         <h2>Good with</h2>
         <p>{guide.pairings.join(', ')}.</p>
       </section>
+      <ShareRow url={pageUrl} title={guide.title} image={imageUrl} description={guide.description} label="Cooked this?" position="bottom" />
       {guide.relatedLinks && guide.relatedLinks.length > 0 && (
         <RelatedCards links={guide.relatedLinks} heading="Related guides" />
       )}

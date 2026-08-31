@@ -123,6 +123,11 @@ th { background: #f3eadc; font-size: .9rem; }
 /* Share + print row (components/ShareRow.astro) */
 .share-row { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: 1rem 0 .25rem; }
 .share-label { color: var(--muted); font-size: .85rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; margin-right: .15rem; }
+/* The end-of-article row sits between the last section and the onward links,
+   so it needs a rule above it to read as a deliberate stop rather than a
+   stray duplicate of the row under the byline. */
+.share-row-bottom { margin: 2rem 0 0; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.prose section + .share-row-bottom { margin-top: 2rem; }
 .share-btn {
   display: inline-flex; align-items: center; gap: .35rem;
   border: 1px solid var(--line); background: var(--card); color: var(--ink);

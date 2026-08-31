@@ -92,6 +92,7 @@ const minutesOf = (iso: string) => iso.match(/^PT(\d+)M$/)?.[1] ?? iso;
           ))}
         </section>
       )}
+      <ShareRow url={pageUrl} title={recipe.title} image={imageUrl} description={recipe.description} label="Cooked this?" position="bottom" />
       <RelatedCards links={recipe.relatedLinks} heading="Related guides" />
     </article>
   </main>
