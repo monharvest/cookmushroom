@@ -1,0 +1,105 @@
+---
+// Cook-along toolbar for the recipe block. The checkboxes themselves are
+// server-rendered in GuidePage/RecipePage so ticking things off works with JS
+// off (and prints as an empty checklist); this adds the parts that need
+// scripting: per-page persistence, screen wake lock, and reset.
+const { storageKey } = Astro.props as { storageKey: string };
+---
+<div class="cook-mode" data-cook-mode data-key={storageKey}>
+  <button type="button" class="share-btn" data-wake hidden aria-pressed="false">Keep screen on</button>
+  <button type="button" class="share-btn" data-reset hidden>Clear ticks</button>
+  <span class="cook-progress" data-progress aria-live="polite"></span>
+</div>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-cook-mode]');
+  if (root) {
+    const key = `cookmushroom:${root.dataset.key}`;
+    const boxes = Array.from(document.querySelectorAll<HTMLInputElement>('[data-check]'));
+    const progress = root.querySelector<HTMLElement>('[data-progress]');
+    const resetBtn = root.querySelector<HTMLButtonElement>('[data-reset]');
+    const wakeBtn = root.querySelector<HTMLButtonElement>('[data-wake]');
+
+    // localStorage throws in some privacy modes; a reader who can't persist
+    // should still get working checkboxes.
+    const store = {
+      read(): string[] {
+        try {
+          return JSON.parse(localStorage.getItem(key) || '[]');
+        } catch {
+          return [];
+        }
+      },
+      write(ids: string[]) {
+        try {
+          localStorage.setItem(key, JSON.stringify(ids));
+        } catch {
+          /* full or blocked — the session still works, it just won't survive a reload */
+        }
+      },
+    };
+
+    const render = () => {
+      const done = boxes.filter((b) => b.checked).length;
+      const ingredients = boxes.filter((b) => b.dataset.check?.startsWith('ing')).length;
+      if (progress) progress.textContent = done ? `${done} of ${boxes.length} ticked` : '';
+      if (resetBtn) resetBtn.hidden = done === 0;
+      void ingredients;
+    };
+
+    const saved = new Set(store.read());
+    boxes.forEach((box) => {
+      if (saved.has(box.dataset.check!)) box.checked = true;
+      box.addEventListener('change', () => {
+        store.write(boxes.filter((b) => b.checked).map((b) => b.dataset.check!));
+        render();
+      });
+    });
+    render();
+
+    resetBtn?.addEventListener('click', () => {
+      boxes.forEach((b) => (b.checked = false));
+      store.write([]);
+      render();
+    });
+
+    // Wake Lock keeps the phone awake while someone cooks from the page.
+    // Chrome/Edge/Safari 16.4+; absent elsewhere, so the button stays hidden.
+    type WakeNavigator = Navigator & { wakeLock?: { request(type: 'screen'): Promise<WakeLockSentinel> } };
+    const wakeLock = (navigator as WakeNavigator).wakeLock;
+    if (wakeBtn && wakeLock) {
+      let sentinel: WakeLockSentinel | null = null;
+      const setState = (on: boolean) => {
+        wakeBtn.setAttribute('aria-pressed', String(on));
+        wakeBtn.classList.toggle('is-done', on);
+        wakeBtn.textContent = on ? 'Screen staying on' : 'Keep screen on';
+      };
+      const release = async () => {
+        await sentinel?.release().catch(() => {});
+        sentinel = null;
+        setState(false);
+      };
+      wakeBtn.hidden = false;
+      wakeBtn.addEventListener('click', async () => {
+        if (sentinel) return release();
+        try {
+          sentinel = await wakeLock.request('screen');
+          setState(true);
+          sentinel.addEventListener('release', () => setState(false));
+        } catch {
+          setState(false);
+        }
+      });
+      // The lock drops when the tab is backgrounded; take it again on return.
+      document.addEventListener('visibilitychange', async () => {
+        if (document.visibilityState === 'visible' && wakeBtn.getAttribute('aria-pressed') === 'true' && !sentinel) {
+          try {
+            sentinel = await wakeLock.request('screen');
+          } catch {
+            setState(false);
+          }
+        }
+      });
+    }
+  }
+</script>

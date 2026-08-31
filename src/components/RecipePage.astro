@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import type { RecipeArticle } from '../data/recipes';
 import ShareRow from './ShareRow.astro';
+import CookMode from './CookMode.astro';
 import RelatedCards from './RelatedCards.astro';
 
 const { recipe } = Astro.props as { recipe: RecipeArticle };
@@ -73,10 +74,19 @@ const minutesOf = (iso: string) => iso.match(/^PT(\d+)M$/)?.[1] ?? iso;
       <section id="recipe" class="recipe-block">
         <h2>{recipe.recipeName}</h2>
         <p class="recipe-meta"><span>Prep: {minutesOf(recipe.prepIsoTime)} min</span><span>Cook: {minutesOf(recipe.cookIsoTime)} min</span><span>Yield: {recipe.yieldText}</span></p>
+        <CookMode storageKey={recipe.slug} />
         <h3>Ingredients</h3>
-        <ul>{recipe.ingredients.map((item) => <li>{item}</li>)}</ul>
+        <ul class="checklist">
+          {recipe.ingredients.map((item, index) => (
+            <li><label><input type="checkbox" data-check={`ing-${index}`} /><span>{item}</span></label></li>
+          ))}
+        </ul>
         <h3>Instructions</h3>
-        <ol>{recipe.steps.map((step) => <li>{step}</li>)}</ol>
+        <ol class="checklist">
+          {recipe.steps.map((step, index) => (
+            <li><label><input type="checkbox" data-check={`step-${index}`} /><span>{step}</span></label></li>
+          ))}
+        </ol>
       </section>
       <section><h2>Small fixes that matter</h2><ul>{recipe.tips.map((tip) => <li>{tip}</li>)}</ul></section>
       <section><h2>Good with</h2><p>{recipe.pairings.join(', ')}.</p></section>

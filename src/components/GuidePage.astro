@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import type { GuideArticle } from '../data/guides';
 import { cookTimes, recipeCards } from '../data/guides';
 import ShareRow from './ShareRow.astro';
+import CookMode from './CookMode.astro';
 import RelatedCards from './RelatedCards.astro';
 
 const { guide } = Astro.props as { guide: GuideArticle };
@@ -133,10 +134,19 @@ const schema = [contentSchema, breadcrumbSchema];
             <span>Cook: {cookMinutes ? `${cookMinutes} min` : primaryCookTime}</span>
             {guide.yieldText && <span>Yield: {guide.yieldText}</span>}
           </p>
+          <CookMode storageKey={guide.slug} />
           <h3>Ingredients</h3>
-          <ul>{guide.ingredients.map((item) => <li>{item}</li>)}</ul>
+          <ul class="checklist">
+            {guide.ingredients.map((item, index) => (
+              <li><label><input type="checkbox" data-check={`ing-${index}`} /><span>{item}</span></label></li>
+            ))}
+          </ul>
           <h3>Instructions</h3>
-          <ol>{guide.steps.map((step) => <li>{step}</li>)}</ol>
+          <ol class="checklist">
+            {guide.steps.map((step, index) => (
+              <li><label><input type="checkbox" data-check={`step-${index}`} /><span>{step}</span></label></li>
+            ))}
+          </ol>
         </section>
       ) : (
         <section>
