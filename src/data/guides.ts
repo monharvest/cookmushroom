@@ -77,6 +77,8 @@ export const cookTimes = [
   { mushroom: 'Morels', mushroomSlug: 'morels', method: 'Butter sauté', methodSlug: 'pan', time: '10–14 min', heat: 'Medium, then medium-low', fat: 'Butter and olive oil', done: 'Tender throughout and browned at the edges.' },
   { mushroom: 'Chicken of the woods', mushroomSlug: 'chicken-of-the-woods', method: 'Sear + covered finish', methodSlug: 'pan', time: '15–20 min', heat: 'Medium-high, then medium', fat: '2 tbsp oil, butter at finish', done: 'Centres tender and steaming; no dry, chalky core.' },
   { mushroom: 'Chicken of the woods', mushroomSlug: 'chicken-of-the-woods', method: 'Oven roast', methodSlug: 'oven', time: '25–30 min', heat: '400°F / 200°C', fat: '2 tbsp oil per 12 oz / 340 g', done: 'Edges browned and crisp, centres tender all the way through.' },
+  { mushroom: 'Puffball', mushroomSlug: 'puffball', method: 'Pan sear', methodSlug: 'pan', time: '6–8 min', heat: 'Medium-high', fat: '2 tbsp oil per 1 lb / 454 g', done: 'Both faces deep golden, centres custardy not squeaky.' },
+  { mushroom: 'Puffball', mushroomSlug: 'puffball', method: 'Grill (slabs)', methodSlug: 'grill', time: '6–8 min', heat: 'Medium-high direct, 425–450°F / 220–230°C', fat: 'Brush with oil', done: 'Grill-marked and tender; cut 3/4 inch thick so slabs hold.' },
   { mushroom: 'Porcini', mushroomSlug: 'porcini', method: 'Pan sauté', methodSlug: 'pan', time: '7–8 min', heat: 'Medium-high, then medium', fat: 'Olive oil, butter at finish', done: 'Browned edges, tender centers.' },
   { mushroom: 'Porcini', mushroomSlug: 'porcini', method: 'Rehydrate + sauté', methodSlug: 'pan', time: '20 min soak + sauté', heat: 'Boiling water, then medium', fat: 'Butter or olive oil', done: 'Broth strained and mushrooms tender.' },
   { mushroom: 'Shaggy mane', mushroomSlug: 'shaggy-mane', method: 'Butter sauté', methodSlug: 'pan', time: '5–6 min', heat: 'Medium-high, then medium', fat: 'Olive oil and butter', done: 'Soft, lightly colored edges.' },
@@ -191,6 +193,7 @@ const methodGuides: GuideArticle[] = [
       { heading: 'Before you start', text: 'Wipe the mushrooms with a damp towel or brush off dirt. Trim the dry ends, then cut the mushrooms into similar-sized pieces so they finish together.' }
     ],
     relatedLinks: [
+      { href: '/how-to-cook-puffball-mushrooms/', label: 'How to cook puffball mushrooms' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
       { href: '/how-to-grill-mushrooms/', label: 'How to grill mushrooms' },
@@ -894,6 +897,7 @@ const methodGuides: GuideArticle[] = [
       'Chimichurri: skip the herbs in the baste and spoon chimichurri over the platter instead.'
     ],
     relatedLinks: [
+      { href: '/how-to-cook-puffball-mushrooms/', label: 'How to cook puffball mushrooms' },
       { href: '/how-to-cook-portobello-mushrooms/', label: 'How to cook portobello mushrooms' },
       { href: '/how-to-cook-king-oyster-mushrooms/', label: 'How to cook king oyster mushrooms' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
@@ -1070,6 +1074,7 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'Why halve morels?', text: 'The hollow stems and honeycomb caps can hold grit or small insects. Halving them makes those spaces easy to inspect and lets heat reach the center. Brush away loose dirt; if needed, place the halved morels in cool water for up to 5 minutes, lift them out, rinse once, and dry them well. Do not leave them soaking.' }
     ],
     relatedLinks: [
+      { href: '/how-to-cook-puffball-mushrooms/', label: 'How to cook puffball mushrooms' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
       { href: '/how-to-cook-chicken-of-the-woods/', label: 'How to cook chicken of the woods' },
@@ -1094,6 +1099,74 @@ const speciesGuides: GuideArticle[] = [
       'Flour-dusted morels: toss the dried, halved morels with 1 tbsp all-purpose flour before pan-frying.',
       'Morel toast: spoon the cooked mushrooms over toasted bread and add a fried egg.',
       'Morel pasta: toss with 8 oz (225 g) cooked pasta and 1/4 cup (60 ml) pasta water.'
+    ]
+  },
+  {
+    slug: 'how-to-cook-puffball-mushrooms', mushroomSlug: 'puffball', label: 'Puffball', badge: 'Slice test first', title: 'How to Cook Puffball Mushrooms', description: 'Puffball cooks like a mild steak: cut into slabs, salt, and sear hot. Slice one open first — the inside must be pure, solid white all the way through.', minutes: '7 min', updated: '2026-08-31', image: '/images/cookmushroom-puffball-hero.webp', imageAlt: 'Golden seared giant puffball slabs with thyme and garlic in a cast-iron skillet', isoTime: 'PT8M', prepIsoTime: 'PT15M', heat: 'Medium-high', cut: 'Slabs 1/2 inch thick, skin trimmed', finish: 'Butter, lemon, and parsley',
+    recipeName: 'Seared Puffball Steaks', yieldText: '2 to 3 side servings',
+    ingredients: [
+      '1 lb (454 g) giant puffball, market-purchased or expert-verified, pure white and solid throughout',
+      '3/4 tsp (4 g) kosher salt, divided',
+      '2 tbsp (30 ml) olive oil',
+      '2 tbsp (28 g) unsalted butter',
+      '2 garlic cloves (6 g), thinly sliced',
+      '1 tsp fresh thyme leaves',
+      '1/4 tsp black pepper',
+      '1 tbsp (15 ml) lemon juice',
+      '2 tbsp (8 g) chopped fresh parsley'
+    ],
+    steps: [
+      'Cut the puffball in half from top to bottom before anything else. The interior must be uniformly white, firm, and completely featureless — like a fresh marshmallow all the way through. Stop and discard it if you see any yellow, olive, brown, or purple tint, any spongy or hollow area, or the faint outline of a cap, gills, or a stem inside. See the safety section below.',
+      'Trim off the outer skin and any discoloured patch, then cut the flesh into slabs about 1/2 inch (1 cm) thick. Cubes will not brown; slabs will.',
+      'Lay the slabs on a board or a rack, salt them with half the salt, and leave them for 10 to 15 minutes. Puffball is mostly water, and this pulls a surprising amount of it to the surface.',
+      'Blot both sides thoroughly with a towel. Skipping this is the difference between searing and steaming.',
+      'Heat the olive oil in a wide skillet over medium-high heat until it shimmers. Lay the slabs in one layer with space between them.',
+      'Cook undisturbed for 3 to 4 minutes, until the undersides are deep golden. Puffball browns faster than a dense mushroom like king oyster, so watch it from the third minute.',
+      'Turn the slabs, add the butter, garlic, thyme, remaining salt, and pepper, and cook for 3 to 4 minutes more, spooning the foaming butter over the tops.',
+      'Add the lemon juice, toss for 20 seconds, scatter the parsley, and serve hot. The slabs should be golden and custardy in the middle, never squeaky or watery.'
+    ],
+    tips: [
+      'If the source or the identification is uncertain, do not cook or eat the mushroom.',
+      'Salt and blot before the pan, not in it. Salting in the pan draws water out over the heat and the slabs stew.',
+      'A crowded pan is the usual reason puffball goes grey and rubbery. Cook in two batches rather than overlapping the slabs.',
+      'Cook it the day you get it. Puffball has the shortest useful life of any mushroom on this site.'
+    ],
+    pairings: ['toasted sourdough', 'a fried egg', 'creamy polenta', 'roasted tomatoes', 'a sharp green salad'],
+    sections: [
+      { heading: 'Sourcing and the slice test', text: 'Cook puffball only from a reputable market or from a wild sample verified by a qualified expert who handled the actual specimen — not a photo, not an app, not a comparison against pictures online. Never eat an unknown wild mushroom. One check matters enough to repeat on every puffball, including ones you are confident about: cut it in half from top to bottom and look at the cut face. An edible puffball is pure white, uniformly firm, and completely featureless inside, with no structure of any kind. Two things you might see instead both mean discard. A yellow, olive, brown, or purple tint means the spores have started to develop; the mushroom is past eating and will taste bitter. The faint silhouette of a cap, gills, or a stem means it is not a puffball at all but the immature button of another mushroom, and some of those are deadly. This slice test is a safety habit, not an identification method — it does not tell you the specimen is a puffball, only that a specimen you already had verified has not been mistaken for something with internal structure.' },
+      { heading: 'What it actually tastes like', text: 'Very mild, and closer in character to a fresh cheese or firm tofu than to a woodland mushroom. There is a clean, faintly nutty savour and almost none of the dark, earthy depth of a cremini or porcini. The texture is what people remember: dense and custardy when it is cooked well, a little like a thick slice of aubergine that has held its shape. That mildness makes it a carrier rather than a star. It takes garlic, herbs, browned butter, soy, miso, or a hot chilli oil and gives them a substantial body to sit on, which is why so many puffball recipes are really seasoning recipes.' },
+      { heading: 'Cut it into slabs, not cubes', text: 'This is the decision that most affects the result. Puffball is close to 90 per cent water, so it needs as much pan contact as you can give it and as little trapped moisture as possible. A 1/2-inch slab has two broad flat faces that brown, and it holds together when you turn it. Cubes have six small faces, never sit still long enough to colour, and release their water into a crowded pan, where the whole lot simmers grey. If the puffball is very large, cut it into steaks first and only then decide whether to halve them; a wide slab is easier to handle than it looks and can always be cut on the plate.' },
+      { heading: 'Why it browns faster than you expect', text: 'Most mushrooms make you wait: cremini and portobello release water for several minutes before the pan is dry enough to brown, which is the whole point of the technique on the pan-cooking page. Puffball behaves differently because you have already removed much of that water by salting and blotting, and because its flesh is soft and open rather than dense. The surface reaches browning temperature quickly, and it will go from golden to bitter and dark in under a minute if you leave it. Set a shorter mental timer than you would for a portobello and look at the third minute rather than the sixth.' },
+      { heading: 'Where puffball fits in the autumn kitchen', text: 'Giant puffballs appear from late summer into autumn, at the same time as several other species worth cooking, and they are the most perishable of the group. If a haul arrives together, cook the puffball first, on the day. Chicken of the woods keeps a couple of days in the fridge and rewards longer cooking; chanterelles hold better still and want a dry pan; morels belong to spring rather than autumn but share the one habit worth carrying across all of them — cut the mushroom open and look inside before it goes anywhere near a pan.' }
+    ],
+    variations: [
+      'Breaded: dip salted, blotted slabs in flour, then egg, then breadcrumbs, and shallow-fry until golden on both sides. The most popular way to serve puffball, and the mildness is the reason it works.',
+      'Garlic and soy: swap the lemon for 1 tbsp (15 ml) soy sauce added off the heat, and finish with sliced spring onion.',
+      'Puffball toast: pile the finished slabs on thick sourdough rubbed with a cut garlic clove, with a fried egg on top.',
+      'Grilled: brush 3/4-inch slabs with oil and grill over medium-high direct heat for 3 to 4 minutes a side. Cut them thicker for the grill so they do not fall through.'
+    ],
+    storage: [
+      'Cook puffball the day you get it. It is the most perishable mushroom on this site and a day in the fridge visibly softens it.',
+      'If you must hold it, wrap it loosely in paper and refrigerate for no more than 24 hours. Do not seal it in plastic.',
+      'Yellowing inside means it is past eating, not merely tired. Discard it rather than trimming around it.',
+      'Cooked puffball keeps 3 days in a sealed container in the fridge. Reheat in a dry pan over medium rather than a microwave, which turns it spongy.',
+      'Raw puffball freezes badly — it collapses to water on thawing. Sear the slabs first, cool them, and freeze those instead.'
+    ],
+    faqs: [
+      { question: 'How do I know a puffball is safe to eat?', answer: 'The only reliable answer is that it was bought from a reputable market or verified by a qualified expert who handled the specimen itself. On top of that, always cut it open: the inside must be pure white, firm, and completely featureless. Any yellow or brown tint, or any outline of a cap, gills, or stem, means discard it.' },
+      { question: 'Why did my puffball turn out rubbery and grey?', answer: 'Almost always a crowded pan or skipped blotting. Puffball is mostly water, so if the slabs overlap or go in damp, the pan drops below browning temperature and they stew in their own liquid. Salt, rest, blot, and cook in two batches.' },
+      { question: 'Do I need to peel a puffball?', answer: 'Trim the outer skin off, yes. It is thin but tough and it does not soften in the pan. Take off any discoloured patch at the same time.' },
+      { question: 'Can I eat a puffball that has gone yellow inside?', answer: 'No. Yellow, olive, or brown flesh means the spores have started to develop. It will taste bitter and is no longer considered edible. Discard the whole thing rather than cutting around the discoloured part.' },
+      { question: 'How thick should I cut the slabs?', answer: 'About 1/2 inch (1 cm) for a pan, and closer to 3/4 inch for a grill so they hold together over the bars. Thinner than 1/2 inch and they dry out before they colour.' },
+      { question: 'Can I cook puffball like a portobello?', answer: 'The cut is similar but the timing is not. Puffball has already given up much of its water by the time it hits the pan, so it browns in 3 to 4 minutes a side rather than the 8 to 12 minutes a portobello wants. Watch it earlier than you think you need to.' }
+    ],
+    relatedLinks: [
+      { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
+      { href: '/how-to-cook-chicken-of-the-woods/', label: 'How to cook chicken of the woods' },
+      { href: '/how-to-cook-morel-mushrooms/', label: 'How to cook morel mushrooms' },
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
+      { href: '/how-to-tell-if-mushrooms-are-bad/', label: 'How to tell if mushrooms are bad' },
+      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms so they stay firm' }
     ]
   },
   {
@@ -1171,6 +1244,7 @@ const speciesGuides: GuideArticle[] = [
       'Sandwich: pile the seared slabs on toasted bread with mayonnaise, lettuce, and a squeeze of lemon.'
     ],
     relatedLinks: [
+      { href: '/how-to-cook-puffball-mushrooms/', label: 'How to cook puffball mushrooms' },
       { href: '/how-to-cook-maitake-mushrooms/', label: 'How to cook maitake (hen of the woods) mushrooms' },
       { href: '/how-to-cook-morel-mushrooms/', label: 'How to cook morel mushrooms' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
