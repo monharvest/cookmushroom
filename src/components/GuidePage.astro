@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import type { GuideArticle } from '../data/guides';
 import { cookTimes, recipeCards } from '../data/guides';
+import ShareRow from './ShareRow.astro';
+import RelatedCards from './RelatedCards.astro';
 
 const { guide } = Astro.props as { guide: GuideArticle };
 const seoTitle = guide.title.length + ' | CookMushroom'.length <= 60 ? `${guide.title} | CookMushroom` : guide.title;
@@ -80,7 +82,7 @@ const breadcrumbSchema = {
 };
 const schema = [contentSchema, breadcrumbSchema];
 ---
-<Layout title={seoTitle} description={guide.description} schema={schema} heroImage={guide.image} heroImageSrcset={heroImageSrcset} heroImageSizes={heroImageSizes}>
+<Layout title={seoTitle} description={guide.description} schema={schema} heroImage={guide.image} heroImageSrcset={heroImageSrcset} heroImageSizes={heroImageSizes} heroImageAlt={guide.imageAlt} ogType="article">
   <main id="content" class="guide">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <a href="/">Home</a> › <a href="/guides/">Guides</a> › <span>{guide.label}</span>
@@ -89,6 +91,7 @@ const schema = [contentSchema, breadcrumbSchema];
     <h1>{guide.title}</h1>
     <p class="lead">{guide.description}</p>
     <p class="updated">By <a href="/about/">Ana</a> · Updated {updatedDisplay}</p>
+    <ShareRow url={pageUrl} title={guide.title} image={imageUrl} description={guide.description} />
     <div class="notice">Use store-bought or positively identified edible mushrooms. Identification notes on this page are safety reminders, not a foraging manual — never eat a wild mushroom without expert verification.</div>
 
     {guide.image && <img class="guide-hero-image" src={guide.image} srcset={heroImageSrcset} sizes={heroImageSrcset ? heroImageSizes : undefined} alt={guide.imageAlt ?? guide.title} width="1200" height="800" loading="eager" decoding="async" fetchpriority="high" />}
@@ -187,16 +190,10 @@ const schema = [contentSchema, breadcrumbSchema];
         <p>{guide.pairings.join(', ')}.</p>
       </section>
       {guide.relatedLinks && guide.relatedLinks.length > 0 && (
-        <section>
-          <h2>Related guides</h2>
-          <ul>{guide.relatedLinks.map((link) => <li><a href={link.href}>{link.label}</a></li>)}</ul>
-        </section>
+        <RelatedCards links={guide.relatedLinks} heading="Related guides" />
       )}
       {relatedRecipes.length > 0 && (
-        <section>
-          <h2>Use it in</h2>
-          <ul>{relatedRecipes.map((recipe) => <li><a href={recipe.href}><strong>{recipe.name}:</strong> {recipe.description}</a></li>)}</ul>
-        </section>
+        <RelatedCards links={relatedRecipes.map((recipe) => ({ href: recipe.href, label: recipe.name }))} heading="Use it in" />
       )}
       {guide.sources && guide.sources.length > 0 && (
         <section>

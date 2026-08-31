@@ -1,0 +1,55 @@
+---
+// Renders a list of internal links as visual cards instead of bullets.
+// The curated `label` stays the anchor text (it is chosen for the reader and
+// for internal-link context); the thumbnail and blurb are resolved from the
+// target page. Only 12 of 35 guides have heroes, so a card without an image
+// falls back to a titled tile rather than leaving a ragged grid.
+import { guideArticles } from '../data/guides';
+import { recipeArticles } from '../data/recipes';
+import type { GuideLink } from '../data/guides';
+
+const { links, heading, id } = Astro.props as { links: GuideLink[]; heading: string; id?: string };
+
+type Target = { image?: string; imageAlt?: string; description?: string; minutes?: string };
+const targets = new Map<string, Target>();
+for (const guide of guideArticles) {
+  targets.set(guide.slug, { image: guide.image, imageAlt: guide.imageAlt, description: guide.description, minutes: guide.minutes });
+}
+for (const recipe of recipeArticles) {
+  targets.set(recipe.slug, { image: recipe.image, imageAlt: recipe.imageAlt, description: recipe.description, minutes: recipe.minutes });
+}
+
+const slugOf = (href: string) => href.replace(/^\/+|\/+$/g, '');
+const thumbOf = (image?: string) => (image?.endsWith('.webp') ? image.replace(/\.webp$/, '-600.webp') : image);
+
+const cards = links.map((link) => {
+  const target = targets.get(slugOf(link.href));
+  return {
+    href: link.href,
+    label: link.label,
+    description: target?.description,
+    minutes: target?.minutes,
+    image: thumbOf(target?.image),
+    imageAlt: target?.imageAlt ?? '',
+  };
+});
+---
+{cards.length > 0 && (
+  <section id={id}>
+    <h2>{heading}</h2>
+    <div class="link-cards">
+      {cards.map((card) => (
+        <a class="link-card" href={card.href}>
+          {card.image
+            ? <img class="link-card-thumb" src={card.image} alt={card.imageAlt} width="600" height="400" loading="lazy" decoding="async" />
+            : <span class="link-card-thumb placeholder" aria-hidden="true">🍄</span>}
+          <span class="link-card-body">
+            {card.minutes && <span class="badge">{card.minutes}</span>}
+            <strong>{card.label}</strong>
+            {card.description && <span class="link-card-text">{card.description}</span>}
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+)}

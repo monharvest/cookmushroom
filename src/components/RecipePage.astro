@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import type { RecipeArticle } from '../data/recipes';
+import ShareRow from './ShareRow.astro';
+import RelatedCards from './RelatedCards.astro';
 
 const { recipe } = Astro.props as { recipe: RecipeArticle };
 const seoTitle = recipe.title.length + ' | CookMushroom'.length <= 60 ? `${recipe.title} | CookMushroom` : recipe.title;
@@ -46,13 +48,14 @@ const breadcrumbSchema = {
 };
 const minutesOf = (iso: string) => iso.match(/^PT(\d+)M$/)?.[1] ?? iso;
 ---
-<Layout title={seoTitle} description={recipe.description} schema={[schema, breadcrumbSchema]} heroImage={recipe.image} heroImageSrcset={heroImageSrcset} heroImageSizes={heroImageSizes}>
+<Layout title={seoTitle} description={recipe.description} schema={[schema, breadcrumbSchema]} heroImage={recipe.image} heroImageSrcset={heroImageSrcset} heroImageSizes={heroImageSizes} heroImageAlt={recipe.imageAlt} ogType="article">
   <main id="content" class="guide">
     <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/mushroom-recipe-index/">Recipe ideas</a> › <span>{recipe.title}</span></nav>
     <p class="eyebrow">Recipe · {recipe.minutes}</p>
     <h1>{recipe.title}</h1>
     <p class="lead">{recipe.description}</p>
     <p class="updated">By <a href="/about/">Ana</a> · Updated {updatedDisplay}</p>
+    <ShareRow url={pageUrl} title={recipe.title} image={imageUrl} description={recipe.description} />
     <img class="guide-hero-image" src={recipe.image} srcset={heroImageSrcset} sizes={heroImageSizes} alt={recipe.imageAlt} width="1200" height="800" loading="eager" decoding="async" fetchpriority="high" />
     {recipe.sections && recipe.sections.length > 0 && (
       <p class="chart-link"><a href="#recipe">Jump to the recipe ↓</a> · <a href="/mushroom-cook-time-chart/">Compare all cook times →</a></p>
@@ -89,7 +92,7 @@ const minutesOf = (iso: string) => iso.match(/^PT(\d+)M$/)?.[1] ?? iso;
           ))}
         </section>
       )}
-      <section><h2>Related guides</h2><ul>{recipe.relatedLinks.map((link) => <li><a href={link.href}>{link.label}</a></li>)}</ul></section>
+      <RelatedCards links={recipe.relatedLinks} heading="Related guides" />
     </article>
   </main>
 </Layout>

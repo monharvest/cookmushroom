@@ -1,0 +1,116 @@
+---
+// Share + print row. Rendered under the byline on guides and recipes.
+// Pinterest, Facebook and email are plain links so they work with JS disabled;
+// copy-link, print and native share are progressive enhancements added by the
+// inline script below. Every action fires a GA `share` event so the value of
+// this row is measurable rather than assumed.
+const { url, title, image, description } = Astro.props as {
+  url: string;
+  title: string;
+  image?: string;
+  description: string;
+};
+const pinDescription = `${title} — ${description}`.slice(0, 480);
+const pinterest = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}${image ? `&media=${encodeURIComponent(image)}` : ''}&description=${encodeURIComponent(pinDescription)}`;
+const facebook = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+const email = `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(`${description}\n\n${url}`)}`;
+---
+<div class="share-row" data-share data-url={url} data-title={title} data-text={description}>
+  <span class="share-label">Save this</span>
+  <button type="button" class="share-btn share-native" data-share-native hidden>Share</button>
+  <a class="share-btn" href={pinterest} target="_blank" rel="noopener nofollow" data-share-method="pinterest">Pin it</a>
+  <a class="share-btn" href={facebook} target="_blank" rel="noopener nofollow" data-share-method="facebook">Facebook</a>
+  <a class="share-btn" href={email} data-share-method="email">Email</a>
+  <button type="button" class="share-btn" data-share-copy>Copy link</button>
+  <button type="button" class="share-btn" data-share-print>Print</button>
+</div>
+
+<script>
+  type ShareEl = HTMLElement & { dataset: { url: string; title: string; text: string } };
+
+  const track = (method: string, url: string) => {
+    const gtag = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
+    gtag?.('event', 'share', { method, content_type: 'article', item_id: url });
+  };
+
+  // FAQ answers live in collapsed <details>. Open them before any print so the
+  // printed page is complete, and restore the reader's state afterwards.
+  let reopened: HTMLDetailsElement[] = [];
+  window.addEventListener('beforeprint', () => {
+    reopened = Array.from(document.querySelectorAll<HTMLDetailsElement>('details:not([open])'));
+    reopened.forEach((el) => (el.open = true));
+  });
+  window.addEventListener('afterprint', () => {
+    reopened.forEach((el) => (el.open = false));
+    reopened = [];
+  });
+
+  document.querySelectorAll<ShareEl>('[data-share]').forEach((row) => {
+    const { url, title, text } = row.dataset;
+
+    row.querySelectorAll<HTMLAnchorElement>('[data-share-method]').forEach((link) => {
+      link.addEventListener('click', () => track(link.dataset.shareMethod ?? 'link', url));
+    });
+
+    const nativeBtn = row.querySelector<HTMLButtonElement>('[data-share-native]');
+    if (nativeBtn && typeof navigator.share === 'function') {
+      nativeBtn.hidden = false;
+      nativeBtn.addEventListener('click', async () => {
+        try {
+          await navigator.share({ title, text, url });
+          track('web_share', url);
+        } catch {
+          // The reader dismissed the sheet. Nothing to do.
+        }
+      });
+    }
+
+    // navigator.clipboard needs a secure context and can still be refused;
+    // the selection fallback covers those cases without a blocking prompt.
+    const legacyCopy = (value: string) => {
+      const field = document.createElement('textarea');
+      field.value = value;
+      field.setAttribute('readonly', '');
+      field.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+      document.body.appendChild(field);
+      field.select();
+      // Reached dynamically: execCommand is deprecated (and typed as such), but
+      // it is still the only copy path in a non-secure context.
+      const exec = (document as unknown as { execCommand?: (command: string) => boolean }).execCommand;
+      let ok = false;
+      try {
+        ok = exec ? exec.call(document, 'copy') : false;
+      } catch {
+        ok = false;
+      }
+      field.remove();
+      return ok;
+    };
+
+    const copyBtn = row.querySelector<HTMLButtonElement>('[data-share-copy]');
+    copyBtn?.addEventListener('click', async () => {
+      let ok = false;
+      try {
+        await navigator.clipboard.writeText(url);
+        ok = true;
+      } catch {
+        ok = legacyCopy(url);
+      }
+      const original = copyBtn.dataset.label ?? copyBtn.textContent ?? 'Copy link';
+      copyBtn.dataset.label = original;
+      copyBtn.textContent = ok ? 'Copied' : 'Press ⌘C';
+      copyBtn.classList.toggle('is-done', ok);
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.classList.remove('is-done');
+      }, 1800);
+      if (ok) track('copy_link', url);
+    });
+
+    const printBtn = row.querySelector<HTMLButtonElement>('[data-share-print]');
+    printBtn?.addEventListener('click', () => {
+      track('print', url);
+      window.print();
+    });
+  });
+</script>
