@@ -30,6 +30,52 @@ const minutesOf = (iso?: string) => iso?.match(/^PT(\d+)M$/)?.[1];
 const prepMinutes = minutesOf(guide.prepIsoTime);
 const cookMinutes = minutesOf(guide.isoTime);
 const totalIsoTime = prepMinutes && cookMinutes ? `PT${Number(prepMinutes) + Number(cookMinutes)}M` : guide.isoTime;
+// Section count doesn't discriminate: the fixed sections (method, cook times,
+// fixes, storage, FAQs) push every guide to ~8 entries regardless of depth, so
+// a 750-word page would get the same contents box as a 2,300-word one. Gate on
+// how much text is actually on the page instead.
+const countWords = (...parts: (string | undefined)[]) =>
+  parts.filter(Boolean).join(' ').trim().split(/\s+/).filter(Boolean).length;
+
+// Table of contents, built from the same data the body renders below so the
+// two can't drift. Only the sections a reader might jump to — the tail
+// (pairings, related links, sources) is skipped. Threshold is total entries
+// rather than section count: a two-section guide still carries method, cook
+// times, fixes and FAQs.
+const slugify = (text: string) => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const methodId = guide.ingredients ? 'recipe' : 'method';
+const methodHeading = guide.ingredients
+  ? (guide.recipeName ?? 'The recipe')
+  : (guide.sections ? 'Fast method' : 'Method');
+const toc = [
+  ...(guide.sections ?? []).map((section) => ({ id: slugify(section.heading), label: section.heading })),
+  { id: methodId, label: methodHeading },
+  ...(guide.showCookTimes !== false && relatedRows.length > 0 ? [{ id: 'cook-times', label: 'Cook times' }] : []),
+  { id: 'small-fixes', label: 'Small fixes that matter' },
+  ...(guide.variations ? [{ id: 'variations', label: 'Variations' }] : []),
+  ...(guide.storage ? [{ id: 'storage', label: 'Storage and reheating' }] : []),
+  ...(guide.faqs ? [{ id: 'faqs', label: 'Frequently asked questions' }] : []),
+];
+const guideWords = countWords(
+  guide.description,
+  ...(guide.sections ?? []).flatMap((section) => [
+    section.heading,
+    section.text,
+    section.quote,
+    ...(section.bullets ?? []),
+    ...(section.ordered ?? []),
+    ...(section.table?.rows.flat() ?? []),
+  ]),
+  ...guide.steps,
+  ...guide.tips,
+  ...(guide.ingredients ?? []),
+  ...(guide.variations ?? []),
+  ...(guide.storage ?? []),
+  ...(guide.faqs ?? []).flatMap((faq) => [faq.question, faq.answer]),
+);
+// ~1,200 words is where scrolling to a section beats scrolling past it.
+const showToc = toc.length >= 5 && guideWords >= 1200;
+
 const quickFacts = guide.quickFacts ?? [
   { label: 'Best heat', value: guide.heat },
   { label: 'Cut', value: guide.cut },
@@ -106,9 +152,16 @@ const schema = [contentSchema, breadcrumbSchema];
       <a href="/mushroom-cook-time-chart/">Compare all cook times →</a>
     </p>
 
+    {showToc && (
+      <details class="toc" open>
+        <summary>In this guide</summary>
+        <ol>{toc.map((item) => <li><a href={`#${item.id}`}>{item.label}</a></li>)}</ol>
+      </details>
+    )}
+
     <article class="prose">
       {guide.sections?.map((section) => (
-        <section>
+        <section id={slugify(section.heading)}>
           <h2>{section.heading}</h2>
           {section.image && <img src={section.image.src} alt={section.image.alt} loading="lazy" />}
           {section.text && <p>{section.text}</p>}
@@ -127,7 +180,7 @@ const schema = [contentSchema, breadcrumbSchema];
       ))}
 
       {guide.ingredients ? (
-        <section id="recipe" class="recipe-block">
+        <section id={methodId} class="recipe-block">
           <h2>{guide.recipeName ?? 'The recipe'}</h2>
           <p class="recipe-meta">
             {guide.prepIsoTime && <span>Prep: {prepMinutes ?? guide.prepIsoTime} min</span>}
@@ -149,14 +202,14 @@ const schema = [contentSchema, breadcrumbSchema];
           </ol>
         </section>
       ) : (
-        <section>
-          <h2>{guide.sections ? 'Fast method' : 'Method'}</h2>
+        <section id={methodId}>
+          <h2>{methodHeading}</h2>
           <ol>{guide.steps.map((step) => <li>{step}</li>)}</ol>
         </section>
       )}
 
       {guide.showCookTimes !== false && relatedRows.length > 0 && (
-        <section>
+        <section id="cook-times">
           <h2>Cook times</h2>
           <div class="table-wrap compact">
             <table>
@@ -168,24 +221,24 @@ const schema = [contentSchema, breadcrumbSchema];
           </div>
         </section>
       )}
-      <section>
+      <section id="small-fixes">
         <h2>Small fixes that matter</h2>
         <ul>{guide.tips.map((tip) => <li>{tip}</li>)}</ul>
       </section>
       {guide.variations && (
-        <section>
+        <section id="variations">
           <h2>Variations</h2>
           <ul>{guide.variations.map((item) => <li>{item}</li>)}</ul>
         </section>
       )}
       {guide.storage && (
-        <section>
+        <section id="storage">
           <h2>Storage and reheating</h2>
           <ul>{guide.storage.map((item) => <li>{item}</li>)}</ul>
         </section>
       )}
       {guide.faqs && (
-        <section>
+        <section id="faqs">
           <h2>Frequently asked questions</h2>
           {guide.faqs.map((faq) => (
             <details class="faq">

@@ -48,6 +48,39 @@ const breadcrumbSchema = {
   ],
 };
 const minutesOf = (iso: string) => iso.match(/^PT(\d+)M$/)?.[1] ?? iso;
+// Section count doesn't discriminate: the fixed sections (method, cook times,
+// fixes, storage, FAQs) push every guide to ~8 entries regardless of depth, so
+// a 750-word page would get the same contents box as a 2,300-word one. Gate on
+// how much text is actually on the page instead.
+const countWords = (...parts: (string | undefined)[]) =>
+  parts.filter(Boolean).join(' ').trim().split(/\s+/).filter(Boolean).length;
+
+// Same construction as GuidePage: built from the rendered data, tail skipped.
+const slugify = (text: string) => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const toc = [
+  ...(recipe.sections ?? []).map((section) => ({ id: slugify(section.heading), label: section.heading })),
+  { id: 'recipe', label: recipe.recipeName },
+  { id: 'small-fixes', label: 'Small fixes that matter' },
+  { id: 'storage', label: 'Storage and reheating' },
+  ...(recipe.faqs ? [{ id: 'faqs', label: 'Frequently asked questions' }] : []),
+];
+const recipeWords = countWords(
+  recipe.description,
+  ...(recipe.sections ?? []).flatMap((section) => [
+    section.heading,
+    section.text,
+    section.quote,
+    ...(section.bullets ?? []),
+    ...(section.ordered ?? []),
+    ...(section.table?.rows.flat() ?? []),
+  ]),
+  ...recipe.ingredients,
+  ...recipe.steps,
+  ...recipe.tips,
+  ...recipe.storage,
+  ...(recipe.faqs ?? []).flatMap((faq) => [faq.question, faq.answer]),
+);
+const showToc = toc.length >= 5 && recipeWords >= 1200;
 ---
 <Layout title={seoTitle} description={recipe.description} schema={[schema, breadcrumbSchema]} heroImage={recipe.image} heroImageSrcset={heroImageSrcset} heroImageSizes={heroImageSizes} heroImageAlt={recipe.imageAlt} ogType="article">
   <main id="content" class="guide">
@@ -61,9 +94,16 @@ const minutesOf = (iso: string) => iso.match(/^PT(\d+)M$/)?.[1] ?? iso;
     {recipe.sections && recipe.sections.length > 0 && (
       <p class="chart-link"><a href="#recipe">Jump to the recipe ↓</a> · <a href="/mushroom-cook-time-chart/">Compare all cook times →</a></p>
     )}
+    {showToc && (
+      <details class="toc" open>
+        <summary>In this recipe</summary>
+        <ol>{toc.map((item) => <li><a href={`#${item.id}`}>{item.label}</a></li>)}</ol>
+      </details>
+    )}
+
     <article class="prose">
       {recipe.sections?.map((section) => (
-        <section>
+        <section id={slugify(section.heading)}>
           <h2>{section.heading}</h2>
           {section.text && <p>{section.text}</p>}
           {section.quote && <blockquote>{section.quote}</blockquote>}
@@ -88,11 +128,11 @@ const minutesOf = (iso: string) => iso.match(/^PT(\d+)M$/)?.[1] ?? iso;
           ))}
         </ol>
       </section>
-      <section><h2>Small fixes that matter</h2><ul>{recipe.tips.map((tip) => <li>{tip}</li>)}</ul></section>
+      <section id="small-fixes"><h2>Small fixes that matter</h2><ul>{recipe.tips.map((tip) => <li>{tip}</li>)}</ul></section>
       <section><h2>Good with</h2><p>{recipe.pairings.join(', ')}.</p></section>
-      <section><h2>Storage and reheating</h2><ul>{recipe.storage.map((item) => <li>{item}</li>)}</ul></section>
+      <section id="storage"><h2>Storage and reheating</h2><ul>{recipe.storage.map((item) => <li>{item}</li>)}</ul></section>
       {recipe.faqs && (
-        <section>
+        <section id="faqs">
           <h2>Frequently asked questions</h2>
           {recipe.faqs.map((faq) => (
             <details class="faq">

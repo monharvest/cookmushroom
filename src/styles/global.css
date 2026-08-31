@@ -1,5 +1,5 @@
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
   --bg: #fbf7ee;
   --ink: #211a13;
   --muted: #6f6258;
@@ -8,16 +8,55 @@
   --accent: #8b4513;
   --accent-2: #446b38;
   --soft: #efe3cf;
+  --surface: #ffffff;      /* table, select and checkbox faces */
+  --on-ink: #ffffff;      /* text on the ink-filled buttons; flips with --ink */
+  --header-bg: color-mix(in srgb, var(--bg), white 72%);
+  --gradient-top: #f4e3c9;
+  --panel: #f6ead8;        /* recipe block, cook-time result */
+  --th: #f3eadc;
+  --highlight: #fff4d9;    /* notice and blockquote */
+  --highlight-ink: #5d3d09;
+  --shadow: 60 35 13;
+  --focus: #d19a45;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Dark mode follows the OS setting — no toggle, so there is no flash and no
+   stored preference to get out of sync. Only the tokens change; every rule
+   above is written against them. The accents lighten because #8b4513 and
+   #446b38 are unreadable on a dark ground. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17130f;
+    --ink: #f0e9df;
+    --muted: #a99a8a;
+    --card: #201a15;
+    --line: #362d24;
+    --accent: #e09a5a;
+    --accent-2: #8fc172;
+    --soft: #2f2620;
+    --surface: #241e18;
+    --on-ink: #17130f;
+    --header-bg: color-mix(in srgb, var(--bg), white 6%);
+    --gradient-top: #241a12;
+    --panel: #262019;
+    --th: #2a231c;
+    --highlight: #2e2411;
+    --highlight-ink: #f2d9a6;
+    --shadow: 0 0 0;
+    --focus: #e0ab63;
+  }
+  /* Photographs are lit for a light page; take the edge off on a dark one. */
+  .guide-hero-image, .prose img, .link-card-thumb { filter: brightness(.92) contrast(1.02); }
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: radial-gradient(circle at top left, #f4e3c9, var(--bg) 34rem); color: var(--ink); line-height: 1.6; }
+body { margin: 0; background: radial-gradient(circle at top left, var(--gradient-top), var(--bg) 34rem); color: var(--ink); line-height: 1.6; }
 a { color: inherit; }
-a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible { outline: 3px solid #d19a45; outline-offset: 3px; }
+a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
 
-.site-header { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg), white 72%); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+.site-header { position: sticky; top: 0; z-index: 10; background: var(--header-bg); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
 .nav { max-width: 1120px; margin: 0 auto; padding: 1rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .brand { font-size: 1.35rem; font-weight: 850; letter-spacing: -0.04em; text-decoration: none; }
 .brand span { color: var(--accent); }
@@ -34,16 +73,16 @@ h2 { font-size: clamp(2rem, 4vw, 3.2rem); margin: 0 0 1rem; }
 h3 { font-size: 1.35rem; margin: 0 0 .5rem; }
 .lead { color: var(--muted); font-size: clamp(1.08rem, 2vw, 1.35rem); max-width: 42rem; }
 .actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.5rem; }
-.button { display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--ink); background: var(--ink); color: white; border-radius: 999px; padding: .8rem 1rem; font-weight: 800; text-decoration: none; }
+.button { display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--ink); background: var(--ink); color: var(--on-ink); border-radius: 999px; padding: .8rem 1rem; font-weight: 800; text-decoration: none; }
 .button.secondary { background: transparent; color: var(--ink); }
 
-.panel, .card, .tool-card, .notice { background: color-mix(in srgb, var(--card), transparent 5%); border: 1px solid var(--line); border-radius: 1.4rem; box-shadow: 0 18px 60px rgb(60 35 13 / 8%); }
+.panel, .card, .tool-card, .notice { background: color-mix(in srgb, var(--card), transparent 5%); border: 1px solid var(--line); border-radius: 1.4rem; box-shadow: 0 18px 60px rgb(var(--shadow) / 8%); }
 .panel { padding: 1.25rem; }
 .panel-title { font-size: 1.15rem; margin: 0 0 .8rem; }
 .panel ul { margin: 0; padding-left: 1.2rem; }
 .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
 .card { padding: 1.15rem; text-decoration: none; transition: transform .18s ease, box-shadow .18s ease; }
-.card:hover { transform: translateY(-3px); box-shadow: 0 22px 70px rgb(60 35 13 / 13%); }
+.card:hover { transform: translateY(-3px); box-shadow: 0 22px 70px rgb(var(--shadow) / 13%); }
 .card p { color: var(--muted); margin: .35rem 0 0; }
 .badge { display: inline-flex; margin-bottom: .75rem; border-radius: 999px; padding: .25rem .6rem; background: var(--soft); color: var(--accent); font-size: .78rem; font-weight: 800; }
 .section { padding: 2.5rem 0; }
@@ -53,32 +92,32 @@ h3 { font-size: 1.35rem; margin: 0 0 .5rem; }
 .tool-card { padding: 1.25rem; }
 .controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1rem 0; }
 label { display: grid; gap: .35rem; color: var(--muted); font-weight: 750; }
-select { width: 100%; border: 1px solid var(--line); border-radius: .8rem; padding: .75rem; background: white; color: var(--ink); font: inherit; }
-.result { border-radius: 1rem; background: #f6ead8; padding: 1rem; }
+select { width: 100%; border: 1px solid var(--line); border-radius: .8rem; padding: .75rem; background: var(--surface); color: var(--ink); font: inherit; }
+.result { border-radius: 1rem; background: var(--panel); padding: 1rem; }
 .result dl { display: grid; grid-template-columns: max-content 1fr; gap: .4rem .8rem; margin: .8rem 0 0; }
 .result dt { font-weight: 850; }
 .result dd { margin: 0; color: var(--muted); }
 .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 1rem; }
-table { width: 100%; border-collapse: collapse; min-width: 720px; background: white; }
+table { width: 100%; border-collapse: collapse; min-width: 720px; background: var(--surface); }
 th, td { padding: .8rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
-th { background: #f3eadc; font-size: .9rem; }
+th { background: var(--th); font-size: .9rem; }
 
 .guide { max-width: 780px; }
-.guide-hero-image { width: 100%; max-height: 24rem; object-fit: cover; border-radius: 1.4rem; border: 1px solid var(--line); margin: 1.2rem 0; box-shadow: 0 18px 60px rgb(60 35 13 / 8%); }
+.guide-hero-image { width: 100%; max-height: 24rem; object-fit: cover; border-radius: 1.4rem; border: 1px solid var(--line); margin: 1.2rem 0; box-shadow: 0 18px 60px rgb(var(--shadow) / 8%); }
 .prose { background: var(--card); border: 1px solid var(--line); border-radius: 1.4rem; padding: clamp(1.25rem, 3vw, 2rem); }
 .prose img { width: 100%; max-height: 18rem; object-fit: cover; border-radius: 1rem; margin: .8rem 0 1rem; }
-.prose blockquote { margin: 1rem 0; border-left: 4px solid var(--accent); background: #fff4d9; color: #5d3d09; padding: .9rem 1rem; border-radius: 0 1rem 1rem 0; font-weight: 750; }
+.prose blockquote { margin: 1rem 0; border-left: 4px solid var(--accent); background: var(--highlight); color: var(--highlight-ink); padding: .9rem 1rem; border-radius: 0 1rem 1rem 0; font-weight: 750; }
 .prose li + li { margin-top: .55rem; }
 .prose section + section { margin-top: 2rem; }
-.notice { padding: 1rem; background: #fff4d9; color: #5d3d09; margin: 1.2rem 0; }
+.notice { padding: 1rem; background: var(--highlight); color: var(--highlight-ink); margin: 1.2rem 0; }
 .recipe-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
 .recipe-list ul { margin: .4rem 0 0; padding-left: 1.2rem; color: var(--muted); }
 .footer { max-width: 1120px; margin: 0 auto; padding: 2rem 1.25rem 3rem; color: var(--muted); border-top: 1px solid var(--line); }
 
-.skip-link { position: absolute; left: -999px; top: .5rem; background: var(--ink); color: white; padding: .6rem .8rem; border-radius: .5rem; z-index: 20; }
+.skip-link { position: absolute; left: -999px; top: .5rem; background: var(--ink); color: var(--on-ink); padding: .6rem .8rem; border-radius: .5rem; z-index: 20; }
 .skip-link:focus { left: .5rem; }
 .pills { display: flex; flex-wrap: wrap; gap: .7rem; }
-.pills a { border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: .65rem .9rem; text-decoration: none; font-weight: 800; box-shadow: 0 10px 30px rgb(60 35 13 / 7%); }
+.pills a { border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: .65rem .9rem; text-decoration: none; font-weight: 800; box-shadow: 0 10px 30px rgb(var(--shadow) / 7%); }
 .pills a:hover { border-color: var(--accent); color: var(--accent); }
 .quick-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .8rem; margin: 1.2rem 0; }
 .fact { background: var(--card); border: 1px solid var(--line); border-radius: 1rem; padding: 1rem; }
@@ -91,7 +130,7 @@ th { background: #f3eadc; font-size: .9rem; }
 .breadcrumbs { color: var(--muted); font-size: .88rem; font-weight: 700; margin-bottom: 1.2rem; }
 .breadcrumbs a { text-decoration: none; }
 .breadcrumbs a:hover { color: var(--accent); }
-.recipe-block { background: #f6ead8; border-radius: 1rem; padding: 1.25rem; }
+.recipe-block { background: var(--panel); border-radius: 1rem; padding: 1.25rem; }
 .recipe-block h2 { font-size: 1.7rem; }
 .recipe-meta { display: flex; flex-wrap: wrap; gap: 1rem; color: var(--muted); font-weight: 750; font-size: .95rem; margin: .2rem 0 1rem; }
 .faq { border-bottom: 1px solid var(--line); padding: .6rem 0; }
@@ -137,8 +176,8 @@ th { background: #f3eadc; font-size: .9rem; }
 }
 .share-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
 .share-btn.is-done { border-color: var(--accent-2); color: var(--accent-2); }
-.share-native { background: var(--ink); border-color: var(--ink); color: white; }
-.share-native:hover { background: var(--accent); border-color: var(--accent); color: white; }
+.share-native { background: var(--ink); border-color: var(--ink); color: var(--on-ink); }
+.share-native:hover { background: var(--accent); border-color: var(--accent); color: var(--on-ink); }
 
 /* Visual link cards, replacing bulleted "Related guides" / "Use it in" lists */
 .link-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: .8rem; }
@@ -148,7 +187,7 @@ th { background: #f3eadc; font-size: .9rem; }
   border: 1px solid var(--line); border-radius: 1.1rem; padding: .7rem;
   text-decoration: none; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
-.link-card:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: 0 16px 44px rgb(60 35 13 / 12%); }
+.link-card:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: 0 16px 44px rgb(var(--shadow) / 12%); }
 .link-card-thumb {
   flex: none; width: 88px; height: 88px; object-fit: cover;
   border-radius: .8rem; border: 1px solid var(--line); margin: 0;
@@ -163,6 +202,18 @@ th { background: #f3eadc; font-size: .9rem; }
 }
 /* .prose sets a width on every img; the thumbnails opt out. */
 .prose .link-card-thumb { width: 88px; max-height: none; }
+
+/* Table of contents on long guides and recipes. Open by default so the
+   structure is visible (and jump-linkable by search engines); collapsible
+   because it sits above the content on a phone. */
+.toc { background: var(--card); border: 1px solid var(--line); border-radius: 1.2rem; padding: 1rem 1.25rem; margin: 0 0 1.2rem; }
+.toc summary { cursor: pointer; font-weight: 850; letter-spacing: -0.02em; }
+.toc ol { columns: 2; column-gap: 2rem; margin: .8rem 0 0; padding-left: 1.1rem; }
+.toc li { break-inside: avoid; margin: 0 0 .35rem; color: var(--muted); }
+.toc a { text-decoration: none; font-weight: 700; }
+.toc a:hover { color: var(--accent); text-decoration: underline; }
+/* The header is sticky, so an anchored section must clear it. */
+.prose section[id] { scroll-margin-top: 4.5rem; }
 
 /* Cook-along: tick ingredients and steps off while standing at the stove.
    The checkboxes are real inputs so they work with JS off and print as an
@@ -182,13 +233,13 @@ th { background: #f3eadc; font-size: .9rem; }
 .checklist input {
   appearance: none; -webkit-appearance: none;
   width: 1.15rem; height: 1.15rem; margin: .2rem 0 0; flex: none;
-  border: 2px solid var(--line); border-radius: .4rem; background: white;
+  border: 2px solid var(--line); border-radius: .4rem; background: var(--surface);
   cursor: pointer; transition: background-color .15s ease, border-color .15s ease;
 }
 .checklist input:checked { background: var(--accent-2); border-color: var(--accent-2); }
 .checklist input:checked::after {
   content: ''; display: block; width: .3rem; height: .6rem; margin: .02rem 0 0 .32rem;
-  border: solid white; border-width: 0 2px 2px 0; transform: rotate(45deg);
+  border: solid var(--on-ink); border-width: 0 2px 2px 0; transform: rotate(45deg);
 }
 .checklist input:checked + span { text-decoration: line-through; opacity: .5; }
 /* Instructions keep their numbers — a struck-off step still needs its position. */
@@ -202,6 +253,8 @@ ol.checklist label::before { content: counter(cook-step) '.'; font-weight: 800; 
 @media (max-width: 820px) {
   .checklist label { padding: .6rem .45rem; gap: .75rem; }
   .checklist input { width: 1.3rem; height: 1.3rem; }
+  /* One column: the headings are full sentences and don't split well. */
+  .toc ol { columns: 1; }
 }
 
 /* Cook from the page: printed output drops the chrome and keeps the method. */
@@ -230,7 +283,7 @@ ol.checklist label::before { content: counter(cook-step) '.'; font-weight: 800; 
   /* Sources are worth carrying onto paper; inline links are not. */
   .prose section:last-of-type a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; word-break: break-all; }
   /* Print an unticked checklist — the reader ticks it with a pen. */
-  .cook-mode { display: none !important; }
+  .cook-mode, .toc { display: none !important; }
   .checklist input { appearance: auto; -webkit-appearance: auto; }
   .checklist input:checked + span { text-decoration: none; opacity: 1; }
   .checklist label { padding: 0; margin-left: 0; }
