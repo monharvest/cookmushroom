@@ -41,6 +41,8 @@ cookmushroom.com — an Astro static site about cooking mushrooms, deployed auto
 - Hero images: verified monthly batches. Do not generate heroes in Hermes.
 - NO health, medical, or supplement claims — especially chaga, reishi, lion's mane. Culinary preparation only.
 - Voice: concise, practical, observable cues ("pan looks dry", "edges turn golden"). No filler.
+- Body copy: keep paragraphs under ~100 words. `GuideSection.text` takes a string **or an array of strings**, one paragraph each — use the array rather than writing a wall. List-shaped content (discard cues, comparisons) belongs in `bullets` or `ordered`, not in prose.
+- `**bold**` works in section text, bullets, ordered lists, tips, storage, variations and FAQ answers (`src/lib/richtext.ts` — bold only, everything else is escaped). Use it for the phrase a scanner needs: the doneness cue, the discard signal, the measurement. Roughly one per paragraph; bolding everything emphasises nothing.
 - Seasonal pages publish 3–4 weeks before their peak.
 - 3–4 gated pages/month max. Quality over volume.
 

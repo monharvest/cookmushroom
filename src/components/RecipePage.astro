@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import type { RecipeArticle } from '../data/recipes';
 import ShareRow from './ShareRow.astro';
 import CookMode from './CookMode.astro';
+import { inlineMarkup } from '../lib/richtext';
 import RelatedCards from './RelatedCards.astro';
 
 const { recipe } = Astro.props as { recipe: RecipeArticle };
@@ -105,10 +106,10 @@ const showToc = toc.length >= 5 && recipeWords >= 1200;
       {recipe.sections?.map((section) => (
         <section id={slugify(section.heading)}>
           <h2>{section.heading}</h2>
-          {section.text && (Array.isArray(section.text) ? section.text.map((para) => <p>{para}</p>) : <p>{section.text}</p>)}
+          {section.text && (Array.isArray(section.text) ? section.text.map((para) => <p set:html={inlineMarkup(para)} />) : <p set:html={inlineMarkup(section.text)} />)}
           {section.quote && <blockquote>{section.quote}</blockquote>}
-          {section.bullets && <ul>{section.bullets.map((item) => <li>{item}</li>)}</ul>}
-          {section.ordered && <ol>{section.ordered.map((item) => <li>{item}</li>)}</ol>}
+          {section.bullets && <ul>{section.bullets.map((item) => <li set:html={inlineMarkup(item)} />)}</ul>}
+          {section.ordered && <ol>{section.ordered.map((item) => <li set:html={inlineMarkup(item)} />)}</ol>}
         </section>
       ))}
       <section id="recipe" class="recipe-block">
@@ -128,16 +129,16 @@ const showToc = toc.length >= 5 && recipeWords >= 1200;
           ))}
         </ol>
       </section>
-      <section id="small-fixes"><h2>Small fixes that matter</h2><ul>{recipe.tips.map((tip) => <li>{tip}</li>)}</ul></section>
+      <section id="small-fixes"><h2>Small fixes that matter</h2><ul>{recipe.tips.map((tip) => <li set:html={inlineMarkup(tip)} />)}</ul></section>
       <section><h2>Good with</h2><p>{recipe.pairings.join(', ')}.</p></section>
-      <section id="storage"><h2>Storage and reheating</h2><ul>{recipe.storage.map((item) => <li>{item}</li>)}</ul></section>
+      <section id="storage"><h2>Storage and reheating</h2><ul>{recipe.storage.map((item) => <li set:html={inlineMarkup(item)} />)}</ul></section>
       {recipe.faqs && (
         <section id="faqs">
           <h2>Frequently asked questions</h2>
           {recipe.faqs.map((faq) => (
             <details class="faq">
               <summary><h3>{faq.question}</h3></summary>
-              <p>{faq.answer}</p>
+              <p set:html={inlineMarkup(faq.answer)} />
             </details>
           ))}
         </section>

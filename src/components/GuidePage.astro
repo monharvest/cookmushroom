@@ -4,6 +4,7 @@ import type { GuideArticle } from '../data/guides';
 import { cookTimes, recipeCards } from '../data/guides';
 import ShareRow from './ShareRow.astro';
 import CookMode from './CookMode.astro';
+import { inlineMarkup } from '../lib/richtext';
 import RelatedCards from './RelatedCards.astro';
 
 const { guide } = Astro.props as { guide: GuideArticle };
@@ -164,10 +165,10 @@ const schema = [contentSchema, breadcrumbSchema];
         <section id={slugify(section.heading)}>
           <h2>{section.heading}</h2>
           {section.image && <img src={section.image.src} alt={section.image.alt} loading="lazy" />}
-          {section.text && (Array.isArray(section.text) ? section.text.map((para) => <p>{para}</p>) : <p>{section.text}</p>)}
+          {section.text && (Array.isArray(section.text) ? section.text.map((para) => <p set:html={inlineMarkup(para)} />) : <p set:html={inlineMarkup(section.text)} />)}
           {section.quote && <blockquote>{section.quote}</blockquote>}
-          {section.bullets && <ul>{section.bullets.map((item) => <li>{item}</li>)}</ul>}
-          {section.ordered && <ol>{section.ordered.map((item) => <li>{item}</li>)}</ol>}
+          {section.bullets && <ul>{section.bullets.map((item) => <li set:html={inlineMarkup(item)} />)}</ul>}
+          {section.ordered && <ol>{section.ordered.map((item) => <li set:html={inlineMarkup(item)} />)}</ol>}
           {section.table && (
             <div class="table-wrap compact">
               <table>
@@ -223,18 +224,18 @@ const schema = [contentSchema, breadcrumbSchema];
       )}
       <section id="small-fixes">
         <h2>Small fixes that matter</h2>
-        <ul>{guide.tips.map((tip) => <li>{tip}</li>)}</ul>
+        <ul>{guide.tips.map((tip) => <li set:html={inlineMarkup(tip)} />)}</ul>
       </section>
       {guide.variations && (
         <section id="variations">
           <h2>Variations</h2>
-          <ul>{guide.variations.map((item) => <li>{item}</li>)}</ul>
+          <ul>{guide.variations.map((item) => <li set:html={inlineMarkup(item)} />)}</ul>
         </section>
       )}
       {guide.storage && (
         <section id="storage">
           <h2>Storage and reheating</h2>
-          <ul>{guide.storage.map((item) => <li>{item}</li>)}</ul>
+          <ul>{guide.storage.map((item) => <li set:html={inlineMarkup(item)} />)}</ul>
         </section>
       )}
       {guide.faqs && (
@@ -243,7 +244,7 @@ const schema = [contentSchema, breadcrumbSchema];
           {guide.faqs.map((faq) => (
             <details class="faq">
               <summary><h3>{faq.question}</h3></summary>
-              <p>{faq.answer}</p>
+              <p set:html={inlineMarkup(faq.answer)} />
             </details>
           ))}
         </section>
