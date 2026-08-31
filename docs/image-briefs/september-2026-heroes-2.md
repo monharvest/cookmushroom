@@ -1,8 +1,10 @@
 # Hero image brief — giant puffball
 
-**Status: NEEDED.** `/how-to-cook-puffball-mushrooms/` is written, builds clean, and is
-committed but **not deployed** — the publication gate forbids shipping a page with a
-broken image reference, and this is the only thing missing.
+**Status: HERO ON DISK 2026-08-31, not pushed — and NOT yet accepted.** Trio + OG card
+written locally from attempt 1. It passes the non-negotiable safety criterion (featureless
+inside) but **fails the fried-cheese reject**, so the visual gate has not passed; see the
+attempt log. Awaiting the user's decision: ship attempt 1 anyway for the September window,
+or regenerate with the corrected prompt below.
 
 - **File name:** `cookmushroom-puffball-hero`
 - **Page:** `/how-to-cook-puffball-mushrooms/`
@@ -17,17 +19,23 @@ broken image reference, and this is the only thing missing.
 Paste verbatim. Plain prose, no markdown, on purpose.
 
 > Editorial food photograph of thick white mushroom steaks searing in a black cast-iron
-> skillet. Each slab is a broad flat slice about half an inch thick, cut from one very
-> large mushroom, so the slabs are wide — several inches across — with a soft rounded
-> outline rather than a cap shape. The flesh is uniformly white and completely smooth
-> inside, like a dense fresh cheese or a firm marshmallow, with absolutely no gills, no
-> stem, no pores, no rings, no internal structure of any kind. The flat faces that touched
-> the pan have browned to an even deep gold, and the contrast between the golden crust and
-> the pure white interior at the cut edge is the point of the photograph. Foaming butter,
-> a few thin slices of garlic and fresh thyme in the pan. Warm natural side light from the
-> left, shallow depth of field, dark neutral background. Landscape 3:2. Nothing else in
-> the pan — no other vegetables, no sauce, no breading. No people, no hands, no text, no
-> labels, no watermark.
+> skillet. The slabs were carved by hand from one enormous mushroom the size of a
+> football, so they are wide — the largest spans most of the pan — and every one is a
+> different irregular shape with a slightly uneven cut edge. No two are alike, and none is
+> a neat oval, a disc, or a figure-eight. Each slab is flat and about half an inch thick,
+> and it stays flat: the flesh shrinks very slightly in the pan rather than puffing, so
+> there is no pillowy dome, no bulging edge, nothing inflated anywhere. The flesh is matte
+> white and completely uniform right through — no gills, no stem, no pores, no rings, no
+> fibres, no layers, no cavity, no internal structure of any kind. It is soft vegetable
+> flesh, faintly porous like dense mushroom, never glossy, never rubbery, never
+> squeaky-looking. One or two slabs keep a thin pale grey-white band of skin along one
+> outer edge. The flat faces that touched the pan have browned unevenly and in patches the
+> way a seared mushroom browns — deep gold in places, paler in others, never a smooth
+> continuous fried crust. Foaming butter, a few thin slices of garlic and fresh thyme in
+> the pan. Warm natural side light from the left, shallow depth of field, dark neutral
+> background. Landscape 3:2 aspect ratio, composed for 3:2 rather than cropped to it. This
+> is a mushroom, not cheese: no halloumi, no paneer, no fried cheese, no tofu, no scallops,
+> no fishcakes, no potato cakes. No people, no hands, no text, no labels, no watermark.
 
 ## Reject it if
 
@@ -43,8 +51,16 @@ Paste verbatim. Plain prose, no markdown, on purpose.
 - **Breading or batter.** Breaded puffball is a variation on the page, not its method.
 - A **whole puffball sitting in grass or on the forest floor.** This is a cooking site; we
   do not run foraging or identification imagery.
-- Anything that reads as **halloumi, tofu, or a scallop** — no rectangular blocks with
-  sharp square corners, no perfect discs.
+- Anything that reads as **halloumi, paneer, or fried cheese**. *(This killed attempts 1
+  through 4.)* The tells, most reliable first: slabs that **puff or dome** with pillowy
+  bulging edges — mushroom shrinks, it never inflates; a **smooth continuous golden crust**
+  instead of patchy uneven browning; **near-identical regular ovals**; a glossy or rubbery
+  interior. Two or more of those present, reject it.
+- The slabs are **all the same shape and size**, or any of them is a neat disc or a
+  figure-eight. *(Attempts 1 and 3.)* They are carved by hand from one huge mushroom.
+- Anything that reads as **tofu, a scallop, a fishcake, or a potato cake**.
+- **Wrong aspect ratio.** *(Attempt 4 came back 1280×720.)* Must be 3:2 landscape, composed
+  for it — a 16:9 frame centre-cropped to 3:2 loses the top and bottom of the composition.
 
 ## Then
 
@@ -100,15 +116,30 @@ the seed.
 
 ## Attempt log
 
-*(none yet)*
+- **Attempt 1 (on disk, converted):** Grok Imagine quality, 16:9 then center-cropped to 3:2. Three thick oval steaks, pure white featureless sides, even gold crust, foaming butter, garlic coins, thyme, cast iron. No gills, stem, cap outline, or internal structure. Reads as halloumi. The prompt's own "dense fresh cheese" simile is likely why.
+- **Attempt 2 (rejected):** mushroom-cap silhouettes with dark gills inside. Fails the non-negotiable safety rule.
+- **Attempt 3 (rejected):** edit of attempt 1 into peanut / figure-8 slabs. Cartoon outline, not a loaf slice.
+- **Attempt 4 (rejected, 16:33, not converted):** dropped the cheese simile, asked for matte suede flesh and different sizes. Still three matching fried-cheese discs. Second miss on reject #7 — stop regenerating; prompt needs changing or use a licensed photo.
+
+**Root cause was this brief, not the generator.** The original prompt described the flesh
+as *"like a dense fresh cheese or a firm marshmallow"*. That simile was meant to convey
+"uniform and featureless" and instead specified the subject — four seeds produced cheese
+because the prompt asked for cheese. Hermes reached the same conclusion independently on
+attempt 4. The prompt above has been rewritten: every dairy reference removed, flesh
+described as matte porous vegetable flesh, plus the two constraints the failures exposed —
+slabs are irregular and hand-cut, and they shrink rather than puff — and the failure modes
+named as explicit negatives.
+
+Do not re-run the old prompt with a new seed. That was tried four times.
 
 ---
 ---
 
 # Hero image brief — cutting mushrooms
 
-**Status: NEEDED.** `/how-to-cut-mushrooms/` is written, builds clean, and is committed
-but **not deployed** for the same reason as the puffball page above.
+**Status: HERO ON DISK 2026-08-31, not pushed. Visual gate passed.** Trio + OG card
+written locally. Correct subject, even slices, fresh matte cut faces, no hands, no pan.
+Ready to deploy.
 
 - **File name:** `cookmushroom-cutting-hero`
 - **Page:** `/how-to-cut-mushrooms/`
@@ -170,4 +201,4 @@ watermark.
 
 ## Attempt log
 
-*(none yet)*
+- **Attempt 1 (accepted, converted):** Grok Imagine quality, 16:9 then center-cropped to 3:2. Cremini on a pale board, chef's knife mid-cut, even ~1/4 inch fan with cap+stem silhouette, two whole mushrooms. No hands, no pan, no text. 3:2 crop clips the knife handle slightly; the fan and board stay in frame.
