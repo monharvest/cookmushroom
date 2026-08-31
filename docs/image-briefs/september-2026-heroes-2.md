@@ -127,6 +127,13 @@ the seed.
   one contradicts the page's central factual claim, that puffball flesh has no fibres or
   grain at all. Arguably worse than attempt 1, which was at least white and featureless.
   My reject list said "fishcakes" and "scallops" but not "fish steak" — my omission.
+- **Attempt 6 (Option A, cut-face shot, rejected, not converted):** the most dangerous miss
+  of the six. Both halves show a **stem silhouette at the base** — a narrowing stalk with a
+  notch — which is exactly the discard cue this page teaches. It also reads as two oversized
+  button mushrooms rather than a football-sized Calvatia. Native 3:2 and otherwise a clean,
+  well-lit photograph, which is what makes it dangerous: it is attractive and it demonstrates
+  the precise thing the text tells readers means "throw it away". Caught by Hermes, confirmed
+  on inspection. Do not use it.
 
 **Root cause was this brief, not the generator.** The original prompt described the flesh
 as *"like a dense fresh cheese or a firm marshmallow"*. That simile was meant to convey
@@ -139,11 +146,22 @@ named as explicit negatives.
 
 Do not re-run the old prompt with a new seed. That was tried four times.
 
-**Two distinct failure modes in five attempts — stop iterating on this shot.** A white slab
+**Three failure modes in six attempts — stop generating.** Halloumi discs (1–4), swordfish
+steaks (5), stem silhouette (6). Only attempt 1 is free of a factual contradiction with the
+page: it is white and featureless, and merely looks like cheese. Attempts 5 and 6 both
+contradict the text, and 6 does so on the safety point. A white slab
 searing in butter in a black pan has strong pull toward both halloumi and fish steak, and
 chasing it with wording is expensive. Three ways forward, best first.
 
-### Option A — change the shot to the cut face (recommended)
+### Option A — change the shot to the cut face (TRIED, FAILED — see attempt 6)
+
+The reasoning below still holds, but the one run produced a stem silhouette on both halves.
+If this is ever retried, the prompt needs to fight the button-mushroom attractor much harder:
+a halved white mushroom on a board pulls strongly toward a halved Agaricus, which by
+definition has the cap-and-stem structure that must not appear. State the scale explicitly
+and repeatedly (football-sized, fills the board, far too big to be a button mushroom), and
+name the negative directly — no stem, no stalk, no narrowing at the base, not a button
+mushroom, not an Agaricus.
 
 Photograph the **raw puffball halved on a board**, not slabs in a pan. This is a better hero
 for this page anyway: the slice test *is* the page's core teaching, so the image would carry
@@ -166,6 +184,12 @@ cutting heroes are both board shots rather than pan shots.
 Reject it if: any internal structure whatsoever on the cut faces; the interior is cream,
 yellow or grey rather than white; it reads as a cheese wheel, a coconut, or a loaf; there
 is any browning or cooking; or the specimen sits in grass or on a forest floor.
+
+- **Attempt 6 (Option A, rejected, 16:47, not converted):** native 3:2 (1248×832). Two
+  halves on a board, knife, no cooking. Interior is white but **both cut faces show a
+  stem/cap silhouette at the base** — the exact Amanita-button outline the page tells
+  readers to discard. Also reads as large white buttons, not a football-sized puffball.
+  Hard fail on the non-negotiable safety rule. Stopped after one cut-face run.
 
 ### Option B — licensed photograph
 
