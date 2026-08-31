@@ -1,10 +1,8 @@
 # Hero image brief — giant puffball
 
-**Status: HERO ON DISK 2026-08-31, not pushed — and NOT yet accepted.** Trio + OG card
-written locally from attempt 1. It passes the non-negotiable safety criterion (featureless
-inside) but **fails the fried-cheese reject**, so the visual gate has not passed; see the
-attempt log. Awaiting the user's decision: ship attempt 1 anyway for the September window,
-or regenerate with the corrected prompt below.
+**Status: HERO ON DISK 2026-08-31 16:41, not pushed — attempt 5 converted.** Native 3:2
+(1248×832) from the rewritten prompt. Trio + OG card replaced attempt 1. Awaiting Batu/Opus
+visual check (left slab can read as a fish steak with skin).
 
 - **File name:** `cookmushroom-puffball-hero`
 - **Page:** `/how-to-cook-puffball-mushrooms/`
@@ -120,6 +118,15 @@ the seed.
 - **Attempt 2 (rejected):** mushroom-cap silhouettes with dark gills inside. Fails the non-negotiable safety rule.
 - **Attempt 3 (rejected):** edit of attempt 1 into peanut / figure-8 slabs. Cartoon outline, not a loaf slice.
 - **Attempt 4 (rejected, 16:33, not converted):** dropped the cheese simile, asked for matte suede flesh and different sizes. Still three matching fried-cheese discs. Second miss on reject #7 — stop regenerating; prompt needs changing or use a licensed photo.
+- **Attempt 5 (converted 16:41, awaiting visual check):** rewritten prompt, native 3:2 (1248×832, Hermes landscape wrapper forced to 3:2 for this call). Irregular flat slabs, patchy browning, no puff, no gills. Not halloumi. Left slab has the requested grey-white skin band and can read as a fish steak. Full-size WebP 100.9 KB, sha256 `ccf34cf8…`.
+- **Attempt 5 (on disk since 16:40, rejected):** first run of the rewritten prompt. It fixed
+  what it was aimed at — the slabs are irregular and the browning is patchy, not a
+  continuous crust — but swung into a second failure mode: these read as **swordfish
+  steaks**. Notched cleft silhouettes exactly like a fish-steak cross-section, flesh
+  cream-to-pink rather than matte white, and visible striation on the cut faces. That last
+  one contradicts the page's central factual claim, that puffball flesh has no fibres or
+  grain at all. Arguably worse than attempt 1, which was at least white and featureless.
+  My reject list said "fishcakes" and "scallops" but not "fish steak" — my omission.
 
 **Root cause was this brief, not the generator.** The original prompt described the flesh
 as *"like a dense fresh cheese or a firm marshmallow"*. That simile was meant to convey
@@ -131,6 +138,55 @@ slabs are irregular and hand-cut, and they shrink rather than puff — and the f
 named as explicit negatives.
 
 Do not re-run the old prompt with a new seed. That was tried four times.
+
+**Two distinct failure modes in five attempts — stop iterating on this shot.** A white slab
+searing in butter in a black pan has strong pull toward both halloumi and fish steak, and
+chasing it with wording is expensive. Three ways forward, best first.
+
+### Option A — change the shot to the cut face (recommended)
+
+Photograph the **raw puffball halved on a board**, not slabs in a pan. This is a better hero
+for this page anyway: the slice test *is* the page's core teaching, so the image would carry
+the argument instead of decorating it. It also removes the searing, the butter and the pan,
+which is where both failure modes come from. There is site precedent — the cleaning and
+cutting heroes are both board shots rather than pan shots.
+
+> Editorial food photograph of one very large round white mushroom on a pale wooden board,
+> cut cleanly in half from top to bottom, both halves resting cut-face towards the camera.
+> The mushroom is the size of a football, smooth and matte white on the outside with a
+> faint suede texture and a little earth still on the base. The two cut faces are the
+> subject: solid, uniform, matte white all the way through, dense and completely
+> featureless — no gills, no stem, no cap outline, no pores, no rings, no fibres, no
+> layers, no hollow cavity, nothing at all inside. Like cut white bread without the holes.
+> A chef's knife rests on the board beside it. Warm natural side light from the left,
+> shallow depth of field, dark neutral background. Landscape 3:2 aspect ratio, composed for
+> 3:2. Raw and uncooked — no pan, no butter, no herbs, no heat, no browning anywhere. Not
+> cheese, not bread, not a coconut. No people, no hands, no text, no labels, no watermark.
+
+Reject it if: any internal structure whatsoever on the cut faces; the interior is cream,
+yellow or grey rather than white; it reads as a cheese wheel, a coconut, or a loaf; there
+is any browning or cooking; or the specimen sits in grass or on a forest floor.
+
+### Option B — licensed photograph
+
+Buy a stock shot of seared puffball or a halved giant puffball. Removes the accuracy risk
+entirely. Hermes suggested this and it is sound.
+
+### Option C — ship attempt 1 and swap later
+
+Attempt 1 is white and featureless, so it does not contradict the page; it just reads as
+halloumi. Recoverable at any time:
+
+```bash
+./scripts/make-hero.sh /tmp/cm-puffball-hero/puffball-candidate-1.jpg cookmushroom-puffball-hero
+```
+
+```bash
+./scripts/make-og-cards.sh --force
+```
+
+Buys the September window at the cost of an image that looks like cheese until replaced.
+The page needs no changes when the hero is swapped.
 
 ---
 ---
