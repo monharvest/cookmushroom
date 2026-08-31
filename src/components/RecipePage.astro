@@ -113,7 +113,7 @@ const showToc = toc.length >= 5 && recipeWords >= 1200;
       ))}
       <section id="recipe" class="recipe-block">
         <h2>{recipe.recipeName}</h2>
-        <p class="recipe-meta"><span>Prep: {minutesOf(recipe.prepIsoTime)} min</span><span>Cook: {minutesOf(recipe.cookIsoTime)} min</span><span>Yield: {recipe.yieldText}</span></p>
+        <p class="recipe-meta"><span>Prep: {minutesOf(recipe.prepIsoTime)} min</span><span>Cook: {minutesOf(recipe.cookIsoTime)} min</span><span>Yield: <span data-yield>{recipe.yieldText}</span></span></p>
         <CookMode storageKey={recipe.slug} />
         <h3>Ingredients</h3>
         <ul class="checklist">

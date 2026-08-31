@@ -6,12 +6,23 @@
 const { storageKey } = Astro.props as { storageKey: string };
 ---
 <div class="cook-mode" data-cook-mode data-key={storageKey}>
+  <span class="cook-scale" role="group" aria-label="Scale the ingredients">
+    {[[0.5, '½×'], [1, '1×'], [2, '2×'], [3, '3×']].map(([factor, label]) => (
+      <button type="button" class="share-btn" data-scale={factor} aria-pressed={factor === 1 ? 'true' : 'false'}>{label}</button>
+    ))}
+  </span>
   <button type="button" class="share-btn" data-wake hidden aria-pressed="false">Keep screen on</button>
   <button type="button" class="share-btn" data-reset hidden>Clear ticks</button>
   <span class="cook-progress" data-progress aria-live="polite"></span>
 </div>
+<p class="cook-scale-note" data-scale-note hidden>
+  Ingredient amounts are scaled. The steps below still quote the original
+  amounts — follow the list above.
+</p>
 
 <script>
+  import { scaleLine, scaleYield } from '../lib/scale';
+
   const root = document.querySelector<HTMLElement>('[data-cook-mode]');
   if (root) {
     const key = `cookmushroom:${root.dataset.key}`;
@@ -62,6 +73,48 @@ const { storageKey } = Astro.props as { storageKey: string };
       store.write([]);
       render();
     });
+
+    // --- ingredient scaling -------------------------------------------------
+    // Only the ingredient list and the yield are rewritten. Steps are left
+    // alone on purpose: they carry times and temperatures, which must not move.
+    const ingredientSpans = Array.from(
+      document.querySelectorAll<HTMLElement>('.recipe-block ul.checklist label span'),
+    );
+    const originals = ingredientSpans.map((el) => el.textContent ?? '');
+    const yieldEl = document.querySelector<HTMLElement>('[data-yield]');
+    const originalYield = yieldEl?.textContent ?? '';
+    const scaleBtns = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-scale]'));
+    const note = document.querySelector<HTMLElement>('[data-scale-note]');
+    const scaleKey = `${key}:scale`;
+
+    const applyScale = (factor: number) => {
+      ingredientSpans.forEach((el, i) => (el.textContent = scaleLine(originals[i], factor)));
+      if (yieldEl) yieldEl.textContent = scaleYield(originalYield, factor);
+      scaleBtns.forEach((b) => {
+        const on = Number(b.dataset.scale) === factor;
+        b.setAttribute('aria-pressed', String(on));
+        b.classList.toggle('is-done', on);
+      });
+      if (note) note.hidden = factor === 1;
+      try {
+        if (factor === 1) localStorage.removeItem(scaleKey);
+        else localStorage.setItem(scaleKey, String(factor));
+      } catch {
+        /* storage blocked — the scale still applies for this visit */
+      }
+    };
+
+    scaleBtns.forEach((btn) => {
+      btn.addEventListener('click', () => applyScale(Number(btn.dataset.scale)));
+    });
+
+    let savedScale = 1;
+    try {
+      savedScale = Number(localStorage.getItem(scaleKey)) || 1;
+    } catch {
+      savedScale = 1;
+    }
+    if (savedScale !== 1) applyScale(savedScale);
 
     // Wake Lock keeps the phone awake while someone cooks from the page.
     // Chrome/Edge/Safari 16.4+; absent elsewhere, so the button stays hidden.

@@ -185,7 +185,7 @@ const schema = [contentSchema, breadcrumbSchema];
           <p class="recipe-meta">
             {guide.prepIsoTime && <span>Prep: {prepMinutes ?? guide.prepIsoTime} min</span>}
             <span>Cook: {cookMinutes ? `${cookMinutes} min` : primaryCookTime}</span>
-            {guide.yieldText && <span>Yield: {guide.yieldText}</span>}
+            {guide.yieldText && <span>Yield: <span data-yield>{guide.yieldText}</span></span>}
           </p>
           <CookMode storageKey={guide.slug} />
           <h3>Ingredients</h3>

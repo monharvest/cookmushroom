@@ -220,6 +220,13 @@ th { background: var(--th); font-size: .9rem; }
    empty checklist; CookMode.astro adds persistence and the wake lock. */
 .cook-mode { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: 0 0 1.1rem; }
 .cook-progress { color: var(--muted); font-size: .85rem; font-weight: 750; }
+.cook-scale { display: inline-flex; gap: .35rem; margin-right: .3rem; }
+.cook-scale .share-btn { padding: .45rem .65rem; min-width: 2.6rem; justify-content: center; }
+.cook-scale-note {
+  margin: -.4rem 0 1.1rem; padding: .7rem .9rem;
+  background: var(--highlight); color: var(--highlight-ink);
+  border-radius: .8rem; font-size: .9rem; font-weight: 700;
+}
 .checklist { list-style: none; padding-left: 0; margin: 0; }
 .checklist li { margin: 0; }
 .checklist li + li { margin-top: .2rem; }
@@ -255,6 +262,9 @@ ol.checklist label::before { content: counter(cook-step) '.'; font-weight: 800; 
   .checklist input { width: 1.3rem; height: 1.3rem; }
   /* One column: the headings are full sentences and don't split well. */
   .toc ol { columns: 1; }
+  /* Same 44px rule as the ticks — these get tapped with cooking hands. */
+  .share-btn { padding: .62rem .85rem; }
+  .cook-scale .share-btn { min-width: 3rem; padding: .62rem .5rem; }
 }
 
 /* Cook from the page: printed output drops the chrome and keeps the method. */
@@ -284,6 +294,8 @@ ol.checklist label::before { content: counter(cook-step) '.'; font-weight: 800; 
   .prose section:last-of-type a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; word-break: break-all; }
   /* Print an unticked checklist — the reader ticks it with a pen. */
   .cook-mode, .toc { display: none !important; }
+  /* The note matters on paper: the printed steps quote unscaled amounts. */
+  .cook-scale-note { border: 1px solid #ccc; }
   .checklist input { appearance: auto; -webkit-appearance: auto; }
   .checklist input:checked + span { text-decoration: none; opacity: 1; }
   .checklist label { padding: 0; margin-left: 0; }
