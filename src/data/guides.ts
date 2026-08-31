@@ -141,6 +141,7 @@ const methodGuides: GuideArticle[] = [
     ],
     pairings: ['steak', 'eggs', 'pasta', 'toast', 'rice bowls', 'polenta'],
     relatedLinks: [
+      { href: '/types-of-mushrooms/', label: 'Types of edible mushrooms and how to cook each' },
       { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' },
       { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
@@ -206,6 +207,7 @@ const methodGuides: GuideArticle[] = [
       { heading: 'Before you start', text: 'Wipe the mushrooms with a damp towel or brush off dirt. Trim the dry ends, then cut the mushrooms into similar-sized pieces so they finish together.' }
     ],
     relatedLinks: [
+      { href: '/types-of-mushrooms/', label: 'Types of edible mushrooms and how to cook each' },
       { href: '/how-to-cut-mushrooms/', label: 'How to cut mushrooms' },
       { href: '/how-to-cook-puffball-mushrooms/', label: 'How to cook puffball mushrooms' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
@@ -341,6 +343,7 @@ const methodGuides: GuideArticle[] = [
       'Pre-sliced mushrooms: skip rinsing unless dirt is visible, then dry the cut sides well.'
     ],
     relatedLinks: [
+      { href: '/types-of-mushrooms/', label: 'Types of edible mushrooms and how to cook each' },
       { href: '/how-to-cut-mushrooms/', label: 'How to cut mushrooms' },
       { href: '/how-to-cook-cremini-mushrooms/', label: 'How to cook cremini mushrooms' },
       { href: '/how-to-cook-oyster-mushrooms/', label: 'How to cook oyster mushrooms' },
@@ -441,6 +444,7 @@ const methodGuides: GuideArticle[] = [
       { href: 'https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts', label: 'FoodSafety.gov — Cold Food Storage Chart' },
     ],
     relatedLinks: [
+      { href: '/types-of-mushrooms/', label: 'Types of edible mushrooms and how to cook each' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
       { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' },
@@ -1174,6 +1178,125 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
+    slug: 'types-of-mushrooms', label: 'Types of mushrooms', badge: 'The hub', title: 'Types of Edible Mushrooms and How to Cook Each', description: 'The edible mushrooms worth cooking, what each one tastes like, and the method that suits it — from everyday cremini to chanterelles, morels and matsutake.', minutes: '9 min', updated: '2026-08-31', image: '/images/cookmushroom-types-hero.webp', imageAlt: 'Cremini, oyster, shiitake, king oyster and enoki mushrooms arranged on a dark board', isoTime: 'PT0M', heat: 'Varies by variety', cut: 'Varies by variety', finish: 'Varies by variety', showCookTimes: false,
+    quickFacts: [
+      { label: 'Start here', value: 'Cremini — the everyday default' },
+      { label: 'Most flavour', value: 'Porcini, morel, matsutake' },
+      { label: 'Best texture', value: 'King oyster, maitake, lion\'s mane' },
+      { label: 'Rule', value: 'Match the method to the water content' }
+    ],
+    steps: [
+      'Decide what you want from the mushroom: bulk and browning, a meaty centrepiece, or a strong savoury flavour to carry a sauce.',
+      'Pick from the table below. The flavour and texture columns matter more than the name — several varieties are near-interchangeable in a pan.',
+      'Match the method to the mushroom. Wet, dense varieties want a hot dry pan; frilly and layered ones want to be torn and crisped; delicate ones want a short cook.',
+      'Follow the linked guide for exact times, cuts and doneness cues.'
+    ],
+    tips: [
+      'Cremini and button are the same mushroom at different ages. Cremini is browner and slightly firmer, and the two swap freely in any recipe.',
+      'Portobello is just a fully grown cremini. **Nothing on this site treats them as different species** — only as different sizes needing different handling.',
+      'If a recipe names a wild mushroom you cannot get, match it on texture rather than name. Maitake stands in for chicken of the woods; king oyster stands in for most meaty cuts.',
+      'Never eat a wild mushroom that has not been verified by a qualified expert who handled the specimen.'
+    ],
+    pairings: ['butter', 'garlic', 'thyme', 'cream', 'soy sauce', 'lemon'],
+    sections: [
+      { heading: 'How to read this page', text: [
+        'Every mushroom below has its own guide with exact times and doneness cues. This page exists to help you choose between them — what each one tastes like, what it does in a pan, and which method suits it.',
+        'Method matters as much as variety: the same mushroom behaves differently [in a pan](/how-to-cook-mushrooms-in-a-pan/), [in the oven](/how-to-roast-mushrooms-in-oven/), [on a grill](/how-to-grill-mushrooms/) or [in an air fryer](/how-to-cook-mushrooms-in-air-fryer/). The single most useful thing to know about any mushroom is **how much water it holds**. Wet varieties like cremini and portobello need a hot, uncrowded pan and time to give that water up before they brown. Dense, dry ones like porcini and matsutake colour quickly and need watching. Layered ones like maitake and oyster are best torn rather than cut, because ragged edges crisp where a flat cut face browns dully.'
+      ] },
+      { heading: 'The everyday mushrooms', text: [
+        'These are the ones in every supermarket, and between them they cover most cooking. If a recipe just says "mushrooms", it means one of these.',
+        '**Cremini is the sensible default.** It has more flavour than white button, browns better, and costs about the same. Button is milder and paler and works anywhere cremini does. Portobello is the same mushroom grown to full size, which makes it a centrepiece rather than an ingredient — a cap holds its shape on a grill or under a filling.'
+      ], bullets: [
+        '**[White button](/how-to-cook-button-mushrooms/)** — mildest, softest, cheapest. Best in soups, stews, and anywhere it is not the star.',
+        '**[Cremini](/how-to-cook-cremini-mushrooms/)** — the everyday default. Firmer and browner than button, with a fuller savoury flavour.',
+        '**[Portobello](/how-to-cook-portobello-mushrooms/)** — a mature cremini. Big enough to be the main item, grilled or roasted whole.'
+      ] },
+      { heading: 'The meaty ones', text: 'These have the structure to be the centre of a plate. They hold their shape under heat and reward a hard sear rather than a gentle sauté, which is why they turn up in place of meat so often.',
+        bullets: [
+          '**[King oyster](/how-to-cook-king-oyster-mushrooms/)** — the thick stem is the good part. Cut into medallions, it sears like a scallop.',
+          '**[Maitake (hen of the woods)](/how-to-cook-maitake-mushrooms/)** — grows in frilly clusters that crisp beautifully. Tear, do not cut.',
+          '**[Lion\'s mane](/how-to-cook-lions-mane-mushrooms/)** — dense and shreddable. Press slabs in a hot pan for a crab-like texture.',
+          '**[Chicken of the woods](/how-to-cook-chicken-of-the-woods/)** — wild, fibrous, pulls apart like poultry. Needs longer cooking than most.',
+          '**[Puffball](/how-to-cook-puffball-mushrooms/)** — mild and custardy in thick slabs. Cut it open first; the inside must be pure white.'
+        ] },
+      { heading: 'The Asian-market mushrooms', text: 'Sold fresh in most Asian groceries and increasingly in supermarkets. These behave quite differently from the everyday varieties, mostly because they are either very fine or very firm.',
+        bullets: [
+          '**[Shiitake](/how-to-cook-shiitake-mushrooms/)** — deeply savoury, the most useful of the group. Discard the woody stems or keep them for stock.',
+          '**[Enoki](/how-to-cook-enoki-mushrooms/)** — fine white strands, cooked in two to four minutes. Overcook them and they go stringy.',
+          '**[Shimeji (beech)](/how-to-cook-shimeji-mushrooms/)** — small clusters with a firm bite and a slight nuttiness. Cut the base off and separate.',
+          '**[Wood ear](/how-to-cook-wood-ear-mushrooms/)** — almost no flavour, all texture. A crunchy, gelatinous bite for stir-fries and soups.',
+          '**[Paddy straw](/how-to-cook-paddy-straw-mushrooms/)** — soft and mild, common in Southeast Asian cooking and often sold canned.'
+        ] },
+      { heading: 'The wild and seasonal ones', text: [
+        'These are the mushrooms worth planning a meal around. Most are foraged rather than farmed, they appear for a few weeks a year, and they cost accordingly.',
+        'The site covers them as **cooking** guides, not identification guides. Buy them from a reputable market, or have a qualified expert verify a wild sample by handling it. Never eat a wild mushroom identified from a photo or an app.'
+      ], bullets: [
+        '**[Chanterelle](/how-to-cook-chanterelle-mushrooms/)** — apricot-scented, firm, holds its trumpet shape. Dry-sauté before adding any fat.',
+        '**[Morel](/how-to-cook-morel-mushrooms/)** — spring only, honeycombed and hollow. Must be cooked through, never eaten raw.',
+        '**[Porcini](/how-to-cook-porcini-mushrooms/)** — the deepest flavour of any mushroom here. Superb fresh, and the best dried mushroom by a distance.',
+        '**[Black trumpet](/how-to-cook-black-trumpet-mushrooms/)** — thin, dark, and intensely savoury. Behaves like a seasoning as much as a vegetable.',
+        '**[Matsutake](/how-to-cook-matsutake-mushrooms/)** — spicy and pine-scented, prized in Japan. Cook it simply or the character is wasted.',
+        '**[Lobster mushroom](/how-to-cook-lobster-mushrooms/)** — firm, seafood-scented, holds up to bolder sauces than most.',
+        '**[Shaggy mane](/how-to-cook-shaggy-mane-mushrooms/)** — delicate and short-lived. Cook it the day you pick it up.',
+        '**[Truffle](/how-to-use-truffles/)** — not cooked so much as shaved over finished food at the last moment.'
+      ] },
+      { heading: 'Dried, and the two that are not food', text: [
+        '[Dried mushrooms](/how-to-cook-dried-mushrooms/) are a category rather than a variety, and porcini is the one to buy. Rehydrating gives you both the mushroom and a strong soaking liquid worth more than the mushroom itself.',
+        '[Chaga](/how-to-prepare-chaga/) and [reishi](/how-to-prepare-reishi-mushrooms/) also appear on this site. Neither is a culinary mushroom in the ordinary sense — both are woody, too tough to eat, and prepared as simmered infusions. **The site covers their preparation only, and makes no health claims about either.**'
+      ] },
+      { heading: 'Every variety at a glance', text: 'Flavour and texture decide substitutions far better than the name does. If a recipe calls for something you cannot find, match the row rather than the label.',
+        table: { headings: ['Mushroom', 'Flavour', 'Texture', 'Best method'], rows: [
+          ['[White button](/how-to-cook-button-mushrooms/)', 'Very mild', 'Soft', 'Sauté, soup'],
+          ['[Cremini](/how-to-cook-cremini-mushrooms/)', 'Savoury, mild', 'Firm', 'Sauté, roast'],
+          ['[Portobello](/how-to-cook-portobello-mushrooms/)', 'Savoury, deeper', 'Meaty', 'Grill, roast whole'],
+          ['[Shiitake](/how-to-cook-shiitake-mushrooms/)', 'Deep umami', 'Chewy caps', 'Sear, simmer'],
+          ['[Oyster](/how-to-cook-oyster-mushrooms/)', 'Mild, delicate', 'Layered, tender', 'Tear and crisp'],
+          ['[King oyster](/how-to-cook-king-oyster-mushrooms/)', 'Mild, sweet', 'Dense, scallop-like', 'Sear medallions'],
+          ['[Maitake](/how-to-cook-maitake-mushrooms/)', 'Earthy, rich', 'Frilly, crisps well', 'Tear and sear'],
+          ["[Lion's mane](/how-to-cook-lions-mane-mushrooms/)", 'Mild, sweet', 'Shreddable, crab-like', 'Press and sear'],
+          ['[Enoki](/how-to-cook-enoki-mushrooms/)', 'Very mild', 'Fine, springy', 'Quick sauté, broil'],
+          ['[Shimeji](/how-to-cook-shimeji-mushrooms/)', 'Nutty', 'Firm bite', 'Sauté'],
+          ['[Wood ear](/how-to-cook-wood-ear-mushrooms/)', 'Almost none', 'Crunchy, gelatinous', 'Stir-fry, soup'],
+          ['[Paddy straw](/how-to-cook-paddy-straw-mushrooms/)', 'Mild', 'Soft', 'Stir-fry'],
+          ['[Chanterelle](/how-to-cook-chanterelle-mushrooms/)', 'Fruity, apricot', 'Firm', 'Dry sauté'],
+          ['[Morel](/how-to-cook-morel-mushrooms/)', 'Nutty, intense', 'Spongy, hollow', 'Butter sauté, cooked through'],
+          ['[Porcini](/how-to-cook-porcini-mushrooms/)', 'Deep, nutty', 'Meaty', 'Sear fresh, or rehydrate'],
+          ['[Black trumpet](/how-to-cook-black-trumpet-mushrooms/)', 'Intense, smoky', 'Thin, tender', 'Sauté, sauces'],
+          ['[Matsutake](/how-to-cook-matsutake-mushrooms/)', 'Spicy, pine', 'Firm', 'Simple sear, broth'],
+          ['[Lobster](/how-to-cook-lobster-mushrooms/)', 'Seafood-like', 'Dense', 'Sauté'],
+          ['[Chicken of the woods](/how-to-cook-chicken-of-the-woods/)', 'Mild, lemony', 'Fibrous, poultry-like', 'Sear then cover'],
+          ['[Puffball](/how-to-cook-puffball-mushrooms/)', 'Very mild', 'Custardy in slabs', 'Sear slabs'],
+          ['[Shaggy mane](/how-to-cook-shaggy-mane-mushrooms/)', 'Delicate', 'Soft, fleeting', 'Butter sauté, same day'],
+          ['[Truffle](/how-to-use-truffles/)', 'Intense aroma', 'Firm, shaved raw', 'Shave over finished food']
+        ] } },
+      { heading: 'Choosing by what you are cooking', text: 'Working backwards from the dish is usually faster than working forwards from the mushroom.',
+        bullets: [
+          '**A steak substitute** — king oyster medallions, a portobello cap, or lion\'s mane slabs.',
+          '**Pasta or risotto** — cremini for body, porcini or black trumpet for flavour, both if you can.',
+          '**Soup or broth** — shiitake and dried porcini. Keep the soaking liquid.',
+          '**Stir-fry** — wood ear for crunch, shiitake for savour, enoki added at the end.',
+          '**On toast, as a side** — cremini, oyster, or whatever is best at the market that week.',
+          '**A special occasion** — morel in spring, chanterelle and matsutake in autumn, truffle shaved over any of them.'
+        ] }
+    ],
+    faqs: [
+      { question: 'What is the most versatile mushroom to cook with?', answer: 'Cremini. It browns well, has more flavour than white button, costs little, and works in almost anything. If you keep one mushroom in the fridge, keep that one.' },
+      { question: 'Are button, cremini and portobello different mushrooms?', answer: 'No — they are the same species at three stages of growth. Button is youngest and mildest, cremini is a little older and firmer, and portobello is fully mature. They differ in size and intensity, not in kind.' },
+      { question: 'Which mushrooms taste the most like meat?', answer: 'King oyster, maitake, lion\'s mane and chicken of the woods, mostly because of texture rather than flavour. King oyster stems sear like scallops, lion\'s mane shreds like crab, and chicken of the woods pulls apart like poultry.' },
+      { question: 'Can I substitute one mushroom for another?', answer: 'Usually, if you match texture rather than name. A dense variety substitutes for a dense one, a delicate one for a delicate one. The table above is arranged to make that easy. Cooking times will change, so use the doneness cue rather than the clock.' },
+      { question: 'Which mushrooms are worth buying dried?', answer: 'Porcini, comfortably. Dried porcini has more concentrated flavour than most fresh mushrooms, keeps for a year, and the soaking liquid is a stock in its own right. Dried shiitake is the other one worth keeping.' },
+      { question: 'Is this page a foraging or identification guide?', answer: 'No. Every entry here is about cooking a mushroom you have already obtained safely, from a market or from a wild sample verified by a qualified expert who handled it. Never eat a wild mushroom identified from a photograph, an app, or a comparison against pictures online.' }
+    ],
+    relatedLinks: [
+      { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
+      { href: '/how-to-cut-mushrooms/', label: 'How to cut mushrooms' },
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
+      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms so they stay firm' },
+      { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
+      { href: '/mushroom-cook-time-chart/', label: 'Mushroom cook time chart' }
+    ]
+  },
+  {
     slug: 'how-to-cut-mushrooms', label: 'Cutting mushrooms', badge: 'Knife work', title: 'How to Cut Mushrooms', description: 'Slice mushrooms about 1/4 inch thick for the pan, halve or quarter them for roasting, and tear oyster and maitake by hand rather than cutting them.', minutes: '5 min', updated: '2026-08-31', image: '/images/cookmushroom-cutting-hero.webp', imageAlt: 'Hands slicing cremini mushrooms into even quarter-inch slices on a wooden board', isoTime: 'PT5M', heat: 'n/a', cut: '1/4 inch for the pan', finish: 'Even thickness matters more than shape', showCookTimes: false,
     quickFacts: [
       { label: 'Default cut', value: 'Slices about 1/4 inch / 6 mm' },
@@ -1243,6 +1366,7 @@ const speciesGuides: GuideArticle[] = [
       { question: 'Do I need to remove portobello gills?', answer: 'Only for appearance. The gills are edible, but they release a grey-black colour that muddies anything pale — a cream sauce, a risotto, a light stuffing. Scrape them out with a teaspoon if that matters for the dish.' }
     ],
     relatedLinks: [
+      { href: '/types-of-mushrooms/', label: 'Types of edible mushrooms and how to cook each' },
       { href: '/how-to-cook-king-oyster-mushrooms/', label: 'How to cook king oyster mushrooms' },
       { href: '/how-to-cook-maitake-mushrooms/', label: 'How to cook maitake mushrooms' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },

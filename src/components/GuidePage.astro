@@ -176,7 +176,7 @@ const schema = [contentSchema, breadcrumbSchema];
             <div class="table-wrap compact">
               <table>
                 <thead><tr>{section.table.headings.map((heading) => <th>{heading}</th>)}</tr></thead>
-                <tbody>{section.table.rows.map((row) => <tr>{row.map((cell) => <td>{cell}</td>)}</tr>)}</tbody>
+                <tbody>{section.table.rows.map((row) => <tr>{row.map((cell) => <td set:html={inlineMarkup(cell)} />)}</tr>)}</tbody>
               </table>
             </div>
           )}
