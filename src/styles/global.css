@@ -203,6 +203,17 @@ th { background: var(--th); font-size: .9rem; }
 /* .prose sets a width on every img; the thumbnails opt out. */
 .prose .link-card-thumb { width: 88px; max-height: none; }
 
+/* Guides-index filter. Hidden until its script runs. */
+.filter { margin: 1.5rem 0 0; max-width: 28rem; }
+.filter-label { display: block; color: var(--muted); font-size: .85rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; margin-bottom: .4rem; }
+.filter input {
+  width: 100%; font: inherit; color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: 999px; padding: .7rem 1.1rem;
+}
+.filter input::placeholder { color: var(--muted); }
+.filter-count { color: var(--muted); font-size: .9rem; font-weight: 750; margin: .5rem 0 0; min-height: 1.2em; }
+
 /* Table of contents on long guides and recipes. Open by default so the
    structure is visible (and jump-linkable by search engines); collapsible
    because it sits above the content on a phone. */

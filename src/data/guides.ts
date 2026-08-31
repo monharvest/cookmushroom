@@ -29,6 +29,9 @@ export type GuideArticle = {
   tips: string[];
   pairings: string[];
   mushroomSlug?: string;
+  // Groups the guides index. Species pages are identified by mushroomSlug;
+  // everything else is a method guide unless marked 'storage'.
+  group?: 'storage';
   image?: string; // local path under /public only — never hotlink external images
   imageAlt?: string;
   badge?: string;
@@ -272,7 +275,8 @@ const methodGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-clean-mushrooms', label: 'Cleaning mushrooms', badge: 'Start here', title: 'How to Clean Mushrooms Before Cooking', description: 'Clean mushrooms with a brush, damp towel, or a quick rinse—never a soak. What to use for each variety so they brown instead of steam.', minutes: '4 min', updated: '2026-07-11', isoTime: 'PT5M', prepIsoTime: 'PT2M', heat: 'No heat', cut: 'Clean whole before cutting', finish: 'Dry completely before cooking', showCookTimes: false,
+    slug: 'how-to-clean-mushrooms',
+    group: 'storage', label: 'Cleaning mushrooms', badge: 'Start here', title: 'How to Clean Mushrooms Before Cooking', description: 'Clean mushrooms with a brush, damp towel, or a quick rinse—never a soak. What to use for each variety so they brown instead of steam.', minutes: '4 min', updated: '2026-07-11', isoTime: 'PT5M', prepIsoTime: 'PT2M', heat: 'No heat', cut: 'Clean whole before cutting', finish: 'Dry completely before cooking', showCookTimes: false,
     quickFacts: [
       { label: 'Tools', value: 'Soft brush or damp towel' },
       { label: 'Time', value: '2–5 minutes' },
@@ -330,7 +334,8 @@ const methodGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-store-mushrooms', label: 'Storing mushrooms', badge: 'Start here', title: 'How to Store Mushrooms So They Stay Firm, Not Slimy', description: 'Store mushrooms unwashed in their vented carton or a paper bag on a main fridge shelf, never sealed plastic. Shelf life by variety and when to cook them.', minutes: '6 min', updated: '2026-08-07', isoTime: 'PT2M', prepIsoTime: 'PT1M', heat: 'No heat', cut: 'Store whole; slice only before cooking', finish: 'Cook them before the caps wrinkle', showCookTimes: false,
+    slug: 'how-to-store-mushrooms',
+    group: 'storage', label: 'Storing mushrooms', badge: 'Start here', title: 'How to Store Mushrooms So They Stay Firm, Not Slimy', description: 'Store mushrooms unwashed in their vented carton or a paper bag on a main fridge shelf, never sealed plastic. Shelf life by variety and when to cook them.', minutes: '6 min', updated: '2026-08-07', isoTime: 'PT2M', prepIsoTime: 'PT1M', heat: 'No heat', cut: 'Store whole; slice only before cooking', finish: 'Cook them before the caps wrinkle', showCookTimes: false,
     quickFacts: [
       { label: 'Where', value: 'Main fridge shelf, at or below 40°F / 4°C' },
       { label: 'Wrapper', value: 'Vented carton or paper bag' },
@@ -426,7 +431,8 @@ const methodGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-tell-if-mushrooms-are-bad', label: 'Spoiled mushrooms', badge: 'Safety check', title: 'How to Tell If Mushrooms Are Bad (Slime, Smell, Spots)', description: 'Mushrooms have gone bad when they feel slimy, smell sour or fishy, or grow fuzzy mold. Wrinkles and dark caps are usually still fine to cook.', minutes: '6 min', updated: '2026-08-17', isoTime: 'PT2M', prepIsoTime: 'PT1M', heat: 'No heat', cut: 'Halve one mushroom to check the inside', finish: 'Cook the good ones tonight', showCookTimes: false,
+    slug: 'how-to-tell-if-mushrooms-are-bad',
+    group: 'storage', label: 'Spoiled mushrooms', badge: 'Safety check', title: 'How to Tell If Mushrooms Are Bad (Slime, Smell, Spots)', description: 'Mushrooms have gone bad when they feel slimy, smell sour or fishy, or grow fuzzy mold. Wrinkles and dark caps are usually still fine to cook.', minutes: '6 min', updated: '2026-08-17', isoTime: 'PT2M', prepIsoTime: 'PT1M', heat: 'No heat', cut: 'Halve one mushroom to check the inside', finish: 'Cook the good ones tonight', showCookTimes: false,
     quickFacts: [
       { label: 'Throw out', value: 'Slime, fuzz, sour or fishy smell' },
       { label: 'Still good', value: 'Wrinkled, dry, darkened, open gills' },
@@ -526,7 +532,8 @@ const methodGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-freeze-mushrooms', label: 'Freezing mushrooms', badge: 'Cook first', title: 'How to Freeze Mushrooms (Sauté First, Not Raw)', description: 'Freeze mushrooms after cooking, not raw: sauté or steam them first, cool them completely, then freeze flat in portions for up to 3 months.', minutes: '6 min', updated: '2026-08-17', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high in the pan, then 0°F / -18°C', cut: 'Slice or quarter before cooking', finish: 'Cool completely, then freeze flat', showCookTimes: false,
+    slug: 'how-to-freeze-mushrooms',
+    group: 'storage', label: 'Freezing mushrooms', badge: 'Cook first', title: 'How to Freeze Mushrooms (Sauté First, Not Raw)', description: 'Freeze mushrooms after cooking, not raw: sauté or steam them first, cool them completely, then freeze flat in portions for up to 3 months.', minutes: '6 min', updated: '2026-08-17', isoTime: 'PT12M', prepIsoTime: 'PT10M', heat: 'Medium-high in the pan, then 0°F / -18°C', cut: 'Slice or quarter before cooking', finish: 'Cool completely, then freeze flat', showCookTimes: false,
     quickFacts: [
       { label: 'Best method', value: 'Sauté, cool, then freeze' },
       { label: 'Raw freezing', value: 'Only for mushrooms headed to soup' },
@@ -619,7 +626,8 @@ const methodGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-dry-mushrooms', label: 'Drying mushrooms', badge: 'Keeps a year', title: 'How to Dry Mushrooms in a Dehydrator or Oven', description: 'Dry mushrooms at 125–135°F until they snap rather than bend — 4 to 10 hours in a dehydrator, 2 to 4 in an oven. Slicing, conditioning, and storage.', minutes: '7 min', updated: '2026-08-17', isoTime: 'PT6H', prepIsoTime: 'PT15M', heat: '125–135°F / 52–57°C', cut: 'Even 1/4-inch slices', finish: 'Condition for a week, then store airtight', showCookTimes: false,
+    slug: 'how-to-dry-mushrooms',
+    group: 'storage', label: 'Drying mushrooms', badge: 'Keeps a year', title: 'How to Dry Mushrooms in a Dehydrator or Oven', description: 'Dry mushrooms at 125–135°F until they snap rather than bend — 4 to 10 hours in a dehydrator, 2 to 4 in an oven. Slicing, conditioning, and storage.', minutes: '7 min', updated: '2026-08-17', isoTime: 'PT6H', prepIsoTime: 'PT15M', heat: '125–135°F / 52–57°C', cut: 'Even 1/4-inch slices', finish: 'Condition for a week, then store airtight', showCookTimes: false,
     quickFacts: [
       { label: 'Temperature', value: '125–135°F / 52–57°C' },
       { label: 'Cut', value: 'Even slices, about 1/4 inch' },
