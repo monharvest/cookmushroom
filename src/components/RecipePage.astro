@@ -52,8 +52,8 @@ const minutesOf = (iso: string) => iso.match(/^PT(\d+)M$/)?.[1] ?? iso;
 // fixes, storage, FAQs) push every guide to ~8 entries regardless of depth, so
 // a 750-word page would get the same contents box as a 2,300-word one. Gate on
 // how much text is actually on the page instead.
-const countWords = (...parts: (string | undefined)[]) =>
-  parts.filter(Boolean).join(' ').trim().split(/\s+/).filter(Boolean).length;
+const countWords = (...parts: (string | string[] | undefined)[]) =>
+  parts.flat().filter(Boolean).join(' ').trim().split(/\s+/).filter(Boolean).length;
 
 // Same construction as GuidePage: built from the rendered data, tail skipped.
 const slugify = (text: string) => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -105,7 +105,7 @@ const showToc = toc.length >= 5 && recipeWords >= 1200;
       {recipe.sections?.map((section) => (
         <section id={slugify(section.heading)}>
           <h2>{section.heading}</h2>
-          {section.text && <p>{section.text}</p>}
+          {section.text && (Array.isArray(section.text) ? section.text.map((para) => <p>{para}</p>) : <p>{section.text}</p>)}
           {section.quote && <blockquote>{section.quote}</blockquote>}
           {section.bullets && <ul>{section.bullets.map((item) => <li>{item}</li>)}</ul>}
           {section.ordered && <ol>{section.ordered.map((item) => <li>{item}</li>)}</ol>}
