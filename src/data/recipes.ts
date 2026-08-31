@@ -9,6 +9,9 @@ export type RecipeArticle = {
   image: string;
   imageAlt: string;
   recipeName: string;
+  recipeCategory?: string;
+  cookingMethod?: string;
+  recipeCuisine?: string;
   keywords: string[]; // recipe-specific schema keywords; pairings are appended automatically
   cardMushroom: string; // label shown on recipe cards
   cardGuide: string; // slug of the guide whose "Use it in" section links this recipe
@@ -45,6 +48,7 @@ export const recipeArticles: RecipeArticle[] = [
     prepIsoTime: 'PT10M',
     cookIsoTime: 'PT25M',
     totalIsoTime: 'PT35M',
+    recipeCategory: 'Side dish', cookingMethod: 'Sautéing',
     ingredients: [
       '1 lb (454 g) cremini mushrooms, wiped clean and sliced 1/4 inch thick',
       '2 medium yellow onions (about 400 g), halved and thinly sliced',
@@ -112,6 +116,7 @@ export const recipeArticles: RecipeArticle[] = [
     prepIsoTime: 'PT10M',
     cookIsoTime: 'PT20M',
     totalIsoTime: 'PT30M',
+    recipeCategory: 'Main course', cookingMethod: 'Sautéing', recipeCuisine: 'Italian',
     ingredients: [
       '12 oz (340 g) spaghetti or linguine',
       '1 lb (454 g) cremini mushrooms, wiped clean and sliced 1/4 inch thick',
@@ -186,6 +191,7 @@ export const recipeArticles: RecipeArticle[] = [
     prepIsoTime: 'PT15M',
     cookIsoTime: 'PT30M',
     totalIsoTime: 'PT45M',
+    recipeCategory: 'Main course', cookingMethod: 'Simmering', recipeCuisine: 'Japanese',
     ingredients: [
       '1 oz (28 g) dried shiitake mushrooms',
       '1 piece kombu, about 4 inches square',
