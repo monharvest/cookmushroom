@@ -101,3 +101,73 @@ the seed.
 ## Attempt log
 
 *(none yet)*
+
+---
+---
+
+# Hero image brief — cutting mushrooms
+
+**Status: NEEDED.** `/how-to-cut-mushrooms/` is written, builds clean, and is committed
+but **not deployed** for the same reason as the puffball page above.
+
+- **File name:** `cookmushroom-cutting-hero`
+- **Page:** `/how-to-cut-mushrooms/`
+- **Why this page:** `how to cut mushrooms` runs **2,900/mo at SD 27** (Ubersuggest, US,
+  pulled 2026-08-31) — twelve times the volume of the fluting page it replaced in calendar
+  slot 3.4, and lower difficulty. Fluting ships as a section inside it.
+
+---
+
+## THE PROMPT — use this one
+
+Paste verbatim. Plain prose, no markdown, on purpose.
+
+> Editorial overhead food photograph of cremini mushrooms being sliced on a pale wooden
+> board. A chef's knife rests mid-cut through one mushroom, and beside it sits a neat fan
+> of finished slices, each one about a quarter of an inch thick and clearly even with the
+> others. Each slice shows the classic mushroom silhouette in cross-section — the domed
+> cap and the stem below it in one piece. Two or three whole unsliced mushrooms sit at the
+> edge of the board for contrast. The cut faces are pale cream and matte, freshly cut and
+> not browned. Warm natural side light from the left, shallow depth of field, dark neutral
+> background beyond the board. Landscape 3:2. Clean and uncluttered — no pan, no cooked
+> food, no sauce, no clutter of other vegetables. No people, no faces, no text, no labels,
+> no watermark.
+
+## Reject it if
+
+- **The slices are visibly uneven in thickness.** The whole page argues that even thickness
+  is what matters. A hero of ragged slices undercuts it.
+- The slices are **thick wedges or chunks** rather than slices, or so thin they are
+  translucent.
+- The cut faces are **brown, grey, or wet-looking**. These are freshly cut and should read
+  pale, dry and matte.
+- **A hand or forearm is prominently in frame.** A knife alone is fine and is what the
+  prompt asks for; the house style has no people in it. If a candidate is otherwise
+  excellent and shows only fingertips steadying a mushroom, that is a judgement call —
+  everything else on the site is food-only.
+- The mushrooms are **not button or cremini**. This is the everyday-mushroom page; it should
+  not show oyster, shiitake or anything exotic.
+- Cooked mushrooms, a skillet, or any heat in the frame. This page is about the board, not
+  the pan.
+
+## Then
+
+Same as above:
+
+```bash
+./scripts/make-hero.sh ~/Downloads/cutting.png cookmushroom-cutting-hero
+```
+
+```bash
+./scripts/make-og-cards.sh
+```
+
+## House style
+
+Board-and-knife rather than pan, but otherwise identical to the rest of the site: warm
+side light, dark neutral background, shallow depth of field, food only, no text or
+watermark.
+
+## Attempt log
+
+*(none yet)*

@@ -193,6 +193,7 @@ const methodGuides: GuideArticle[] = [
       { heading: 'Before you start', text: 'Wipe the mushrooms with a damp towel or brush off dirt. Trim the dry ends, then cut the mushrooms into similar-sized pieces so they finish together.' }
     ],
     relatedLinks: [
+      { href: '/how-to-cut-mushrooms/', label: 'How to cut mushrooms' },
       { href: '/how-to-cook-puffball-mushrooms/', label: 'How to cook puffball mushrooms' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
@@ -326,6 +327,7 @@ const methodGuides: GuideArticle[] = [
       'Pre-sliced mushrooms: skip rinsing unless dirt is visible, then dry the cut sides well.'
     ],
     relatedLinks: [
+      { href: '/how-to-cut-mushrooms/', label: 'How to cut mushrooms' },
       { href: '/how-to-cook-cremini-mushrooms/', label: 'How to cook cremini mushrooms' },
       { href: '/how-to-cook-oyster-mushrooms/', label: 'How to cook oyster mushrooms' },
       { href: '/how-to-cook-chanterelle-mushrooms/', label: 'How to cook chanterelle mushrooms' },
@@ -1102,6 +1104,70 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
+    slug: 'how-to-cut-mushrooms', label: 'Cutting mushrooms', badge: 'Knife work', title: 'How to Cut Mushrooms', description: 'Slice mushrooms about 1/4 inch thick for the pan, halve or quarter them for roasting, and tear oyster and maitake by hand rather than cutting them.', minutes: '5 min', updated: '2026-08-31', image: '/images/cookmushroom-cutting-hero.webp', imageAlt: 'Hands slicing cremini mushrooms into even quarter-inch slices on a wooden board', isoTime: 'PT5M', heat: 'n/a', cut: '1/4 inch for the pan', finish: 'Even thickness matters more than shape', showCookTimes: false,
+    quickFacts: [
+      { label: 'Default cut', value: 'Slices about 1/4 inch / 6 mm' },
+      { label: 'For roasting', value: 'Halves or quarters' },
+      { label: 'Tear, do not cut', value: 'Oyster, maitake, lion\'s mane' },
+      { label: 'Rule', value: 'Even thickness beats neat shapes' }
+    ],
+    steps: [
+      'Clean and dry the mushrooms first. A damp mushroom slides under the knife and a wet one will steam rather than brown later.',
+      'Trim the very base of the stem — the dry, sometimes gritty end where it met the growing medium. On most mushrooms that is a few millimetres, not the whole stem.',
+      'Set the mushroom stem-side down on the board so it sits flat and cannot roll.',
+      'Slice straight down through cap and stem together, keeping every slice the same thickness. About 1/4 inch (6 mm) suits almost everything going into a pan.',
+      'For roasting or grilling, halve small mushrooms and quarter large ones instead of slicing, so they survive the longer heat without drying out.',
+      'Keep the pieces from one batch the same size. Mixed sizes are the most common reason some pieces burn while others are still pale.'
+    ],
+    tips: [
+      'A thin, genuinely sharp blade matters more than an expensive one. A blunt knife crushes the cap and tears the gills.',
+      'Cut mushrooms just before cooking. Cut surfaces darken and dry within the hour.',
+      'Do not cut to a ruler. Even is what matters, not exact.',
+      'An egg slicer will slice a bowl of button mushrooms in seconds if you are doing a lot of them.'
+    ],
+    pairings: ['a wide skillet', 'a hot oven', 'skewers', 'a sharp paring knife'],
+    sections: [
+      { heading: 'The default: quarter-inch slices', text: 'If you do not know what a recipe wants, slice about 1/4 inch (6 mm) thick and you will rarely be wrong. That thickness is enough for the slice to hold its shape and take colour on both faces, and thin enough to cook through in the time a pan takes to dry out. Thinner slices shrink to almost nothing and tend to go leathery. Thicker ones stay pale in the middle while the outside browns. Slice down through the cap and stem in one motion so each piece keeps that classic mushroom silhouette, which is partly cosmetic and partly practical — the stem section holds the slice together.' },
+      { heading: 'Halves and quarters for the oven and the grill', text: 'Longer, drier heat wants a chunkier piece. Roasting a tray of 1/4-inch slices gives you crisps; roasting halves and quarters gives you browned edges and a tender centre, which is what most people actually want. Halve anything up to about an inch across, quarter anything larger, and leave very small button mushrooms whole. The same logic applies on skewers, where a flat slice will spin and fall apart and a quarter will not.' },
+      { heading: 'When to tear instead of cut', text: 'Some mushrooms are better pulled apart by hand. Oyster, maitake and lion\'s mane all grow in layered clusters with a natural grain, and tearing along that grain gives you ragged edges with far more surface area than a knife leaves. Those ragged edges are what crisp up. A clean cut face browns flat and evenly; a torn edge frays and catches. Tear these into pieces roughly the size you want on the plate, and trim only the dense base where the cluster was attached.' },
+      { heading: 'Stems: keep, trim, or bin', text: 'Most stems are perfectly good food and get thrown away for no reason. On button, cremini and portobello the stem is the same flesh as the cap and only the dry base needs removing. Shiitake is the real exception: its stem stays tough and woody no matter how long you cook it, so pull it off and keep it for stock rather than the pan. Enoki and shimeji grow from a solid clump at the base — cut that off in one go and the strands separate on their own. On a portobello you may also want to scrape the dark gills out with a teaspoon, not for safety but because they bleed a grey-black colour into anything pale, like a cream sauce or a risotto.' },
+      { heading: 'The right cut for each mushroom', text: 'Shape and structure differ enough between varieties that the default slice is not always the best answer. This is the short version for the ones you are most likely to have in the kitchen.', table: { headings: ['Mushroom', 'Best cut', 'Why'], rows: [
+        ['Button / cremini', 'Slices 1/4 inch, or quarters', 'Uniform flesh; cap and stem cook at the same rate.'],
+        ['Portobello', 'Whole cap, or 1/2-inch planks', 'Big enough to be the main item; scrape the gills for pale dishes.'],
+        ['Shiitake', 'Caps sliced, stems removed', 'Stems stay woody however long you cook them. Keep them for stock.'],
+        ['Oyster', 'Torn along the grain', 'Ragged edges crisp; a flat cut face browns dully.'],
+        ['King oyster', 'Crosswise medallions 3/4 inch', 'The thick stem is the good part; medallions sear like scallops.'],
+        ['Maitake', 'Torn into fronds', 'The cluster separates naturally; frilly edges catch the heat.'],
+        ["Lion's mane", 'Torn or 1/2-inch slabs', 'Slabs press and sear; torn pieces crisp. Both work, cubes do not.'],
+        ['Enoki', 'Base cut off, strands separated', 'One cut at the clump releases the whole bunch.'],
+        ['Shimeji', 'Base cut off, clusters split', 'Same as enoki; keep small clusters together.'],
+        ['Chanterelle', 'Halved or torn lengthways', 'Keeps the trumpet shape, which is half the appeal.'],
+        ['Morel', 'Halved lengthways', 'Opens the hollow interior so it can be checked and rinsed.'],
+        ['Puffball', 'Slabs 1/2 inch', 'Broad flat faces brown; cubes release water and stew.']
+      ] } },
+      { heading: 'Fluting: the decorative spiral cut', text: 'Fluting is the classic French garnish cut — a series of shallow curved grooves carved from the crown of a button mushroom down to its edge, giving a spiral, almost flower-like pattern. It is pure decoration and it is fiddly, so it belongs on a plated dish rather than a weeknight pan. Use small, firm, very white button mushrooms and a small sharp paring knife. Hold the mushroom in your non-knife hand, rest the blade near the centre of the cap at a shallow angle, and rotate the mushroom against the blade while drawing the knife down and outward, so the mushroom turns and the knife barely moves. Each pass lifts a thin curl and leaves one groove. Space five or six grooves evenly around the cap. Fluted mushrooms are usually cooked gently in butter with a little lemon juice, which keeps them pale and makes the grooves stand out; browning them hard defeats the point. Expect to waste the first several while you find the angle.' },
+      { heading: 'Cut size changes cook time', text: 'Every time you change the cut you change the timing, which is why a recipe that says "8 minutes" is really saying "8 minutes for this thickness". Thinner slices give up their water faster and reach the browning stage sooner. Quarters take longer to get heat into the middle and want a lower, longer heat. If you cut differently from a recipe, expect to adjust — and use the doneness cue rather than the clock. The cook-time chart lists times by mushroom and method, and every one of them assumes an even cut.' }
+    ],
+    faqs: [
+      { question: 'How thick should I slice mushrooms?', answer: 'About 1/4 inch (6 mm) for anything going into a pan. Thinner slices shrink and toughen; thicker ones stay pale in the middle. For roasting or grilling, halve or quarter instead of slicing.' },
+      { question: 'Should I cut the stems off mushrooms?', answer: 'Usually no — trim the dry base and slice the rest along with the cap. The exception is shiitake, whose stems stay woody however long you cook them; pull those off and save them for stock.' },
+      { question: 'Which mushrooms should I tear instead of cut?', answer: 'Oyster, maitake and lion\'s mane. They grow in layered clusters with a grain, and tearing along it leaves ragged edges that crisp far better than a flat knife cut.' },
+      { question: 'What is fluting a mushroom?', answer: 'A decorative cut: shallow curved grooves carved from the crown of a button mushroom outward, giving a spiral pattern. It is a garnish technique, done with a small paring knife on firm white buttons, and usually cooked gently in butter so the mushroom stays pale and the grooves show.' },
+      { question: 'Can I cut mushrooms ahead of time?', answer: 'Only just ahead. Cut surfaces darken and dry within about an hour. If you must prep early, keep the pieces in a paper-lined container in the fridge for a few hours at most, never sealed in plastic.' },
+      { question: 'Do I need to remove portobello gills?', answer: 'Only for appearance. The gills are edible, but they release a grey-black colour that muddies anything pale — a cream sauce, a risotto, a light stuffing. Scrape them out with a teaspoon if that matters for the dish.' }
+    ],
+    relatedLinks: [
+      { href: '/how-to-cook-king-oyster-mushrooms/', label: 'How to cook king oyster mushrooms' },
+      { href: '/how-to-cook-maitake-mushrooms/', label: 'How to cook maitake mushrooms' },
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
+      { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
+      { href: '/how-to-cook-portobello-mushrooms/', label: 'How to cook portobello mushrooms' },
+      { href: '/how-to-cook-shiitake-mushrooms/', label: 'How to cook shiitake mushrooms' },
+      { href: '/how-to-cook-oyster-mushrooms/', label: 'How to cook oyster mushrooms' },
+      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms so they stay firm' }
+    ]
+  },
+  {
     slug: 'how-to-cook-puffball-mushrooms', mushroomSlug: 'puffball', label: 'Puffball', badge: 'Slice test first', title: 'How to Cook Puffball Mushrooms', description: 'Puffball cooks like a mild steak: cut into slabs, salt, and sear hot. Slice one open first — the inside must be pure, solid white all the way through.', minutes: '7 min', updated: '2026-08-31', image: '/images/cookmushroom-puffball-hero.webp', imageAlt: 'Golden seared giant puffball slabs with thyme and garlic in a cast-iron skillet', isoTime: 'PT8M', prepIsoTime: 'PT15M', heat: 'Medium-high', cut: 'Slabs 1/2 inch thick, skin trimmed', finish: 'Butter, lemon, and parsley',
     recipeName: 'Seared Puffball Steaks', yieldText: '2 to 3 side servings',
     ingredients: [
@@ -1449,6 +1515,7 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'Buy and prep', text: 'Cultivated oyster mushrooms are the simplest choice for this recipe. If using wild-harvested oyster mushrooms, use only market-purchased specimens or mushrooms verified by a qualified expert. This guide does not identify mushrooms or establish that a wild find is safe to eat.' }
     ],
     relatedLinks: [
+      { href: '/how-to-cut-mushrooms/', label: 'How to cut mushrooms' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
       { href: '/how-to-grill-mushrooms/', label: 'How to grill mushrooms' },
@@ -2278,6 +2345,7 @@ const speciesGuides: GuideArticle[] = [
       'Mediterranean: add 1/2 tsp dried oregano and serve with crumbled feta and sliced cucumber.'
     ],
     relatedLinks: [
+      { href: '/how-to-cut-mushrooms/', label: 'How to cut mushrooms' },
       { href: '/how-to-grill-mushrooms/', label: 'How to grill mushrooms' },
       { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
       { href: '/how-to-cook-button-mushrooms/', label: 'How to cook button mushrooms' },
