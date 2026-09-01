@@ -107,7 +107,7 @@ const contentSchema = guide.ingredients
       recipeCuisine: guide.recipeCuisine,
       keywords: [guide.label, 'mushroom recipe', ...guide.pairings].join(', '),
       recipeIngredient: guide.ingredients,
-      recipeInstructions: guide.steps.map((text, index) => ({ '@type': 'HowToStep', position: index + 1, text })),
+      recipeInstructions: guide.steps.map((text, index) => ({ '@type': 'HowToStep', position: index + 1, text, url: `${pageUrl}#step-${index + 1}` })),
       mainEntityOfPage: pageUrl,
     }
   : {
@@ -201,7 +201,7 @@ const schema = [contentSchema, breadcrumbSchema];
           <h3>Instructions</h3>
           <ol class="checklist">
             {guide.steps.map((step, index) => (
-              <li><label><input type="checkbox" data-check={`step-${index}`} /><span>{step}</span></label></li>
+              <li id={`step-${index + 1}`}><label><input type="checkbox" data-check={`step-${index}`} /><span>{step}</span></label></li>
             ))}
           </ol>
         </section>
