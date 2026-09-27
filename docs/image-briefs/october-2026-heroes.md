@@ -1,10 +1,11 @@
 # Hero image brief — mushroom stuffing
 
-**Status: NEEDED.** `/mushroom-stuffing/` is written, builds clean (0 diagnostics) and is
-committed locally but **not deployed** — the publication gate forbids a broken image
-reference. **Target: live by October 10.** Thanksgiving is November 26, and Google is
-indexing this site slowly (see the 2026-09-27 audit note in the content calendar), so the
-usual 3–4 weeks of lead time is not enough.
+**Status: SHIPPED 2026-09-27.** Attempt 1 accepted and live on `/mushroom-stuffing/`,
+13 days ahead of the October 10 target. Native 3:2 (1248×832, quality model). Crisp
+golden top, browned mushrooms, sage, white rectangular dish, spoon in the scooped corner.
+Visual gate passed against every reject criterion; two minor notes, neither a reject — a
+few mushroom slices near the spoon are only lightly browned, and the scooped corner reads
+softer than the page's "not soggy" pitch.
 
 - **File name:** `cookmushroom-mushroom-stuffing-hero`
 - **Page:** `/mushroom-stuffing/`
@@ -76,4 +77,4 @@ itself.
 
 ## Attempt log
 
-*(none yet)*
+- **Attempt 1 (accepted 2026-09-27):** Grok Imagine quality, native 3:2 (1248×832 JPEG). White rectangular dish, crisp uneven golden top, browned cremini slices, sage and parsley, spoon in a scooped moist corner. No meat, cheese, or seasonal props. Full-size WebP 109.9 KB (112,610 bytes). Not pushed.

@@ -97,7 +97,7 @@ US Thanksgiving (Nov 26, 2026) drives massive recipe search volume. Publish holi
 
 | # | URL | Type | Why now |
 |---|---|---|---|
-| 4.1 | ~~`/mushroom-gravy/`~~ → `/mushroom-stuffing/` | Recipe | **Written 2026-09-27, hero pending** — ~2,290 words, Recipe schema, two tables (mushroom mix, make-ahead plan), 8 FAQs, backlinks from 4 pages (dried mushrooms, porcini, cremini, cutting). Committed locally; not deployed until `cookmushroom-mushroom-stuffing-hero.webp` exists — brief in `docs/image-briefs/october-2026-heroes.md`. **Live by Oct 10.** Replaced gravy on the data in the reorder note above. |
+| 4.1 | ~~`/mushroom-gravy/`~~ → `/mushroom-stuffing/` | Recipe | **Shipped 2026-09-27** — ~2,290 words, Recipe schema, two tables (mushroom mix, make-ahead plan), 8 FAQs, backlinks from 4 pages (dried mushrooms, porcini, cremini, cutting). Hero brief: `docs/image-briefs/october-2026-heroes.md`. Replaced gravy on the data in the reorder note above. |
 | 4.2 | `/stuffed-mushrooms/` | Recipe | **Next up.** Oven (party batch) and air fryer (small batch) in one page, aimed at `air fryer stuffed mushrooms` 1,300/mo **SD 20** (Dec 1,900; SERP DA 22–34). The head term (49,500/mo, SD 50, Nov–Dec 110,000) is a long-run bonus. Cremini/button base → links both guides and the air fryer guide. Publish by ~Oct 25. |
 | 4.3 | `/mushroom-gravy/` | Recipe | **Deferred 2026-09-27:** 12,100/mo but SD 50, and the long tail is SD 35–50 bar sub-300 terms. It still peaks at 33,100 every November — revisit for 2027 once pages are indexing. |
 | 4.4 | `/creamy-mushroom-soup/`, `/mushroom-risotto/` | Recipe | **Deferred 2026-09-27:** SD 56 and SD 70. Not winnable at DA 7 this season. |

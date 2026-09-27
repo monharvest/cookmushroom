@@ -4,7 +4,7 @@ Read this first. It is the persistent memory for any agent (Hermes, Claude, or o
 
 ## What this project is
 
-cookmushroom.com — an Astro static site about cooking mushrooms, deployed automatically by Cloudflare on push to `origin/main`. 34 guides + 4 recipes (`/mushroom-stuffing/` awaiting its hero). Public author byline: **Ana** (Person schema); CookMushroom is the publisher Organization.
+cookmushroom.com — an Astro static site about cooking mushrooms, deployed automatically by Cloudflare on push to `origin/main`. 34 guides + 4 recipes. Public author byline: **Ana** (Person schema); CookMushroom is the publisher Organization.
 
 **Indexing is the bottleneck, not technical SEO** (audit 2026-09-27): `site:cookmushroom.com` shows ~4 of 48 pages indexed. The likely cause is ~1,800 legacy auto-posted URLs from 2025–Jan 2026, all 404 now. Pick keywords with SD ≲25 and a weak live SERP, publish seasonal pages 6+ weeks early, and re-check indexing with `site:` queries (GSC is user-only).
 
