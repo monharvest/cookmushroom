@@ -20,7 +20,8 @@ made=0
 skipped=0
 
 for src in "$out"/*.webp; do
-  case "$src" in *-600.webp|*-900.webp) continue ;; esac
+  # Size variants and schema crops are not heroes.
+  case "$src" in *-600.webp|*-900.webp|*-16x9.webp|*-4x3.webp|*-1x1.webp) continue ;; esac
   card="${src%.webp}-og.jpg"
   if [ -f "$card" ] && [ "$force" != "--force" ]; then
     skipped=$((skipped + 1))

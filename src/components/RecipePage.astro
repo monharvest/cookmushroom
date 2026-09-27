@@ -1,4 +1,6 @@
 ---
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 import Layout from '../layouts/Layout.astro';
 import type { RecipeArticle } from '../data/recipes';
 import ShareRow from './ShareRow.astro';
@@ -10,6 +12,17 @@ const { recipe } = Astro.props as { recipe: RecipeArticle };
 const seoTitle = recipe.title.length + ' | CookMushroom'.length <= 60 ? `${recipe.title} | CookMushroom` : recipe.title;
 const updatedDisplay = new Date(`${recipe.updated}T00:00:00Z`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 const imageUrl = new URL(recipe.image, 'https://cookmushroom.com').toString();
+// Google's Recipe docs ask for 16:9, 4:3 and 1:1 images, which carousels and
+// the square thumbnail use instead of cropping the 3:2 hero themselves. The
+// crops come from scripts/make-schema-crops.sh; only the ones on disk are
+// listed, so a recipe without them still emits valid schema with the hero alone.
+const schemaImages = [
+  imageUrl,
+  ...['16x9', '4x3', '1x1']
+    .map((ratio) => recipe.image.replace(/\.webp$/, `-${ratio}.webp`))
+    .filter((path) => existsSync(join(process.cwd(), 'public', path)))
+    .map((path) => new URL(path, 'https://cookmushroom.com').toString()),
+];
 const heroImageSizes = '(max-width: 720px) 100vw, (max-width: 1120px) 90vw, 960px';
 const heroImageSrcset = [600, 900, 1200].map((width) => `${width === 1200 ? recipe.image : recipe.image.replace(/\.webp$/, `-${width}.webp`)} ${width}w`).join(', ');
 const author = { '@type': 'Person', name: 'Ana' };
@@ -25,7 +38,7 @@ const schema = {
   '@type': 'Recipe',
   name: recipe.recipeName,
   description: recipe.description,
-  image: imageUrl,
+  image: schemaImages.length > 1 ? schemaImages : imageUrl,
   author,
   publisher,
   datePublished: recipe.updated,
