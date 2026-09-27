@@ -4,7 +4,9 @@ Read this first. It is the persistent memory for any agent (Hermes, Claude, or o
 
 ## What this project is
 
-cookmushroom.com — an Astro static site about cooking mushrooms, deployed automatically by Cloudflare on push to `origin/main`. 34 guides + 3 recipes. Public author byline: **Ana** (Person schema); CookMushroom is the publisher Organization.
+cookmushroom.com — an Astro static site about cooking mushrooms, deployed automatically by Cloudflare on push to `origin/main`. 34 guides + 4 recipes (`/mushroom-stuffing/` awaiting its hero). Public author byline: **Ana** (Person schema); CookMushroom is the publisher Organization.
+
+**Indexing is the bottleneck, not technical SEO** (audit 2026-09-27): `site:cookmushroom.com` shows ~4 of 48 pages indexed. The likely cause is ~1,800 legacy auto-posted URLs from 2025–Jan 2026, all 404 now. Pick keywords with SD ≲25 and a weak live SERP, publish seasonal pages 6+ weeks early, and re-check indexing with `site:` queries (GSC is user-only).
 
 ## Where the plan lives
 
@@ -17,7 +19,7 @@ cookmushroom.com — an Astro static site about cooking mushrooms, deployed auto
 
 - Guides: `src/data/guides.ts` (`GuideArticle[]`), rendered by `src/pages/[slug].astro`. `ingredients` present → Recipe schema; absent → Article schema. `quickFacts` overrides the default Heat/Cut/Time/Finish grid (see `how-to-clean-mushrooms` for the pattern). A `GuideSection` may carry an optional `table: { headings, rows }` — see the shelf-life table in `how-to-store-mushrooms`.
 - Engagement furniture, on every guide and recipe: `src/components/ShareRow.astro` (Pinterest / Facebook / email links, plus JS-enhanced native share, copy-link and print; each action fires a GA `share` event) and `src/components/RelatedCards.astro`, which renders `relatedLinks` as thumbnail cards by resolving each href against `guideArticles` + `recipeArticles`. A link to a page in neither collection (e.g. the cook-time chart) degrades to a tinted tile — fine, but prefer linking guides and recipes. `src/styles/global.css` carries an `@media print` block so a reader can cook from paper; ShareRow's `beforeprint` handler opens collapsed FAQs so nothing is lost.
-- Recipes: `src/data/recipes.ts` (`RecipeArticle[]`) + `src/components/RecipePage.astro`. Adding a recipe = one entry in `recipes.ts`, nothing else. Recipes accept optional `sections` and `faqs` (same shapes as guides): sections render above the recipe card, FAQs below storage. **Use them on every new recipe** — without them a recipe page is a bare card and lands ~750 words.
+- Recipes: `src/data/recipes.ts` (`RecipeArticle[]`) + `src/components/RecipePage.astro`. Adding a recipe = one entry in `recipes.ts`, nothing else. Recipes accept optional `sections` and `faqs` (same shapes as guides, including section `table`s): sections render above the recipe card, FAQs below storage. ISO times may carry hours (`PT1H25M`); the card shows "1 hr 25 min". **Use them on every new recipe** — without them a recipe page is a bare card and lands ~750 words.
 - Routing: `src/pages/[slug].astro` is a thin router over BOTH collections — guides and recipes share the root URL space (`/<slug>/`). It dispatches to `GuidePage.astro` or `RecipePage.astro`. Guide body markup lives in `src/components/GuidePage.astro`, not in the route.
 - Recipe cards on guide pages come from `recipeCards` in `guides.ts`, which derives from `recipeArticles`; each recipe's `cardGuide` decides which guide's "Use it in" section shows it, and `keywords`/`cardMushroom` are per-recipe (never hardcode these in the component).
 - Cook-time chart rows: `cookTimes` in `guides.ts`. Recipe cards: `recipeCards` in `guides.ts`.

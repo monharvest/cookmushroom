@@ -51,7 +51,12 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 3, name: recipe.title, item: pageUrl },
   ],
 };
-const minutesOf = (iso: string) => iso.match(/^PT(\d+)M$/)?.[1] ?? iso;
+// PT25M → "25 min"; PT1H25M → "1 hr 25 min". A long bake (stuffing) needs the hour.
+const durationOf = (iso: string) => {
+  const match = iso.match(/^PT(?:(\d+)H)?(?:(\d+)M)?$/);
+  if (!match || (!match[1] && !match[2])) return iso;
+  return [match[1] && `${match[1]} hr`, match[2] && `${match[2]} min`].filter(Boolean).join(' ');
+};
 // Section count doesn't discriminate: the fixed sections (method, cook times,
 // fixes, storage, FAQs) push every guide to ~8 entries regardless of depth, so
 // a 750-word page would get the same contents box as a 2,300-word one. Gate on
@@ -113,11 +118,19 @@ const showToc = toc.length >= 5 && recipeWords >= 1200;
           {section.quote && <blockquote>{section.quote}</blockquote>}
           {section.bullets && <ul>{section.bullets.map((item) => <li set:html={inlineMarkup(item)} />)}</ul>}
           {section.ordered && <ol>{section.ordered.map((item) => <li set:html={inlineMarkup(item)} />)}</ol>}
+          {section.table && (
+            <div class="table-wrap compact">
+              <table>
+                <thead><tr>{section.table.headings.map((heading) => <th>{heading}</th>)}</tr></thead>
+                <tbody>{section.table.rows.map((row) => <tr>{row.map((cell) => <td set:html={inlineMarkup(cell)} />)}</tr>)}</tbody>
+              </table>
+            </div>
+          )}
         </section>
       ))}
       <section id="recipe" class="recipe-block">
         <h2>{recipe.recipeName}</h2>
-        <p class="recipe-meta"><span>Prep: {minutesOf(recipe.prepIsoTime)} min</span><span>Cook: {minutesOf(recipe.cookIsoTime)} min</span><span>Yield: <span data-yield>{recipe.yieldText}</span></span></p>
+        <p class="recipe-meta"><span>Prep: {durationOf(recipe.prepIsoTime)}</span><span>Cook: {durationOf(recipe.cookIsoTime)}</span><span>Yield: <span data-yield>{recipe.yieldText}</span></span></p>
         <CookMode storageKey={recipe.slug} />
         <h3>Ingredients</h3>
         <ul class="checklist">

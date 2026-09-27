@@ -842,6 +842,7 @@ const methodGuides: GuideArticle[] = [
       { href: '/shiitake-mushroom-ramen/', label: 'Shiitake mushroom ramen recipe' },
       { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' },
       { href: '/garlic-mushroom-pasta/', label: 'Garlic mushroom pasta recipe' },
+      { href: '/mushroom-stuffing/', label: 'Mushroom stuffing made with porcini soaking liquid' },
       { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms, fresh and dried' },
       { href: '/how-to-dry-mushrooms/', label: 'How to dry mushrooms in a dehydrator or oven' }
     ]
@@ -1374,7 +1375,8 @@ const speciesGuides: GuideArticle[] = [
       { href: '/how-to-cook-portobello-mushrooms/', label: 'How to cook portobello mushrooms' },
       { href: '/how-to-cook-shiitake-mushrooms/', label: 'How to cook shiitake mushrooms' },
       { href: '/how-to-cook-oyster-mushrooms/', label: 'How to cook oyster mushrooms' },
-      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms so they stay firm' }
+      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms so they stay firm' },
+      { href: '/mushroom-stuffing/', label: 'Mushroom stuffing recipe' }
     ]
   },
   {
@@ -1653,7 +1655,8 @@ const speciesGuides: GuideArticle[] = [
     relatedLinks: [
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
       { href: '/how-to-dry-mushrooms/', label: 'How to dry porcini and other mushrooms' },
-      { href: '/garlic-mushroom-pasta/', label: 'Garlic mushroom pasta recipe' }
+      { href: '/garlic-mushroom-pasta/', label: 'Garlic mushroom pasta recipe' },
+      { href: '/mushroom-stuffing/', label: 'Mushroom stuffing with dried porcini and sage' }
     ],
     faqs: [
       { question: 'Can I wash porcini mushrooms?', answer: 'Brush them first. If they are heavily soiled, rinse them briefly under cool water and dry them thoroughly before cooking.' },
@@ -2377,6 +2380,7 @@ const speciesGuides: GuideArticle[] = [
       { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
       { href: '/how-to-cook-button-mushrooms/', label: 'How to cook button mushrooms' },
       { href: '/garlic-mushroom-pasta/', label: 'Garlic mushroom pasta recipe' },
+      { href: '/mushroom-stuffing/', label: 'Mushroom stuffing with browned cremini' },
       { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' },
       { href: '/how-to-store-mushrooms/', label: 'How to store cremini so they stay firm' },
       { href: '/how-to-tell-if-mushrooms-are-bad/', label: 'How to tell if mushrooms are bad' }

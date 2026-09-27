@@ -252,5 +252,127 @@ export const recipeArticles: RecipeArticle[] = [
       { question: 'Can you make the broth ahead?', answer: 'Yes, and it improves. Make it through the soy-and-sesame stage but leave the miso out, refrigerate up to 4 days or freeze up to 3 months, then whisk fresh miso in when you reheat.' },
       { question: 'What should you do with the shiitake stems?', answer: 'Do not eat them — they stay fibrous no matter how long they cook. Drop them into the broth pot for extra flavor and strain them out with the rest of the solids.' }
     ]
+  },
+  {
+    // Calendar 4.1 (reordered 2026-09-27). Ubersuggest US: `mushroom stuffing`
+    // 1,300/mo, 9,900 in November, SD 22; live SERP is grocery-chain recipe
+    // pages, an Allrecipes category page and a Facebook post.
+    slug: 'mushroom-stuffing',
+    title: 'Mushroom Stuffing with Porcini and Sage',
+    description: 'Brown the mushrooms until the pan is dry, moisten dried bread with porcini soaking liquid, and bake at 375°F until the top is crisp and the center hits 165°F.',
+    updated: '2026-09-27',
+    minutes: '1 hr 55 min',
+    image: '/images/cookmushroom-mushroom-stuffing-hero.webp',
+    imageAlt: 'Baked mushroom stuffing with a crisp golden top, browned mushrooms and sage in a white baking dish',
+    recipeName: 'Make-Ahead Mushroom Stuffing with Porcini and Sage',
+    keywords: ['mushroom stuffing', 'mushroom dressing', 'Thanksgiving stuffing', 'vegetarian stuffing', 'make-ahead stuffing'],
+    cardMushroom: 'Cremini + dried porcini',
+    cardGuide: 'how-to-cook-dried-mushrooms',
+    yieldText: '10 side servings',
+    prepIsoTime: 'PT30M',
+    cookIsoTime: 'PT1H25M',
+    totalIsoTime: 'PT1H55M',
+    recipeCategory: 'Side dish', cookingMethod: 'Baking', recipeCuisine: 'American',
+    ingredients: [
+      '1 lb (454 g) sturdy white bread or sourdough, cut into 3/4-inch cubes (about 10 cups)',
+      '1/2 oz (14 g) dried porcini mushrooms',
+      '1 1/2 cups (360 ml) hot water, for soaking',
+      '1 1/2 lb (680 g) fresh mushrooms — cremini, or cremini with some shiitake or oyster',
+      '3 tbsp (45 ml) olive oil, divided',
+      '6 tbsp (85 g) unsalted butter, divided, plus more for the dish',
+      '2 medium yellow onions (about 400 g), diced',
+      '3 celery stalks (about 150 g), diced',
+      '4 garlic cloves, minced',
+      '2 tbsp chopped fresh sage, or 2 tsp dried',
+      '1 tbsp fresh thyme leaves',
+      '1/3 cup (80 ml) dry white wine or dry sherry (optional)',
+      '1 1/2 cups (360 ml) vegetable or chicken stock, plus up to 1/2 cup more',
+      '2 large eggs',
+      '1/3 cup chopped flat-leaf parsley',
+      '1 1/2 tsp kosher salt, divided',
+      '1/2 tsp black pepper'
+    ],
+    steps: [
+      'Heat the oven to 275°F (135°C). Spread the bread cubes over two sheet pans and bake 30 to 40 minutes, tossing halfway, until they feel dry and crisp all the way through but are still pale.',
+      'While the bread dries, cover the porcini with the hot water and soak 20 to 30 minutes. Lift them out, squeeze them over the bowl, and chop them. Strain the soaking liquid through a paper towel or coffee filter; you should have about 1 1/4 cups.',
+      'Slice cremini and shiitake caps 1/4 inch thick and tear oyster mushrooms into bite-size pieces. Heat 1 1/2 tbsp oil in a 12-inch skillet over medium-high, add half the mushrooms in one layer, and leave them undisturbed for 3 minutes.',
+      'Stir and cook 5 to 7 minutes more, until the released liquid has cooked away, the pan looks dry, and the edges are deep brown. Season with 1/4 tsp salt and tip into a large bowl. Repeat with the remaining oil and mushrooms.',
+      'Lower the heat to medium. Add 3 tbsp butter, the onions, celery, and 1/2 tsp salt, and cook 8 to 10 minutes, scraping up the browned bits, until the onions are soft and translucent and the celery is tender.',
+      'Add the garlic, sage, and thyme and cook 1 minute, until fragrant. Pour in the wine, if using, and simmer about 1 minute, until it has almost disappeared. Scrape everything into the mushroom bowl and add the chopped porcini.',
+      'Raise the oven to 375°F (190°C) and butter a 9x13-inch (23x33 cm) baking dish. Add the dried bread cubes and parsley to the bowl.',
+      'Whisk the eggs with the porcini liquid, stock, the remaining 1/2 tsp salt, and the pepper. Pour over the bread and fold gently until evenly moistened. Rest 10 minutes, then fold again.',
+      'Squeeze a cube from the middle of the bowl. It should be moist all the way through with no liquid pooling at the bottom. If the centers are still dry, add more stock 1/4 cup at a time.',
+      'Spread the stuffing loosely in the dish without pressing it down. Melt the remaining 3 tbsp butter and drizzle it over the top.',
+      'Cover with foil and bake 25 minutes. Uncover and bake 20 to 25 minutes more, until the top is deep golden and crisp and the center reads 165°F (74°C). Rest 10 minutes before serving.'
+    ],
+    tips: [
+      'Brown the mushrooms in **two batches**. A single 1 1/2 lb batch floods a 12-inch pan and steams instead of browning — which is exactly the soggy stuffing you are trying to avoid.',
+      'Salt the mushrooms only after they brown. Early salt pulls water out and keeps the pan wet.',
+      'Taste the stock first. If it is salted store-bought stock, cut the salt in the egg mixture to a pinch.',
+      'Do not pack the dish. Loose cubes let the heat in and bake into a craggy, crisp top instead of a flat lid.',
+      'Portobellos work, but scrape out the dark gills first or they turn the whole dish gray.'
+    ],
+    pairings: ['roast turkey', 'roast chicken', 'pork loin', 'cranberry sauce', 'green beans', 'mashed potatoes'],
+    storage: [
+      'Refrigerate leftovers within 2 hours of baking, covered, for **3 to 4 days**.',
+      'Freeze baked stuffing, tightly covered, for up to 1 month. Thaw overnight in the fridge.',
+      'Reheat covered at 350°F (175°C) with a splash of stock until the center reaches **165°F (74°C)**, then uncover for the last 10 minutes to crisp the top again.'
+    ],
+    relatedLinks: [
+      { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms and use the broth' },
+      { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
+      { href: '/how-to-cook-cremini-mushrooms/', label: 'How to cook cremini mushrooms' },
+      { href: '/how-to-cook-shiitake-mushrooms/', label: 'How to cook shiitake mushrooms' },
+      { href: '/how-to-cut-mushrooms/', label: 'How to cut mushrooms' },
+      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms before the holiday' }
+    ],
+    sections: [
+      { heading: 'Why mushroom stuffing turns soggy', text: [
+        'Mushrooms are about **92 percent water**. The 1 1/2 lb in this recipe carry roughly 2 1/2 cups of it — nearly as much as all the stock and soaking liquid combined. Stir them into the bread raw, or only softened, and they keep releasing that water in the oven. The bread underneath soaks it up and turns to paste while the top dries out.',
+        'The fix is the one that runs through every guide on this site: **brown them until the pan looks dry** before they go anywhere near the bread. The water cooks off in the skillet, where it can evaporate, instead of in the dish, where it has nowhere to go. It also turns spongy mushrooms into browned, savory ones, which is most of the flavor in the finished stuffing.'
+      ] },
+      { heading: 'Porcini liquid does the work of meat stock', text: [
+        'Most stuffing gets its savory depth from turkey stock, sausage, or pan drippings. Here half an ounce of dried porcini does that job. Soaking them makes a dark, concentrated broth that replaces nearly half the stock, and the stuffing tastes meaty even when every ingredient is vegetarian.',
+        'Strain the soaking liquid through a paper towel or coffee filter, not just a sieve — dried porcini carry grit, and it settles to the bottom of the bowl. **Pour slowly and leave the last spoonful behind.** The soaked porcini get chopped and folded in, so nothing is wasted.'
+      ] },
+      { heading: 'Which mushrooms to use', text: [
+        'Cremini are the base: cheap, firm, and they brown reliably. Swap up to a third of the weight for something with more character — shiitake, oyster, or maitake — and the stuffing tastes of more than one mushroom. Keep the total at 1 1/2 lb whatever the mix.',
+        'Skip enoki. The thin strands go stringy in a long bake and tangle through the bread.'
+      ], table: { headings: ['Mushroom', 'Share of the mix', 'Prep'], rows: [
+        ['Cremini', 'Up to all of it', 'Slices 1/4 inch; the reliable base.'],
+        ['White button', 'Up to all of it', 'Milder than cremini; slice a little thicker.'],
+        ['Shiitake', 'Up to a third', 'Stems off — they stay woody. Slice the caps.'],
+        ['Oyster', 'Up to a third', 'Tear along the grain; the edges crisp in the pan.'],
+        ['Maitake', 'Up to a third', 'Break into small clusters; frilly edges brown fast.'],
+        ['Chanterelle', 'Up to half, in season', 'Tear lengthwise; dry-sauté before adding any fat.'],
+        ['Portobello', 'Up to a third', 'Scrape out the gills or the dish turns gray.'],
+        ['Dried porcini', '1/2 oz on top of the fresh', 'Soak, chop, and use the strained liquid.']
+      ] } },
+      { heading: 'Dry bread, not stale bread', text: [
+        'Stale and dry are not the same thing. A loaf left out overnight firms up mostly because its starch changes, not because the water has gone, so it soaks up less stock and slumps sooner. Drying the cubes in a low oven actually removes the water, and **a dry cube soaks up liquid and still holds its shape** through the bake.',
+        'Use a sturdy loaf with some chew — country white, sourdough, or a plain Italian loaf. Soft sandwich bread turns to porridge. The cubes are ready when they feel **dry and crisp right through but are still pale**: you are drying them, not toasting them.'
+      ] },
+      { heading: 'The check before it goes in the oven', text: 'Bread varies more than any other ingredient here, so the liquid is a starting point, not a rule. Dry centers bake into dry stuffing; liquid pooling in the bowl bakes into a dense, wet bottom layer.', quote: 'Squeeze a cube from the middle of the bowl. Moist all the way through, with nothing pooling underneath, is right.' },
+      { heading: 'Make it ahead for Thanksgiving', text: [
+        'Almost all the work can be done days before the oven gets crowded. The one step to leave for the day is combining the bread with the eggs and liquid: assembled stuffing left overnight keeps absorbing, and the bottom layer bakes up dense.',
+        'If the mushroom mixture comes straight from the fridge, add about 10 minutes to the covered bake and **go by the thermometer, not the clock**.'
+      ], table: { headings: ['Step', 'How far ahead', 'Keep it'], rows: [
+        ['Dry the bread cubes', 'Up to 3 days', 'Airtight container at room temperature'],
+        ['Soak the porcini, strain the liquid', 'Up to 2 days', 'Liquid and chopped porcini covered in the fridge'],
+        ['Brown the mushrooms, cook the vegetables', 'Up to 2 days', 'Covered in the fridge; no need to reheat'],
+        ['Combine with eggs and liquid', 'On the day', 'Rest 10 minutes, then into the dish'],
+        ['Bake', 'On the day, or fully baked 1 day ahead', 'Reheat covered at 350°F; uncover for the last 10 minutes']
+      ] } }
+    ],
+    faqs: [
+      { question: 'Can you make mushroom stuffing ahead of time?', answer: 'Yes. Dry the bread up to 3 days ahead and cook the mushroom mixture up to 2 days ahead, then combine with the eggs and liquid on the day. Or bake it completely a day ahead and reheat covered at 350°F, uncovering for the last 10 minutes.' },
+      { question: 'Can you freeze mushroom stuffing?', answer: 'Freeze it baked, not raw. Cool it, cover tightly, and freeze up to 1 month. Thaw overnight in the fridge and reheat covered at 350°F (175°C) until the center reaches **165°F (74°C)**, then uncover to crisp the top.' },
+      { question: 'Can you cook this stuffing inside the turkey?', answer: 'You can, but a dish is safer and better. Stuffing inside the bird has to reach **165°F (74°C)** in the center, and by the time it does the breast is usually overcooked. The USDA recommends cooking stuffing outside the bird for that reason — and in a dish you get the crisp top as well.' },
+      { question: 'What is the difference between stuffing and dressing?', answer: 'Only where it cooks. Stuffing traditionally goes inside the bird; dressing is the same mixture baked in a dish. In much of the US the two words are used interchangeably, and this recipe, baked in a dish, is either one.' },
+      { question: 'How do you make mushroom stuffing vegetarian or vegan?', answer: 'It is vegetarian as written if you use vegetable stock. For vegan, swap the butter for olive oil and the two eggs for an extra 1/2 cup of stock. Without eggs the stuffing sets more loosely, so give it the full uncovered time to crisp.' },
+      { question: 'Why is my stuffing soggy on the bottom?', answer: 'Either the mushrooms went in wet or there was too much liquid for the bread. Brown the mushrooms until the pan is dry, dry the bread cubes in the oven, and squeeze a cube before baking: **moist through, nothing pooling in the bowl**.' },
+      { question: 'Why is my stuffing dry?', answer: 'There was not enough liquid for how dry the bread was, or it spent too long uncovered. Check a cube before baking and add stock if the center is dry, and keep the first 25 minutes covered so the inside heats through before the top crisps.' },
+      { question: 'Can you use cornbread?', answer: 'For up to half the bread. All-cornbread stuffing crumbles into a soft mass; mixed with sourdough or white bread it keeps some structure. Fold gently, and go by the squeeze check rather than the stock measurement.' }
+    ]
   }
 ];
