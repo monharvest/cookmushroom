@@ -6,6 +6,10 @@
 // copy-link, print and native share are progressive enhancements added by the
 // inline script below. Every action fires a GA `share` event tagged with the
 // row's position, so the two placements can be compared rather than assumed.
+// The email link sits inside <!--email_off--> markers: Cloudflare's Email
+// Address Obfuscation otherwise rewrites any mailto: href to
+// /cdn-cgi/l/email-protection#…, which crawlers follow into a 404 — 82 broken
+// internal links sitewide before the markers went in.
 const { url, title, image, description, label = 'Save this', position = 'top' } = Astro.props as {
   url: string;
   title: string;
@@ -24,7 +28,7 @@ const email = `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComp
   <button type="button" class="share-btn share-native" data-share-native hidden>Share</button>
   <a class="share-btn" href={pinterest} target="_blank" rel="noopener nofollow" data-share-method="pinterest">Pin it</a>
   <a class="share-btn" href={facebook} target="_blank" rel="noopener nofollow" data-share-method="facebook">Facebook</a>
-  <a class="share-btn" href={email} data-share-method="email">Email</a>
+  <!--email_off--><a class="share-btn" href={email} data-share-method="email">Email</a><!--/email_off-->
   <button type="button" class="share-btn" data-share-copy>Copy link</button>
   <button type="button" class="share-btn" data-share-print>Print</button>
 </div>
