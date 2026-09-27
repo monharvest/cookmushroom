@@ -1,8 +1,8 @@
 # Hero image brief — giant puffball
 
-**Status: HERO ON DISK 2026-08-31 16:41, not pushed — attempt 5 converted.** Native 3:2
-(1248×832) from the rewritten prompt. Trio + OG card replaced attempt 1. Awaiting Batu/Opus
-visual check (left slab can read as a fish steak with skin).
+**Status: SHIPPED 2026-08-31 (attempt 1 restored).** Live on
+`/how-to-cook-puffball-mushrooms/`. White and featureless so it does not contradict the
+page, but it reads as seared halloumi. Licensed photo is still the likely fix.
 
 - **File name:** `cookmushroom-puffball-hero`
 - **Page:** `/how-to-cook-puffball-mushrooms/`
@@ -217,9 +217,8 @@ The page needs no changes when the hero is swapped.
 
 # Hero image brief — cutting mushrooms
 
-**Status: HERO ON DISK 2026-08-31, not pushed. Visual gate passed.** Trio + OG card
-written locally. Correct subject, even slices, fresh matte cut faces, no hands, no pan.
-Ready to deploy.
+**Status: SHIPPED 2026-08-31.** Visual gate passed. Live on `/how-to-cut-mushrooms/`.
+Correct subject, even slices, fresh matte cut faces, no hands, no pan.
 
 - **File name:** `cookmushroom-cutting-hero`
 - **Page:** `/how-to-cut-mushrooms/`

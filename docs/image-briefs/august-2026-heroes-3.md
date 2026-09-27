@@ -1,10 +1,8 @@
 # Hero image brief — August 2026, batch 3 (2 images)
 
-**Status: generated 2026-08-17.** Both WebP trios exist and are wired in `guides.ts`.
-Uncommitted; not pushed.
-
-**Hand the two prompt blocks below to Hermes (via Grok).** Everything Hermes needs is in
-this file — prompt, aspect ratio, and reject criteria.
+**Status: SHIPPED 2026-08-17.** Both WebP trios exist, are wired in `guides.ts`, and are live
+(`/how-to-freeze-mushrooms/`, `/how-to-dry-mushrooms/`). Prompts below are the record of
+what shipped.
 
 ## Workflow
 

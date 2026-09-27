@@ -9,9 +9,8 @@ reference section is the part worth reading first.
 
 - **File name:** `cookmushroom-chicken-of-the-woods-hero`
 - **Page:** `/how-to-cook-chicken-of-the-woods/`
-- **Deadline pressure:** `how to cook chicken of the woods` runs 1,600/mo now and peaks at
-  **6,600/mo in September**. The page is written and building; this image is the only thing
-  holding it back.
+- **Deadline pressure:** `how to cook chicken of the woods` ran 1,600/mo at write time and peaks at
+  **6,600/mo in September**. Page and hero shipped 2026-08-22.
 
 ---
 

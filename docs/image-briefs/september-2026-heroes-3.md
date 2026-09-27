@@ -1,7 +1,7 @@
 # Hero image brief — types of mushrooms (pillar page)
 
-**Status: NEEDED.** `/types-of-mushrooms/` is written, builds clean, committed but **not
-deployed** — the publication gate forbids a broken image reference.
+**Status: SHIPPED 2026-08-31.** Live on `/types-of-mushrooms/` with the
+`cookmushroom-types-hero` WebP trio + OG card.
 
 - **File name:** `cookmushroom-types-hero`
 - **Page:** `/types-of-mushrooms/`

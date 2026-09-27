@@ -1,8 +1,7 @@
 # Hero image brief — July 2026 batch (3 images)
 
-**Status:** the three pages are written, built, and passing the gate. They are
-**not deployed** because their hero images do not exist yet (AGENTS.md: never ship
-broken image references). Drop the images in, run one command each, and they go live.
+**Status: SHIPPED.** All three heroes exist and the pages are live
+(`/garlic-mushroom-pasta/`, `/shiitake-mushroom-ramen/`, `/how-to-cook-frozen-mushrooms/`).
 
 ## Workflow
 
