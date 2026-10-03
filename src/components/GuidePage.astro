@@ -6,6 +6,7 @@ import ShareRow from './ShareRow.astro';
 import CookMode from './CookMode.astro';
 import { inlineMarkup } from '../lib/richtext';
 import RelatedCards from './RelatedCards.astro';
+import GearBox from './GearBox.astro';
 
 const { guide } = Astro.props as { guide: GuideArticle };
 const seoTitle = guide.title.length + ' | CookMushroom'.length <= 60 ? `${guide.title} | CookMushroom` : guide.title;
@@ -155,6 +156,9 @@ const schema = [contentSchema, breadcrumbSchema];
       {guide.ingredients && ' · '}
       <a href="/mushroom-cook-time-chart/">Compare all cook times →</a>
     </p>
+
+    {/* Above the contents box: the disclosure promises the notice near the top. */}
+    {guide.gear && guide.gear.length > 0 && <GearBox items={guide.gear} />}
 
     {showToc && (
       <details class="toc" open>

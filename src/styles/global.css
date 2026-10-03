@@ -125,6 +125,15 @@ th { background: var(--th); font-size: .9rem; }
 .fact span, .recipe-card small { display: block; color: var(--muted); font-size: .85rem; font-weight: 750; }
 .fact strong { display: block; margin-top: .25rem; font-size: 1.05rem; }
 .chart-link { margin: -.4rem 0 1rem; color: var(--muted); font-weight: 800; }
+/* Tools box (GearBox.astro): the only place affiliate links appear. */
+.gear { background: var(--card); border: 1px solid var(--line); border-radius: 1rem; padding: 1rem 1.15rem; margin: 1.2rem 0; }
+.gear h2 { font-size: 1.25rem; letter-spacing: -0.02em; margin: 0 0 .35rem; }
+.gear-notice { color: var(--muted); font-size: .85rem; margin: 0 0 .7rem; }
+.gear ul { margin: 0; padding-left: 1.2rem; }
+.gear li + li { margin-top: .45rem; }
+/* Padding brings the link to a 24px tap target; most readers are on a phone. */
+.gear li > a { font-weight: 800; display: inline-block; padding: .15rem 0; }
+.gear-why { color: var(--muted); }
 .updated { color: var(--muted); font-size: .95rem; font-weight: 700; }
 .compact table { min-width: 0; }
 .breadcrumbs { color: var(--muted); font-size: .88rem; font-weight: 700; margin-bottom: 1.2rem; }
@@ -284,7 +293,7 @@ ol.checklist label::before { content: counter(cook-step) '.'; font-weight: 800; 
   html { scroll-behavior: auto; }
   body { background: white; color: black; font-size: 11pt; line-height: 1.45; }
   .site-header, .footer, .share-row, .breadcrumbs, .skip-link, .chart-link,
-  .link-cards, .guide-hero-image, .prose img { display: none !important; }
+  .link-cards, .guide-hero-image, .prose img, .gear { display: none !important; }
   main { max-width: none; padding: 0; }
   .prose { background: none; border: 0; border-radius: 0; padding: 0; box-shadow: none; }
   .panel, .card, .tool-card, .notice, .fact, .recipe-block { box-shadow: none; background: none; }

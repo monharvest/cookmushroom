@@ -1,0 +1,27 @@
+---
+// The tools a page tells the reader to use, each linked to Amazon.
+//
+// Rules this component enforces (AGENTS.md, "Amazon Associates"):
+// - the notice sits above the first link, as /affiliate-disclosure/ promises;
+// - every link is rel="sponsored nofollow noopener";
+// - no prices, ratings or product images — only the tool and why the method
+//   uses it.
+// Affiliate links stay out of body copy: richtext.ts only allows internal
+// links, so this box is the one place an Amazon link can appear on a page.
+import type { GearItem } from '../data/guides';
+import { amazonSearchUrl } from '../lib/amazon';
+
+const { items } = Astro.props as { items: GearItem[] };
+---
+<aside class="gear" aria-labelledby="gear-heading">
+  <h2 id="gear-heading">What you need</h2>
+  <p class="gear-notice">Links go to Amazon. As an Amazon Associate I earn from qualifying purchases. <a href="/affiliate-disclosure/">How that works</a>.</p>
+  <ul>
+    {items.map((item) => (
+      <li>
+        <a href={amazonSearchUrl(item.search)} rel="sponsored nofollow noopener" target="_blank">{item.name}</a>
+        {item.note && <span class="gear-why"> — {item.note}</span>}
+      </li>
+    ))}
+  </ul>
+</aside>

@@ -15,6 +15,10 @@ export type GuideSection = {
 };
 
 export type GuideFaq = { question: string; answer: string };
+// A tool the page tells the reader to use, linked to Amazon by GearBox.astro.
+// `search` is the Amazon search phrase; `note` says why this method uses it.
+// Only list tools the page's own steps call for.
+export type GearItem = { name: string; search: string; note?: string };
 export type GuideLink = { href: string; label: string };
 
 export type GuideArticle = {
@@ -40,6 +44,7 @@ export type GuideArticle = {
   imageAlt?: string;
   badge?: string;
   sections?: GuideSection[];
+  gear?: GearItem[];
   relatedLinks?: GuideLink[];
   // External citations, rendered as a "Sources" list at the end of the article.
   // Only for pages where a reader makes a real food-safety decision, and only
@@ -810,6 +815,10 @@ const methodGuides: GuideArticle[] = [
       'Use the rehydrated mushrooms for tenderness and the broth for concentrated flavor.'
     ],
     pairings: ['pasta', 'risotto', 'ramen', 'rice', 'gravy', 'cream sauces'],
+    gear: [
+      { name: 'Fine-mesh sieve', search: 'fine mesh sieve', note: 'for straining grit out of the soaking liquid' },
+      { name: 'Heatproof glass bowl', search: 'heatproof glass mixing bowl', note: 'for the hot-water soak' },
+    ],
     sections: [
       { heading: 'Why this method works', text: 'Drying concentrates mushroom flavor. A soak gives you two useful ingredients: tender mushrooms for the dish and a savory broth for the sauce, stock, or rice.' },
       { heading: 'Soak times by mushroom', bullets: ['Porcini: soak about 20 minutes, then slice or chop.', 'Shiitake: soak 25 to 30 minutes; remove tough stems after softening.', 'Wood ear: soak until fully expanded, then rinse, trim, and cook thoroughly.', 'Morels: soak 15 to 20 minutes, rinse away any remaining grit, and cook thoroughly.'] },
@@ -874,6 +883,9 @@ const methodGuides: GuideArticle[] = [
       'Parchment is fine at 400°F, but bare metal usually gives the cut sides more color.'
     ],
     pairings: ['steak', 'pasta', 'grain bowls', 'eggs', 'roast chicken', 'toast'],
+    gear: [
+      { name: 'Rimmed half-sheet pan', search: 'half sheet pan', note: 'a shallow rim lets steam escape; use two when a pound overlaps' },
+    ],
     sections: [
       { heading: 'Why roasting works', text: 'A hot oven is the easiest way to cook a pound or more of mushrooms at once. Give the pieces room on a sheet pan and the moisture can evaporate instead of collecting in a crowded dish.' },
       { heading: 'Choose the temperature', bullets: ['375°F / 190°C: gentler for delicate mushrooms that can dry quickly.', '400°F / 200°C: the default for button and cremini mushrooms.', '425°F / 220°C: useful for thick portobello caps and dense king oyster slices; watch the edges closely.'] },
@@ -939,6 +951,11 @@ const methodGuides: GuideArticle[] = [
       'Mushrooms shrink by roughly half on the grill. Buy more than looks necessary.'
     ],
     pairings: ['steak', 'grilled chicken', 'burgers', 'couscous', 'grilled corn', 'crusty bread'],
+    gear: [
+      { name: 'Metal skewers', search: 'metal skewers for grilling', note: 'for small mushrooms that would fall through the grate' },
+      { name: 'Grill tongs', search: 'grill tongs', note: 'for turning caps and oiling the grates' },
+      { name: 'Basting brush', search: 'silicone basting brush', note: 'for the garlic-herb baste' },
+    ],
     sections: [
       { heading: 'What this page covers, and what it does not', text: 'This is the cross-variety grilling method: how to set up the fire, which mushrooms suit the grate, the skewer, or the foil packet, and how to tell each one is done. Whole portobello caps have their own marinade and timing on the portobello guide, and scored king oyster medallions are covered on the king oyster guide. Start here to choose the approach, then follow those pages for their specific recipes.' },
       { heading: 'Set up the grill before the mushrooms', text: 'Mushrooms grill fast and burn faster, so the fire matters more than the seasoning. Build a two-zone fire: coals banked to one side, or half the gas burners on high and the rest off. The hot zone gives the char, and the cool zone is where anything cooking too fast can finish without scorching. Scrape the grates while they are hot, then wipe them with oil so the caps release cleanly.' },
@@ -1085,6 +1102,10 @@ const speciesGuides: GuideArticle[] = [
       'Season with salt and pepper, add a small squeeze of lemon if you like, and serve hot.'
     ],
     tips: ['True chanterelles have blunt false gills that run down the stem.', 'A true golden chanterelle has a white-to-creamy yellow spore print.', "Avoid Jack-O'Lantern mushrooms: true sharp gills and clustered growth on wood are danger signs."], pairings: ['toast', 'cream sauces', 'eggs', 'pasta'],
+    gear: [
+      { name: '12-inch skillet', search: '12 inch skillet', note: 'a wide pan lets their water cook off before the butter goes in' },
+      { name: 'Mushroom brush', search: 'mushroom brush', note: 'brushing keeps them from turning slimy in the pan' },
+    ],
     sections: [
       { heading: 'Why the dry pan matters', text: 'Chanterelles hold a lot of water. Fat added too early traps that water and the mushrooms boil in it, turning slimy. Starting in a dry pan lets the moisture escape first, which concentrates the fruity, apricot-like aroma chanterelles are prized for and leaves the edges free to crisp in the butter at the end.' },
       { heading: 'Safety first: true chanterelles vs. false look-alikes', text: 'True chanterelles have ridges, or false gills, rather than true blade-like gills. These blunt, wavy folds run down the stem and do not separate easily from the cap.', bullets: ['The spore print is white to creamy yellow.', "Jack-O'Lantern mushrooms have true, sharp, unbranched gills and grow in clusters on decaying wood.", 'Buy from a market or have an experienced forager verify your find — this page is a cooking guide, not an identification manual.'] },
@@ -1499,6 +1520,10 @@ const speciesGuides: GuideArticle[] = [
       'Eat a small portion the first time you try it, even from a verified source. See the note below.'
     ],
     pairings: ['toasted sourdough', 'creamy polenta', 'buttered noodles', 'roasted potatoes', 'a sharp green salad'],
+    gear: [
+      { name: '12-inch skillet with a lid', search: '12 inch skillet with lid', note: 'wide enough for the slabs in one layer, and the covered stage needs the lid' },
+      { name: 'Mushroom brush', search: 'mushroom brush', note: 'for brushing off dirt without soaking it' },
+    ],
     sections: [
       { heading: 'Sourcing and safety', text: [
         'Cook chicken of the woods only from a reputable market or from a wild sample verified by a qualified expert who handled the actual specimen — not a photo, not an app, not a comparison against pictures online. Never eat an unknown wild mushroom. Cook it thoroughly and serve it hot; it is not eaten raw or lightly cooked.',
@@ -1647,6 +1672,10 @@ const speciesGuides: GuideArticle[] = [
       'Slice the stems too; they are firm and flavorful when young and clean.'
     ],
     pairings: ['creamy polenta', 'tagliatelle', 'scrambled eggs', 'grilled sourdough', 'roast chicken'],
+    gear: [
+      { name: '12-inch skillet', search: '12 inch skillet', note: 'wide, so the slices brown before the butter goes in' },
+      { name: 'Mushroom brush', search: 'mushroom brush', note: 'for brushing off soil without soaking them' },
+    ],
     sections: [
       { heading: 'Why this method works', text: 'Porcini have a firm, meaty texture that holds up well to a quick skillet sauté. Starting with a hot pan helps the slices brown before butter, garlic, and shallot add their softer flavors.' },
       { heading: 'Buy and prep', text: 'Buy porcini from a reputable market, or use wild specimens only after expert verification. This guide does not identify mushrooms or establish that a wild find is safe to eat. Brush away soil, trim any tough stem base, and avoid soaking the mushrooms, which can make them watery.' },
@@ -1821,6 +1850,10 @@ const speciesGuides: GuideArticle[] = [
       'Dry the mushrooms well before cooking. Excess moisture prevents crisp edges.'
     ],
     pairings: ['rice bowls', 'steak', 'pasta', 'eggs', 'polenta', 'tacos'],
+    gear: [
+      { name: '12-inch cast-iron skillet', search: '12 inch cast iron skillet', note: 'heavy enough to stay hot while the fronds crisp' },
+      { name: 'Metal spatula', search: 'metal spatula', note: 'for pressing larger clusters flat against the pan' },
+    ],
     sections: [
       { heading: 'Why a hot pan sear works for maitake', text: 'Maitake’s ruffled fronds hold a lot of moisture. High heat and space in the pan drive off water quickly so the edges can crisp and brown instead of steaming. The final butter-garlic toss coats the delicate layers without making them soggy. This method highlights the mushroom’s meaty texture and nutty flavor in under 12 minutes.' },
       { heading: 'Safety first: look-alikes', text: 'Maitake has few dangerous look-alikes, but always buy from a trusted market or supplier.', bullets: ['Confirm the grey-brown ruffled overlapping fronds growing in a dense cluster at the base of oaks.', 'Buy from a market or get expert verification before eating any wild find.'] },
@@ -1880,6 +1913,10 @@ const speciesGuides: GuideArticle[] = [
       'Taste before adding extra salt because the wine reduction concentrates the seasoning.'
     ],
     pairings: ['creamy polenta', 'roasted potatoes', 'buttered noodles', 'grilled steak', 'wilted greens'],
+    gear: [
+      { name: '12-inch skillet', search: '12 inch skillet', note: 'wide, so the slices brown in one layer' },
+      { name: 'Mushroom brush', search: 'mushroom brush', note: 'for brushing and scrubbing them clean' },
+    ],
     sections: [
       { heading: 'Why this method works', text: 'Lobster mushrooms have a dense texture, so thin slices and steady heat help them become tender without losing their bite. A short splash of wine loosens the browned bits, while lemon keeps the finish bright.' },
       { heading: 'Buy and prep', text: 'Buy lobster mushrooms from a reputable market, or use wild specimens only after expert verification. This guide does not identify mushrooms or establish that a wild find is safe to eat. Choose clean, firm mushrooms from a known source and trim away any tough or damaged areas.' }
@@ -1987,6 +2024,10 @@ const speciesGuides: GuideArticle[] = [
       'Keep the sauce brief and concentrated so the mushrooms stay springy.'
     ],
     pairings: ['jasmine rice', 'garlic noodles', 'bok choy', 'charred tofu', 'roast pork'],
+    gear: [
+      { name: 'Wok', search: 'wok', note: 'takes the high heat a quick stir-fry needs' },
+      { name: '12-inch skillet', search: '12 inch skillet', note: 'the wide-pan alternative to a wok' },
+    ],
     sections: [
       { heading: 'Why wood ear mushrooms are different', text: 'Wood ear mushrooms are valued for texture rather than a deep mushroom flavor. Their thin, ear-shaped lobes stay springy after cooking and pick up sauces without becoming soft or heavy.' },
       { heading: 'Fresh or dried', text: 'Fresh wood ears need trimming and rinsing. Dried wood ears must be soaked until fully expanded, then rinsed carefully because grit can collect in their folds. This recipe uses fresh mushrooms.' },
@@ -2645,6 +2686,11 @@ const speciesGuides: GuideArticle[] = [
       'Add garlic after the mushrooms have browned so it stays sweet instead of burning.'
     ],
     pairings: ['eggs', 'pasta', 'burgers', 'steak', 'toast', 'rice bowls'],
+    gear: [
+      { name: '12-inch skillet', search: '12 inch skillet', note: 'wide, so the mushrooms brown instead of crowding' },
+      { name: 'Air fryer', search: 'air fryer', note: 'for the 390°F method' },
+      { name: 'Mushroom brush', search: 'mushroom brush', note: 'for cleaning them dry' },
+    ],
     sections: [
       { heading: 'What button mushrooms are', text: 'White button mushrooms are the youngest common form of Agaricus bisporus. Cremini are the same mushroom, harvested later with a browner cap; portobellos are the fully mature form. Button mushrooms have the mildest flavor, so they respond well to salt, butter, garlic, and herbs.' },
       { heading: 'What their mild flavor means in the pan', text: 'Dry button mushrooms well and give them room in the skillet. Their high moisture content needs time to cook away, while their mild flavor benefits from a clear finishing seasoning rather than a heavy sauce.' },

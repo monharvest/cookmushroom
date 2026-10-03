@@ -22,6 +22,7 @@ cookmushroom.com — an Astro static site about cooking mushrooms, deployed auto
 - Recipes: `src/data/recipes.ts` (`RecipeArticle[]`) + `src/components/RecipePage.astro`. Adding a recipe = one entry in `recipes.ts`, nothing else. Recipes accept optional `sections` and `faqs` (same shapes as guides, including section `table`s): sections render above the recipe card, FAQs below storage. ISO times may carry hours (`PT1H25M`); the card shows "1 hr 25 min". **Use them on every new recipe** — without them a recipe page is a bare card and lands ~750 words.
 - Routing: `src/pages/[slug].astro` is a thin router over BOTH collections — guides and recipes share the root URL space (`/<slug>/`). It dispatches to `GuidePage.astro` or `RecipePage.astro`. Guide body markup lives in `src/components/GuidePage.astro`, not in the route.
 - Recipe cards on guide pages come from `recipeCards` in `guides.ts`, which derives from `recipeArticles`; each recipe's `cardGuide` decides which guide's "Use it in" section shows it, and `keywords`/`cardMushroom` are per-recipe (never hardcode these in the component).
+- Tools box: an optional `gear: GearItem[]` on a guide renders `src/components/GearBox.astro` above the contents box, with the affiliate notice above its links. It is hidden in print. See "Amazon Associates" below before adding or changing one.
 - Cook-time chart rows: `cookTimes` in `guides.ts`. Recipe cards: `recipeCards` in `guides.ts`.
 - Images: `public/images/`, WebP for everything on-page, 1200×800 hero + `-600`/`-900` variants for srcset. Hero ≤110 KB. Each full-size hero also needs a `-og.jpg` social card (1200×630) from `./scripts/make-og-cards.sh` — run it after `make-hero.sh`; it only writes missing cards unless passed `--force`. JPEG because `og:image` is fetched by link unfurlers, not browsers, and several still won't render WebP. **Recipe heroes** (those in `recipes.ts`) also get `-16x9`/`-4x3`/`-1x1` WebP crops for Recipe schema from `./scripts/make-schema-crops.sh` (Google's recommended ratios); run it after `make-og-cards.sh` and look at the 1:1, which cuts the most — pass `<hero-name>:north` etc. if the subject is off-centre. `RecipePage` lists only crops that exist on disk.
 - Toolchain: Astro 7, static output, no adapter — do not re-add `@astrojs/node`, it was removed as unused. Requires **Node >=22.12.0**; `.nvmrc` pins 22 and Cloudflare Pages needs `NODE_VERSION=22` or the build fails.
@@ -54,6 +55,17 @@ cookmushroom.com — an Astro static site about cooking mushrooms, deployed auto
 - Push to `origin/main` deploys via Cloudflare. After deploy, verify a live URL; old URLs may serve stale edge-cached HTML until a Cloudflare cache purge (dashboard action, user-only).
 - User-only actions (dashboard logins): Cloudflare purge/deploy logs, Google Search Console, image generation approval. Ask, don't block silently.
 - If blocked on an asset (e.g., hero image), say exactly what's needed and do not ship partial work.
+
+## Amazon Associates (links built 2026-10-03 — check `git log` for whether they are deployed)
+
+- Disclosure is in place: the "As an Amazon Associate I earn from qualifying purchases" line in the `Layout.astro` footer (keep that wording exact), `/affiliate-disclosure/`, and an affiliate bullet in `/privacy/`.
+- **Tracking ID: `cookmushroom09-20`** — given by the user on 2026-10-03. It is this site's own tag; the Associates account is shared with LighterTorch, so never use `lightertorch-20` here.
+- cookmushroom.com **is on the Associates website list** — the user confirmed it with a screenshot on 2026-10-03, so both conditions for shipping links are met.
+- **Where links live:** only in the "What you need" box (`src/components/GearBox.astro`), fed by a guide's `gear` field and built by `src/lib/amazon.ts`. Ten guides carry one as of 2026-10-03 — the ten with the most search landings. The disclosure and the links must ship together: the box links to `/affiliate-disclosure/`.
+- Links go to Amazon **search results for a kind of tool** ("12 inch skillet"), not to a product: nothing to go stale, and no product is recommended that has not been tested. Only list tools the page's own steps call for, and say why the method uses them.
+- When links arrive: `rel="sponsored nofollow noopener"`, a short notice above the first link on that page (the disclosure page promises it), no hardcoded prices, no Amazon review quotes or star ratings. `richtext.ts` is bold-only, so links need their own data field/component — do not widen the escaper.
+- Strictly culinary, always. Nothing on psychoactive mushrooms, in any framing — it risks the whole Associates account, not just this site.
+- Earnings come from buying-guide pages, not how-tos. Those still pass the full publication gate.
 
 ## Update this file
 
