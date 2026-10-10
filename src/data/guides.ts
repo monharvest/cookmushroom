@@ -1401,7 +1401,7 @@ const speciesGuides: GuideArticle[] = [
     ]
   },
   {
-    slug: 'how-to-cook-puffball-mushrooms', mushroomSlug: 'puffball', label: 'Puffball', badge: 'Slice test first', title: 'How to Cook Puffball Mushrooms', description: 'Puffball cooks like a mild steak: cut into slabs, salt, and sear hot. Slice one open first — the inside must be pure, solid white all the way through.', minutes: '7 min', updated: '2026-08-31', image: '/images/cookmushroom-puffball-hero.webp', imageAlt: 'Golden seared giant puffball slabs with thyme and garlic in a cast-iron skillet', isoTime: 'PT8M', prepIsoTime: 'PT15M', heat: 'Medium-high', cut: 'Slabs 1/2 inch thick, skin trimmed', finish: 'Butter, lemon, and parsley',
+    slug: 'how-to-cook-puffball-mushrooms', mushroomSlug: 'puffball', label: 'Puffball', badge: 'Slice test first', title: 'How to Cook Puffball Mushrooms: Seared Puffball Steaks', description: 'Cook puffball like a steak: cut 1/2-inch slabs, salt and blot, then sear 3 to 4 minutes a side. Slice it open first; the inside must be pure white throughout.', minutes: '7 min', updated: '2026-10-10', image: '/images/cookmushroom-puffball-hero.webp', imageAlt: 'Golden seared giant puffball slabs with thyme and garlic in a cast-iron skillet', isoTime: 'PT8M', prepIsoTime: 'PT15M', heat: 'Medium-high', cut: 'Slabs 1/2 inch thick, skin trimmed', finish: 'Butter, lemon, and parsley',
     recipeName: 'Seared Puffball Steaks', yieldText: '2 to 3 side servings',
     recipeCategory: 'Side dish', cookingMethod: 'Pan-frying',
     ingredients: [
@@ -1446,8 +1446,8 @@ const speciesGuides: GuideArticle[] = [
         'Very mild, and closer in character to a fresh cheese or firm tofu than to a woodland mushroom. There is a clean, faintly nutty savour and almost none of the dark, earthy depth of a cremini or porcini. The texture is what people remember: dense and custardy when it is cooked well, a little like a thick slice of aubergine that has held its shape.',
         'That mildness makes it a carrier rather than a star. It takes garlic, herbs, browned butter, soy, miso, or a hot chilli oil and gives them a substantial body to sit on, which is why so many puffball recipes are really seasoning recipes.'
       ] },
-      { heading: 'Cut it into slabs, not cubes', text: [
-        'This is the decision that most affects the result. Puffball is **close to 90 per cent water**, so it needs as much pan contact as you can give it and as little trapped moisture as possible.',
+      { heading: 'Puffball steaks: cut slabs, not cubes', text: [
+        'A **puffball steak** is simply a thick slab cut across a giant puffball, salted, blotted, and seared like a piece of meat. It is the best way to cook one, and this is the decision that most affects the result. Puffball is **close to 90 per cent water**, so it needs as much pan contact as you can give it and as little trapped moisture as possible.',
         'A 1/2-inch slab has two broad flat faces that brown, and it holds together when you turn it. Cubes have six small faces, never sit still long enough to colour, and release their water into a crowded pan, where the whole lot simmers grey.',
         'If the puffball is very large, cut it into steaks first and only then decide whether to halve them. A wide slab is easier to handle than it looks, and it can always be cut on the plate.'
       ] },
@@ -1476,6 +1476,9 @@ const speciesGuides: GuideArticle[] = [
       { question: 'Do I need to peel a puffball?', answer: 'Trim the outer skin off, yes. It is thin but tough and it does not soften in the pan. Take off any discoloured patch at the same time.' },
       { question: 'Can I eat a puffball that has gone yellow inside?', answer: 'No. Yellow, olive, or brown flesh means the spores have started to develop. It will taste bitter and is no longer considered edible. Discard the whole thing rather than cutting around the discoloured part.' },
       { question: 'How thick should I cut the slabs?', answer: 'About 1/2 inch (1 cm) for a pan, and closer to 3/4 inch for a grill so they hold together over the bars. Thinner than 1/2 inch and they dry out before they colour.' },
+      { question: 'What is a puffball steak?', answer: 'A thick slab, about 1/2 inch (1 cm), cut across a giant puffball after the skin is trimmed. Salt it, rest it 10 to 15 minutes, blot it dry, and sear it in a hot pan for 3 to 4 minutes a side, then baste it with butter, garlic, and thyme. It eats like a mild, custardy steak and takes strong seasoning well.' },
+      { question: 'Can you deep-fry puffball?', answer: 'Yes. Bread salted, blotted slabs in flour, egg, and breadcrumbs, then fry them in oil at about 350°F (175°C) for 2 to 3 minutes, until **deep golden** on both sides. Drain on a rack and salt straight away. Shallow-frying in a skillet, as in the breaded variation on this page, gives the same crust with less oil.' },
+      { question: 'What is the best giant puffball recipe for a first try?', answer: 'Seared puffball steaks, the recipe on this page. The plain sear shows you the texture before you start adding sauces. Once you know what it does in the pan, try the breaded version or pile the slabs on garlic toast with a fried egg.' },
       { question: 'Can I cook puffball like a portobello?', answer: 'The cut is similar but the timing is not. Puffball has already given up much of its water by the time it hits the pan, so it browns in 3 to 4 minutes a side rather than the 8 to 12 minutes a portobello wants. Watch it earlier than you think you need to.' }
     ],
     relatedLinks: [
