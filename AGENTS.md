@@ -4,7 +4,7 @@ Read this first. It is the persistent memory for any agent (Hermes, Claude, or o
 
 ## What this project is
 
-cookmushroom.com — an Astro static site about cooking mushrooms, deployed automatically by Cloudflare on push to `origin/main`. 34 guides + 4 recipes. Public author byline: **Ana** (Person schema); CookMushroom is the publisher Organization.
+cookmushroom.com — an Astro static site about cooking mushrooms, deployed automatically by Cloudflare on push to `origin/main`. 34 guides + 4 recipes live; a 5th, `/stuffed-mushrooms/`, is drafted on branch `holiday-prep-2026-10` waiting for its hero. Public author byline: **Ana** (Person schema); CookMushroom is the publisher Organization.
 
 **Indexing is the bottleneck, not technical SEO** (audit 2026-09-27): `site:cookmushroom.com` shows ~4 of 48 pages indexed. The likely cause is ~1,800 legacy auto-posted URLs from 2025–Jan 2026, which 404ed until the 410 function below (branch `holiday-prep-2026-10`; check `git log origin/main` for whether it is live). Pick keywords with SD ≲25 and a weak live SERP, publish seasonal pages 6+ weeks early, and re-check indexing with `site:` queries (GSC is user-only).
 
@@ -37,7 +37,7 @@ cookmushroom.com — an Astro static site about cooking mushrooms, deployed auto
 3. ≥4 outbound internal links AND ≥3 existing pages edited to link back.
 4. Cannibalization check against existing slugs — improve an existing page rather than duplicating intent.
 5. `npm run build` passes with 0 diagnostics.
-6. Never publish partial pages or broken image references.
+6. Never publish partial pages or broken image references. `npm run build` enforces the image half: `scripts/check-image-refs.mjs` fails the build if any built page references a missing `/images/` file.
 
 ## Editorial rules (permanent)
 

@@ -296,12 +296,14 @@ const methodGuides: GuideArticle[] = [
     relatedLinks: [
       { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
       { href: '/how-to-cook-button-mushrooms/', label: 'How to cook button mushrooms' },
+      { href: '/stuffed-mushrooms/', label: 'Air fryer stuffed mushrooms' },
     ],
     faqs: [
       { question: 'How long do mushrooms take in an air fryer?', answer: 'At 400°F (200°C), halved or quartered mushrooms usually take 8 to 12 minutes.' },
       { question: 'Do I need to preheat the air fryer?', answer: 'Preheating helps the mushrooms begin browning as soon as they enter the basket. Three minutes is usually enough.' },
       { question: 'Why are my air-fryer mushrooms soggy?', answer: 'The basket may be overcrowded, or the mushrooms may have gone in wet. Give them space and dry them before seasoning.' },
       { question: 'Can I air-fry whole mushrooms?', answer: 'Yes, but whole mushrooms take longer and brown less evenly. Halving them gives better color and seasoning.' },
+      { question: 'Can I make stuffed mushrooms in an air fryer?', answer: 'Yes, and it is the quickest way to make a small batch. Air-fry the empty caps gill side down at 375°F (190°C) for 4 minutes so their liquid runs out, then fill them and cook 6 to 8 minutes more. The full method is in [air fryer stuffed mushrooms](/stuffed-mushrooms/).' },
       { question: 'Can I use canned mushrooms?', answer: 'Yes, but drain and pat them very dry first. They will be softer than fresh mushrooms and may need only 6 to 8 minutes.' }
     ],
     storage: [
@@ -956,6 +958,7 @@ const methodGuides: GuideArticle[] = [
       { href: '/how-to-cook-portobello-mushrooms/', label: 'How to cook portobello mushrooms' },
       { href: '/how-to-cook-king-oyster-mushrooms/', label: 'How to cook king oyster mushrooms' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
+      { href: '/stuffed-mushrooms/', label: 'Stuffed mushrooms for a party tray' },
     ]
   },
   {
@@ -2468,6 +2471,7 @@ const speciesGuides: GuideArticle[] = [
       { href: '/how-to-cook-button-mushrooms/', label: 'How to cook button mushrooms' },
       { href: '/garlic-mushroom-pasta/', label: 'Garlic mushroom pasta recipe' },
       { href: '/mushroom-stuffing/', label: 'Mushroom stuffing with browned cremini' },
+      { href: '/stuffed-mushrooms/', label: 'Stuffed cremini mushrooms' },
       { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' },
       { href: '/how-to-store-mushrooms/', label: 'How to store cremini so they stay firm' },
       { href: '/how-to-tell-if-mushrooms-are-bad/', label: 'How to tell if mushrooms are bad' }
@@ -2706,6 +2710,7 @@ const speciesGuides: GuideArticle[] = [
       { href: '/how-to-grill-mushrooms/', label: 'How to grill mushrooms' },
       { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
       { href: '/how-to-cook-button-mushrooms/', label: 'How to cook button mushrooms' },
+      { href: '/stuffed-mushrooms/', label: 'Stuffed mushrooms (cremini or portobello)' },
     ]
   },
   {

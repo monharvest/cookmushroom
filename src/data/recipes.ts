@@ -374,5 +374,124 @@ export const recipeArticles: RecipeArticle[] = [
       { question: 'Why is my stuffing dry?', answer: 'There was not enough liquid for how dry the bread was, or it spent too long uncovered. Check a cube before baking and add stock if the center is dry, and keep the first 25 minutes covered so the inside heats through before the top crisps.' },
       { question: 'Can you use cornbread?', answer: 'For up to half the bread. All-cornbread stuffing crumbles into a soft mass; mixed with sourdough or white bread it keeps some structure. Fold gently, and go by the squeeze check rather than the stock measurement.' }
     ]
+  },
+  {
+    // Calendar month 4, second pick after /mushroom-stuffing/ (reorder accepted
+    // 2026-09-27). Ubersuggest US, 2026-09-27: `air fryer stuffed mushrooms`
+    // 1,300/mo, SD 20, Dec 1,900, SERP DA 22–34 — the winnable slice.
+    // `stuffed mushrooms` 49,500/mo (Nov–Dec 110,000) but SD 50. Covers both the
+    // air fryer (small batch) and the oven (party batch).
+    // HERO PENDING: brief in docs/image-briefs/october-2026-heroes-2.md. The build
+    // fails (scripts/check-image-refs.mjs) until the hero exists — do not push before.
+    slug: 'stuffed-mushrooms',
+    title: 'Air Fryer Stuffed Mushrooms (Plus an Oven Party Batch)',
+    description: 'Air fry the empty caps 4 minutes, fill them with a browned-stem and cream cheese filling, then 6 to 8 minutes more at 375°F. Oven: 400°F for a party tray.',
+    updated: '2026-10-10',
+    minutes: '50 min',
+    image: '/images/cookmushroom-stuffed-mushrooms-hero.webp',
+    imageAlt: 'Stuffed cremini mushrooms with a golden, crisp Parmesan and breadcrumb topping and chopped parsley on a white platter',
+    recipeName: 'Air Fryer Stuffed Mushrooms with Garlic and Parmesan',
+    keywords: ['stuffed mushrooms', 'air fryer stuffed mushrooms', 'cream cheese stuffed mushrooms', 'baked stuffed mushrooms', 'party appetizer', 'make-ahead appetizer'],
+    cardMushroom: 'Cremini',
+    cardGuide: 'how-to-cook-mushrooms-in-air-fryer',
+    yieldText: '24 stuffed mushrooms (6 to 8 appetizer servings)',
+    prepIsoTime: 'PT25M',
+    cookIsoTime: 'PT25M',
+    totalIsoTime: 'PT50M',
+    recipeCategory: 'Appetizer', cookingMethod: 'Air frying', recipeCuisine: 'American',
+    ingredients: [
+      '24 medium cremini mushrooms (about 1 1/2 lb / 680 g), caps 1 1/2 to 2 inches across',
+      '3 tbsp (45 ml) olive oil, divided',
+      '1 tbsp (14 g) unsalted butter',
+      '1 small shallot (about 1/4 cup / 40 g), minced',
+      '3 garlic cloves, minced',
+      '1 tsp fresh thyme leaves',
+      '2 tbsp (30 ml) dry white wine or dry sherry (optional)',
+      '4 oz (113 g) cream cheese, softened',
+      '1/2 cup (40 g) finely grated Parmesan, divided',
+      '1/3 cup (25 g) panko breadcrumbs, divided',
+      '2 tbsp chopped flat-leaf parsley',
+      '1/2 tsp kosher salt, divided',
+      '1/4 tsp black pepper'
+    ],
+    steps: [
+      'Wipe the mushrooms clean. Twist out the stems, then use a small spoon to scrape a little more room in each cap without breaking the rim. Chop the stems and scrapings finely.',
+      'Heat 1 tbsp oil and the butter in a skillet over medium-high. Add the chopped stems, shallot, and 1/4 tsp salt and cook 6 to 8 minutes, stirring now and then, until the liquid has cooked away, **the pan looks dry**, and the bits are browned.',
+      'Add the garlic and thyme and cook 1 minute, until fragrant. Pour in the wine, if using, and let it bubble away, about 30 seconds. Scrape into a bowl and cool 5 minutes.',
+      'Stir in the cream cheese, 1/4 cup Parmesan, 2 tbsp panko, the parsley, and the pepper until smooth. In a small bowl, mix the remaining Parmesan and panko with 1 tbsp oil for the topping.',
+      'Preheat the air fryer to 375°F (190°C) for 3 minutes. Brush the outside of the caps with the remaining 1 tbsp oil and season the cavities with the remaining 1/4 tsp salt.',
+      'Air fry half the caps (about 12), **gill side down** in a single layer, for 4 minutes. They shrink slightly and release liquid.',
+      'Turn the caps over with tongs and tip out any liquid pooled inside. Fill each with a heaping tablespoon of filling, mounded, and press on a pinch of the topping.',
+      'Air fry 6 to 8 minutes more, until the topping is deep golden and the tip of a knife slides easily into the side of a cap. Repeat with the second batch. Rest 3 minutes before serving — the filling is very hot.'
+    ],
+    tips: [
+      'Cook the empty caps first. It drives off the water that would otherwise pool around the filling and turn it loose and gray.',
+      'Brown the stems until the pan is dry. Wet filling is the other half of the watery-mushroom problem.',
+      'Pick caps of the same size so every one finishes at the same time.',
+      'Air fryers run hot or cool by model. Check the first batch at 6 minutes and adjust the second.',
+      'Taste the Parmesan before salting: a very salty cheese means you can halve the salt in the filling.'
+    ],
+    pairings: ['a holiday appetizer board', 'roast beef or steak', 'a green salad with lemon dressing', 'crostini', 'sparkling wine'],
+    storage: [
+      'Refrigerate leftovers in a covered container within 2 hours, for up to **3 to 4 days**.',
+      'Reheat in the air fryer at 350°F (175°C) for 3 to 4 minutes, or in a 375°F (190°C) oven for about 8 minutes, until hot in the middle. The microwave makes the caps rubbery and the topping soft.',
+      'Freeze baked, cooled mushrooms in one layer, then bag them, for up to 1 month. Reheat from frozen in a 375°F (190°C) oven for 15 to 20 minutes, until hot through. The caps soften a little after freezing.'
+    ],
+    relatedLinks: [
+      { href: '/how-to-cook-mushrooms-in-air-fryer/', label: 'How to cook mushrooms in an air fryer' },
+      { href: '/how-to-cook-cremini-mushrooms/', label: 'How to cook cremini mushrooms' },
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
+      { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
+      { href: '/how-to-cook-portobello-mushrooms/', label: 'How to cook portobello mushrooms' },
+      { href: '/mushroom-stuffing/', label: 'Mushroom stuffing for the holiday table' }
+    ],
+    sections: [
+      { heading: 'Why stuffed mushrooms turn watery', text: [
+        'Mushrooms are about **92 percent water**, and a whole cap holds onto it until heat forces it out. Stuff a raw cap and bake it, and that water collects in the cavity, under the filling. You get a gray puddle on the plate and a filling that slumps instead of setting.',
+        'Two steps stop it. **Cook the empty caps gill side down first**, so the first rush of liquid runs out of the cap instead of into the filling. And brown the chopped stems until the pan is dry, so the filling itself goes in without water to give up. Both take minutes, and they are the difference between a crisp, set top and a soggy one.'
+      ] },
+      { heading: 'Air fryer or oven?', text: [
+        'The air fryer is the better tool for a small batch: the moving air crisps the topping fast and the caps cook through in about 12 minutes. A basket only holds one layer, though, so for a party tray of two dozen or more, the oven does it in one go.',
+        'The filling and the two-stage method are the same either way. Only the temperature, the times, and the batch size change.'
+      ], table: { headings: ['', 'Air fryer', 'Oven'], rows: [
+        ['Batch size', 'About 10 to 12 medium caps in a 5- to 6-quart basket', '24 or more on a rimmed sheet pan'],
+        ['Temperature', '375°F (190°C)', '400°F (200°C)'],
+        ['Empty caps, gill side down', '4 minutes', '10 minutes'],
+        ['After filling', '6 to 8 minutes', '12 to 15 minutes'],
+        ['Best for', 'A snack for 2 to 4, or two quick batches', 'A party tray, all hot at once']
+      ] } },
+      { heading: 'The oven method for a party tray', text: 'Make the filling and topping exactly as in the recipe card below, then:', ordered: [
+        'Heat the oven to 400°F (200°C). Line a rimmed sheet pan with foil and set a wire rack on it if you have one.',
+        'Brush the caps with oil and lay them **gill side down** on the rack or pan. Roast 10 minutes.',
+        'Turn them over and pour off any liquid in the caps and on the pan. Fill each cap and press on the topping.',
+        'Bake 12 to 15 minutes, until the topping is deep golden and a knife slides easily into the side of a cap. Rest 3 minutes before serving.'
+      ] },
+      { heading: 'Which mushrooms to stuff', text: 'Cremini (sold as baby bella) are the best choice: firm enough to hold their shape, deep enough to take a real spoonful of filling, and more flavorful than white button mushrooms. Look for caps of one size, closed or barely open underneath.', table: { headings: ['Mushroom', 'Good for stuffing?', 'Notes'], rows: [
+        ['Cremini, 1 1/2 to 2 in', 'Best', 'The size this recipe is timed for.'],
+        ['White button', 'Yes', 'Milder and a little softer; check 1 minute early.'],
+        ['Portobello', 'As a main course', 'Scrape out the dark gills first, and expect roughly double the times. One cap is a serving.'],
+        ['Shiitake', 'Only large caps', 'Shallow caps hold little filling. Remove the stems — they stay woody — and chop them for the broth pot, not the filling.']
+      ] } },
+      { heading: 'Make them ahead', text: [
+        'For a party, do the slow parts the day before and leave only the filling and the final bake for the day. Filled, unbaked caps hold in the fridge for a few hours, but not overnight: the filling softens and the caps keep weeping.',
+        'If they go into the oven or air fryer straight from the fridge, add 2 to 3 minutes and **go by the knife test, not the clock**.'
+      ], table: { headings: ['Step', 'How far ahead', 'Keep it'], rows: [
+        ['Make the filling and topping', 'Up to 2 days', 'Separately, covered in the fridge'],
+        ['Pre-cook the empty caps', 'Up to 1 day', 'Drained, gill side down on a paper towel, covered in the fridge'],
+        ['Fill the caps', 'Up to 4 hours', 'Covered in the fridge'],
+        ['Final bake', 'Just before serving', 'Add 2 to 3 minutes if cold from the fridge']
+      ] } },
+      { heading: 'How to tell they are done', text: 'Three cues, all visible: the topping is **deep golden** rather than pale, the caps have darkened and shrunk slightly, and the tip of a knife slides into the side of a cap with no resistance. If the topping is browning before the caps are tender, lay a piece of foil loosely over them for the last few minutes.' }
+    ],
+    faqs: [
+      { question: 'How long do stuffed mushrooms take in the air fryer?', answer: 'About 12 minutes at 375°F (190°C): 4 minutes for the empty caps gill side down, then 6 to 8 minutes after filling, until the topping is deep golden and a knife slides easily into a cap.' },
+      { question: 'What temperature do you bake stuffed mushrooms at?', answer: 'Use 400°F (200°C). Roast the empty caps gill side down for 10 minutes, then fill them and bake 12 to 15 minutes more.' },
+      { question: 'Do you have to pre-cook mushrooms before stuffing them?', answer: 'It is the step that stops them going watery. Cooking the empty caps gill side down lets the first rush of liquid run out of the cap instead of pooling under the filling. It adds 4 minutes in the air fryer or 10 in the oven.' },
+      { question: 'Why are my stuffed mushrooms watery?', answer: 'Either the caps went in raw or the filling went in wet. Pre-cook the empty caps and tip out the liquid, and brown the chopped stems until **the pan looks dry** before mixing the filling.' },
+      { question: 'Can you make stuffed mushrooms ahead of time?', answer: 'Yes. Make the filling and pre-cook the caps up to a day ahead, then fill them up to 4 hours before baking. Add 2 to 3 minutes to the final bake if they come straight from the fridge.' },
+      { question: 'Can you freeze stuffed mushrooms?', answer: 'Freeze them baked, not raw. Cool them, freeze in one layer, then bag them for up to 1 month. Reheat from frozen in a 375°F (190°C) oven for 15 to 20 minutes. They are best fresh: the caps soften a little after freezing.' },
+      { question: 'What are the best mushrooms for stuffing?', answer: 'Cremini with caps 1 1/2 to 2 inches across. They hold their shape, take a good spoonful of filling, and taste more of mushroom than white button caps. Large portobellos work as a main course.' },
+      { question: 'Can you add sausage to stuffed mushrooms?', answer: 'Yes. Brown 4 oz (113 g) bulk sausage until **no pink remains** and it reaches 160°F (71°C), drain it well, and fold it into the filling in place of half the cream cheese. Cut the salt in the filling to a pinch, since sausage is already salted.' }
+    ]
   }
 ];
