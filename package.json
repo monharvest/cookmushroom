@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build && node scripts/write-routes-json.mjs",
+    "build": "astro check && astro build && node scripts/check-image-refs.mjs && node scripts/write-routes-json.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "grok": "node scripts/grok-status.mjs"
