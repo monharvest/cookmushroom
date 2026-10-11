@@ -18,7 +18,10 @@ export type GuideFaq = { question: string; answer: string };
 // A tool the page tells the reader to use, linked to Amazon by GearBox.astro.
 // `search` is the Amazon search phrase; `note` says why this method uses it.
 // Only list tools the page's own steps call for.
-export type GearItem = { name: string; search: string; note?: string };
+// `search` is always required: it is the default link, and the fallback
+// "other options" link when an item also carries an `asin` (a verified
+// amazon.com product page; `product` names it). See src/lib/amazon.ts.
+export type GearItem = { name: string; search: string; note?: string; asin?: string; product?: string };
 export type GuideLink = { href: string; label: string };
 
 export type GuideArticle = {
@@ -45,6 +48,8 @@ export type GuideArticle = {
   badge?: string;
   sections?: GuideSection[];
   gear?: GearItem[];
+  // TEST (amazon-test-2026-10): show the KitchenEssentials banner below the body.
+  essentialsBanner?: boolean;
   relatedLinks?: GuideLink[];
   // External citations, rendered as a "Sources" list at the end of the article.
   // Only for pages where a reader makes a real food-safety decision, and only
@@ -145,6 +150,10 @@ const methodGuides: GuideArticle[] = [
       'Add garlic during the final minute. Garlic added at the start can burn before the mushrooms brown.'
     ],
     pairings: ['steak', 'eggs', 'pasta', 'toast', 'rice bowls', 'polenta'],
+    gear: [
+      { name: '12-inch skillet', search: '12 inch skillet', note: 'wide enough for a pound of slices in one layer, so their water cooks off fast' },
+    ],
+    essentialsBanner: true,
     relatedLinks: [
       { href: '/types-of-mushrooms/', label: 'Types of edible mushrooms and how to cook each' },
       { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' },
@@ -207,6 +216,11 @@ const methodGuides: GuideArticle[] = [
       'Add salt after the mushrooms begin to brown so they do not release all their moisture at once.'
     ],
     pairings: ['toasted sourdough', 'steak or roast chicken', 'creamy polenta', 'scrambled eggs', 'buttered noodles'],
+    gear: [
+      { name: '12-inch skillet', search: '12 inch skillet', note: 'room for the mushrooms to brown instead of crowding' },
+      { name: 'Mushroom brush', search: 'mushroom brush', asin: 'B073X54VM9', product: 'Redecker natural-bristle mushroom brush', note: 'for brushing off dirt instead of rinsing' },
+    ],
+    essentialsBanner: true,
     sections: [
       { heading: 'Why this method works', text: 'A hot, uncrowded pan lets mushroom moisture evaporate before the butter goes in. That gives the mushrooms browned edges instead of a soft, steamed texture.' },
       { heading: 'Before you start', text: 'Wipe the mushrooms with a damp towel or brush off dirt. Trim the dry ends, then cut the mushrooms into similar-sized pieces so they finish together.' }
@@ -271,6 +285,10 @@ const methodGuides: GuideArticle[] = [
       'Check early if the pieces are small. Air fryers vary, and thin slices can finish in 7 to 8 minutes.'
     ],
     pairings: ['burgers', 'baked potatoes', 'rice bowls', 'breakfast hash', 'tacos'],
+    gear: [
+      { name: 'Basket air fryer', search: 'basket air fryer', note: 'the basket you shake halfway through' },
+      { name: 'Mushroom brush', search: 'mushroom brush', note: 'brush them clean so the oil coats a dry surface' },
+    ],
     sections: [
       { heading: 'Why use an air fryer?', text: 'Moving hot air browns the mushroom edges quickly while the centers stay tender. The best results come from a dry basket with enough space for the air to circulate.' },
       { heading: 'Before you start', text: 'Brush off dirt and trim the stems. If the mushrooms need rinsing, dry them thoroughly before seasoning. Cut them evenly so small pieces do not overcook.' }
@@ -322,6 +340,12 @@ const methodGuides: GuideArticle[] = [
       'Clean mushrooms just before cooking, not before storage.'
     ],
     pairings: ['the pan mushroom method', 'air-fryer mushrooms', 'roasted mushrooms', 'garlic-butter mushrooms'],
+    gear: [
+      { name: 'Mushroom brush', search: 'mushroom brush', asin: 'B073X54VM9', product: 'Redecker natural-bristle mushroom brush', note: 'soft bristles lift loose soil without water' },
+      { name: 'Colander', search: 'stainless steel colander', note: 'for the quick rinse when they are truly muddy' },
+      { name: 'Flour sack towels', search: 'flour sack kitchen towels', note: 'lint-free, for patting them completely dry' },
+    ],
+    essentialsBanner: true,
     sections: [
       { heading: 'The 30-second answer', text: 'Brush or wipe most mushrooms clean. Use a quick rinse only when they are truly muddy, then dry them thoroughly. Never leave mushrooms soaking in a bowl of water.' },
       { heading: 'The golden rule', quote: 'Clean mushrooms quickly, then dry them completely before they reach a hot pan.' },
@@ -385,6 +409,9 @@ const methodGuides: GuideArticle[] = [
       'Buy the quantity you will cook that week. No storage method beats a mushroom that was in the ground four days ago.'
     ],
     pairings: ['the pan method', 'oven-roasted mushrooms', 'grilled mushrooms', 'dried mushroom broth'],
+    gear: [
+      { name: 'Brown paper bags', search: 'brown paper lunch bags', note: 'for loose or opened mushrooms: paper absorbs moisture and still breathes' },
+    ],
     sections: [
       { heading: 'The 30-second answer', text: 'Unwashed, in the fridge, in something that breathes. The vented carton mushrooms come in is already the right container; a paper bag is the right replacement once you open it. Sealed plastic is the one real mistake — it traps the moisture the mushrooms give off and returns it to their surfaces as slime.' },
       { heading: 'The rule', quote: 'Mushrooms spoil from water and warmth. Every good storage decision is about removing one of the two.' },
@@ -603,6 +630,12 @@ const methodGuides: GuideArticle[] = [
       'Label the variety as well as the date. Frozen cooked mushrooms all look alike, and porcini deserve better than being mistaken for button mushrooms.'
     ],
     pairings: ['soups', 'pasta sauces', 'gravy', 'risotto', 'stews', 'fillings'],
+    gear: [
+      { name: '12-inch skillet', search: '12 inch skillet', note: 'wide, so the water cooks off before they go in the freezer' },
+      { name: 'Rimmed half-sheet pan', search: 'half sheet pan', asin: 'B0049C2S32', product: 'Nordic Ware Naturals half-sheet pans, 2-pack', note: 'for freezing the pieces in a single layer before bagging' },
+      { name: 'Parchment paper', search: 'parchment paper roll', note: 'lines the tray so the frozen pieces lift off' },
+      { name: 'Freezer bags', search: 'gallon freezer bags', note: 'to bag them flat, press the air out and stack' },
+    ],
     sections: [
       { heading: 'The 30-second answer', text: 'Cook mushrooms before you freeze them. Sauté them in a wide pan until the water has cooked off and the edges brown, cool them completely, freeze them in a single layer on a tray, then bag them flat. They keep 2 to 3 months with good texture and cook straight from frozen. Freezing mushrooms raw is the common shortcut and it is the reason so many people think frozen mushrooms are watery — raw mushrooms are roughly 90 percent water, and freezing that water is what wrecks them.' },
       { heading: 'The rule', quote: 'Freeze cooked mushrooms, not raw ones. The pan removes the water that the freezer would otherwise turn against you.' },
@@ -713,6 +746,12 @@ const methodGuides: GuideArticle[] = [
       'Do not dry different varieties on the same tray if you care which is which. Dried mushrooms are hard to tell apart and the aromas mingle.'
     ],
     pairings: ['broths', 'risotto', 'pasta sauces', 'braises', 'rubs and seasoning'],
+    gear: [
+      { name: 'Food dehydrator', search: 'food dehydrator adjustable temperature', asin: 'B0090WOCN0', product: 'Nesco FD-75A Snackmaster Pro', note: 'holds 125–135°F with moving air, which an oven cannot' },
+      { name: 'Wire cooling racks', search: 'wire cooling rack for half sheet pan', note: 'for the oven method, so air reaches both sides' },
+      { name: 'Airtight glass jars', search: 'airtight glass jars', note: 'clear glass shows condensation while they condition' },
+      { name: 'Spice grinder', search: 'electric spice grinder', note: 'turns broken pieces into mushroom powder' },
+    ],
     sections: [
       { heading: 'The 30-second answer', text: 'Slice clean mushrooms about 1/4 inch thick, spread them in a single layer, and dry them at 125–135°F until a cooled slice snaps instead of bending. That is 4 to 8 hours in a dehydrator and 2 to 4 in an oven set to its lowest temperature with the door propped open. Then condition them in a jar for a week to catch any moisture you missed. Done properly they keep about a year, and they rehydrate into something more intensely flavoured than the fresh mushroom you started with.' },
       { heading: 'The rule', quote: 'Dry until they snap. A slice that bends is still holding water, and water left in the jar is what spoils the whole batch.' },
@@ -884,7 +923,7 @@ const methodGuides: GuideArticle[] = [
     ],
     pairings: ['steak', 'pasta', 'grain bowls', 'eggs', 'roast chicken', 'toast'],
     gear: [
-      { name: 'Rimmed half-sheet pan', search: 'half sheet pan', note: 'a shallow rim lets steam escape; use two when a pound overlaps' },
+      { name: 'Rimmed half-sheet pan', search: 'half sheet pan', asin: 'B0049C2S32', product: 'Nordic Ware Naturals half-sheet pans, 2-pack', note: 'a shallow rim lets steam escape; use two when a pound overlaps' },
     ],
     sections: [
       { heading: 'Why roasting works', text: 'A hot oven is the easiest way to cook a pound or more of mushrooms at once. Give the pieces room on a sheet pan and the moisture can evaporate instead of collecting in a crowded dish.' },
@@ -1166,6 +1205,10 @@ const speciesGuides: GuideArticle[] = [
       'Keep the pan in a single layer. Cook in batches if necessary.'
     ],
     pairings: ['toasted country bread', 'soft polenta', 'scrambled eggs', 'roast chicken', 'creamy pasta'],
+    gear: [
+      { name: '12-inch skillet', search: '12 inch skillet', note: 'so the halves fit cut side down in one layer' },
+      { name: 'Mushroom brush', search: 'mushroom brush', note: 'for brushing grit out of the pits' },
+    ],
     sections: [
       { heading: 'Safety first', text: 'Use morels purchased from a reputable market or a wild sample verified by a qualified mushroom expert. Never eat an unknown wild mushroom. Clean morels carefully and cook them thoroughly; do not eat them raw or undercooked.' },
       { heading: 'Identification: true morels vs. false morels', bullets: ['True morels have a distinctive cap covered in deeply pitted honeycomb-like hollows.', 'Slice the mushroom completely from top to bottom. True morels are 100% hollow.'] },
@@ -1854,7 +1897,7 @@ const speciesGuides: GuideArticle[] = [
     ],
     pairings: ['rice bowls', 'steak', 'pasta', 'eggs', 'polenta', 'tacos'],
     gear: [
-      { name: '12-inch cast-iron skillet', search: '12 inch cast iron skillet', note: 'heavy enough to stay hot while the fronds crisp' },
+      { name: '12-inch cast-iron skillet', search: '12 inch cast iron skillet', asin: 'B00006JSUB', product: 'Lodge 12-inch cast-iron skillet', note: 'heavy enough to stay hot while the fronds crisp' },
       { name: 'Metal spatula', search: 'metal spatula', note: 'for pressing larger clusters flat against the pan' },
     ],
     sections: [
@@ -2631,6 +2674,10 @@ const speciesGuides: GuideArticle[] = [
       'Let the mushrooms rest before slicing so their juices stay in the cap.'
     ],
     pairings: ['brioche buns', 'herbed couscous', 'grilled asparagus', 'arugula salad', 'roasted potatoes'],
+    gear: [
+      { name: 'Cast-iron grill pan', search: 'cast iron grill pan', note: 'the indoor alternative to the grill' },
+      { name: 'Basting brush', search: 'silicone basting brush', note: 'for brushing the marinade over both sides' },
+    ],
     sections: [
       { heading: 'Make portobellos tender and flavorful', text: 'Portobello caps have a meaty texture and absorb marinades quickly. High heat browns the surface while keeping the center juicy.' },
       { heading: 'Prepare the caps carefully', text: 'Wipe the caps clean rather than soaking them. Remove the stems, and scrape out the dark gills only if you prefer a cleaner-looking marinade and lighter-colored juices.' }

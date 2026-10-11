@@ -1,0 +1,34 @@
+---
+// "Mushroom kitchen essentials" — a banner-style callout below the article
+// body (TEST, branch amazon-test-2026-10). Self-built HTML/CSS: no Amazon
+// iframe or script, no images, no prices or ratings. It carries its own
+// affiliate notice so it is compliant even on a page without a GearBox, and
+// every link goes through src/lib/amazon.ts with rel="sponsored nofollow noopener".
+// Shown only on guides with `essentialsBanner: true`. Hidden in print.
+import { AMAZON_REL, amazonProductUrl, amazonSearchUrl } from '../lib/amazon';
+
+type Essential = { name: string; why: string; search: string; asin?: string };
+// The four tools nearly every method on the site leans on.
+const essentials: Essential[] = [
+  { name: 'Mushroom brush', why: 'cleans without soaking', search: 'mushroom brush', asin: 'B073X54VM9' },
+  { name: '12-inch cast-iron skillet', why: 'room to brown, not steam', search: '12 inch cast iron skillet', asin: 'B00006JSUB' },
+  { name: 'Rimmed half-sheet pan', why: 'roasting and tray-freezing', search: 'half sheet pan', asin: 'B0049C2S32' },
+  { name: 'Fine-mesh sieve', why: 'strains dried-mushroom broth', search: 'fine mesh sieve' },
+];
+---
+<aside class="essentials" aria-labelledby="essentials-heading">
+  <div class="essentials-head">
+    <h2 id="essentials-heading">Mushroom kitchen essentials</h2>
+    <p class="essentials-notice">Links go to Amazon. As an Amazon Associate I earn from qualifying purchases. <a href="/affiliate-disclosure/">How that works</a>.</p>
+  </div>
+  <ul class="essentials-list">
+    {essentials.map((item) => (
+      <li>
+        <a href={item.asin ? amazonProductUrl(item.asin) : amazonSearchUrl(item.search)} rel={AMAZON_REL} target="_blank">
+          <strong>{item.name}</strong>
+          <span>{item.why}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</aside>

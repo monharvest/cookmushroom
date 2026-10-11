@@ -134,6 +134,17 @@ th { background: var(--th); font-size: .9rem; }
 /* Padding brings the link to a 24px tap target; most readers are on a phone. */
 .gear li > a { font-weight: 800; display: inline-block; padding: .15rem 0; }
 .gear-why { color: var(--muted); }
+.gear-pick { display: block; color: var(--muted); font-size: .85rem; }
+/* Banner test (KitchenEssentials.astro): pure CSS, no images, no third-party code. */
+.essentials { margin: 2rem 0 0; padding: 1rem 1.15rem; border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 1rem; background: var(--panel); }
+.essentials-head h2 { font-size: 1.2rem; letter-spacing: -0.02em; margin: 0 0 .25rem; }
+.essentials-notice { color: var(--muted); font-size: .82rem; margin: 0 0 .8rem; }
+.essentials-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; }
+.prose .essentials-list li + li { margin-top: 0; }
+.essentials-list a { display: block; height: 100%; text-decoration: none; background: var(--card); border: 1px solid var(--line); border-radius: .8rem; padding: .65rem .75rem; }
+.essentials-list a:hover, .essentials-list a:focus-visible { border-color: var(--accent); }
+.essentials-list strong { display: block; color: var(--accent); font-size: .95rem; }
+.essentials-list span { display: block; color: var(--muted); font-size: .82rem; margin-top: .15rem; }
 .updated { color: var(--muted); font-size: .95rem; font-weight: 700; }
 .compact table { min-width: 0; }
 .breadcrumbs { color: var(--muted); font-size: .88rem; font-weight: 700; margin-bottom: 1.2rem; }
@@ -293,7 +304,7 @@ ol.checklist label::before { content: counter(cook-step) '.'; font-weight: 800; 
   html { scroll-behavior: auto; }
   body { background: white; color: black; font-size: 11pt; line-height: 1.45; }
   .site-header, .footer, .share-row, .breadcrumbs, .skip-link, .chart-link,
-  .link-cards, .guide-hero-image, .prose img, .gear { display: none !important; }
+  .link-cards, .guide-hero-image, .prose img, .gear, .essentials { display: none !important; }
   main { max-width: none; padding: 0; }
   .prose { background: none; border: 0; border-radius: 0; padding: 0; box-shadow: none; }
   .panel, .card, .tool-card, .notice, .fact, .recipe-block { box-shadow: none; background: none; }

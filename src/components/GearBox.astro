@@ -6,10 +6,13 @@
 // - every link is rel="sponsored nofollow noopener";
 // - no prices, ratings or product images — only the tool and why the method
 //   uses it.
+// An item with an `asin` links its name to that one product and keeps a
+// search link beside it ("other options"), so a dead listing never leaves the
+// reader stuck. Items without one link to a search, as before.
 // Affiliate links stay out of body copy: richtext.ts only allows internal
 // links, so this box is the one place an Amazon link can appear on a page.
 import type { GearItem } from '../data/guides';
-import { amazonSearchUrl } from '../lib/amazon';
+import { AMAZON_REL, amazonProductUrl, amazonSearchUrl } from '../lib/amazon';
 
 const { items } = Astro.props as { items: GearItem[] };
 ---
@@ -19,8 +22,18 @@ const { items } = Astro.props as { items: GearItem[] };
   <ul>
     {items.map((item) => (
       <li>
-        <a href={amazonSearchUrl(item.search)} rel="sponsored nofollow noopener" target="_blank">{item.name}</a>
-        {item.note && <span class="gear-why"> — {item.note}</span>}
+        {item.asin ? (
+          <>
+            <a href={amazonProductUrl(item.asin)} rel={AMAZON_REL} target="_blank">{item.name}</a>
+            {item.note && <span class="gear-why"> — {item.note}</span>}
+            <span class="gear-pick">Linked: {item.product ?? item.name} · <a href={amazonSearchUrl(item.search)} rel={AMAZON_REL} target="_blank">other options</a></span>
+          </>
+        ) : (
+          <>
+            <a href={amazonSearchUrl(item.search)} rel={AMAZON_REL} target="_blank">{item.name}</a>
+            {item.note && <span class="gear-why"> — {item.note}</span>}
+          </>
+        )}
       </li>
     ))}
   </ul>

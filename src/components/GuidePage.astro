@@ -7,6 +7,7 @@ import CookMode from './CookMode.astro';
 import { inlineMarkup } from '../lib/richtext';
 import RelatedCards from './RelatedCards.astro';
 import GearBox from './GearBox.astro';
+import KitchenEssentials from './KitchenEssentials.astro';
 
 const { guide } = Astro.props as { guide: GuideArticle };
 const seoTitle = guide.title.length + ' | CookMushroom'.length <= 60 ? `${guide.title} | CookMushroom` : guide.title;
@@ -260,6 +261,7 @@ const schema = [contentSchema, breadcrumbSchema];
         <h2>Good with</h2>
         <p>{guide.pairings.join(', ')}.</p>
       </section>
+      {guide.essentialsBanner && <KitchenEssentials />}
       <ShareRow url={pageUrl} title={guide.title} image={imageUrl} description={guide.description} label="Cooked this?" position="bottom" />
       {guide.relatedLinks && guide.relatedLinks.length > 0 && (
         <RelatedCards links={guide.relatedLinks} heading="Related guides" />
