@@ -9,7 +9,9 @@ const {
   heroImageSizes,
   heroImageAlt,
   ogType = 'website',
+  noindex = false,
 } = Astro.props;
+const onSearchPage = Astro.url.pathname.startsWith('/search');
 const site = 'https://cookmushroom.com';
 const canonical = new URL(Astro.url.pathname, site).toString();
 const logo = `${site}/logo.png`;
@@ -38,6 +40,7 @@ const schemas = [baseSchema, ...(Array.isArray(schema) ? schema : [schema]).filt
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     {heroImage && <link rel="preload" as="image" href={heroImage} imagesrcset={heroImageSrcset} imagesizes={heroImageSizes} fetchpriority="high" />}
     <meta property="og:site_name" content="CookMushroom" />
     <meta property="og:title" content={title} />
@@ -74,6 +77,15 @@ const schemas = [baseSchema, ...(Array.isArray(schema) ? schema : [schema]).filt
           <a href="/mushroom-recipe-index/" aria-current={Astro.url.pathname.startsWith('/mushroom-recipe-index') ? 'page' : undefined}>Recipes</a>
           <a href="/about/" aria-current={Astro.url.pathname.startsWith('/about') ? 'page' : undefined}>About</a>
         </div>
+        {/* A plain GET form, so it works with JS off; /search/ has its own box. */}
+        {!onSearchPage && (
+          <form class="nav-search" action="/search/" method="get" role="search">
+            <input name="q" type="search" placeholder="Search" aria-label="Search guides and recipes" autocomplete="off" enterkeyhint="search" />
+          </form>
+        )}
+        <a class="nav-search-link" href="/search/" aria-label="Search guides and recipes" aria-current={onSearchPage ? 'page' : undefined}>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.8-3.8" /></svg>
+        </a>
       </nav>
     </header>
     <slot />

@@ -63,6 +63,18 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 .nav-links { display: flex; gap: 1rem; flex-wrap: wrap; color: var(--muted); font-weight: 650; font-size: .94rem; }
 .nav-links a { text-decoration: none; }
 .nav-links a:hover { color: var(--accent); }
+/* Header search: a field on wide screens, an icon link to /search/ on a phone,
+   where the single-row header has no room for a field. */
+.nav-links { margin-left: auto; }
+.nav-search input {
+  width: 11rem; font: inherit; font-size: .9rem; color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: 999px; padding: .4rem .9rem;
+}
+.nav-search input::placeholder { color: var(--muted); }
+.nav-search-link { display: none; flex: none; color: var(--muted); padding: .3rem; margin: -.3rem; }
+.nav-search-link:hover, .nav-search-link[aria-current="page"] { color: var(--accent); }
+.nav-search-link svg { display: block; }
 
 main { max-width: 1120px; margin: 0 auto; padding: 3.5rem 1.25rem; }
 .hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr); gap: 2rem; align-items: center; padding: 2rem 0 3rem; }
@@ -164,13 +176,15 @@ th { background: var(--th); font-size: .9rem; }
   .hero, .grid, .recipe-list, .controls, .quick-grid { grid-template-columns: 1fr; }
   /* Stay a single row. Stacking the brand above the links made the sticky
      header ~108px tall — 13% of a 375px-wide phone screen, on every scroll. */
-  .nav { padding: .55rem .7rem; gap: .5rem; }
-  .brand { font-size: 1rem; flex: none; letter-spacing: -0.05em; }
+  .nav { padding: .55rem .6rem; gap: .4rem; }
+  .brand { font-size: .95rem; flex: none; letter-spacing: -0.05em; }
   /* Overflow-scroll is the safety net, not the plan: at 375px all four links
-     fit, so nothing is hidden behind a swipe. */
-  .nav-links { flex-wrap: nowrap; gap: .55rem; font-size: .75rem; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+     and the search icon fit, so nothing is hidden behind a swipe. */
+  .nav-links { flex-wrap: nowrap; gap: .4rem; font-size: .72rem; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
   .nav-links::-webkit-scrollbar { display: none; }
   .nav-links a { white-space: nowrap; }
+  .nav-search { display: none; }
+  .nav-search-link { display: block; }
   main { padding-top: 2rem; }
   h1 { max-width: 100%; }
   .link-card-thumb { width: 72px; height: 72px; }
@@ -212,6 +226,8 @@ th { background: var(--th); font-size: .9rem; }
   flex: none; width: 88px; height: 88px; object-fit: cover;
   border-radius: .8rem; border: 1px solid var(--line); margin: 0;
 }
+/* display:flex above would otherwise beat the hidden attribute /search/ sets. */
+.link-card[hidden] { display: none; }
 .link-card-thumb.placeholder { display: grid; place-items: center; background: var(--soft); font-size: 1.9rem; }
 .link-card-body { display: block; min-width: 0; }
 .link-card-body .badge { margin-bottom: .3rem; }
@@ -223,7 +239,7 @@ th { background: var(--th); font-size: .9rem; }
 /* .prose sets a width on every img; the thumbnails opt out. */
 .prose .link-card-thumb { width: 88px; max-height: none; }
 
-/* Guides-index filter. Hidden until its script runs. */
+/* Guides-index filter (hidden until its script runs) and the /search/ box. */
 .filter { margin: 1.5rem 0 0; max-width: 28rem; }
 .filter-label { display: block; color: var(--muted); font-size: .85rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; margin-bottom: .4rem; }
 .filter input {

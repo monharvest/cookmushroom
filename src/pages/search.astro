@@ -1,0 +1,133 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { guideArticles } from '../data/guides';
+import { recipeArticles } from '../data/recipes';
+
+// Every guide and recipe is rendered as a card, so the page is a complete
+// browse-all list with JS off; the script below only reorders and hides them.
+const thumbOf = (image?: string) => (image?.endsWith('.webp') ? image.replace(/\.webp$/, '-600.webp') : image);
+const cards = [
+  ...guideArticles.map((guide) => ({ slug: guide.slug, kind: 'Guide', title: guide.title, description: guide.description, minutes: guide.minutes, image: thumbOf(guide.image), imageAlt: guide.imageAlt ?? '' })),
+  ...recipeArticles.map((recipe) => ({ slug: recipe.slug, kind: 'Recipe', title: recipe.title, description: recipe.description, minutes: recipe.minutes, image: thumbOf(recipe.image), imageAlt: recipe.imageAlt })),
+];
+---
+<Layout title="Search Guides and Recipes | CookMushroom" description="Search every CookMushroom guide and recipe by mushroom, cooking method or ingredient." noindex>
+  <main id="content">
+    <p class="eyebrow">Search</p>
+    <h1>Search</h1>
+    <p class="lead">Every guide and recipe on the site. Type a mushroom, a method or an ingredient.</p>
+    <form class="filter" action="/search/" method="get" role="search" data-search-form>
+      <label class="filter-label" for="site-search">Search guides and recipes</label>
+      <input id="site-search" name="q" type="search" placeholder="shiitake, freezing, air fryer…" autocomplete="off" spellcheck="false" enterkeyhint="search" />
+      <p class="filter-count" role="status" data-search-status></p>
+    </form>
+    <section class="section">
+      <div class="link-cards" data-search-results>
+        {cards.map((card) => (
+          <a class="link-card" href={`/${card.slug}/`} data-slug={card.slug}>
+            {card.image
+              ? <img class="link-card-thumb" src={card.image} alt={card.imageAlt} width="600" height="400" loading="lazy" decoding="async" />
+              : <span class="link-card-thumb placeholder" aria-hidden="true">🍄</span>}
+            <span class="link-card-body">
+              <span class="badge">{card.kind} · {card.minutes}</span>
+              <strong>{card.title}</strong>
+              <span class="link-card-text">{card.description}</span>
+            </span>
+          </a>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <script>
+    import { search } from '../lib/search';
+    import type { SearchDoc } from '../lib/search';
+
+    const form = document.querySelector<HTMLFormElement>('[data-search-form]');
+    const input = document.querySelector<HTMLInputElement>('#site-search');
+    const status = document.querySelector<HTMLElement>('[data-search-status]');
+    const list = document.querySelector<HTMLElement>('[data-search-results]');
+
+    if (form && input && status && list) {
+      const cards = Array.from(list.querySelectorAll<HTMLAnchorElement>('[data-slug]'));
+      const bySlug = new Map(cards.map((card) => [card.dataset.slug, card]));
+      const total = cards.length;
+
+      // One fetch, started on load so the index is usually there before the
+      // first keystroke lands.
+      const index: Promise<SearchDoc[]> = fetch('/search-index.json').then((response) => {
+        if (!response.ok) throw new Error(`search index: ${response.status}`);
+        return response.json();
+      });
+
+      const show = (ordered: HTMLAnchorElement[]) => {
+        const visible = new Set(ordered);
+        for (const card of cards) card.hidden = !visible.has(card);
+        // Re-appending moves a card, so the DOM order becomes the ranked order.
+        for (const card of ordered) list.append(card);
+      };
+
+      let latest = 0;
+      const apply = async () => {
+        const run = ++latest;
+        const query = input.value.trim();
+        if (!query) {
+          show(cards);
+          status.textContent = '';
+          return;
+        }
+        let docs: SearchDoc[];
+        try {
+          docs = await index;
+        } catch {
+          status.textContent = 'Search could not load. Every guide and recipe is listed below.';
+          return;
+        }
+        if (run !== latest) return; // a newer keystroke already answered
+        const { hits, partial } = search(docs, query);
+        show(hits.map((hit) => bySlug.get(hit.doc.slug)).filter((card): card is HTMLAnchorElement => Boolean(card)));
+        status.textContent = !hits.length
+          ? `Nothing matches “${query}”. Try a mushroom name, a method or an ingredient.`
+          : partial
+            ? `Nothing matches every word in “${query}”. Closest pages:`
+            : `${hits.length} of ${total} pages match “${query}”`;
+      };
+
+      // Keep the address in step with the box so a result list can be shared or
+      // returned to with Back, and tell GA what readers look for. Both wait for
+      // a pause in typing so half-typed words are not recorded.
+      let settle: number | undefined;
+      const settled = () => {
+        const query = input.value.trim();
+        const url = new URL(window.location.href);
+        if (query) url.searchParams.set('q', query); else url.searchParams.delete('q');
+        history.replaceState(null, '', url);
+        if (query) {
+          const gtag = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
+          gtag?.('event', 'search', { search_term: query.toLowerCase() });
+        }
+      };
+
+      input.addEventListener('input', () => {
+        apply();
+        window.clearTimeout(settle);
+        settle = window.setTimeout(settled, 1200);
+      });
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        window.clearTimeout(settle);
+        settled();
+        apply();
+      });
+
+      const initial = new URLSearchParams(window.location.search).get('q')?.trim() ?? '';
+      if (initial) {
+        input.value = initial;
+        apply();
+      } else {
+        // Arriving from the header's search link: the box is why they came.
+        input.focus({ preventScroll: true });
+      }
+    }
+  </script>
+</Layout>
