@@ -82,7 +82,8 @@ export const recipeArticles: RecipeArticle[] = [
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-cook-cremini-mushrooms/', label: 'How to cook cremini mushrooms' },
       { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
-      { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' }
+      { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
+      { href: '/mushroom-stuffing/', label: 'Mushroom stuffing with porcini and sage' }
     ],
     sections: [
       { heading: 'Why the onions start first', text: 'Onions and mushrooms want opposite pans. Onions soften slowly over medium heat and turn sweet as their sugars break down; mushrooms want a hot, dry pan and a few undisturbed minutes to brown. Starting the onions gives them the 10 to 12 minutes they need, and by the time the mushrooms go in, the pan is hot enough to sear rather than stew. Cooking both from the start gives you pale onions and gray mushrooms.' },
@@ -324,7 +325,8 @@ export const recipeArticles: RecipeArticle[] = [
       { href: '/how-to-cook-cremini-mushrooms/', label: 'How to cook cremini mushrooms' },
       { href: '/how-to-cook-shiitake-mushrooms/', label: 'How to cook shiitake mushrooms' },
       { href: '/how-to-cut-mushrooms/', label: 'How to cut mushrooms' },
-      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms before the holiday' }
+      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms before the holiday' },
+      { href: '/stuffed-mushrooms/', label: 'Stuffed mushrooms for the appetizer tray' }
     ],
     sections: [
       { heading: 'Why mushroom stuffing turns soggy', text: [
@@ -381,8 +383,7 @@ export const recipeArticles: RecipeArticle[] = [
     // 1,300/mo, SD 20, Dec 1,900, SERP DA 22–34 — the winnable slice.
     // `stuffed mushrooms` 49,500/mo (Nov–Dec 110,000) but SD 50. Covers both the
     // air fryer (small batch) and the oven (party batch).
-    // HERO PENDING: brief in docs/image-briefs/october-2026-heroes-2.md. The build
-    // fails (scripts/check-image-refs.mjs) until the hero exists — do not push before.
+    // Hero shipped 2026-10-11 (3f89b03); brief in docs/image-briefs/october-2026-heroes-2.md.
     slug: 'stuffed-mushrooms',
     title: 'Air Fryer Stuffed Mushrooms (Plus an Oven Party Batch)',
     description: 'Air fry the empty caps 4 minutes, fill them with a browned-stem and cream cheese filling, then 6 to 8 minutes more at 375°F. Oven: 400°F for a party tray.',
@@ -443,7 +444,8 @@ export const recipeArticles: RecipeArticle[] = [
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
       { href: '/how-to-cook-portobello-mushrooms/', label: 'How to cook portobello mushrooms' },
-      { href: '/mushroom-stuffing/', label: 'Mushroom stuffing for the holiday table' }
+      { href: '/mushroom-stuffing/', label: 'Mushroom stuffing for the holiday table' },
+      { href: '/how-to-cook-button-mushrooms/', label: 'How to cook button mushrooms' }
     ],
     sections: [
       { heading: 'Why stuffed mushrooms turn watery', text: [

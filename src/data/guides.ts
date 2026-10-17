@@ -161,7 +161,10 @@ const methodGuides: GuideArticle[] = [
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
       { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms so they stay firm' },
       { href: '/how-to-tell-if-mushrooms-are-bad/', label: 'How to tell if mushrooms are bad' },
-      { href: '/how-to-cook-chicken-of-the-woods/', label: 'How to cook chicken of the woods' }
+      { href: '/how-to-cook-chicken-of-the-woods/', label: 'How to cook chicken of the woods' },
+      { href: '/sauteed-mushrooms-and-onions/', label: 'Sautéed mushrooms and onions' },
+      { href: '/stuffed-mushrooms/', label: 'Stuffed mushrooms in the air fryer or oven' },
+      { href: '/mushroom-stuffing/', label: 'Mushroom stuffing for Thanksgiving' }
     ],
     sections: [
       { heading: 'Why a wide hot pan works for mushrooms', text: 'Fresh mushrooms release water as they heat. A wide skillet gives that water room to evaporate, while medium-high heat browns the exposed surfaces once the pan dries. Leaving the first side alone for 3 minutes builds color before stirring. Oil handles the early heat; butter and garlic go in only after the water is gone, so they coat the browned slices instead of forming a thin sauce in the pan.' },
@@ -234,7 +237,9 @@ const methodGuides: GuideArticle[] = [
       { href: '/how-to-grill-mushrooms/', label: 'How to grill mushrooms' },
       { href: '/how-to-cook-button-mushrooms/', label: 'How to cook button mushrooms' },
       { href: '/garlic-mushroom-pasta/', label: 'Garlic mushroom pasta recipe' },
-      { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' }
+      { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' },
+      { href: '/sauteed-mushrooms-and-onions/', label: 'Sautéed mushrooms and onions recipe' },
+      { href: '/mushroom-stuffing/', label: 'Mushroom stuffing, browned in batches first' }
     ],
     faqs: [
       { question: 'Should I wash mushrooms before pan-frying?', answer: 'Brush or wipe them first. If they are muddy, rinse them quickly and dry them very well before cooking.' },
@@ -1157,6 +1162,8 @@ const speciesGuides: GuideArticle[] = [
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-freeze-mushrooms/', label: 'How to freeze mushrooms without ruining them' },
       { href: '/how-to-dry-mushrooms/', label: 'How to dry mushrooms (and which ones not to)' },
+      { href: '/how-to-cook-lobster-mushrooms/', label: 'How to cook lobster mushrooms' },
+      { href: '/how-to-cook-black-trumpet-mushrooms/', label: 'How to cook black trumpet mushrooms' }
     ],
     faqs: [
       { question: 'Can you eat chanterelles raw?', answer: 'No. Raw chanterelles are hard to digest and can cause stomach upset, and their apricot-like aroma only develops with heat. Always cook them through.' },
@@ -1533,7 +1540,8 @@ const speciesGuides: GuideArticle[] = [
       { href: '/how-to-cook-morel-mushrooms/', label: 'How to cook morel mushrooms' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-tell-if-mushrooms-are-bad/', label: 'How to tell if mushrooms are bad' },
-      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms so they stay firm' }
+      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms so they stay firm' },
+      { href: '/how-to-cook-shaggy-mane-mushrooms/', label: 'How to cook shaggy mane mushrooms' }
     ]
   },
   {
@@ -2084,7 +2092,8 @@ const speciesGuides: GuideArticle[] = [
     ],
     relatedLinks: [
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
-      { href: '/shiitake-mushroom-ramen/', label: 'Shiitake mushroom ramen recipe' }
+      { href: '/shiitake-mushroom-ramen/', label: 'Shiitake mushroom ramen recipe' },
+      { href: '/how-to-cook-paddy-straw-mushrooms/', label: 'How to cook paddy straw mushrooms' }
     ],
     faqs: [
       { question: 'Should I soak dried wood ear mushrooms before cooking?', answer: 'Yes. Soak them in plenty of water until fully expanded, then rinse, trim, and cook thoroughly.' },
@@ -2144,7 +2153,9 @@ const speciesGuides: GuideArticle[] = [
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
       { href: '/how-to-dry-mushrooms/', label: 'How to dry shiitake and other mushrooms' },
       { href: '/how-to-grill-mushrooms/', label: 'How to grill mushrooms' },
-      { href: '/shiitake-mushroom-ramen/', label: 'Shiitake mushroom ramen recipe' }
+      { href: '/shiitake-mushroom-ramen/', label: 'Shiitake mushroom ramen recipe' },
+      { href: '/how-to-cook-shimeji-mushrooms/', label: 'How to cook shimeji mushrooms' },
+      { href: '/how-to-cook-matsutake-mushrooms/', label: 'How to cook matsutake mushrooms' }
     ],
     faqs: [
       { question: 'Should I remove shiitake stems before cooking?', answer: 'Yes. Fresh stems are often fibrous, so remove them and reserve them for stock.' },
@@ -2196,7 +2207,8 @@ const speciesGuides: GuideArticle[] = [
     pairings: ['steamed rice', 'miso soup', 'grilled salmon', 'lettuce wraps', 'cold soba'],
     relatedLinks: [
       { href: '/shiitake-mushroom-ramen/', label: 'Shiitake mushroom ramen recipe' },
-      { href: '/how-to-cook-shiitake-mushrooms/', label: 'How to cook shiitake mushrooms' }
+      { href: '/how-to-cook-shiitake-mushrooms/', label: 'How to cook shiitake mushrooms' },
+      { href: '/how-to-cook-shimeji-mushrooms/', label: 'How to cook shimeji mushrooms' }
     ],
     sections: [
       { heading: 'Enoki’s delicate structure', text: 'Enoki mushrooms have long, slender white stems and tiny rounded caps that grow in dense clusters. Their texture is tender and slightly springy when cooked, so the goal is to soften the stems without burning the caps.' },
@@ -2777,6 +2789,8 @@ const speciesGuides: GuideArticle[] = [
       { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
       { href: '/how-to-cook-mushrooms-in-air-fryer/', label: 'How to cook mushrooms in an air fryer' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
+      { href: '/stuffed-mushrooms/', label: 'Stuffed mushrooms (button caps work too)' },
+      { href: '/sauteed-mushrooms-and-onions/', label: 'Sautéed mushrooms and onions' }
     ]
   }
 ];
