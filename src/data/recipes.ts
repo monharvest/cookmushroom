@@ -158,7 +158,8 @@ export const recipeArticles: RecipeArticle[] = [
       { href: '/how-to-cook-cremini-mushrooms/', label: 'How to cook cremini mushrooms' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms for deeper flavor' },
-      { href: '/how-to-cook-porcini-mushrooms/', label: 'How to cook porcini mushrooms' }
+      { href: '/how-to-cook-porcini-mushrooms/', label: 'How to cook porcini mushrooms' },
+      { href: '/how-to-use-truffles/', label: 'How to use truffles at the table' }
     ],
     sections: [
       { heading: 'The timing that makes this work', text: 'Mushrooms need a head start. They take 8 to 10 minutes to release their water and brown, and pasta takes 9 to 11 — but the mushrooms have to be done before the sauce comes together, not alongside it. Get the mushrooms browning first, then drop the pasta once the pan looks dry. Everything meets in the skillet with about a minute to spare.' },

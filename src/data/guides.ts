@@ -1229,6 +1229,8 @@ const speciesGuides: GuideArticle[] = [
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
       { href: '/how-to-cook-chicken-of-the-woods/', label: 'How to cook chicken of the woods' },
+      { href: '/how-to-cook-lobster-mushrooms/', label: 'How to cook lobster mushrooms' },
+      { href: '/how-to-cook-shaggy-mane-mushrooms/', label: 'How to cook shaggy mane mushrooms' }
     ],
     faqs: [
       { question: 'Can I eat morel mushrooms raw?', answer: 'No. Morels should be cooked thoroughly and served hot. Do not eat them raw or undercooked.' },
@@ -1368,7 +1370,9 @@ const speciesGuides: GuideArticle[] = [
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms so they stay firm' },
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
-      { href: '/mushroom-cook-time-chart/', label: 'Mushroom cook time chart' }
+      { href: '/mushroom-cook-time-chart/', label: 'Mushroom cook time chart' },
+      { href: '/how-to-prepare-chaga/', label: 'How to prepare chaga' },
+      { href: '/how-to-prepare-reishi-mushrooms/', label: 'How to prepare reishi mushrooms' }
     ]
   },
   {
@@ -1678,6 +1682,13 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'What to expect', text: "Lion's mane has a soft, layered texture and releases moisture as it cooks. Gentle pressing helps the mushroom make good contact with the pan, so the outside turns golden while the middle stays tender." },
       { heading: 'Before you start', text: 'Brush away dirt and trim only the dry base. Avoid soaking the mushroom because its sponge-like texture absorbs water. Cut or tear it into pieces of similar thickness.' }
     ],
+    relatedLinks: [
+      { href: '/how-to-cook-maitake-mushrooms/', label: 'How to cook maitake (hen of the woods) mushrooms' },
+      { href: '/how-to-cook-king-oyster-mushrooms/', label: 'How to cook king oyster mushrooms' },
+      { href: '/how-to-cook-oyster-mushrooms/', label: 'How to cook oyster mushrooms' },
+      { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' }
+    ],
     faqs: [
       { question: "How do I clean lion's mane mushrooms?", answer: 'Brush off dirt and trim the dry base. Avoid soaking them because they absorb water easily.' },
       { question: "Should I slice or tear lion's mane mushrooms?", answer: 'Either works. Slice thick slabs for browned faces, or tear the mushroom into pieces for more crisp edges.' },
@@ -1742,7 +1753,8 @@ const speciesGuides: GuideArticle[] = [
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
       { href: '/how-to-dry-mushrooms/', label: 'How to dry porcini and other mushrooms' },
       { href: '/garlic-mushroom-pasta/', label: 'Garlic mushroom pasta recipe' },
-      { href: '/mushroom-stuffing/', label: 'Mushroom stuffing with dried porcini and sage' }
+      { href: '/mushroom-stuffing/', label: 'Mushroom stuffing with dried porcini and sage' },
+      { href: '/how-to-use-truffles/', label: 'How to use truffles at the table' }
     ],
     faqs: [
       { question: 'Can I wash porcini mushrooms?', answer: 'Brush them first. If they are heavily soiled, rinse them briefly under cool water and dry them thoroughly before cooking.' },
@@ -1796,6 +1808,13 @@ const speciesGuides: GuideArticle[] = [
     sections: [
       { heading: 'Why this method works', text: 'Shaggy mane mushrooms are delicate and cook quickly. A brief sauté keeps their texture soft without letting them sit in their own moisture, while toast gives the tender mushrooms a crisp contrast.' },
       { heading: 'Buy and prep', text: 'Buy shaggy mane mushrooms from a reputable market, or use wild specimens only after expert verification. This guide does not identify mushrooms or establish that a wild find is safe to eat. Cook them promptly after purchase or verification, and discard any specimen that is deteriorating, leaking dark liquid, or otherwise questionable.' }
+    ],
+    relatedLinks: [
+      { href: '/how-to-cook-puffball-mushrooms/', label: 'How to cook puffball mushrooms' },
+      { href: '/how-to-cook-chanterelle-mushrooms/', label: 'How to cook chanterelle mushrooms' },
+      { href: '/how-to-cook-morel-mushrooms/', label: 'How to cook morel mushrooms' },
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
+      { href: '/how-to-tell-if-mushrooms-are-bad/', label: 'How to tell if mushrooms are bad' }
     ],
     faqs: [
       { question: 'How soon should I cook shaggy mane mushrooms?', answer: 'Cook them as soon as practical after purchase or expert verification, preferably the same day.' },
@@ -1855,6 +1874,7 @@ const speciesGuides: GuideArticle[] = [
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
       { href: '/how-to-grill-mushrooms/', label: 'How to grill mushrooms' },
+      { href: '/how-to-cook-lions-mane-mushrooms/', label: "How to cook lion's mane mushrooms" }
     ],
     faqs: [
       { question: 'Should I wash oyster mushrooms?', answer: 'Brush them clean first. If they need a rinse, do it quickly and dry them thoroughly before they hit the pan.' },
@@ -1920,7 +1940,8 @@ const speciesGuides: GuideArticle[] = [
       { href: '/how-to-cook-chicken-of-the-woods/', label: 'How to cook chicken of the woods' },
       { href: '/how-to-cook-oyster-mushrooms/', label: 'How to cook oyster mushrooms' },
       { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
-      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' }
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
+      { href: '/how-to-cook-lions-mane-mushrooms/', label: "How to cook lion's mane mushrooms" }
     ],
     faqs: [
       { question: 'Can you eat maitake raw?', answer: 'No, raw maitake is tough and bitter. Cooking softens the texture and improves flavor and digestibility.' },
@@ -1978,6 +1999,13 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'Why this method works', text: 'Lobster mushrooms have a dense texture, so thin slices and steady heat help them become tender without losing their bite. A short splash of wine loosens the browned bits, while lemon keeps the finish bright.' },
       { heading: 'Buy and prep', text: 'Buy lobster mushrooms from a reputable market, or use wild specimens only after expert verification. This guide does not identify mushrooms or establish that a wild find is safe to eat. Choose clean, firm mushrooms from a known source and trim away any tough or damaged areas.' }
     ],
+    relatedLinks: [
+      { href: '/how-to-cook-chanterelle-mushrooms/', label: 'How to cook chanterelle mushrooms' },
+      { href: '/how-to-cook-black-trumpet-mushrooms/', label: 'How to cook black trumpet mushrooms' },
+      { href: '/how-to-cook-chicken-of-the-woods/', label: 'How to cook chicken of the woods' },
+      { href: '/how-to-cook-shaggy-mane-mushrooms/', label: 'How to cook shaggy mane mushrooms' },
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' }
+    ],
     faqs: [
       { question: 'What are lobster mushrooms?', answer: 'They are firm, orange-red mushrooms sold fresh or dried. For this recipe, use fresh mushrooms from a reputable market or an expert-verified wild source.' },
       { question: 'Do lobster mushrooms taste like lobster?', answer: 'No. Their name refers to their orange-red appearance and firm texture, not a seafood flavor.' },
@@ -2031,6 +2059,13 @@ const speciesGuides: GuideArticle[] = [
     sections: [
       { heading: 'Why this method works', text: 'Black trumpet mushrooms cook quickly. A hot pan drives off their moisture and concentrates their earthy, smoky flavor before butter, wine, and pasta water turn the browned bits into a light sauce.' },
       { heading: 'Safety first', text: 'Use market-purchased black trumpet mushrooms, or wild specimens verified by a qualified local mushroom expert. A mushroom found outdoors and identified by appearance alone should not be eaten.' }
+    ],
+    relatedLinks: [
+      { href: '/how-to-cook-chanterelle-mushrooms/', label: 'How to cook chanterelle mushrooms' },
+      { href: '/how-to-cook-morel-mushrooms/', label: 'How to cook morel mushrooms' },
+      { href: '/how-to-use-truffles/', label: 'How to use truffles at the table' },
+      { href: '/how-to-cook-lobster-mushrooms/', label: 'How to cook lobster mushrooms' },
+      { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' }
     ],
     faqs: [
       { question: 'Can I use dried black trumpet mushrooms?', answer: 'Yes. Soak them in warm water until pliable, rinse away grit, dry well, and use the strained soaking liquid in place of part of the pasta water.' },
@@ -2208,7 +2243,9 @@ const speciesGuides: GuideArticle[] = [
     relatedLinks: [
       { href: '/shiitake-mushroom-ramen/', label: 'Shiitake mushroom ramen recipe' },
       { href: '/how-to-cook-shiitake-mushrooms/', label: 'How to cook shiitake mushrooms' },
-      { href: '/how-to-cook-shimeji-mushrooms/', label: 'How to cook shimeji mushrooms' }
+      { href: '/how-to-cook-shimeji-mushrooms/', label: 'How to cook shimeji mushrooms' },
+      { href: '/how-to-cook-matsutake-mushrooms/', label: 'How to cook matsutake mushrooms' },
+      { href: '/how-to-cook-paddy-straw-mushrooms/', label: 'How to cook paddy straw mushrooms' }
     ],
     sections: [
       { heading: 'Enoki’s delicate structure', text: 'Enoki mushrooms have long, slender white stems and tiny rounded caps that grow in dense clusters. Their texture is tender and slightly springy when cooked, so the goal is to soften the stems without burning the caps.' },
@@ -2267,6 +2304,12 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'Why this method works', text: 'Matsutake mushrooms have a firm texture and a strong pine-like aroma. A quick sear gives the edges color without burying their flavor under a heavy sauce.' },
       { heading: 'Before you start', text: 'Use matsutake mushrooms purchased from a reputable market or produce supplier, or use mushrooms verified by a qualified local expert. Never treat a wild mushroom find as safe based on appearance alone. Wipe the mushrooms with a damp cloth or soft brush instead of soaking them.' }
     ],
+    relatedLinks: [
+      { href: '/how-to-cook-shiitake-mushrooms/', label: 'How to cook shiitake mushrooms' },
+      { href: '/how-to-cook-king-oyster-mushrooms/', label: 'How to cook king oyster mushrooms' },
+      { href: '/how-to-cook-shimeji-mushrooms/', label: 'How to cook shimeji mushrooms' },
+      { href: '/how-to-cook-chanterelle-mushrooms/', label: 'How to cook chanterelle mushrooms' }
+    ],
     faqs: [
       { question: 'Should matsutake mushrooms be washed?', answer: 'Wipe them with a damp cloth or soft brush. Avoid soaking them, which can make them waterlogged and dilute their aroma.' },
       { question: 'Do you eat the stems?', answer: 'Yes. Trim away the dirty base, then cook the stems along with the caps.' },
@@ -2318,6 +2361,13 @@ const speciesGuides: GuideArticle[] = [
     sections: [
       { heading: 'Why this method works', text: 'Shimeji mushrooms release moisture as they cook. Starting in a hot, lightly oiled skillet lets that moisture evaporate before the butter and sauce go in, so the caps brown instead of steam.' },
       { heading: 'Before you start', text: 'Cut away the compact base, then pull the mushrooms into bite-size clusters. A quick rinse is fine if needed, but dry them well before they hit the pan.' }
+    ],
+    relatedLinks: [
+      { href: '/how-to-cook-enoki-mushrooms/', label: 'How to cook enoki mushrooms' },
+      { href: '/how-to-cook-shiitake-mushrooms/', label: 'How to cook shiitake mushrooms' },
+      { href: '/how-to-cook-matsutake-mushrooms/', label: 'How to cook matsutake mushrooms' },
+      { href: '/how-to-cook-paddy-straw-mushrooms/', label: 'How to cook paddy straw mushrooms' },
+      { href: '/shiitake-mushroom-ramen/', label: 'Shiitake mushroom ramen recipe' }
     ],
     faqs: [
       { question: 'Do I need to remove the base of shimeji mushrooms?', answer: 'Yes. The dense base is fibrous and holds the cluster together. Trim it away, then separate the individual stems or small clusters.' },
@@ -2371,6 +2421,13 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'Why this method works', text: 'King oyster stems are dense and hold their shape when sliced thickly. Scoring the cut faces creates more surface area for browning and lets the pan sauce settle into the ridges.' },
       { heading: 'Before you start', text: 'Wipe the mushrooms clean and trim only the dry ends. Save the caps for the skillet, too; they cook faster, so add them after the thicker stem pieces.' }
     ],
+    relatedLinks: [
+      { href: '/how-to-cook-oyster-mushrooms/', label: 'How to cook oyster mushrooms' },
+      { href: '/how-to-cook-lions-mane-mushrooms/', label: "How to cook lion's mane mushrooms" },
+      { href: '/how-to-cook-maitake-mushrooms/', label: 'How to cook maitake (hen of the woods) mushrooms' },
+      { href: '/how-to-grill-mushrooms/', label: 'How to grill mushrooms' },
+      { href: '/how-to-cut-mushrooms/', label: 'How to cut mushrooms' }
+    ],
     faqs: [
       { question: 'Do you eat the caps of king oyster mushrooms?', answer: 'Yes. The caps are edible and can be cooked with the thicker stems. Add them a little later because they soften faster.' },
       { question: 'How thick should king oyster mushroom slices be?', answer: 'Cut the stems into slices about 1 inch thick. This gives the outside time to brown while the center stays tender.' },
@@ -2423,6 +2480,12 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'Safety and preparation', text: 'Use paddy straw mushrooms purchased from a reputable market or supplier, or mushrooms verified by a qualified local expert. Never treat a wild mushroom find as safe based on appearance alone. If using canned mushrooms, drain and rinse them well. If using fresh market mushrooms, wipe them clean and halve any large ones.' },
       { heading: 'Wild warning', quote: 'In the field, immature wild straw mushrooms look nearly identical to deadly Death Cap mushrooms. Never forage look-alikes without expert authentication.' },
       { heading: 'Why this method works', text: 'Paddy straw mushrooms are delicate and cook quickly. High heat keeps the stir-fry lively while the ginger, garlic, and soy sauce give the mild mushrooms a clear savory finish.' }
+    ],
+    relatedLinks: [
+      { href: '/how-to-cook-wood-ear-mushrooms/', label: 'How to cook wood ear mushrooms' },
+      { href: '/how-to-cook-enoki-mushrooms/', label: 'How to cook enoki mushrooms' },
+      { href: '/how-to-cook-shimeji-mushrooms/', label: 'How to cook shimeji mushrooms' },
+      { href: '/how-to-cook-shiitake-mushrooms/', label: 'How to cook shiitake mushrooms' }
     ],
     faqs: [
       { question: 'Should paddy straw mushrooms be washed?', answer: 'Rinse canned paddy straw mushrooms and pat them dry. For fresh market mushrooms, wipe them clean or rinse briefly, then dry them thoroughly.' },
@@ -2538,6 +2601,12 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'What to expect', text: 'Chaga produces a dark amber-brown infusion with a woody aroma and a mild, earthy flavor. Cinnamon and orange peel give the finished drink a warmer, brighter profile. This guide covers culinary preparation only. Use dried chaga that is labeled and sold for culinary use; strain and discard the woody pieces rather than chewing them.' },
       { heading: 'Gentle heat matters', text: 'A low simmer extracts color and flavor without aggressively boiling the liquid. Keep the surface just active enough to show occasional small bubbles.' }
     ],
+    relatedLinks: [
+      { href: '/how-to-prepare-reishi-mushrooms/', label: 'How to prepare reishi mushrooms' },
+      { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
+      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms, fresh and dried' },
+      { href: '/types-of-mushrooms/', label: 'Types of edible mushrooms and how to cook each' }
+    ],
     faqs: [
       { question: 'Does chaga need to be boiled?', answer: 'No. A gentle simmer is sufficient for this culinary infusion and helps preserve a clean, rounded flavor.' },
       { question: 'How long should chaga simmer?', answer: 'Simmer dried pieces for about 40–50 minutes, or until the liquid is deeply colored and aromatic.' },
@@ -2588,6 +2657,12 @@ const speciesGuides: GuideArticle[] = [
     sections: [
       { heading: 'Flavor and texture', text: 'Reishi creates a dark, woody infusion with a pronounced bitter finish. Ginger, cinnamon, and orange peel add warmth and fragrance without requiring a complicated preparation. This guide covers culinary preparation only. Use dried reishi that is labeled and sold for culinary use; strain and discard the woody pieces rather than chewing them.' },
       { heading: 'Keep the process gentle', text: 'A low simmer is easier to control than a hard boil and gives the liquid time to develop color. Keep the saucepan uncovered or partly covered so you can monitor the heat.' }
+    ],
+    relatedLinks: [
+      { href: '/how-to-prepare-chaga/', label: 'How to prepare chaga' },
+      { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
+      { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms, fresh and dried' },
+      { href: '/types-of-mushrooms/', label: 'Types of edible mushrooms and how to cook each' }
     ],
     faqs: [
       { question: 'How long should reishi simmer?', answer: 'Simmer dried reishi for about 50–60 minutes, or until the infusion is dark and aromatic.' },
@@ -2640,6 +2715,13 @@ const speciesGuides: GuideArticle[] = [
     sections: [
       { heading: 'Use truffles at the finish', text: 'Truffles are most expressive when shaved over a hot but finished dish. The warmth releases their serving aroma without subjecting the delicate shavings to prolonged cooking.' },
       { heading: 'Keep the base simple', text: 'Butter, pasta water, and hard cheese create a glossy background that carries the truffle without competing with it. Serve immediately after shaving.' }
+    ],
+    relatedLinks: [
+      { href: '/how-to-cook-black-trumpet-mushrooms/', label: 'How to cook black trumpet mushrooms' },
+      { href: '/how-to-cook-porcini-mushrooms/', label: 'How to cook porcini mushrooms' },
+      { href: '/garlic-mushroom-pasta/', label: 'Garlic mushroom pasta recipe' },
+      { href: '/how-to-prepare-chaga/', label: 'How to prepare chaga' },
+      { href: '/how-to-prepare-reishi-mushrooms/', label: 'How to prepare reishi mushrooms' }
     ],
     faqs: [
       { question: 'Should truffles be cooked?', answer: 'No. Add fresh shavings off heat, directly over the warm finished dish.' },
