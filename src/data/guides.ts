@@ -229,6 +229,7 @@ const methodGuides: GuideArticle[] = [
       { heading: 'Before you start', text: 'Wipe the mushrooms with a damp towel or brush off dirt. Trim the dry ends, then cut the mushrooms into similar-sized pieces so they finish together.' }
     ],
     relatedLinks: [
+      { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
       { href: '/types-of-mushrooms/', label: 'Types of edible mushrooms and how to cook each' },
       { href: '/how-to-cut-mushrooms/', label: 'How to cut mushrooms' },
       { href: '/how-to-cook-puffball-mushrooms/', label: 'How to cook puffball mushrooms' },
@@ -1159,6 +1160,7 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'The golden rule of cleaning', quote: 'Never soak chanterelles in water. They absorb excess moisture and turn slimy when cooked.' }
     ],
     relatedLinks: [
+      { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-freeze-mushrooms/', label: 'How to freeze mushrooms without ruining them' },
       { href: '/how-to-dry-mushrooms/', label: 'How to dry mushrooms (and which ones not to)' },
@@ -1750,6 +1752,7 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'Deep umami: maximizing dried porcini', text: 'The soaking liquid carries a potent concentration of mushroom flavor. Strain it well, then reduce it into sauces instead of throwing it away.', ordered: ['Soak dried pieces in boiling water for 20 minutes.', 'Filter through a fine mesh sieve or paper towel.', 'Use the mushrooms in a sauté and reduce the broth into sauces.'] }
     ],
     relatedLinks: [
+      { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
       { href: '/how-to-dry-mushrooms/', label: 'How to dry porcini and other mushrooms' },
       { href: '/garlic-mushroom-pasta/', label: 'Garlic mushroom pasta recipe' },
@@ -1870,6 +1873,7 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'Buy and prep', text: 'Cultivated oyster mushrooms are the simplest choice for this recipe. If using wild-harvested oyster mushrooms, use only market-purchased specimens or mushrooms verified by a qualified expert. This guide does not identify mushrooms or establish that a wild find is safe to eat.' }
     ],
     relatedLinks: [
+      { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
       { href: '/how-to-cut-mushrooms/', label: 'How to cut mushrooms' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
@@ -2185,6 +2189,7 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'The finishing sauce', text: 'Butter softens the edges of the mushrooms, while soy sauce adds salt and savoriness. Lemon juice keeps the finished dish bright instead of heavy.' }
     ],
     relatedLinks: [
+      { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
       { href: '/how-to-cook-dried-mushrooms/', label: 'How to cook dried mushrooms' },
       { href: '/how-to-dry-mushrooms/', label: 'How to dry shiitake and other mushrooms' },
       { href: '/how-to-grill-mushrooms/', label: 'How to grill mushrooms' },
@@ -2241,6 +2246,7 @@ const speciesGuides: GuideArticle[] = [
     ],
     pairings: ['steamed rice', 'miso soup', 'grilled salmon', 'lettuce wraps', 'cold soba'],
     relatedLinks: [
+      { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
       { href: '/shiitake-mushroom-ramen/', label: 'Shiitake mushroom ramen recipe' },
       { href: '/how-to-cook-shiitake-mushrooms/', label: 'How to cook shiitake mushrooms' },
       { href: '/how-to-cook-shimeji-mushrooms/', label: 'How to cook shimeji mushrooms' },
@@ -2363,6 +2369,7 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'Before you start', text: 'Cut away the compact base, then pull the mushrooms into bite-size clusters. A quick rinse is fine if needed, but dry them well before they hit the pan.' }
     ],
     relatedLinks: [
+      { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
       { href: '/how-to-cook-enoki-mushrooms/', label: 'How to cook enoki mushrooms' },
       { href: '/how-to-cook-shiitake-mushrooms/', label: 'How to cook shiitake mushrooms' },
       { href: '/how-to-cook-matsutake-mushrooms/', label: 'How to cook matsutake mushrooms' },
@@ -2422,6 +2429,7 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'Before you start', text: 'Wipe the mushrooms clean and trim only the dry ends. Save the caps for the skillet, too; they cook faster, so add them after the thicker stem pieces.' }
     ],
     relatedLinks: [
+      { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
       { href: '/how-to-cook-oyster-mushrooms/', label: 'How to cook oyster mushrooms' },
       { href: '/how-to-cook-lions-mane-mushrooms/', label: "How to cook lion's mane mushrooms" },
       { href: '/how-to-cook-maitake-mushrooms/', label: 'How to cook maitake (hen of the woods) mushrooms' },
@@ -2541,6 +2549,7 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'Before you start', text: 'Wipe the mushrooms clean with a damp towel and trim only the dry ends. Avoid crowding the pan; cook in two batches if needed.' }
     ],
     relatedLinks: [
+      { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
       { href: '/how-to-cook-button-mushrooms/', label: 'How to cook button mushrooms' },
@@ -2800,6 +2809,7 @@ const speciesGuides: GuideArticle[] = [
       'Mediterranean: add 1/2 tsp dried oregano and serve with crumbled feta and sliced cucumber.'
     ],
     relatedLinks: [
+      { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
       { href: '/how-to-cut-mushrooms/', label: 'How to cut mushrooms' },
       { href: '/how-to-grill-mushrooms/', label: 'How to grill mushrooms' },
       { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },
@@ -2865,6 +2875,7 @@ const speciesGuides: GuideArticle[] = [
       'Burgers: cook whole small buttons or thick halves, then pile them onto a burger with cheese.'
     ],
     relatedLinks: [
+      { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
       { href: '/how-to-cook-cremini-mushrooms/', label: 'How to cook cremini mushrooms' },
       { href: '/how-to-cook-portobello-mushrooms/', label: 'How to cook portobello mushrooms' },
       { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
