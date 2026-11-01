@@ -1,0 +1,70 @@
+# Pings IndexNow (Bing, Yandex …) with the pages a push to main added, changed or
+# removed. Cloudflare Pages deploys the same push separately, so this builds the
+# site before and after the push, diffs the HTML (scripts/indexnow-changed.mjs),
+# waits for new pages to answer 200 on the live site, then submits.
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build after the push
+        run: npx astro build && mv dist "$RUNNER_TEMP/new"
+
+      - name: Build before the push
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: |
+          # A new branch or a force-push can leave no usable "before" commit; then
+          # every page counts as new, which is still correct, just noisier.
+          if git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
+            git worktree add "$RUNNER_TEMP/old" "$BEFORE"
+            cd "$RUNNER_TEMP/old"
+            npm ci
+            npx astro build
+          fi
+
+      - name: List changed pages
+        run: |
+          node scripts/indexnow-changed.mjs "$RUNNER_TEMP/old/dist" "$RUNNER_TEMP/new" | tee "$RUNNER_TEMP/changes.txt"
+
+      - name: Wait for new pages to go live
+        run: |
+          grep '^new ' "$RUNNER_TEMP/changes.txt" | cut -d' ' -f2 > "$RUNNER_TEMP/new-pages.txt" || true
+          if [ ! -s "$RUNNER_TEMP/changes.txt" ]; then exit 0; fi
+          # Cloudflare usually serves a deploy within a minute or two of the push.
+          sleep 120
+          while read -r path; do
+            for i in $(seq 1 60); do
+              code=$(curl -s -o /dev/null -w '%{http_code}' "https://cookmushroom.com$path") || true
+              [ "$code" = 200 ] && break
+              [ "$i" = 60 ] && { echo "$path still answers $code after 10 min"; exit 1; }
+              sleep 10
+            done
+          done < "$RUNNER_TEMP/new-pages.txt"
+
+      - name: Submit to IndexNow
+        run: |
+          paths=$(cut -d' ' -f2 "$RUNNER_TEMP/changes.txt")
+          if [ -z "$paths" ]; then echo "No page changes."; exit 0; fi
+          node scripts/indexnow.mjs $paths
