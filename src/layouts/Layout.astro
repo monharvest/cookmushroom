@@ -10,8 +10,14 @@ const {
   heroImageAlt,
   ogType = 'website',
   noindex = false,
+  ads = true,
 } = Astro.props;
 const onSearchPage = Astro.url.pathname.startsWith('/search');
+// Google AdSense (Auto ads): one loader in the head, Google places the units.
+// Not on noindex pages (/search/) or the 404 — AdSense policy forbids ads on
+// pages without publisher content. CSP for it lives in public/_headers.
+const ADSENSE_CLIENT = 'ca-pub-1320198648576974';
+const showAds = ads && !noindex;
 const site = 'https://cookmushroom.com';
 const canonical = new URL(Astro.url.pathname, site).toString();
 const logo = `${site}/logo.png`;
@@ -57,6 +63,7 @@ const schemas = [baseSchema, ...(Array.isArray(schema) ? schema : [schema]).filt
     <meta name="twitter:image" content={socialImage} />
     <meta name="twitter:image:alt" content={socialImageAlt} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {showAds && <script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`} crossorigin="anonymous" is:inline></script>}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SP5SEQPV12" is:inline></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
