@@ -79,6 +79,7 @@ export const recipeArticles: RecipeArticle[] = [
       'Freeze only if texture is secondary; thawed mushrooms and onions are best folded into sauces or soups.'
     ],
     relatedLinks: [
+      { href: '/sauteed-mushrooms-for-steak/', label: 'Mushrooms for steak, with a 5-minute pan sauce' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-cook-cremini-mushrooms/', label: 'How to cook cremini mushrooms' },
       { href: '/how-to-cook-mushrooms-in-a-pan/', label: 'How to cook mushrooms in a pan' },
@@ -440,6 +441,7 @@ export const recipeArticles: RecipeArticle[] = [
       'Freeze baked, cooled mushrooms in one layer, then bag them, for up to 1 month. Reheat from frozen in a 375°F (190°C) oven for 15 to 20 minutes, until hot through. The caps soften a little after freezing.'
     ],
     relatedLinks: [
+      { href: '/marinated-mushrooms/', label: 'Marinated mushrooms, a make-ahead appetizer' },
       { href: '/how-to-cook-mushrooms-in-air-fryer/', label: 'How to cook mushrooms in an air fryer' },
       { href: '/how-to-cook-cremini-mushrooms/', label: 'How to cook cremini mushrooms' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
@@ -564,6 +566,10 @@ export const recipeArticles: RecipeArticle[] = [
       "Use it cold for a Wellington. Warm duxelles melts the butter in puff pastry before it reaches the oven."
     ],
     "relatedLinks": [
+      {
+        "href": "/sauteed-mushrooms-for-steak/",
+        "label": "Sautéed mushrooms for steak, with a pan sauce"
+      },
       {
         "href": "/how-to-clean-mushrooms/",
         "label": "How to clean mushrooms before chopping"
@@ -720,6 +726,389 @@ export const recipeArticles: RecipeArticle[] = [
       {
         "question": "What else can I do with leftover duxelles?",
         "answer": "Stir it into gravy or a cream sauce, fold it into scrambled eggs or an omelet, spread it on toast under melted cheese, or use it in a mushroom Wellington with a whole roasted portobello in place of the beef."
+      }
+    ]
+  },
+  {
+    // Calendar 5.2 (December steak dinners). Ubersuggest: 'mushroom side dish with steak' SD 8; 'mushroom sauce recipe steak' 1.6K, SD 7. Kept serving-focused to stay distinct from the pan guide and mushrooms-and-onions. Hero brief: docs/image-briefs/november-2026-heroes.md.
+    "slug": "sauteed-mushrooms-for-steak",
+    "title": "Sautéed Mushrooms for Steak, with a 5-Minute Pan Sauce",
+    "description": "Brown cremini hard in a hot skillet, then make a quick shallot, brandy and cream sauce in the same pan while the steak rests. On the plate in 20 minutes.",
+    "updated": "2026-11-03",
+    "minutes": "20 min",
+    "image": "/images/cookmushroom-mushrooms-for-steak-hero.webp",
+    "imageAlt": "Browned cremini mushrooms in a glossy cream pan sauce with thyme in a cast-iron skillet",
+    "recipeName": "Sautéed Mushrooms and Pan Sauce for Steak",
+    "recipeCategory": "Side dish",
+    "cookingMethod": "Sautéing",
+    "recipeCuisine": "American",
+    "keywords": [
+      "mushrooms for steak",
+      "mushroom side dish with steak",
+      "mushroom sauce for steak",
+      "steak topping",
+      "holiday steak dinner"
+    ],
+    "cardMushroom": "Cremini",
+    "cardGuide": "how-to-cook-mushrooms-in-a-pan",
+    "yieldText": "4 servings (for 4 steaks)",
+    "prepIsoTime": "PT5M",
+    "cookIsoTime": "PT15M",
+    "totalIsoTime": "PT20M",
+    "ingredients": [
+      "12 oz (340 g) cremini mushrooms, wiped clean, halved or quartered (thick-sliced if large)",
+      "1 tbsp (15 ml) neutral oil, or the fat left in the steak pan",
+      "2 tbsp (28 g) unsalted butter, divided",
+      "1 medium shallot (about 1/4 cup / 40 g), minced",
+      "2 garlic cloves, minced",
+      "1 tsp fresh thyme leaves",
+      "1/2 tsp kosher salt, divided",
+      "1/4 tsp coarsely ground black pepper",
+      "3 tbsp (45 ml) brandy, cognac or dry red wine",
+      "1/2 cup (120 ml) beef or mushroom stock",
+      "1/3 cup (80 ml) heavy cream (optional, for the creamy sauce)",
+      "1 tsp Dijon mustard",
+      "1 tsp Worcestershire sauce, or soy sauce",
+      "1 tbsp chopped parsley or chives"
+    ],
+    "steps": [
+      "Cook the steaks first if you are using one pan, and move them to a board to rest. Pour off all but about 1 tbsp of fat. Otherwise heat the oil in a 12-inch skillet over medium-high heat until it shimmers.",
+      "Add the mushrooms in a single layer, cut side down, and **leave them alone for 3 minutes**, until the undersides are deep golden. Season with 1/4 tsp salt, toss, and cook 3 to 4 minutes more, until browned all over and the pan is dry.",
+      "Lower the heat to medium. Add 1 tbsp butter, the shallot, garlic and thyme and cook 1 minute, stirring, until the shallot softens.",
+      "Take the pan off the heat and add the brandy or wine (off the heat, so it cannot flare). Return it to the heat and scrape up the browned bits until the liquid is almost gone, about 30 seconds.",
+      "Add the stock and simmer 2 minutes, until reduced by about half. Stir in the cream, if using, the mustard and the Worcestershire, and simmer 1 to 2 minutes more, until **the sauce coats the back of a spoon**.",
+      "Off the heat, swirl in the last 1 tbsp butter, the pepper and any juices from the resting steaks. Taste for salt, add the parsley, and spoon over the sliced steak."
+    ],
+    "tips": [
+      "Dry pan first, sauce second. If the mushrooms are still wet when the liquid goes in, they stew and the sauce turns thin and gray.",
+      "Do not salt until after the first sear: salt draws water out early and stops the browning.",
+      "Pour the resting juices from the steak board into the sauce at the end. It is the best seasoning in the kitchen.",
+      "Leave out the cream and stock for a plain steak topping: stop after step 3, deglaze with 1 tbsp brandy or a squeeze of lemon, and finish with the butter.",
+      "Doubling for a holiday table? Brown the mushrooms in two batches, then combine them for the sauce."
+    ],
+    "pairings": [
+      "ribeye or strip steak",
+      "beef tenderloin",
+      "mashed potatoes",
+      "roast potatoes",
+      "green beans"
+    ],
+    "storage": [
+      "Refrigerate leftovers in a covered container for up to **3 days**.",
+      "Reheat gently in a small pan over low heat, stirring, with 1 to 2 tbsp of stock or water if the sauce has thickened. A hard boil can split the cream.",
+      "Not a good freezer candidate with cream; the sauce turns grainy when thawed. The plain version freezes for up to 2 months."
+    ],
+    "relatedLinks": [
+      {
+        "href": "/how-to-cook-mushrooms-in-a-pan/",
+        "label": "How to cook mushrooms in a pan"
+      },
+      {
+        "href": "/how-to-cook-cremini-mushrooms/",
+        "label": "How to cook cremini mushrooms"
+      },
+      {
+        "href": "/sauteed-mushrooms-and-onions/",
+        "label": "Sautéed mushrooms and onions"
+      },
+      {
+        "href": "/how-to-grill-mushrooms/",
+        "label": "How to grill mushrooms"
+      },
+      {
+        "href": "/how-to-cook-king-oyster-mushrooms/",
+        "label": "How to cook king oyster mushrooms"
+      },
+      {
+        "href": "/mushroom-duxelles/",
+        "label": "Mushroom duxelles for beef Wellington"
+      },
+      {
+        "href": "/how-to-clean-mushrooms/",
+        "label": "How to clean mushrooms"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Mushrooms that belong next to a steak",
+        "text": [
+          "A steak plate needs mushrooms that can stand up to it: **deeply browned, a little crisp at the edges**, and glossy with a sauce that ties them to the meat. Pale, soft, boiled-looking mushrooms do the opposite.",
+          "This recipe is built around the steak dinner. The mushrooms brown while the steak rests, the sauce is made in the same pan from the browned bits, and the steak’s own juices go in at the end. If you want a general lesson in pan-cooking mushrooms, the pan guide covers that; this page is about getting them onto a steak plate."
+        ]
+      },
+      {
+        "heading": "Two ways to serve them",
+        "table": {
+          "headings": [
+            "",
+            "Buttery topping",
+            "Creamy pan sauce"
+          ],
+          "rows": [
+            [
+              "Stop after",
+              "Step 3, plus a splash of brandy or lemon",
+              "Step 6"
+            ],
+            [
+              "Time",
+              "About 10 minutes",
+              "About 15 minutes"
+            ],
+            [
+              "Texture",
+              "Browned mushrooms, butter-glazed",
+              "Mushrooms in a sauce that coats a spoon"
+            ],
+            [
+              "Best with",
+              "Grilled steak, burgers",
+              "Pan-seared steak, tenderloin, a holiday roast"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Which mushrooms to use",
+        "text": "Cremini are the everyday choice: firm, savory and easy to find. For a special dinner, mix in something with more texture.",
+        "bullets": [
+          "**Cremini (baby bella):** the default. Halve small ones and quarter large ones so they stay juicy inside.",
+          "**White button:** milder, and a little more water to cook off; give them 2 extra minutes.",
+          "**King oyster:** cut the stems into thick coins and score them. They sear like scallops and stay meaty.",
+          "**Shiitake:** caps only, sliced. Very savory with soy in place of Worcestershire.",
+          "**Wild mushrooms** such as chanterelles or morels: lovely with steak, but skip the cream so their flavor leads."
+        ]
+      },
+      {
+        "heading": "Timing it with the steak",
+        "text": [
+          "Steaks need 5 to 10 minutes of rest, and that is exactly how long the mushrooms and sauce take. Cook the steak, move it to a board, and make everything in the same pan while it rests.",
+          "For a crowd or a big roast, make the sauce up to step 5 an hour ahead, keep it off the heat, and warm it gently just before serving, finishing with the butter and the resting juices."
+        ]
+      },
+      {
+        "heading": "How to tell they are done",
+        "text": "The mushrooms are ready for the sauce when they are **brown on at least two sides**, have shrunk by about a third, and the pan sizzles instead of bubbling. The sauce is ready when you can draw a finger through it on the back of a spoon and the line holds."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What mushrooms go best with steak?",
+        "answer": "Cremini are the most reliable: firm, savory and quick to brown. King oyster and shiitake add more texture and depth for a special dinner."
+      },
+      {
+        "question": "How do you make a mushroom sauce for steak?",
+        "answer": "Brown the mushrooms, soften a shallot and garlic in butter, deglaze with brandy or red wine, then reduce stock with a little cream, Dijon and Worcestershire until it coats a spoon. Finish with butter and the steak’s resting juices."
+      },
+      {
+        "question": "Can I make it without alcohol?",
+        "answer": "Yes. Deglaze with an extra 3 tbsp of stock and add 1 tsp of red wine vinegar or lemon juice at the end for the acidity the wine would give."
+      },
+      {
+        "question": "Should I cook the mushrooms before or after the steak?",
+        "answer": "After. Cook the steak, let it rest, and use the same pan for the mushrooms and sauce. They pick up the browned bits, and the timing matches the rest."
+      },
+      {
+        "question": "How do I keep the mushrooms from going soggy?",
+        "answer": "Use a hot, wide pan, keep them in one layer, and do not salt or stir for the first 3 minutes. Add liquid only once **the pan is dry**."
+      },
+      {
+        "question": "Can I make it ahead?",
+        "answer": "The sauce holds for up to an hour off the heat, or 3 days in the fridge. Rewarm it gently over low heat with a splash of stock; do not let a cream sauce boil hard."
+      }
+    ]
+  },
+  {
+    // Calendar 5.3 (December appetizers). Ubersuggest: 'marinated mushrooms' 5.4K, SD 36 — above the SD floor, so holiday/make-ahead long-tails are the realistic target. Hero brief: docs/image-briefs/november-2026-heroes.md.
+    "slug": "marinated-mushrooms",
+    "title": "Marinated Mushrooms (Easy Make-Ahead Antipasto)",
+    "description": "Blanch small button mushrooms for 3 minutes, then marinate them in olive oil, red wine vinegar, garlic and herbs. Ready in 4 hours; keeps 4 days in the fridge.",
+    "updated": "2026-11-03",
+    "minutes": "20 min + marinating",
+    "image": "/images/cookmushroom-marinated-mushrooms-hero.webp",
+    "imageAlt": "Marinated button mushrooms with garlic, herbs, red pepper flakes and olive oil in a glass jar and a small bowl",
+    "recipeName": "Italian-Style Marinated Mushrooms",
+    "recipeCategory": "Appetizer",
+    "cookingMethod": "Blanching",
+    "recipeCuisine": "Italian",
+    "keywords": [
+      "marinated mushrooms",
+      "antipasto mushrooms",
+      "make-ahead appetizer",
+      "holiday appetizer",
+      "marinated button mushrooms"
+    ],
+    "cardMushroom": "White button or cremini",
+    "cardGuide": "how-to-cook-button-mushrooms",
+    "yieldText": "About 3 cups (8 appetizer servings)",
+    "prepIsoTime": "PT15M",
+    "cookIsoTime": "PT5M",
+    "totalIsoTime": "PT4H20M",
+    "ingredients": [
+      "1 1/2 lb (680 g) small white button or cremini mushrooms, about 1 inch across, wiped clean",
+      "2 tbsp kosher salt, for the blanching water",
+      "1/3 cup (80 ml) red wine vinegar",
+      "1/2 cup (120 ml) extra-virgin olive oil",
+      "2 tbsp (30 ml) fresh lemon juice",
+      "3 garlic cloves, thinly sliced",
+      "1 tsp dried oregano",
+      "1/2 tsp red pepper flakes",
+      "1 tsp sugar or honey",
+      "3/4 tsp kosher salt, for the marinade",
+      "1/4 tsp black pepper",
+      "1 bay leaf",
+      "2 tbsp chopped flat-leaf parsley",
+      "1/4 cup (35 g) jarred roasted red pepper, diced (optional)"
+    ],
+    "steps": [
+      "Trim the dry stem ends. Leave mushrooms about 1 inch across whole; halve any larger ones so all the pieces are the same size.",
+      "Bring 3 quarts (about 3 liters) of water and the 2 tbsp salt to a boil. Add the mushrooms and boil **3 minutes**, until they are just tender and have darkened slightly. They will float; push them under once or twice.",
+      "Drain well and spread on a towel for 5 minutes so surface water does not dilute the marinade.",
+      "While they drain, whisk the vinegar, olive oil, lemon juice, garlic, oregano, red pepper flakes, sugar, salt, pepper and bay leaf in a bowl.",
+      "Add the warm mushrooms (warm mushrooms soak up the marinade faster), the parsley and the roasted pepper, if using. Toss to coat.",
+      "Transfer to a clean jar or container, cool to room temperature, then cover and **refrigerate at least 4 hours**, or overnight. Shake or stir once or twice.",
+      "Take them out 20 minutes before serving so the oil turns liquid again, toss, and serve with toothpicks or on an antipasto board."
+    ],
+    "tips": [
+      "Pick small, firm, closed caps of one size. They stay plump, and every piece seasons at the same rate.",
+      "Blanch, do not simmer them soft. Three minutes keeps a little bite; five makes them slippery.",
+      "Taste after 4 hours and adjust: more salt if flat, more vinegar if heavy, more pepper flakes for heat.",
+      "The olive oil firms up in the fridge. That is normal; it melts back at room temperature.",
+      "Use the leftover marinade as a salad dressing within the same 4 days."
+    ],
+    "pairings": [
+      "an antipasto board",
+      "cured meats and cheese",
+      "crusty bread",
+      "a green salad",
+      "grain bowls"
+    ],
+    "storage": [
+      "Keep covered in the refrigerator and eat within **4 days**. Garlic and herbs in oil must stay cold; do not store marinated mushrooms at room temperature.",
+      "On a buffet, return them to the fridge within **2 hours**.",
+      "Do not freeze; thawed mushrooms turn spongy and weep.",
+      "This is a fridge recipe, not a canning recipe. It is not safe for shelf storage."
+    ],
+    "relatedLinks": [
+      {
+        "href": "/how-to-cook-button-mushrooms/",
+        "label": "How to cook button mushrooms"
+      },
+      {
+        "href": "/how-to-clean-mushrooms/",
+        "label": "How to clean mushrooms"
+      },
+      {
+        "href": "/how-to-store-mushrooms/",
+        "label": "How to store mushrooms"
+      },
+      {
+        "href": "/how-to-cook-cremini-mushrooms/",
+        "label": "How to cook cremini mushrooms"
+      },
+      {
+        "href": "/stuffed-mushrooms/",
+        "label": "Stuffed mushrooms for a party tray"
+      },
+      {
+        "href": "/how-to-grill-mushrooms/",
+        "label": "How to grill mushrooms"
+      },
+      {
+        "href": "/how-to-tell-if-mushrooms-are-bad/",
+        "label": "How to tell if mushrooms are bad"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Why blanch before marinating",
+        "text": [
+          "Raw mushrooms are spongy and closed; they take a marinade slowly and unevenly, and they stay squeaky. A short boil in salted water opens them up, seasons them through, and gives them the tender, juicy bite you expect from deli antipasto.",
+          "Once blanched, there is **no more cooking**: the marinade does the rest in the fridge. That makes this the easiest make-ahead appetizer on a holiday menu — one pot of water, one bowl, and a jar."
+        ]
+      },
+      {
+        "heading": "Which mushrooms to use",
+        "table": {
+          "headings": [
+            "Mushroom",
+            "Use it?",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "Small white button, about 1 in",
+              "Best",
+              "Classic antipasto look; mild, so they take the marinade well."
+            ],
+            [
+              "Small cremini",
+              "Yes",
+              "A little firmer and more savory; same times."
+            ],
+            [
+              "Larger button or cremini",
+              "Halve or quarter",
+              "Cut to about 1-inch pieces so they season evenly."
+            ],
+            [
+              "Shiitake",
+              "Caps only",
+              "Slice thick; blanch 2 minutes. Good with a splash of soy in the marinade."
+            ],
+            [
+              "Oyster or king oyster",
+              "Yes, torn or sliced",
+              "Blanch 1 to 2 minutes; they turn soft quickly."
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Marinade variations",
+        "bullets": [
+          "**Lemon and thyme:** swap the oregano for 1 tsp fresh thyme and add the zest of 1 lemon.",
+          "**Balsamic:** replace half the red wine vinegar with balsamic and add a pinch more sugar for a darker, sweeter jar.",
+          "**Spicy:** double the red pepper flakes and add a sliced Calabrian or Fresno chili.",
+          "**Herby green:** stir in 2 tbsp chopped basil and 1 tbsp chopped dill just before serving."
+        ]
+      },
+      {
+        "heading": "Make them ahead for the holidays",
+        "text": [
+          "They improve overnight, which makes them ideal party food. Make them 1 or 2 days before the event and keep them refrigerated.",
+          "Plan the 4-day window from the day you blanch them, not the day of the party. If they are going on a board that sits out, set out only what you need and top it up from the fridge."
+        ]
+      },
+      {
+        "heading": "How to tell they are ready",
+        "text": "After at least 4 hours, a halved mushroom should be **seasoned to the center** and tinted by the marinade, not white inside. They should be tender with a little bite. If the center still tastes plain, give them a few more hours."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do you have to cook mushrooms before marinating them?",
+        "answer": "For this style, yes. A 3-minute blanch in salted water makes them tender, seasons them through, and lets them absorb the marinade. Raw mushrooms stay spongy and take much longer to flavor."
+      },
+      {
+        "question": "How long do marinated mushrooms last?",
+        "answer": "Up to **4 days** in the refrigerator in a covered container. Keep them cold the whole time, and do not leave them out for more than 2 hours."
+      },
+      {
+        "question": "How long should mushrooms marinate?",
+        "answer": "At least 4 hours, and overnight is better. Stir or shake the jar once or twice so every mushroom stays coated."
+      },
+      {
+        "question": "Why did my olive oil turn solid?",
+        "answer": "Olive oil thickens and clouds in the fridge. It is not spoiled. Let the jar stand 20 minutes at room temperature, then stir."
+      },
+      {
+        "question": "Can I can marinated mushrooms for the shelf?",
+        "answer": "Not with this recipe. It is designed for the fridge only. Shelf-stable canned mushrooms need a tested pressure-canning recipe."
+      },
+      {
+        "question": "What do you serve marinated mushrooms with?",
+        "answer": "An antipasto board with cheese, olives and cured meats, a slice of crusty bread, or tossed into a green salad or grain bowl with a little of the marinade as dressing."
       }
     ]
   }

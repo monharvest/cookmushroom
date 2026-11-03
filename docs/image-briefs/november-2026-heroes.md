@@ -49,3 +49,58 @@ wooden spoon drawing a clean line through the paste*
 - A food processor or any appliance is in frame. Wrong ratio; any text or watermark.
 
 ---
+
+## 2. `cookmushroom-mushrooms-for-steak-hero` — `/sauteed-mushrooms-for-steak/`
+
+**Alt text on the page:** *Browned cremini mushrooms in a glossy cream pan sauce with thyme in
+a cast-iron skillet*
+
+### THE PROMPT
+
+> Editorial three-quarter-angle food photograph of a black cast-iron skillet on a dark wooden
+> table, filled with halved and quartered brown cremini mushrooms that are deeply seared and
+> golden-brown on their cut faces, coated in a glossy, light tan cream pan sauce that pools
+> thickly around them. Small fresh thyme leaves and chopped chives are scattered on top, with a
+> few flecks of black pepper. The mushrooms are the subject and fill most of the frame. Warm
+> natural side light from the left, soft shadows, shallow depth of field, realistic texture with
+> visible browning and crisp edges. Landscape 3:2 aspect ratio, composed for 3:2. No steak in the
+> pan, no plated meat, no knives or forks, no appliances, no people, no hands, no text, no
+> labels, no watermark.
+
+### Reject it if
+
+- The mushrooms are **pale, gray or boiled-looking** — the page is about hard browning.
+- The sauce is **thin and watery** or the mushrooms are drowning in it.
+- A **steak dominates the frame** (an edge of sliced steak blurred far in the background is
+  acceptable; prefer none).
+- White button mushrooms, or sliced thin. Wrong ratio; any text or watermark.
+
+---
+
+## 3. `cookmushroom-marinated-mushrooms-hero` — `/marinated-mushrooms/`
+
+**Alt text on the page:** *Marinated button mushrooms with garlic, herbs, red pepper flakes and
+olive oil in a glass jar and a small bowl*
+
+### THE PROMPT
+
+> Editorial three-quarter-angle food photograph of small whole white button mushrooms marinated
+> in golden olive oil with thin garlic slices, chopped parsley, dried oregano, red pepper flakes
+> and a bay leaf, served in a small shallow ceramic bowl in the foreground, with an open glass
+> jar of more marinated mushrooms just behind it. The mushrooms are plump, glossy, slightly
+> darkened and tinted by the marinade. A few small pieces of diced roasted red pepper. Pale stone
+> or linen surface. Warm natural side light from the left, soft shadows, shallow depth of field,
+> realistic texture. Landscape 3:2 aspect ratio, composed for 3:2. No cured meats, no cheese
+> board, no crackers, no toothpick flags, no appliances, no people, no hands, no text, no labels
+> on the jar, no watermark.
+
+### Reject it if
+
+- The mushrooms look **raw, white and dry**, or shriveled and slimy.
+- They are **sliced** instead of whole small caps.
+- An antipasto spread crowds the frame so mushrooms are not clearly the subject.
+- The jar carries a **label or brand**. Wrong ratio; any text or watermark.
+
+## Attempt log
+
+- (none yet)

@@ -229,6 +229,7 @@ const methodGuides: GuideArticle[] = [
       { heading: 'Before you start', text: 'Wipe the mushrooms with a damp towel or brush off dirt. Trim the dry ends, then cut the mushrooms into similar-sized pieces so they finish together.' }
     ],
     relatedLinks: [
+      { href: '/sauteed-mushrooms-for-steak/', label: 'Sautéed mushrooms for steak, with a pan sauce' },
       { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
       { href: '/types-of-mushrooms/', label: 'Types of edible mushrooms and how to cook each' },
       { href: '/how-to-cut-mushrooms/', label: 'How to cut mushrooms' },
@@ -485,6 +486,7 @@ const methodGuides: GuideArticle[] = [
       { href: 'https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts', label: 'FoodSafety.gov — Cold Food Storage Chart' },
     ],
     relatedLinks: [
+      { href: '/marinated-mushrooms/', label: 'Marinated mushrooms (keeps 4 days in the fridge)' },
       { href: '/types-of-mushrooms/', label: 'Types of edible mushrooms and how to cook each' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
@@ -2432,6 +2434,7 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'Before you start', text: 'Wipe the mushrooms clean and trim only the dry ends. Save the caps for the skillet, too; they cook faster, so add them after the thicker stem pieces.' }
     ],
     relatedLinks: [
+      { href: '/sauteed-mushrooms-for-steak/', label: 'Sautéed mushrooms and pan sauce for steak' },
       { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
       { href: '/how-to-cook-oyster-mushrooms/', label: 'How to cook oyster mushrooms' },
       { href: '/how-to-cook-lions-mane-mushrooms/', label: "How to cook lion's mane mushrooms" },
@@ -2879,6 +2882,7 @@ const speciesGuides: GuideArticle[] = [
       'Burgers: cook whole small buttons or thick halves, then pile them onto a burger with cheese.'
     ],
     relatedLinks: [
+      { href: '/marinated-mushrooms/', label: 'Marinated mushrooms for an antipasto board' },
       { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
       { href: '/how-to-cook-cremini-mushrooms/', label: 'How to cook cremini mushrooms' },
       { href: '/how-to-cook-portobello-mushrooms/', label: 'How to cook portobello mushrooms' },
