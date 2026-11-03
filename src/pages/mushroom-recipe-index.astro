@@ -1,21 +1,133 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { recipeCards } from '../data/guides';
+import { recipeArticles } from '../data/recipes';
+
+// Full recipes (recipes.ts) are grouped by how they are used on the table.
+// A recipe missing from this map still shows, under "More recipes", so a new
+// entry in recipes.ts can never silently disappear from the index.
+const useOf: Record<string, 'sides' | 'mains' | 'holiday'> = {
+  'sauteed-mushrooms-and-onions': 'sides',
+  'sauteed-mushrooms-for-steak': 'sides',
+  'garlic-mushroom-pasta': 'mains',
+  'shiitake-mushroom-ramen': 'mains',
+  'mushroom-stuffing': 'holiday',
+  'stuffed-mushrooms': 'holiday',
+  'mushroom-duxelles': 'holiday',
+  'marinated-mushrooms': 'holiday',
+};
+const thumb = (image: string) => image.replace(/\.webp$/, '-600.webp');
+const recipesFor = (use?: string) => recipeArticles.filter((r) => (use ? useOf[r.slug] === use : !useOf[r.slug]));
+const groups = [
+  { id: 'sides', title: 'Sides and steak toppings', intro: 'Mushrooms that sit next to a main course. Both are built around the same rule: brown the mushrooms in a dry, hot pan before any butter or liquid goes in, so they come out glossy and savory instead of gray.', items: recipesFor('sides') },
+  { id: 'mains', title: 'Main dishes', intro: 'Mushrooms as the center of the meal. Each makes dinner for two to four in under 45 minutes, with the mushroom choice doing most of the flavor work.', items: recipesFor('mains') },
+  { id: 'holiday', title: 'Holiday and party recipes', intro: 'Thanksgiving and Christmas dishes, all designed so the slow part can be done days ahead. Each page carries a make-ahead plan, and the times below are hands-on cooking, not the waiting.', items: recipesFor('holiday') },
+  { id: 'more', title: 'More recipes', intro: 'Newer recipes not yet sorted into a group.', items: recipesFor() },
+].filter((g) => g.items.length > 0);
+
+// Quick recipe ideas that live inside the method and species guides.
+const fullHrefs = new Set(recipeArticles.map((r) => `/${r.slug}/`));
+const ideas = recipeCards.filter((c) => !fullHrefs.has(c.href));
+const mainIdeas = new Set(['Pressed maitake steaks', 'Black trumpet butter pasta', 'King oyster scallops', "Golden skillet lion's mane", 'Garlic-herb grilled mushroom skewers']);
+const ideaGroups = [
+  { title: 'Quick sides from the guides', items: ideas.filter((c) => !mainIdeas.has(c.name)) },
+  { title: 'Hearty plates from the guides', items: ideas.filter((c) => mainIdeas.has(c.name)) },
+].filter((g) => g.items.length > 0);
 ---
-<Layout title="Mushroom Recipe Ideas | CookMushroom" description="Browse mushroom recipe ideas by variety, cooking method, and total time, with each dish linked to its complete preparation guide.">
+<Layout title="Mushroom Recipes: Sides, Mains and Holiday Dishes | CookMushroom" description="Every CookMushroom recipe grouped as sides, mains and holiday dishes, plus quick ideas from the guides, with make-ahead notes and the best mushroom for each.">
   <main id="content">
-    <p class="eyebrow">Recipe ideas</p>
-    <h1>Mushroom recipe ideas</h1>
-    <p class="lead">No filler recipes: just quick ideas tied back to the right mushroom cooking method.</p>
-    <section class="recipe-list section">
-      {recipeCards.map((recipe) => (
-        <a class="card recipe-card" href={recipe.href}>
-          <span class="badge">{recipe.time}</span>
-          <h2>{recipe.name}</h2>
-          <p>{recipe.description}</p>
-          <small>Best mushroom: {recipe.mushroom}</small>
-        </a>
+    <p class="eyebrow">Recipes</p>
+    <h1>Mushroom recipes, sorted by how you will use them</h1>
+    <p class="lead">{recipeArticles.length} full, tested recipes grouped as sides, mains and holiday dishes, followed by {ideas.length} quick ideas that live inside our cooking guides.</p>
+
+    <nav class="section" aria-label="On this page">
+      <p>Jump to:{' '}
+        {groups.map((g, i) => (<>{i > 0 && ' · '}<a href={`#${g.id}`}>{g.title}</a></>))}
+        {' · '}<a href="#ideas">Quick ideas from the guides</a>
+        {' · '}<a href="#choosing">Choosing a recipe</a>
+      </p>
+    </nav>
+
+    <section class="section">
+      <h2>Full recipes and quick ideas: what is the difference?</h2>
+      <p>A <strong>full recipe</strong> has its own page with exact quantities, a step-by-step card with doneness cues, storage and reheating notes, and answers to the questions people ask most. Those are the recipes grouped first on this page.</p>
+      <p>A <strong>quick idea</strong> is a short recipe inside one of our method or species guides: the guide teaches the technique — searing oyster mushrooms, dry-sautéing chanterelles — and ends with one dish that uses it. They link to the guide, where the recipe sits at the end.</p>
+    </section>
+
+    {groups.map((g) => (
+      <section class="section" id={g.id}>
+        <h2>{g.title}</h2>
+        <p>{g.intro}</p>
+        <div class="link-cards">
+          {g.items.map((r) => (
+            <a class="link-card" href={`/${r.slug}/`}>
+              <img class="link-card-thumb" src={thumb(r.image)} alt={r.imageAlt} width="600" height="400" loading="lazy" decoding="async" />
+              <span class="link-card-body">
+                <span class="badge">{r.minutes}</span>
+                <strong>{r.title}</strong>
+                <span class="link-card-text">{r.description}</span>
+                <small>Best mushroom: {r.cardMushroom} · {r.yieldText}</small>
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <section class="section">
+      <h2>Planning a holiday menu with mushrooms</h2>
+      <p>Mushroom dishes are some of the easiest holiday cooking to do ahead, because the step that matters most — cooking the water out — does not suffer from waiting. A workable plan for a Christmas or Thanksgiving dinner:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>When</th><th>What to do</th><th>Recipe</th></tr></thead>
+          <tbody>
+            <tr><td>Up to 3 months ahead</td><td>Make and freeze duxelles flat in a bag</td><td><a href="/mushroom-duxelles/">Mushroom duxelles</a></td></tr>
+            <tr><td>2 days ahead</td><td>Blanch and marinate the antipasto mushrooms; make the stuffed-mushroom filling</td><td><a href="/marinated-mushrooms/">Marinated mushrooms</a>, <a href="/stuffed-mushrooms/">Stuffed mushrooms</a></td></tr>
+            <tr><td>1 day ahead</td><td>Assemble the stuffing unbaked; pre-cook the empty mushroom caps</td><td><a href="/mushroom-stuffing/">Mushroom stuffing</a></td></tr>
+            <tr><td>On the day</td><td>Bake stuffing and stuffed mushrooms; make the steak sauce while the meat rests</td><td><a href="/sauteed-mushrooms-for-steak/">Mushrooms for steak</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="ideas">
+      <h2>Quick ideas from the guides</h2>
+      <p>Each of these is a short recipe at the end of a cooking guide. Open the guide to learn the method first — heat, cut, and the cue that tells you it is done — then cook the dish.</p>
+      {ideaGroups.map((g) => (
+        <>
+          <h3>{g.title}</h3>
+          <div class="recipe-list">
+            {g.items.map((recipe) => (
+              <a class="card recipe-card" href={recipe.href}>
+                <span class="badge">{recipe.time}</span>
+                <h4>{recipe.name}</h4>
+                <p>{recipe.description}</p>
+                <small>Best mushroom: {recipe.mushroom}</small>
+              </a>
+            ))}
+          </div>
+        </>
       ))}
+    </section>
+
+    <section class="section" id="choosing">
+      <h2>Choosing a recipe</h2>
+      <h3>By the mushrooms you have</h3>
+      <ul>
+        <li><strong>Cremini or white button:</strong> almost everything here. They are the base of the duxelles, the steak mushrooms, the stuffed caps, the marinated jar and the mushrooms and onions.</li>
+        <li><strong>Shiitake:</strong> the ramen, or a share of the duxelles for a deeper flavor. Use the caps; the stems stay woody.</li>
+        <li><strong>Dried porcini:</strong> the stuffing, where the soaking liquid replaces part of the stock.</li>
+        <li><strong>Oyster, maitake, king oyster or lion’s mane:</strong> the quick ideas from their species guides, which are built for their textures.</li>
+      </ul>
+      <h3>By the time you have</h3>
+      <ul>
+        <li><strong>About 20 minutes:</strong> mushrooms for steak, or any of the quick pan ideas.</li>
+        <li><strong>Under an hour:</strong> garlic mushroom pasta, mushrooms and onions, stuffed mushrooms, duxelles.</li>
+        <li><strong>Make it ahead:</strong> marinated mushrooms (4 hours in the fridge), stuffing and duxelles.</li>
+      </ul>
+      <h3>The one rule every recipe shares</h3>
+      <p>Mushrooms are mostly water. Almost every failure — gray sautéed mushrooms, soggy pastry, watery stuffed caps, thin sauce — comes from that water staying in the dish. Every recipe here has a step to drive it off, and a visible cue for when it is gone: <strong>the pan looks dry</strong>, the sizzle returns, a spoon leaves a clean line. Learn that cue once in <a href="/how-to-cook-mushrooms-in-a-pan/">how to cook mushrooms in a pan</a> and every recipe gets easier.</p>
+      <p>Before cooking any of them, <a href="/how-to-clean-mushrooms/">clean the mushrooms</a> with a brush or damp towel rather than soaking, and check the <a href="/mushroom-cook-time-chart/">cook-time chart</a> if you are swapping one mushroom for another.</p>
     </section>
   </main>
 </Layout>
