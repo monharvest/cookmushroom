@@ -904,7 +904,9 @@ const methodGuides: GuideArticle[] = [
       { href: '/garlic-mushroom-pasta/', label: 'Garlic mushroom pasta recipe' },
       { href: '/mushroom-stuffing/', label: 'Mushroom stuffing made with porcini soaking liquid' },
       { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms, fresh and dried' },
-      { href: '/how-to-dry-mushrooms/', label: 'How to dry mushrooms in a dehydrator or oven' }
+      { href: '/how-to-dry-mushrooms/', label: 'How to dry mushrooms in a dehydrator or oven' },
+      { href: '/how-to-prepare-chaga/', label: 'How to prepare chaga as a simmered culinary infusion' },
+      { href: '/how-to-prepare-reishi-mushrooms/', label: 'How to prepare dried reishi slices as a culinary infusion' }
     ]
   },
   {
