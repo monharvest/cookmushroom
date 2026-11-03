@@ -380,6 +380,7 @@ const methodGuides: GuideArticle[] = [
       'Pre-sliced mushrooms: skip rinsing unless dirt is visible, then dry the cut sides well.'
     ],
     relatedLinks: [
+      { href: '/mushroom-duxelles/', label: 'Mushroom duxelles for beef Wellington' },
       { href: '/types-of-mushrooms/', label: 'Types of edible mushrooms and how to cook each' },
       { href: '/how-to-cut-mushrooms/', label: 'How to cut mushrooms' },
       { href: '/how-to-cook-cremini-mushrooms/', label: 'How to cook cremini mushrooms' },
@@ -719,6 +720,7 @@ const methodGuides: GuideArticle[] = [
       { href: 'https://www.foodsafety.gov/keep-food-safe/foodkeeper-app', label: 'USDA FoodKeeper — storage timelines for fresh produce' },
     ],
     relatedLinks: [
+      { href: '/mushroom-duxelles/', label: 'Make-ahead mushroom duxelles that freezes for 3 months' },
       { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms without thawing' },
       { href: '/how-to-dry-mushrooms/', label: 'How to dry mushrooms in a dehydrator or oven' },
       { href: '/how-to-store-mushrooms/', label: 'How to store mushrooms so they stay firm' },
@@ -1447,6 +1449,7 @@ const speciesGuides: GuideArticle[] = [
       { question: 'Do I need to remove portobello gills?', answer: 'Only for appearance. The gills are edible, but they release a grey-black colour that muddies anything pale — a cream sauce, a risotto, a light stuffing. Scrape them out with a teaspoon if that matters for the dish.' }
     ],
     relatedLinks: [
+      { href: '/mushroom-duxelles/', label: 'Mushroom duxelles: what to do with a fine chop' },
       { href: '/types-of-mushrooms/', label: 'Types of edible mushrooms and how to cook each' },
       { href: '/how-to-cook-king-oyster-mushrooms/', label: 'How to cook king oyster mushrooms' },
       { href: '/how-to-cook-maitake-mushrooms/', label: 'How to cook maitake mushrooms' },
@@ -2549,6 +2552,7 @@ const speciesGuides: GuideArticle[] = [
       { heading: 'Before you start', text: 'Wipe the mushrooms clean with a damp towel and trim only the dry ends. Avoid crowding the pan; cook in two batches if needed.' }
     ],
     relatedLinks: [
+      { href: '/mushroom-duxelles/', label: 'Mushroom duxelles for beef Wellington' },
       { href: '/how-to-cook-mushrooms/', label: 'How to cook mushrooms so they brown, not steam' },
       { href: '/how-to-clean-mushrooms/', label: 'How to clean mushrooms before cooking' },
       { href: '/how-to-roast-mushrooms-in-oven/', label: 'How to roast mushrooms in the oven' },

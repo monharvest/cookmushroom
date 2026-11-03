@@ -496,5 +496,231 @@ export const recipeArticles: RecipeArticle[] = [
       { question: 'What are the best mushrooms for stuffing?', answer: 'Cremini with caps 1 1/2 to 2 inches across. They hold their shape, take a good spoonful of filling, and taste more of mushroom than white button caps. Large portobellos work as a main course.' },
       { question: 'Can you add sausage to stuffed mushrooms?', answer: 'Yes. Brown 4 oz (113 g) bulk sausage until **no pink remains** and it reaches 160°F (71°C), drain it well, and fold it into the filling in place of half the cream cheese. Cut the salt in the filling to a pinch, since sausage is already salted.' }
     ]
+  },
+  {
+    // Calendar 5.1 (Christmas). Ubersuggest: 'mushroom duxelles' near-zero US volume, so the title, H1 and intro target the Beef Wellington angle. Hero brief: docs/image-briefs/november-2026-heroes.md.
+    "slug": "mushroom-duxelles",
+    "title": "Mushroom Duxelles for Beef Wellington (Make-Ahead)",
+    "description": "Cook finely chopped cremini and shallot in butter for 20 to 25 minutes, until a dry paste holds a line in the pan. Cool it fully before it goes on the beef.",
+    "updated": "2026-11-03",
+    "minutes": "40 min",
+    "image": "/images/cookmushroom-duxelles-hero.webp",
+    "imageAlt": "Dark brown mushroom duxelles with thyme in a stainless skillet, a wooden spoon drawing a clean line through the paste",
+    "recipeName": "Classic Mushroom Duxelles for Beef Wellington",
+    "recipeCategory": "Condiment",
+    "cookingMethod": "Sautéing",
+    "recipeCuisine": "French",
+    "keywords": [
+      "mushroom duxelles",
+      "duxelles for beef wellington",
+      "beef wellington mushroom layer",
+      "make-ahead duxelles",
+      "christmas dinner prep"
+    ],
+    "cardMushroom": "Cremini",
+    "cardGuide": "how-to-cook-cremini-mushrooms",
+    "yieldText": "About 1 1/2 cups (enough for one 2 1/2 to 3 lb Wellington)",
+    "prepIsoTime": "PT15M",
+    "cookIsoTime": "PT25M",
+    "totalIsoTime": "PT40M",
+    "ingredients": [
+      "1 1/2 lb (680 g) cremini mushrooms, wiped clean",
+      "2 medium shallots (about 1/2 cup / 80 g), finely minced",
+      "2 garlic cloves, finely minced",
+      "3 tbsp (42 g) unsalted butter",
+      "1 tbsp (15 ml) olive oil",
+      "2 tsp fresh thyme leaves, chopped",
+      "3/4 tsp kosher salt",
+      "1/4 tsp black pepper",
+      "3 tbsp (45 ml) dry sherry, Madeira, or dry white wine (optional)",
+      "1 tbsp chopped flat-leaf parsley"
+    ],
+    "steps": [
+      "Trim the dry ends of the stems. Chop the mushrooms in a food processor in 3 batches, pulsing 8 to 10 times, until the pieces are about the size of rice grains. Scrape the bowl between pulses; do not run it to a purée.",
+      "Heat the butter and oil in your widest skillet over medium heat until the butter foams. Add the shallots and cook 2 to 3 minutes, until soft and translucent but not browned.",
+      "Add all the mushrooms and the salt and stir. Raise the heat to medium-high. They will look wet within 3 minutes as they release their water.",
+      "Cook, stirring every minute or so, for 15 to 20 minutes. The liquid boils off, the hiss in the pan goes quiet, and the mixture darkens from tan to deep brown.",
+      "Add the garlic, thyme and pepper and cook 1 minute, until fragrant. Pour in the sherry, if using, and stir until it is gone, about 1 minute.",
+      "Keep cooking until **a spoon drawn across the pan leaves a clean line** that does not fill with liquid and the paste clumps on the spoon. Stir in the parsley and taste for salt.",
+      "Spread the duxelles on a plate in a thin layer to cool, then refrigerate until cold, at least 30 minutes, before spreading it on pastry, crêpes or beef."
+    ],
+    "tips": [
+      "Dry is the whole point. Wet duxelles is what makes the pastry under a Wellington soggy, so cook past the point where you think it is done.",
+      "Use the widest pan you own. A 12-inch skillet steams 1 1/2 lb of chopped mushrooms off in about 20 minutes; a small pan can take twice as long.",
+      "Pulse, do not blend. Rice-sized pieces cook dry and spread evenly; a purée holds water and turns pasty.",
+      "Salt early. It draws the water out of the mushrooms faster, which shortens the cook.",
+      "Hand-chopping works: slice, then rock a chef’s knife through the pile until the pieces are fine. Budget 15 minutes for 1 1/2 lb."
+    ],
+    "pairings": [
+      "beef Wellington",
+      "mushroom Wellington",
+      "omelets",
+      "toast with ricotta",
+      "pan sauces and gravy"
+    ],
+    "storage": [
+      "Refrigerate in a covered container for up to **4 days**.",
+      "Freeze flat in a zip-top bag for up to 3 months. Thaw overnight in the fridge, then stir in a dry skillet for 1 to 2 minutes if any liquid has separated.",
+      "Use it cold for a Wellington. Warm duxelles melts the butter in puff pastry before it reaches the oven."
+    ],
+    "relatedLinks": [
+      {
+        "href": "/how-to-clean-mushrooms/",
+        "label": "How to clean mushrooms before chopping"
+      },
+      {
+        "href": "/how-to-cook-cremini-mushrooms/",
+        "label": "How to cook cremini mushrooms"
+      },
+      {
+        "href": "/how-to-cut-mushrooms/",
+        "label": "How to cut mushrooms: slices, quarters and fine dice"
+      },
+      {
+        "href": "/how-to-freeze-mushrooms/",
+        "label": "How to freeze mushrooms"
+      },
+      {
+        "href": "/how-to-cook-dried-mushrooms/",
+        "label": "How to cook dried mushrooms (porcini for extra depth)"
+      },
+      {
+        "href": "/mushroom-stuffing/",
+        "label": "Mushroom stuffing for the holiday table"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "What duxelles is",
+        "text": [
+          "Duxelles is a French preparation of very finely chopped mushrooms and shallots, cooked in butter until nearly all their water is gone. What is left is a dark, concentrated paste that tastes intensely of mushroom and spreads like a thick jam.",
+          "It is best known as the layer between the beef and the pastry in a **beef Wellington**, but it is a base ingredient, not a finished dish. A spoonful stirs into gravy, fills an omelet, tops toast, or stuffs a chicken breast. Making a double batch at Christmas is worth it."
+        ]
+      },
+      {
+        "heading": "Why the Wellington needs it dry",
+        "text": [
+          "A Wellington cooks the beef inside sealed pastry, so any water in the filling has nowhere to go. It turns to steam against the underside of the pastry, and you cut into a pale, gummy base instead of a crisp one.",
+          "Fresh mushrooms are about **92 percent water**. A pound and a half of them gives up close to a cup of liquid as it cooks. Duxelles exists to drive that water off before the mushrooms go anywhere near the pastry. The spoon-line test in step 6 is the check: if liquid seeps back into the line, keep cooking."
+        ]
+      },
+      {
+        "heading": "How it looks at each stage",
+        "table": {
+          "headings": [
+            "Time in the pan",
+            "What you see",
+            "What to do"
+          ],
+          "rows": [
+            [
+              "0 to 3 min",
+              "Pale, fluffy chopped mushrooms; the pan sizzles",
+              "Stir once a minute"
+            ],
+            [
+              "3 to 10 min",
+              "Wet and glossy, liquid pooling around the edges",
+              "Keep the heat at medium-high; do not cover"
+            ],
+            [
+              "10 to 18 min",
+              "Liquid gone, sizzle returns, color turns tan to brown",
+              "Stir more often so the bottom does not catch"
+            ],
+            [
+              "18 to 25 min",
+              "Dark brown, clumping paste; a spoon leaves a clean line",
+              "Add garlic and wine, cook off, then cool"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Using it in a beef Wellington",
+        "text": "For a 2 1/2 to 3 lb (1.1 to 1.4 kg) center-cut beef tenderloin, this batch is the right amount. The mushroom part of the job:",
+        "ordered": [
+          "Make the duxelles up to 2 days ahead and chill it. Cold paste spreads in an even layer and will not melt the pastry.",
+          "Lay overlapping slices of prosciutto or crêpes on plastic wrap, then spread the duxelles over them about **1/4 inch (6 mm) thick**, edge to edge.",
+          "Set the seared, cooled beef on top and roll it up tight in the wrap. Chill 20 to 30 minutes so it holds its shape before it goes into the pastry.",
+          "Bake as your Wellington recipe directs. The beef is the thing to time: take it out when a thermometer in the center reads 120 to 125°F (49 to 52°C) for medium-rare; it rises as it rests."
+        ]
+      },
+      {
+        "heading": "Which mushrooms to use",
+        "text": "Cremini are the standard: more flavor than white button mushrooms and cheap enough to buy in bulk. A small share of something stronger makes it taste richer.",
+        "table": {
+          "headings": [
+            "Mushroom",
+            "Use it?",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "Cremini (baby bella)",
+              "Best",
+              "The base of this recipe. Firm, brown and full-flavored."
+            ],
+            [
+              "White button",
+              "Yes",
+              "Milder and paler; the paste ends up lighter brown."
+            ],
+            [
+              "Dried porcini",
+              "As a booster",
+              "Soak 1/2 oz (15 g), chop fine and add with the fresh mushrooms. Reduce the strained soaking liquid with the wine."
+            ],
+            [
+              "Shiitake",
+              "Up to a quarter",
+              "Caps only; the stems stay woody. Adds a deeper, savory note."
+            ],
+            [
+              "Portobello",
+              "Yes, gills scraped",
+              "Scrape out the dark gills first or the duxelles turns black and muddy."
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Make it ahead for Christmas",
+        "text": [
+          "Duxelles is the easiest part of a holiday Wellington to get out of the way. Make it on the weekend before, refrigerate it for up to 4 days, or freeze it flat for up to 3 months.",
+          "Frozen duxelles may weep a little as it thaws. Stir it in a dry skillet over medium heat for a minute or two until **the pan looks dry again**, then chill it before use."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is duxelles used for in beef Wellington?",
+        "answer": "It is the mushroom layer wrapped around the beef under the pastry. It adds deep mushroom flavor and, if cooked dry, acts as a barrier that keeps juices from soaking the pastry."
+      },
+      {
+        "question": "How do you keep beef Wellington from getting soggy?",
+        "answer": "Cook the duxelles until a spoon leaves a clean line in the pan, chill it completely, and wrap it in prosciutto or crêpes. The meat should also be seared and cooled before it is wrapped."
+      },
+      {
+        "question": "How long does it take to cook duxelles?",
+        "answer": "About 20 to 25 minutes in a 12-inch skillet for 1 1/2 lb of mushrooms. Go by the look, not the clock: **dark brown, clumping, and no liquid** when you drag a spoon through it."
+      },
+      {
+        "question": "Can I make duxelles ahead?",
+        "answer": "Yes. It keeps for up to 4 days in the fridge or 3 months in the freezer. Many cooks make it first, since a cold paste spreads more cleanly anyway."
+      },
+      {
+        "question": "Do I need a food processor?",
+        "answer": "No. A sharp chef’s knife gets the same result; it just takes longer. Aim for pieces about the size of a grain of rice."
+      },
+      {
+        "question": "Can I make duxelles without alcohol?",
+        "answer": "Yes. Leave the wine out, or deglaze with 1 tbsp of water and 1 tsp of lemon juice for brightness. Cook it off the same way."
+      },
+      {
+        "question": "What else can I do with leftover duxelles?",
+        "answer": "Stir it into gravy or a cream sauce, fold it into scrambled eggs or an omelet, spread it on toast under melted cheese, or use it in a mushroom Wellington with a whole roasted portobello in place of the beef."
+      }
+    ]
   }
 ];
