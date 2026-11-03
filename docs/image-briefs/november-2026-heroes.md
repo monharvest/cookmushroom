@@ -103,4 +103,5 @@ olive oil in a glass jar and a small bowl*
 
 ## Attempt log
 
-- (none yet)
+- 2026-11-03, attempt 1 (all three): generated 1024x576 (16:9) sources, center-cropped to 864x576 (3:2), Lanczos-upscaled to 1200x800, then make-hero.sh / make-og-cards.sh / make-schema-crops.sh. 1:1 crops checked: food centered, no gravity override needed. Marinated: hero.webp 104.3 KB (q82), within budget. Duxelles 129.8 KB and steak 122.7 KB at q62: over the 110 KB budget because of generator grain.
+- 2026-11-03, attempt 2 (duxelles, steak): `magick up.png -blur 0x0.7` on the 1200x800 source to remove grain (0x0.5 was not enough; 0x0.9 was more than needed), then reran all three scripts. Duxelles hero.webp 109.5 KB (q66), steak 109.1 KB (q70). Both under budget, and both still look sharp.
