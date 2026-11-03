@@ -102,7 +102,7 @@ US Thanksgiving (Nov 26, 2026) drives massive recipe search volume. Publish holi
 | 4.3 | `/mushroom-gravy/` | Recipe | **Deferred 2026-09-27:** 12,100/mo but SD 50, and the long tail is SD 35–50 bar sub-300 terms. It still peaks at 33,100 every November — revisit for 2027 once pages are indexing. |
 | 4.4 | `/creamy-mushroom-soup/`, `/mushroom-risotto/` | Recipe | **Deferred 2026-09-27:** SD 56 and SD 70. Not winnable at DA 7 this season. |
 
-**Improvements this month:** rework `/mushroom-recipe-index/` into a real recipe hub now that 6+ recipes exist (cards → actual recipe URLs, grouped by use: sides, mains, holiday) · add a "Recipes" nav item if the index warrants it.
+**Improvements this month:** (index rework shipped 2026-11-03) rework `/mushroom-recipe-index/` into a real recipe hub now that 6+ recipes exist (cards → actual recipe URLs, grouped by use: sides, mains, holiday) · add a "Recipes" nav item if the index warrants it.
 
 **Checkpoint (mid-Nov):** holiday pages ranking? If gravy/stuffed mushrooms get traction, fast-follow with one more holiday page (green-bean-adjacent mushroom side or make-ahead notes added to existing pages) instead of item 5.4.
 
@@ -112,9 +112,9 @@ US Thanksgiving (Nov 26, 2026) drives massive recipe search volume. Publish holi
 
 | # | URL | Type | Why now |
 |---|---|---|---|
-| 5.1 | `/mushroom-duxelles/` | Recipe | Beef Wellington season (Christmas). Classic technique page with low competition and strong culinary-authority signal. Links: cleaning guide (fine chop needs clean mushrooms), cremini. |
-| 5.2 | `/sauteed-mushrooms-for-steak/` | Recipe (short) | "Mushrooms for steak" is a distinct high-intent query cluster; holiday steak dinners peak in December. Keep it short and clearly differentiated from the pan guide (it's a serving-focused recipe, not a method lesson). |
-| 5.3 | `/marinated-mushrooms/` | Recipe | Holiday appetizer/antipasto query with a December peak; no-cook-after-blanch method adds variety to the recipe set. |
+| 5.1 | `/mushroom-duxelles/` | Recipe | **Shipped 2026-11-03** (drafted by Grok, reviewed; heroes user-approved). Beef Wellington season (Christmas). Classic technique page with low competition and strong culinary-authority signal. Links: cleaning guide (fine chop needs clean mushrooms), cremini. |
+| 5.2 | `/sauteed-mushrooms-for-steak/` | Recipe (short) | **Shipped 2026-11-03** (drafted by Grok, reviewed; heroes user-approved). "Mushrooms for steak" is a distinct high-intent query cluster; holiday steak dinners peak in December. Keep it short and clearly differentiated from the pan guide (it's a serving-focused recipe, not a method lesson). |
+| 5.3 | `/marinated-mushrooms/` | Recipe | **Shipped 2026-11-03** (drafted by Grok, reviewed; heroes user-approved). Holiday appetizer/antipasto query with a December peak; no-cook-after-blanch method adds variety to the recipe set. |
 | 5.4 | Flex slot | — | Filled by whatever the Month 4 checkpoint indicated: a holiday fast-follow, a GSC-discovered opportunity, or pulled forward from Month 6. |
 
 **Improvements this month:** year-end refresh pass — update `updated` dates ONLY on pages that get substantive improvements; add "make it for a crowd" scaling notes to gravy/stuffed/soup pages · verify all Recipe pages pass Rich Results Test in bulk.

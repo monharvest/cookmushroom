@@ -876,7 +876,7 @@ export const recipeArticles: RecipeArticle[] = [
           "**White button:** milder, and a little more water to cook off; give them 2 extra minutes.",
           "**King oyster:** cut the stems into thick coins and score them. They sear like scallops and stay meaty.",
           "**Shiitake:** caps only, sliced. Very savory with soy in place of Worcestershire.",
-          "**Wild mushrooms** such as chanterelles or morels: lovely with steak, but skip the cream so their flavor leads."
+          "**Chanterelles or morels** (market-purchased or expert-verified): lovely with steak, but skip the cream so their flavor leads."
         ]
       },
       {
