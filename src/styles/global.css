@@ -27,12 +27,15 @@
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* Dark mode follows the OS setting — no toggle, so there is no flash and no
-   stored preference to get out of sync. Only the tokens change; every rule
-   above is written against them. The accents lighten because #8b4513 and
-   #446b38 are unreadable on a dark ground. */
-@media (prefers-color-scheme: dark) {
-  :root {
+/* Dark mode follows the OS setting until the reader presses the header's
+   theme button; the choice is stored and set as data-theme on <html> before
+   first paint (Layout.astro), so there is no flash. The token list appears
+   twice — OS dark without a choice, and an explicit dark choice — keep the
+   two copies identical. Screen only: paper always gets the light palette. Only the tokens change; every rule above is written
+   against them. The accents lighten because #8b4513 and #446b38 are
+   unreadable on a dark ground. */
+@media screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
     --bg: #17130f;
     --ink: #f0e9df;
     --muted: #a99a8a;
@@ -55,8 +58,35 @@
     --focus: #e0ab63;
   }
   /* Photographs are lit for a light page; take the edge off on a dark one. */
-  .guide-hero-image, .prose img, .link-card-thumb { filter: brightness(.92) contrast(1.02); }
+  :root:not([data-theme="light"]) .guide-hero-image, :root:not([data-theme="light"]) .prose img, :root:not([data-theme="light"]) .link-card-thumb { filter: brightness(.92) contrast(1.02); }
 }
+@media screen {
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #17130f;
+    --ink: #f0e9df;
+    --muted: #a99a8a;
+    --card: #201a15;
+    --line: #362d24;
+    --accent: #e09a5a;
+    --accent-2: #8fc172;
+    --soft: #2f2620;
+    --surface: #241e18;
+    --on-ink: #17130f;
+    --nav-bg: #221b15;
+    --nav-bg-2: #30261e;
+    --nav-accent: #e0ab63;
+    --gradient-top: #241a12;
+    --panel: #262019;
+    --th: #2a231c;
+    --highlight: #2e2411;
+    --highlight-ink: #f2d9a6;
+    --shadow: 0 0 0;
+    --focus: #e0ab63;
+  }
+  :root[data-theme="dark"] .guide-hero-image, :root[data-theme="dark"] .prose img, :root[data-theme="dark"] .link-card-thumb { filter: brightness(.92) contrast(1.02); }
+}
+:root[data-theme="light"] { color-scheme: light; }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -75,6 +105,11 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 .header-actions { display: flex; align-items: center; gap: .25rem; }
 .nav-search-link { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: var(--nav-ink); border-radius: .7rem; }
 .nav-search-link:hover, .nav-search-link[aria-current="page"] { color: var(--nav-accent); }
+.theme-toggle { display: none; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; color: var(--nav-ink); background: none; border: 0; border-radius: .7rem; cursor: pointer; }
+.js .theme-toggle { display: inline-flex; }
+.theme-toggle:hover { color: var(--nav-accent); }
+.theme-toggle .icon-sun, .theme-toggle[aria-pressed="true"] .icon-moon { display: none; }
+.theme-toggle[aria-pressed="true"] .icon-sun { display: block; }
 .menu-button {
   display: none; align-items: center; gap: .45rem; min-height: 44px; padding: 0 .85rem;
   font: inherit; font-weight: 800; color: var(--nav-ink); background: transparent;
@@ -146,11 +181,13 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 }
 
 @media (min-width: 960px) {
-  .header-row { flex-wrap: nowrap; gap: 1.5rem; min-height: 4rem; }
-  .header-actions { display: none; }
-  .site-nav, .js .site-nav { display: flex; align-items: center; gap: 1.5rem; flex-basis: auto; }
-  .nav-list { display: flex; align-items: center; gap: 1.4rem; }
-  .nav-link, .mega-nojs, .js .mega-btn { position: relative; width: auto; min-height: 4rem; border: 0; font-size: .98rem; }
+  .header-row { flex-wrap: nowrap; gap: clamp(1rem, 2vw, 1.5rem); min-height: 4rem; }
+  /* Only the theme button stays; it sits after the search box. */
+  .header-actions { order: 2; }
+  .nav-search-link, .js .menu-button { display: none; }
+  .site-nav, .js .site-nav { display: flex; align-items: center; gap: clamp(1rem, 2vw, 1.5rem); flex-basis: auto; }
+  .nav-list { display: flex; align-items: center; gap: clamp(1rem, 2vw, 1.4rem); }
+  .nav-link, .mega-nojs, .js .mega-btn { position: relative; width: auto; min-height: 4rem; border: 0; font-size: .98rem; white-space: nowrap; }
   /* The open panel's trigger stays light and carries the underline. */
   .mega-btn[aria-expanded="true"] { color: var(--nav-ink); }
   .mega-btn[data-active]::after, .mega-btn[aria-expanded="true"]::after,
@@ -159,7 +196,7 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
   }
   .nav-search { display: flex; align-items: center; background: var(--nav-bg-2); border: 1px solid var(--nav-line); border-radius: .8rem; }
   .nav-search:focus-within { outline: 3px solid var(--focus); outline-offset: 2px; }
-  .nav-search input { width: 9.5rem; min-height: 2.6rem; padding: 0 0 0 .85rem; font: inherit; font-size: .92rem; color: var(--nav-ink); background: transparent; border: 0; }
+  .nav-search input { width: clamp(7rem, 12vw, 9.5rem); min-height: 2.6rem; padding: 0 0 0 .85rem; font: inherit; font-size: .92rem; color: var(--nav-ink); background: transparent; border: 0; }
   .nav-search input:focus-visible { outline: none; }
   .nav-search input::placeholder { color: var(--nav-muted); }
   .nav-search button { display: inline-flex; align-items: center; justify-content: center; width: 2.6rem; height: 2.6rem; color: var(--nav-ink); background: none; border: 0; border-radius: .8rem; cursor: pointer; }

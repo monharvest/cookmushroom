@@ -44,8 +44,14 @@ const schemas = [baseSchema, ...(Array.isArray(schema) ? schema : [schema]).filt
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {/* Before any CSS applies: the header shows its JS menu only when this ran. */}
-    <script is:inline>document.documentElement.classList.add('js');</script>
+    {/* Before any CSS applies: the header shows its JS menu only when this ran,
+        and a reader's stored light/dark choice lands before first paint. */}
+    <script is:inline>
+      (function (d) {
+        d.classList.add('js');
+        try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') d.dataset.theme = t; } catch (e) {}
+      })(document.documentElement);
+    </script>
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
