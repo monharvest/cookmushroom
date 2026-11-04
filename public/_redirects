@@ -1,4 +1,4 @@
-# www -> apex is a Cloudflare Redirect Rule on the zone; _redirects cannot redirect across hosts.
+# www -> apex is the cookmushroom-www-redirect Worker; _redirects cannot redirect across hosts.
 /sitemap.xml /sitemap-index.xml 301
 /blog /guides/ 301
 /blog/* /guides/ 301

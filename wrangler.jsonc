@@ -15,8 +15,9 @@
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
   },
-  // cookmushroom.com is served through this route (www -> apex is a zone
-  // Redirect Rule). workers.dev is off: a second public copy of the site.
+  // cookmushroom.com is served through this route (DNS: proxied AAAA 100::;
+  // www -> apex is the cookmushroom-www-redirect Worker). workers.dev is off:
+  // a second public copy of the site.
   "routes": [{ "pattern": "cookmushroom.com/*", "zone_name": "cookmushroom.com" }],
   "workers_dev": false,
   "preview_urls": false,
