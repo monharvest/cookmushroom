@@ -8,6 +8,7 @@ import { inlineMarkup } from '../lib/richtext';
 import RelatedCards from './RelatedCards.astro';
 import GearBox from './GearBox.astro';
 import KitchenEssentials from './KitchenEssentials.astro';
+import SectionNav from './SectionNav.astro';
 
 const { guide } = Astro.props as { guide: GuideArticle };
 const seoTitle = guide.title.length + ' | CookMushroom'.length <= 60 ? `${guide.title} | CookMushroom` : guide.title;
@@ -78,6 +79,8 @@ const guideWords = countWords(
 );
 // ~1,200 words is where scrolling to a section beats scrolling past it.
 const showToc = toc.length >= 5 && guideWords >= 1200;
+// The sidebar costs no scrolling, so it only needs enough entries to be a map.
+const showSectionNav = toc.length >= 4;
 
 const quickFacts = guide.quickFacts ?? [
   { label: 'Best heat', value: guide.heat },
@@ -169,6 +172,7 @@ const schema = [contentSchema, breadcrumbSchema];
     )}
 
     <article class="prose">
+      {showSectionNav && <SectionNav items={toc} label="In this guide" />}
       {guide.sections?.map((section) => (
         <section id={slugify(section.heading)}>
           <h2>{section.heading}</h2>

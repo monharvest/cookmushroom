@@ -7,6 +7,7 @@ import ShareRow from './ShareRow.astro';
 import CookMode from './CookMode.astro';
 import { inlineMarkup } from '../lib/richtext';
 import RelatedCards from './RelatedCards.astro';
+import SectionNav from './SectionNav.astro';
 
 const { recipe } = Astro.props as { recipe: RecipeArticle };
 const seoTitle = recipe.title.length + ' | CookMushroom'.length <= 60 ? `${recipe.title} | CookMushroom` : recipe.title;
@@ -103,6 +104,8 @@ const recipeWords = countWords(
   ...(recipe.faqs ?? []).flatMap((faq) => [faq.question, faq.answer]),
 );
 const showToc = toc.length >= 5 && recipeWords >= 1200;
+// The sidebar costs no scrolling, so it only needs enough entries to be a map.
+const showSectionNav = toc.length >= 4;
 ---
 <Layout title={seoTitle} description={recipe.description} schema={[schema, breadcrumbSchema]} heroImage={recipe.image} heroImageSrcset={heroImageSrcset} heroImageSizes={heroImageSizes} heroImageAlt={recipe.imageAlt} ogType="article">
   <main id="content" class="guide">
@@ -124,6 +127,7 @@ const showToc = toc.length >= 5 && recipeWords >= 1200;
     )}
 
     <article class="prose">
+      {showSectionNav && <SectionNav items={toc} label="In this recipe" />}
       {recipe.sections?.map((section) => (
         <section id={slugify(section.heading)}>
           <h2>{section.heading}</h2>

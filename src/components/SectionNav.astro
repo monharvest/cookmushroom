@@ -1,0 +1,49 @@
+---
+// Sticky contents beside the article on wide screens (global.css, "Section
+// nav"). Rendered inside .prose so it spans the article's height; hidden below
+// 1240px, where the gutter is too narrow and the inline contents box does the job.
+interface Props {
+  items: { id: string; label: string }[];
+  label: string;
+}
+const { items, label } = Astro.props;
+---
+<nav class="section-nav" aria-label={label}>
+  <div class="section-nav-inner">
+    <p class="section-nav-title">{label}</p>
+    <ol>{items.map((item) => <li><a href={`#${item.id}`}>{item.label}</a></li>)}</ol>
+  </div>
+</nav>
+
+<script>
+  // Marks the section being read: the last one whose top has passed the upper
+  // third of the viewport.
+  const nav = document.querySelector<HTMLElement>('.section-nav');
+  if (nav) {
+    const links = [...nav.querySelectorAll<HTMLAnchorElement>('a')];
+    const targets = links.map((a) => document.getElementById(decodeURIComponent(a.hash.slice(1))));
+    let current = -2;
+    let queued = false;
+    const update = () => {
+      queued = false;
+      if (!nav.offsetParent) return; // display: none on narrow screens
+      const line = window.innerHeight * 0.33;
+      let index = -1;
+      targets.forEach((target, i) => {
+        if (target && target.getBoundingClientRect().top <= line) index = i;
+      });
+      if (index === current) return;
+      current = index;
+      links.forEach((a, i) => (i === index ? a.setAttribute('aria-current', 'location') : a.removeAttribute('aria-current')));
+    };
+    const queue = () => {
+      if (!queued) {
+        queued = true;
+        requestAnimationFrame(update);
+      }
+    };
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue);
+    update();
+  }
+</script>

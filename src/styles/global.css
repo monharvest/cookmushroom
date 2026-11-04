@@ -389,6 +389,24 @@ th { background: var(--th); font-size: .9rem; }
 /* The header is sticky, so an anchored section must clear it. */
 .prose section[id] { scroll-margin-top: 4.5rem; }
 
+/* Section nav: the same contents, sticky in the left gutter on wide screens,
+   with the section being read marked (SectionNav.astro). It replaces the
+   inline box there (the nav renders on every page the box does). It spans the
+   article's height so its inner list can stick until the article ends. */
+.section-nav { display: none; }
+@media (min-width: 1240px) {
+  .guide .toc { display: none; }
+  .guide .prose { position: relative; }
+  .section-nav { display: block; position: absolute; top: 0; bottom: 0; right: calc(100% + 2rem); width: min(14rem, calc((100vw - 780px) / 2 - 2.75rem)); }
+  .section-nav-inner { position: sticky; top: 5.5rem; max-height: calc(100vh - 7rem); overflow-y: auto; padding-top: 1.5rem; }
+  .section-nav-title { margin: 0 0 .6rem; font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .section-nav ol { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--line); font-size: .88rem; line-height: 1.35; }
+  .prose .section-nav li + li { margin-top: 0; }
+  .section-nav a { display: block; margin-left: -2px; padding: .4rem 0 .4rem .9rem; border-left: 2px solid transparent; color: var(--muted); text-decoration: none; font-weight: 650; }
+  .section-nav a:hover { color: var(--ink); }
+  .section-nav a[aria-current] { color: var(--accent); border-left-color: var(--accent); font-weight: 800; }
+}
+
 /* Cook-along: tick ingredients and steps off while standing at the stove.
    The checkboxes are real inputs so they work with JS off and print as an
    empty checklist; CookMode.astro adds persistence and the wake lock. */
@@ -468,7 +486,7 @@ ol.checklist label::before { content: counter(cook-step) '.'; font-weight: 800; 
   /* Sources are worth carrying onto paper; inline links are not. */
   .prose section:last-of-type a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; word-break: break-all; }
   /* Print an unticked checklist — the reader ticks it with a pen. */
-  .cook-mode, .toc { display: none !important; }
+  .cook-mode, .toc, .section-nav { display: none !important; }
   /* The note matters on paper: the printed steps quote unscaled amounts. */
   .cook-scale-note { border: 1px solid #ccc; }
   .checklist input { appearance: auto; -webkit-appearance: auto; }
