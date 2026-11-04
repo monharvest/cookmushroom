@@ -13,7 +13,8 @@ const {
   noindex = false,
   ads = true,
 } = Astro.props;
-// Google AdSense (Auto ads): one loader in the head, Google places the units.
+// Google AdSense (Auto ads): one deferred loader in the head (it injects
+// adsbygoogle.js after the page has painted), Google places the units.
 // Not on noindex pages (/search/) or the 404 — AdSense policy forbids ads on
 // pages without publisher content. CSP for it lives in public/_headers.
 const ADSENSE_CLIENT = 'ca-pub-1320198648576974';
@@ -65,7 +66,38 @@ const schemas = [baseSchema, ...(Array.isArray(schema) ? schema : [schema]).filt
     <meta name="twitter:image" content={socialImage} />
     <meta name="twitter:image:alt" content={socialImageAlt} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    {showAds && <script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`} crossorigin="anonymous" is:inline></script>}
+    {showAds && (
+      <script is:inline data-ad-client={ADSENSE_CLIENT}>
+        // Deferred AdSense loader: the page paints first, ads follow. Loads once,
+        // after the first painted frame once the browser is idle, or on the first
+        // scroll, tap or key press, whichever comes first.
+        (function () {
+          var client = document.currentScript.dataset.adClient, done = false;
+          function load() {
+            if (done) return;
+            done = true;
+            var s = document.createElement('script');
+            s.async = true;
+            s.crossOrigin = 'anonymous';
+            s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + client;
+            document.head.appendChild(s);
+          }
+          ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (e) {
+            addEventListener(e, load, { once: true, passive: true });
+          });
+          // After load, wait for a frame to be painted (rAF, then a task after
+          // it), then for idle time, so the ad code never delays first paint.
+          addEventListener('load', function () {
+            requestAnimationFrame(function () {
+              setTimeout(function () {
+                if ('requestIdleCallback' in window) requestIdleCallback(load, { timeout: 2000 });
+                else setTimeout(load, 1000);
+              }, 0);
+            });
+          });
+        })();
+      </script>
+    )}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SP5SEQPV12" is:inline></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
