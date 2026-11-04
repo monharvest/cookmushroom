@@ -1,0 +1,313 @@
+---
+// Site header: brand, main menu and search. On wide screens Guides, Mushrooms
+// and Recipes open a mega panel (hover or click); on phones a Menu button
+// pushes the same menu down as an accordion. Disclosure pattern, not an ARIA
+// menu: plain buttons with aria-expanded, panels toggled with `hidden`.
+// With JS off the buttons stay hidden and their hub links show instead, so
+// every top item still goes somewhere. Styles: "Site header" in global.css.
+import { guideArticles } from '../data/guides';
+import { recipeArticles } from '../data/recipes';
+
+const path = Astro.url.pathname;
+const onSearchPage = path.startsWith('/search');
+
+const guideBySlug = new Map(guideArticles.map((guide) => [guide.slug, guide]));
+// Menu names are shorter than page titles. A slug that no longer exists fails
+// the build rather than shipping a dead menu link.
+const pick = (items: [string, string][]) => items.map(([slug, name]) => {
+  const guide = guideBySlug.get(slug);
+  if (!guide) throw new Error(`SiteHeader: no guide with slug "${slug}"`);
+  return { href: `/${slug}/`, name, text: guide.description };
+});
+
+const methodCols = [
+  { heading: 'Cooking methods', items: pick([
+    ['how-to-cook-mushrooms', 'Start here: browned, not steamed'],
+    ['how-to-cook-mushrooms-in-a-pan', 'In a pan'],
+    ['how-to-roast-mushrooms-in-oven', 'Oven-roasted'],
+    ['how-to-cook-mushrooms-in-air-fryer', 'In the air fryer'],
+  ]) },
+  { heading: 'More ways', items: pick([
+    ['how-to-grill-mushrooms', 'On the grill'],
+    ['how-to-cook-frozen-mushrooms', 'From frozen'],
+    ['how-to-cook-dried-mushrooms', 'Dried mushrooms'],
+    ['how-to-cut-mushrooms', 'How to cut them'],
+  ]) },
+  { heading: 'Prep & storage', items: pick([
+    ['how-to-clean-mushrooms', 'Cleaning'],
+    ['how-to-store-mushrooms', 'Storing'],
+    ['how-to-tell-if-mushrooms-are-bad', 'Spotting bad mushrooms'],
+    ['how-to-freeze-mushrooms', 'Freezing'],
+    ['how-to-dry-mushrooms', 'Drying'],
+  ]) },
+];
+
+const mushroomCols = [
+  { heading: 'From the store', items: pick([
+    ['how-to-cook-button-mushrooms', 'White button'],
+    ['how-to-cook-cremini-mushrooms', 'Cremini'],
+    ['how-to-cook-portobello-mushrooms', 'Portobello'],
+    ['how-to-cook-shiitake-mushrooms', 'Shiitake'],
+    ['how-to-cook-oyster-mushrooms', 'Oyster'],
+    ['how-to-cook-king-oyster-mushrooms', 'King oyster'],
+    ['how-to-cook-enoki-mushrooms', 'Enoki'],
+    ['how-to-cook-shimeji-mushrooms', 'Shimeji'],
+    ['how-to-cook-maitake-mushrooms', 'Maitake'],
+    ['how-to-cook-lions-mane-mushrooms', "Lion's mane"],
+    ['how-to-cook-paddy-straw-mushrooms', 'Paddy straw'],
+    ['how-to-cook-wood-ear-mushrooms', 'Wood ear'],
+  ]) },
+  { heading: 'Wild & seasonal', items: pick([
+    ['how-to-cook-chanterelle-mushrooms', 'Chanterelles'],
+    ['how-to-cook-morel-mushrooms', 'Morels'],
+    ['how-to-cook-porcini-mushrooms', 'Porcini'],
+    ['how-to-cook-black-trumpet-mushrooms', 'Black trumpets'],
+    ['how-to-cook-lobster-mushrooms', 'Lobster mushrooms'],
+    ['how-to-cook-chicken-of-the-woods', 'Chicken of the woods'],
+    ['how-to-cook-puffball-mushrooms', 'Puffball'],
+    ['how-to-cook-shaggy-mane-mushrooms', 'Shaggy mane'],
+    ['how-to-cook-matsutake-mushrooms', 'Matsutake'],
+  ]) },
+  { heading: 'Dried & specialty', items: pick([
+    ['how-to-cook-dried-mushrooms', 'Dried mushrooms'],
+    ['how-to-use-truffles', 'Truffles'],
+    ['how-to-prepare-chaga', 'Chaga'],
+    ['how-to-prepare-reishi-mushrooms', 'Reishi'],
+  ]) },
+];
+
+// Recipes come straight from recipes.ts, so a new one joins the menu by itself.
+// The menu name drops the subtitle: "(Plus an Oven Party Batch)", ", with a …".
+const recipeItems = recipeArticles.map((recipe) => ({
+  href: `/${recipe.slug}/`,
+  name: recipe.title.replace(/\s*\(.*\)\s*$/, '').replace(/,.*$/, ''),
+  text: `${recipe.cardMushroom} · ${recipe.minutes}`,
+}));
+
+const inSection = (hub: string, items: { href: string }[]) =>
+  path.startsWith(hub) || items.some((item) => item.href === path);
+const guidesActive = inSection('/guides', methodCols.flatMap((col) => col.items));
+const mushroomsActive = !guidesActive && inSection('/types-of-mushrooms', mushroomCols.flatMap((col) => col.items));
+const recipesActive = inSection('/mushroom-recipe-index', recipeItems);
+const current = (href: string) => (href === path ? ('page' as const) : undefined);
+---
+<header class="site-header">
+  <div class="header-row">
+    <a class="brand" href="/">Cook<span>Mushroom</span></a>
+    <div class="header-actions">
+      <a class="nav-search-link" href="/search/" aria-label="Search guides and recipes" aria-current={onSearchPage ? 'page' : undefined}>
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.8-3.8" /></svg>
+      </a>
+      <button type="button" class="menu-button" aria-expanded="false" aria-controls="site-nav">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path class="menu-bars" d="M4 6h16M4 12h16M4 18h16" /><path class="menu-x" d="M6 6l12 12M18 6 6 18" /></svg>
+        Menu
+      </button>
+    </div>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <ul class="nav-list">
+        <li class="mega-item">
+          <a class="mega-nojs" href="/guides/" aria-current={current('/guides/')}>Guides</a>
+          <button type="button" class="mega-btn" aria-expanded="false" aria-controls="mega-guides" data-active={guidesActive ? '' : undefined}>
+            Guides <svg class="chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+          </button>
+          <div class="mega-panel" id="mega-guides" hidden>
+            <div class="mega-body">
+              <p class="mega-h">Overview</p>
+              <a class="mega-feat" href="/guides/" aria-current={current('/guides/')}>
+                <span class="mega-ic" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2.5Z" /><path d="M8 7h7M8 11h5" /></svg>
+                </span>
+                <span>
+                  <strong>All {guideArticles.length} cooking guides <span aria-hidden="true">→</span></strong>
+                  <span class="mega-d">Exact times, heat levels and the doneness cue to watch for, by method and by mushroom.</span>
+                </span>
+              </a>
+              <div class="mega-cols">
+                {methodCols.map((col) => (
+                  <div class="mega-col">
+                    <p class="mega-h">{col.heading}</p>
+                    <ul>
+                      {col.items.map((item) => (
+                        <li><a href={item.href} aria-current={current(item.href)}><strong>{item.name}</strong><span class="mega-d">{item.text}</span></a></li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+                <aside class="mega-side">
+                  <span class="mega-pill">Cook-time chart</span>
+                  <p class="mega-side-t">Times and heat in one table.</p>
+                  <ul class="mega-check">
+                    <li>Pan, oven, air fryer and grill, by mushroom</li>
+                    <li>How much fat per batch</li>
+                    <li>What "done" looks like</li>
+                  </ul>
+                  <a class="mega-cta" href="/mushroom-cook-time-chart/">Open the chart <span aria-hidden="true">→</span></a>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="mega-item">
+          <a class="mega-nojs" href="/types-of-mushrooms/" aria-current={current('/types-of-mushrooms/')}>Mushrooms</a>
+          <button type="button" class="mega-btn" aria-expanded="false" aria-controls="mega-mushrooms" data-active={mushroomsActive ? '' : undefined}>
+            Mushrooms <svg class="chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+          </button>
+          <div class="mega-panel" id="mega-mushrooms" hidden>
+            <div class="mega-body">
+              <p class="mega-h">Overview</p>
+              <a class="mega-feat" href="/types-of-mushrooms/" aria-current={current('/types-of-mushrooms/')}>
+                <span class="mega-ic" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 7 0 0 1 18 0Z" /><path d="M9.5 12v6.5a2.5 2.5 0 0 0 5 0V12" /></svg>
+                </span>
+                <span>
+                  <strong>Types of edible mushrooms <span aria-hidden="true">→</span></strong>
+                  <span class="mega-d">What each one tastes like and the method that suits it.</span>
+                </span>
+              </a>
+              <div class="mega-cols mega-labels">
+                {mushroomCols.map((col) => (
+                  <div class={col.items.length > 10 ? 'mega-col mega-col-list' : 'mega-col'}>
+                    <p class="mega-h">{col.heading}</p>
+                    <ul>
+                      {col.items.map((item) => (
+                        <li><a href={item.href} aria-current={current(item.href)}><strong>{item.name}</strong></a></li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+                <aside class="mega-side mega-side-safety">
+                  <span class="mega-pill">Foraging</span>
+                  <p class="mega-side-t">Identify first, cook second.</p>
+                  <p class="mega-side-p">The wild-mushroom guides cover cooking only. Never eat a wild mushroom without expert verification.</p>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="mega-item">
+          <a class="mega-nojs" href="/mushroom-recipe-index/" aria-current={current('/mushroom-recipe-index/')}>Recipes</a>
+          <button type="button" class="mega-btn" aria-expanded="false" aria-controls="mega-recipes" data-active={recipesActive ? '' : undefined}>
+            Recipes <svg class="chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+          </button>
+          <div class="mega-panel" id="mega-recipes" hidden>
+            <div class="mega-body">
+              <p class="mega-h">Overview</p>
+              <a class="mega-feat" href="/mushroom-recipe-index/" aria-current={current('/mushroom-recipe-index/')}>
+                <span class="mega-ic" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18a9 9 0 0 1-18 0Z" /><path d="M8 7c0-1.5 1-2 1-3.5M12 7c0-1.5 1-2 1-3.5M16 7c0-1.5 1-2 1-3.5" /></svg>
+                </span>
+                <span>
+                  <strong>Mushroom recipe index <span aria-hidden="true">→</span></strong>
+                  <span class="mega-d">Every recipe on the site, with time and the mushroom it uses.</span>
+                </span>
+              </a>
+              <div class="mega-cols">
+                <div class="mega-col mega-col-wide">
+                  <p class="mega-h">Recipes</p>
+                  <ul>
+                    {recipeItems.map((item) => (
+                      <li><a href={item.href} aria-current={current(item.href)}><strong>{item.name}</strong><span class="mega-d">{item.text}</span></a></li>
+                    ))}
+                  </ul>
+                </div>
+                <aside class="mega-side">
+                  <span class="mega-pill">Cook along</span>
+                  <p class="mega-side-t">Made for the stove, not the scroll.</p>
+                  <ul class="mega-check">
+                    <li>Tick off ingredients and steps as you go</li>
+                    <li>Scale the batch up or down</li>
+                    <li>Prints as a clean checklist</li>
+                  </ul>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a class="nav-link" href="/mushroom-cook-time-chart/" aria-current={path.startsWith('/mushroom-cook-time-chart') ? 'page' : undefined}>Cook Times</a></li>
+        <li><a class="nav-link" href="/about/" aria-current={path.startsWith('/about') ? 'page' : undefined}>About</a></li>
+      </ul>
+      {/* A plain GET form, so it works with JS off; /search/ has its own box. */}
+      {!onSearchPage && (
+        <form class="nav-search" action="/search/" method="get" role="search">
+          <input name="q" type="search" placeholder="Search…" aria-label="Search guides and recipes" autocomplete="off" enterkeyhint="search" />
+          <button type="submit" aria-label="Search">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.8-3.8" /></svg>
+          </button>
+        </form>
+      )}
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Wide screens with a mouse: panels open on hover (short close delay so the
+  // pointer can cross the gap) and on click; one open at a time; Escape,
+  // focus leaving or a click outside closes. Phones: the Menu button shows
+  // the list, and each section is an independent accordion.
+  const root = document.documentElement;
+  const menuButton = document.querySelector<HTMLButtonElement>('.menu-button');
+  const items = [...document.querySelectorAll<HTMLElement>('.mega-item')];
+  const wide = window.matchMedia('(min-width: 960px)');
+  const hover = window.matchMedia('(min-width: 960px) and (hover: hover)');
+  let closeTimer: number | undefined;
+  let openedByHover = 0;
+
+  const setMenu = (open: boolean) => {
+    menuButton?.setAttribute('aria-expanded', String(open));
+    root.classList.toggle('nav-open', open);
+  };
+  const setPanel = (item: HTMLElement, open: boolean) => {
+    item.querySelector('.mega-btn')?.setAttribute('aria-expanded', String(open));
+    const panel = item.querySelector<HTMLElement>('.mega-panel');
+    if (panel) panel.hidden = !open;
+    item.classList.toggle('is-open', open);
+  };
+  const closeOthers = (keep?: HTMLElement) => items.forEach((item) => item !== keep && setPanel(item, false));
+
+  menuButton?.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
+
+  items.forEach((item) => {
+    const button = item.querySelector<HTMLButtonElement>('.mega-btn');
+    button?.addEventListener('click', () => {
+      // A click right after hover-open would otherwise close what the
+      // pointer just opened.
+      const open = button.getAttribute('aria-expanded') !== 'true' || (hover.matches && Date.now() - openedByHover < 600);
+      if (wide.matches) closeOthers(item);
+      setPanel(item, open);
+    });
+    item.addEventListener('mouseenter', () => {
+      if (!hover.matches) return;
+      clearTimeout(closeTimer);
+      if (!item.classList.contains('is-open')) openedByHover = Date.now();
+      closeOthers(item);
+      setPanel(item, true);
+    });
+    item.addEventListener('mouseleave', () => {
+      if (hover.matches) closeTimer = window.setTimeout(() => setPanel(item, false), 180);
+    });
+    item.addEventListener('focusout', (event) => {
+      if (wide.matches && !item.contains(event.relatedTarget as Node | null)) setPanel(item, false);
+    });
+  });
+
+  document.addEventListener('click', (event) => {
+    if (wide.matches) items.forEach((item) => !item.contains(event.target as Node) && setPanel(item, false));
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    const open = items.find((item) => item.classList.contains('is-open'));
+    if (open) {
+      setPanel(open, false);
+      open.querySelector<HTMLButtonElement>('.mega-btn')?.focus();
+    } else if (root.classList.contains('nav-open')) {
+      setMenu(false);
+      menuButton?.focus();
+    }
+  });
+  // Crossing the breakpoint resets everything, so a phone accordion left open
+  // never turns into a stuck desktop panel, or the reverse.
+  wide.addEventListener('change', () => {
+    closeOthers();
+    setMenu(false);
+  });
+</script>

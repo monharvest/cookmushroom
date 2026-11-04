@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
 const {
   title = 'CookMushroom — How to Cook Mushrooms Properly',
   description = 'CookMushroom is a focused guide to cooking mushrooms: cook times, pan methods, air-fryer tips, and simple mushroom recipes.',
@@ -12,7 +13,6 @@ const {
   noindex = false,
   ads = true,
 } = Astro.props;
-const onSearchPage = Astro.url.pathname.startsWith('/search');
 // Google AdSense (Auto ads): one loader in the head, Google places the units.
 // Not on noindex pages (/search/) or the 404 — AdSense policy forbids ads on
 // pages without publisher content. CSP for it lives in public/_headers.
@@ -43,6 +43,8 @@ const schemas = [baseSchema, ...(Array.isArray(schema) ? schema : [schema]).filt
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {/* Before any CSS applies: the header shows its JS menu only when this ran. */}
+    <script is:inline>document.documentElement.classList.add('js');</script>
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -75,26 +77,7 @@ const schemas = [baseSchema, ...(Array.isArray(schema) ? schema : [schema]).filt
   </head>
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
-    <header class="site-header">
-      <nav class="nav" aria-label="Main navigation">
-        <a class="brand" href="/">Cook<span>Mushroom</span></a>
-        <div class="nav-links">
-          <a href="/guides/" aria-current={Astro.url.pathname.startsWith('/guides') ? 'page' : undefined}>Guides</a>
-          <a href="/mushroom-cook-time-chart/" aria-current={Astro.url.pathname.startsWith('/mushroom-cook-time-chart') ? 'page' : undefined}>Cook Times</a>
-          <a href="/mushroom-recipe-index/" aria-current={Astro.url.pathname.startsWith('/mushroom-recipe-index') ? 'page' : undefined}>Recipes</a>
-          <a href="/about/" aria-current={Astro.url.pathname.startsWith('/about') ? 'page' : undefined}>About</a>
-        </div>
-        {/* A plain GET form, so it works with JS off; /search/ has its own box. */}
-        {!onSearchPage && (
-          <form class="nav-search" action="/search/" method="get" role="search">
-            <input name="q" type="search" placeholder="Search" aria-label="Search guides and recipes" autocomplete="off" enterkeyhint="search" />
-          </form>
-        )}
-        <a class="nav-search-link" href="/search/" aria-label="Search guides and recipes" aria-current={onSearchPage ? 'page' : undefined}>
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.8-3.8" /></svg>
-        </a>
-      </nav>
-    </header>
+    <SiteHeader />
     <slot />
     <footer class="footer">
       <p>CookMushroom covers cooking edible mushrooms. Identification notes are safety reminders only — never eat a wild mushroom without expert verification.</p>
