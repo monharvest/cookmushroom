@@ -1,5 +1,5 @@
-// Decides which 404s become 410 Gone. Used by functions/[[path]].js; kept outside
-// functions/ so Pages does not treat it as a route, and so it can be tested with
+// Decides which 404s become 410 Gone. Used by worker/index.js; kept separate so
+// it can be tested with
 // `node legacy/check-legacy-paths.mjs`.
 import { LEGACY_PATHS } from './legacy-410-paths.js';
 
@@ -42,9 +42,8 @@ export function isLegacyPath(pathname) {
   return LEGACY_PATHS.has(path);
 }
 
-// Same rules as public/_redirects. Pages skips _redirects for any path a Function
-// handles; _routes.json normally keeps these paths away from the function, and this
-// is the fallback if it ever doesn't (e.g. a build that skipped write-routes-json).
+// Same rules as public/_redirects, which Cloudflare applies before the Worker
+// runs; this is the fallback if a rule there is ever lost.
 /** @param {string} pathname @returns {string | null} */
 export function redirectTarget(pathname) {
   if (pathname === '/blog' || pathname.startsWith('/blog/') || pathname.startsWith('/category/')) return '/guides/';

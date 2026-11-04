@@ -1,4 +1,4 @@
-https://www.cookmushroom.com/* https://cookmushroom.com/:splat 301!
+# www -> apex is a Cloudflare Redirect Rule on the zone; _redirects cannot redirect across hosts.
 /sitemap.xml /sitemap-index.xml 301
 /blog /guides/ 301
 /blog/* /guides/ 301

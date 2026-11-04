@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build && node scripts/check-image-refs.mjs && node scripts/write-routes-json.mjs",
+    "build": "astro check && astro build && node scripts/check-image-refs.mjs && node scripts/write-slash-redirects.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "grok": "node scripts/grok-status.mjs"
@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "wrangler": "^4.157.0"
   }
 }

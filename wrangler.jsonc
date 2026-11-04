@@ -1,0 +1,24 @@
+// Cloudflare Worker with static assets (replaced Cloudflare Pages, 2026-11-04).
+// Workers Builds runs `npm run build` (writes dist/) and `npx wrangler deploy`
+// on every push to main; deploy uploads dist/ with
+// worker/index.js, which only runs when no built file matches (410 for legacy
+// URLs, otherwise the 404 page). public/_headers and _redirects still apply.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cookmushroom",
+  "account_id": "01644e982bf4fd61e45c31c2dc1a2a57",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  // cookmushroom.com is served through this route (www -> apex is a zone
+  // Redirect Rule). workers.dev is off: a second public copy of the site.
+  "routes": [{ "pattern": "cookmushroom.com/*", "zone_name": "cookmushroom.com" }],
+  "workers_dev": false,
+  "preview_urls": false,
+  "observability": { "enabled": true }
+}

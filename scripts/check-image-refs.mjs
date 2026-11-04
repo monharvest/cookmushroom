@@ -2,7 +2,7 @@
 // exist (publication gate rule 6: never publish broken image references).
 //
 // A page whose hero has not been made yet therefore cannot deploy by accident:
-// Cloudflare Pages keeps serving the last good deployment when a build fails.
+// a failed build never reaches `wrangler deploy`, so the last good version stays live.
 import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 

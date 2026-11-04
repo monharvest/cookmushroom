@@ -67,14 +67,14 @@ npm run preview
 
 ## Deployment
 
-Push to `origin/main`. Cloudflare Pages builds and deploys automatically; there is no manual upload step.
+Push to `origin/main`. The site is a Cloudflare Worker with static assets (`wrangler.jsonc`); Workers Builds builds and deploys it automatically, with no manual upload step.
 
 | Setting | Value |
 |---|---|
 | Build command | `npm run build` |
-| Output directory | `dist` |
-| Build system | v3 (Node 22.16.0, npm 10.9.2) |
-| Node version | ≥22.12.0 — do not set `NODE_VERSION` below 22 |
+| Deploy command | `npx wrangler deploy` |
+| Assets directory | `dist` (set in `wrangler.jsonc`) |
+| Node version | `NODE_VERSION=22` (≥22.12.0) |
 
 Generate the lockfile with the **npm version the build image uses** (10.9.2). A lockfile written by npm 11 prunes optional wasm transitives that npm 10's `npm ci` demands, and the deploy fails.
 
@@ -100,4 +100,4 @@ npm run grok    # duplicate-guard block for the recipe prompt
 
 - [Astro 7](https://astro.build) — static output, no adapter
 - [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
-- Cloudflare Pages
+- Cloudflare Workers (static assets)

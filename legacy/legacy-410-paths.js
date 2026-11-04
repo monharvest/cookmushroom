@@ -3,7 +3,7 @@
 // Source: Wayback Machine CDX API, cookmushroom.com/*, 2024–2026, collapsed by URL
 // (1,811 captures pulled 2026-10-10). This list holds only the ASCII single-segment
 // slugs; non-ASCII slugs and WordPress system paths (/tag/, /author/, /wp-content/ …)
-// are matched by rule in functions/[[path]].js, and /category/* + /blog/* keep their
+// are matched by rule in legacy/is-legacy-path.js, and /category/* + /blog/* keep their
 // existing 301s in public/_redirects.
 //
 // Normalised: decoded, lower-case, no trailing slash. Every current and planned slug

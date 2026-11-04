@@ -4,7 +4,7 @@
 
 ## What this is
 
-cookmushroom.com — a **static Astro 7 site** about cooking mushrooms. Static output, **no adapter, no server runtime, no CMS, no database**. Deployed by Cloudflare Pages on push to `origin/main`.
+cookmushroom.com — a **static Astro 7 site** about cooking mushrooms. Static output, **no adapter, no server runtime, no CMS, no database**. Deployed as a Cloudflare Worker with static assets (Workers Builds) on push to `origin/main`.
 
 There is no WordPress. Do not add an API client, a headless CMS, or `@astrojs/node` — the adapter was removed as unused and must not come back.
 
@@ -31,7 +31,7 @@ npm run build      # astro check && astro build — type errors fail the build
 npm run preview
 ```
 
-Requires **Node ≥22.12.0**; `.nvmrc` pins 22. Generate lockfiles with **npm 10.9.2**, the version on the Pages build image — a lockfile from npm 11 prunes optional wasm transitives that npm 10's `npm ci` requires, and the deploy fails.
+Requires **Node ≥22.12.0**; `.nvmrc` pins 22. Generate lockfiles with **npm 10.9.2**, the version the CI build uses — a lockfile from npm 11 prunes optional wasm transitives that npm 10's `npm ci` requires, and the deploy fails.
 
 ## Images
 
