@@ -59,6 +59,8 @@ const toc = [
   ...(guide.variations ? [{ id: 'variations', label: 'Variations' }] : []),
   ...(guide.storage ? [{ id: 'storage', label: 'Storage and reheating' }] : []),
   ...(guide.faqs ? [{ id: 'faqs', label: 'Frequently asked questions' }] : []),
+  // The one tail item listed: readers look for the tools.
+  { id: 'essentials', label: 'Mushroom kitchen essentials' },
 ];
 const guideWords = countWords(
   guide.description,
@@ -265,7 +267,7 @@ const schema = [contentSchema, breadcrumbSchema];
         <h2>Good with</h2>
         <p>{guide.pairings.join(', ')}.</p>
       </section>
-      {guide.essentialsBanner && <KitchenEssentials />}
+      <KitchenEssentials />
       <ShareRow url={pageUrl} title={guide.title} image={imageUrl} description={guide.description} label="Cooked this?" position="bottom" />
       {guide.relatedLinks && guide.relatedLinks.length > 0 && (
         <RelatedCards links={guide.relatedLinks} heading="Related guides" />

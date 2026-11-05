@@ -48,8 +48,6 @@ export type GuideArticle = {
   badge?: string;
   sections?: GuideSection[];
   gear?: GearItem[];
-  // TEST (amazon-test-2026-10): show the KitchenEssentials banner below the body.
-  essentialsBanner?: boolean;
   relatedLinks?: GuideLink[];
   // External citations, rendered as a "Sources" list at the end of the article.
   // Only for pages where a reader makes a real food-safety decision, and only
@@ -153,7 +151,6 @@ const methodGuides: GuideArticle[] = [
     gear: [
       { name: '12-inch skillet', search: '12 inch skillet', note: 'wide enough for a pound of slices in one layer, so their water cooks off fast' },
     ],
-    essentialsBanner: true,
     relatedLinks: [
       { href: '/types-of-mushrooms/', label: 'Types of edible mushrooms and how to cook each' },
       { href: '/how-to-cook-frozen-mushrooms/', label: 'How to cook frozen mushrooms' },
@@ -223,7 +220,6 @@ const methodGuides: GuideArticle[] = [
       { name: '12-inch skillet', search: '12 inch skillet', note: 'room for the mushrooms to brown instead of crowding' },
       { name: 'Mushroom brush', search: 'mushroom brush', asin: 'B073X54VM9', product: 'Redecker natural-bristle mushroom brush', note: 'for brushing off dirt instead of rinsing' },
     ],
-    essentialsBanner: true,
     sections: [
       { heading: 'Why this method works', text: 'A hot, uncrowded pan lets mushroom moisture evaporate before the butter goes in. That gives the mushrooms browned edges instead of a soft, steamed texture.' },
       { heading: 'Before you start', text: 'Wipe the mushrooms with a damp towel or brush off dirt. Trim the dry ends, then cut the mushrooms into similar-sized pieces so they finish together.' }
@@ -354,7 +350,6 @@ const methodGuides: GuideArticle[] = [
       { name: 'Colander', search: 'stainless steel colander', note: 'for the quick rinse when they are truly muddy' },
       { name: 'Flour sack towels', search: 'flour sack kitchen towels', note: 'lint-free, for patting them completely dry' },
     ],
-    essentialsBanner: true,
     sections: [
       { heading: 'The 30-second answer', text: 'Brush or wipe most mushrooms clean. Use a quick rinse only when they are truly muddy, then dry them thoroughly. Never leave mushrooms soaking in a bowl of water.' },
       { heading: 'The golden rule', quote: 'Clean mushrooms quickly, then dry them completely before they reach a hot pan.' },

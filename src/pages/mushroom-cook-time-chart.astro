@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import KitchenEssentials from '../components/KitchenEssentials.astro';
 import { cookTimes } from '../data/guides';
 const mushrooms = [...new Map(cookTimes.map((row) => [row.mushroomSlug, row.mushroom])).entries()];
 const methods = cookTimes.reduce((items, row) => items.some(([slug]) => slug === row.methodSlug) ? items : [...items, [row.methodSlug, row.method]], []);
@@ -40,6 +41,7 @@ const methods = cookTimes.reduce((items, row) => items.some(([slug]) => slug ===
         </table>
       </div>
     </section>
+    <KitchenEssentials />
   </main>
   <script id="cook-time-data" type="application/json" set:html={JSON.stringify(cookTimes)} is:inline></script>
   <script>

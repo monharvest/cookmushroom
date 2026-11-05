@@ -387,7 +387,7 @@ th { background: var(--th); font-size: .9rem; }
 .toc a { text-decoration: none; font-weight: 700; }
 .toc a:hover { color: var(--accent); text-decoration: underline; }
 /* The header is sticky, so an anchored section must clear it. */
-.prose section[id] { scroll-margin-top: 4.5rem; }
+.prose section[id], .prose .essentials { scroll-margin-top: 4.5rem; }
 
 /* Section nav: the same contents, sticky in the left gutter on wide screens,
    with the section being read marked (SectionNav.astro). It replaces the

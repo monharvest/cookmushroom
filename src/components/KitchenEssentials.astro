@@ -1,10 +1,10 @@
 ---
 // "Mushroom kitchen essentials" — a banner-style callout below the article
-// body (TEST, branch amazon-test-2026-10). Self-built HTML/CSS: no Amazon
-// iframe or script, no images, no prices or ratings. It carries its own
-// affiliate notice so it is compliant even on a page without a GearBox, and
-// every link goes through src/lib/amazon.ts with rel="sponsored nofollow noopener".
-// Shown only on guides with `essentialsBanner: true`. Hidden in print.
+// body. Self-built HTML/CSS: no Amazon iframe or script, no images, no prices
+// or ratings. It carries its own affiliate notice so it is compliant even on
+// a page without a GearBox, and every link goes through src/lib/amazon.ts with rel="sponsored nofollow noopener".
+// On every guide and recipe (listed in their contents) and at the foot of the
+// three hubs; not on the homepage or the legal/utility pages. Hidden in print.
 import { AMAZON_REL, amazonProductUrl, amazonSearchUrl } from '../lib/amazon';
 
 type Essential = { name: string; why: string; search: string; asin?: string };
@@ -16,7 +16,7 @@ const essentials: Essential[] = [
   { name: 'Fine-mesh sieve', why: 'strains dried-mushroom broth', search: 'fine mesh sieve' },
 ];
 ---
-<aside class="essentials" aria-labelledby="essentials-heading">
+<aside id="essentials" class="essentials" aria-labelledby="essentials-heading">
   <div class="essentials-head">
     <h2 id="essentials-heading">Mushroom kitchen essentials</h2>
     <p class="essentials-notice">Links go to Amazon. As an Amazon Associate I earn from qualifying purchases. <a href="/affiliate-disclosure/">How that works</a>.</p>

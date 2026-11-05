@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import KitchenEssentials from '../components/KitchenEssentials.astro';
 import { guideArticles } from '../data/guides';
 const methodGuides = guideArticles.filter((guide) => !guide.mushroomSlug && guide.group !== 'storage');
 const storageGuides = guideArticles.filter((guide) => guide.group === 'storage');
@@ -51,6 +52,7 @@ const mushroomGuides = guideArticles.filter((guide) => guide.mushroomSlug);
         ))}
       </div>
     </section>
+    <KitchenEssentials />
   </main>
 
   <script>
